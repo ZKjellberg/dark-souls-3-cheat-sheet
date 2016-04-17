@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <title>Dark Souls 3 Cheat Sheet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cheat sheet for Dark Souls 3. Checklist of things to do, items to get etc.">
+  <meta name="author" content="Zachary Kjellberg">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="js/jstorage.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  var profilesKey = 'darksouls3_profiles';
+  </script>
+  <script src="js/main.js"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66576837-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <h1>Dark Souls 3 Cheat Sheet</h1>
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#tabPlaythrough" data-toggle="tab">Playthrough</a></li>
+          <li><a href="#tabChecklists" data-toggle="tab">Checklists</a></li>
+          <li><a href="#tabInformation" data-toggle="tab">Information</a></li>
+          <li><a href="#tabHelp" data-toggle="tab">Help</a></li>
+        </ul>
+        <div class="profile" style="float: right;">
+          <div class="input-append">
+            <select id="profiles">
+            </select>
+            <button class="btn" type="button" id="profileAdd">Add</button>
+            <button class="btn" type="button" id="profileEdit">Edit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="intro">
+      <p>
+        The following is a checklist and set of information for use when playing Dark Souls 3. If this is your first time visiting this page please check out the Help section.
+        This checklist was created by using <a href="https://github.com/smcnabb">Stephen McNabb</a>'s Dark Soul Cheat Sheet code
+      </p>
+      <p>
+        <em>Warning: Contains Spoilers!</em>
+      </p>
+    </div>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="tabPlaythrough">
+        <h2>Playthrough Checklist <span id="playthrough_overall_total"></span></h2>
+        <ul>
+          <li><a href="#1st_Floor_Sickroom">1st Floor Sickroom</a> <span id="playthrough_nav_totals_1"></span></li>
+          <li><a href="#Hunters_Dream">Hunter's Dream</a> <span id="playthrough_nav_totals_2"></span></li>
+        </ul>
+        <hr />
+
+        <h3 id="1st_Floor_Sickroom"><a href="">1st Floor Sickroom</a> <span id="playthrough_totals_1"></span></h3>
+        <ul>
+          <li data-id="playthrough_1_1"></li>
+        </ul>
+
+        <h3 id="Hunters_Dream"><a href="">Hunter's Dream</a> <span id="playthrough_totals_2"></span></h3>
+        <ul>
+          <li data-id="playthrough_2_1"></li>
+          <li data-id="playthrough_2_2"></li>
+        </ul>
+      </div>
+
+
+      <div class="tab-pane" id="tabChecklists">
+        <h2>Checklists <span id="checklist_overall_total"></span></h2>
+        <ul>
+          <li><a href="#Master_of_Expression">Master of Expression</a>: Learn all gestures<span id="checklist_nav_totals_1"></span></li>
+          <li><a href="#Master_of_Rings">Master of Rings</a>: Acquire all rings <span id="checklist_nav_totals_2"></span></li>
+          <li><a href="#Master_of_Sorceries">Master of Sorceries</a>: Acquire all sorceries <span id="checklist_nav_totals_3"></span></li>
+          <li><a href="#Master_of_Pyromancies">Master of Pyromancies</a>: Acquire all pyromancies <span id="checklist_nav_totals_4"></span></li>
+          <li><a href="#Master_of_Miracles">Master of Miracles</a>: Acquire all miracles <span id="checklist_nav_totals_5"></span></li>
+        </ul>
+
+        <hr />
+
+        <h3 id="Master_of_Expression">Master of Expression: Learn all <a href="http://darksouls3.wiki.fextralife.com/Gestures">gestures</a> <span id="checklist_totals_1"></span></h3>
+        <ul>
+          <li data-id="checklist_1_1">Beckon: </li>
+          <li data-id="checklist_1_2">Call Over: </li>
+          <li data-id="checklist_1_3">Welcome: </li>
+          <li data-id="checklist_1_4">Applause: </li>
+          <li data-id="checklist_1_5">Quiet Resolve: </li>
+          <li data-id="checklist_1_6">Rejoice: </li>
+          <li data-id="checklist_1_7">Hurrah!: </li>
+          <li data-id="checklist_1_8">Praise the Sun: </li>
+          <li data-id="checklist_1_9">My Thanks!: </li>
+          <li data-id="checklist_1_10">Proper Bow: </li>
+          <li data-id="checklist_1_12">Dignified Bow: </li>
+          <li data-id="checklist_1_13">Duel Bow: </li>
+          <li data-id="checklist_1_14">Legion Etiquette: </li>
+          <li data-id="checklist_1_15">Darkmoon Loyalty: </li>
+          <li data-id="checklist_1_16">By My Sword: </li>
+          <li data-id="checklist_1_17">Prayer: </li>
+          <li data-id="checklist_1_18">Silent Ally: </li>
+          <li data-id="checklist_1_19">Rest: </li>
+          <li data-id="checklist_1_20">Collapse: </li>
+          <li data-id="checklist_1_21">Patches Squat: </li>
+          <li data-id="checklist_1_22">Prostration: </li>
+          <li data-id="checklist_1_23">Toast: </li>
+          <li data-id="checklist_1_24">Sleep: </li>
+          <li data-id="checklist_1_25">Curl Up: </li>
+          <li data-id="checklist_1_26">Stretch Out: </li>
+          <li data-id="checklist_1_27">Path of The Dragon: </li>
+        </ul>
+
+        <h3 id="Master_of_Rings">Master of Rings: Acquire all <a href="http://darksouls3.wiki.fextralife.com/Rings">rings</a> <span id="checklist_totals_2"></span></h3>
+        <ul>
+          <li data-id="checklist_2_1"><a href=""></a>: </li>
+          <li data-id="checklist_2_2"><a href=""></a>: </li>
+        </ul>
+
+        <h3 id="Master_of_Sorceries">Master of Sorceries: Acquire all <a href="http://darksouls3.wiki.fextralife.com/Sorceries">sorceries</a> <span id="checklist_totals_3"></span></h3>
+        <ul>
+          <li data-id="checklist_3_1"><a href="http://darksouls3.wiki.fextralife.com/Soul+Arrow">Soul Arrow</a>: </li>
+          <li data-id="checklist_3_2"><a href="http://darksouls3.wiki.fextralife.com/Great+Soul+Arrow">Great Soul Arrow</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Heavy+Soul+Arrow">Heavy Soul Arrow</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Great+Heavy+Soul+Arrow">Great Heavy Soul Arrow</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Farron+Dart">Farron Dart</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Great+Farron+Dart">Great Farron Dart</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Farron+Hail">Farron Hail</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Homing+Soulmass">Homing Soulmass</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Homing+Crystal+Soulmass">Homing Crystal Soulmass</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Crystal+Hail">Crystal Hail</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Soul+Spear">Soul Spear</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Crystal+Soul+Spear">Crystal Soul Spear</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/White+Dragon+Breath">White Dragon Breath</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Soul+Stream">Soul Stream</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Soul+Greatsword">Soul Greatsword</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Farron+Flashsword">Farron Flashsword</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Magic+Weapon">Magic Weapon</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Great+Magic+Weapon">Great Magic Weapon</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Crystal+Magic+Weapon">Crystal Magic Weapon</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Magic+Shield">Magic Shield</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Great+Magic+Shield">Great Magic Shield</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Spook">Spook</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Aural+Decoy">Aural Decoy</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Pestilent+Mercury">Pestilent Mercury</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Cast%20Light">Cast Light</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Repair">Repair</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Hidden+Weapon">Hidden Weapon</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Hidden+Body">Hidden Body</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Chameleon">Chameleon</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Twisted+Wall+of+Light">Twisted Wall of Light</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Deep+Soul">Deep Soul</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Great+Deep+Soul">Great Deep Soul</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Affinity">Affinity</a>: </li>
+          <li data-id="checklist_3_"><a href="http://darksouls3.wiki.fextralife.com/Dark+Edge">Dark Edge</a>: </li>
+        </ul>
+
+        <h3 id="Master_of_Pyromancies">Master of Pyromancies: Acquire all <a href="http://darksouls3.wiki.fextralife.com/Pyromancies">pyromancies</a> <span id="checklist_totals_4"></span></h3>
+        <ul>
+          <li data-id="checklist_4_1"><a href="http://darksouls3.wiki.fextralife.com/Fireball">Fireball</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Cornyx+of+the+Great+Swamp">Cornyx of the Great Swamp</a> for 1000 souls</li>
+          <li data-id="checklist_4_2"><a href="http://darksouls3.wiki.fextralife.com/Fire+Orb">Fire Orb</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Cornyx+of+the+Great+Swamp">Cornyx of the Great Swamp</a> for 3000 souls</li>
+          <li data-id="checklist_4_3"><a href="http://darksouls3.wiki.fextralife.com/Bursting+Fireball">Bursting Fireball</a>: </li>
+          <li data-id="checklist_4_4"><a href="http://darksouls3.wiki.fextralife.com/Great%20Chaos+Fire+Orb">Great Chaos Fire Orb</a>: </li>
+          <li data-id="checklist_4_5"><a href="http://darksouls3.wiki.fextralife.com/Chaos+Bed+Vestiges">Chaos Bed Vestiges</a>: </li>
+          <li data-id="checklist_4_6"><a href="http://darksouls3.wiki.fextralife.com/Fire+Surge">Fire Surge</a>: </li>
+          <li data-id="checklist_4_7"><a href="http://darksouls3.wiki.fextralife.com/Fire+Whip">Fire Whip</a>: </li>
+          <li data-id="checklist_4_8"><a href="http://darksouls3.wiki.fextralife.com/Firestorm">Firestorm</a>: </li>
+          <li data-id="checklist_4_9"><a href="http://darksouls3.wiki.fextralife.com/Chaos+Storm">Chaos Storm</a>: </li>
+          <li data-id="checklist_4_10"><a href="http://darksouls3.wiki.fextralife.com/Great+Combustion">Great Combustion</a>: </li>
+          <li data-id="checklist_4_11"><a href="http://darksouls3.wiki.fextralife.com/Sacred+Flame">Sacred Flame</a>: </li>
+          <li data-id="checklist_4_12"><a href="http://darksouls3.wiki.fextralife.com/Profaned+Flame">Profaned Flame</a>: </li>
+          <li data-id="checklist_4_13"><a href="http://darksouls3.wiki.fextralife.com/Poison+Mist">Poison Mist</a>: </li>
+          <li data-id="checklist_4_14"><a href="http://darksouls3.wiki.fextralife.com/Toxic+Mist">Toxic Mist</a>: </li>
+          <li data-id="checklist_4_15"><a href="http://darksouls3.wiki.fextralife.com/Acid+Surge">Acid Surge</a>: </li>
+          <li data-id="checklist_4_16"><a href="http://darksouls3.wiki.fextralife.com/Flash+Sweat">Flash Sweat</a>: </li>
+          <li data-id="checklist_4_17"><a href="http://darksouls3.wiki.fextralife.com/Profuse+Sweat">Profuse Sweat</a>: </li>
+          <li data-id="checklist_4_18"><a href="http://darksouls3.wiki.fextralife.com/Iron+Flesh">Iron Flesh</a>: </li>
+          <li data-id="checklist_4_19"><a href="http://darksouls3.wiki.fextralife.com/Power%20Within">Power Within</a>: </li>
+          <li data-id="checklist_4_20"><a href="http://darksouls3.wiki.fextralife.com/Carthus+Beacon">Carthus Beacon</a>: </li>
+          <li data-id="checklist_4_21"><a href="http://darksouls3.wiki.fextralife.com/Carthus+Flame+Arc">Carthus Flame Arc</a>: </li>
+          <li data-id="checklist_4_22"><a href="http://darksouls3.wiki.fextralife.com/Warmth">Warmth</a>: </li>
+          <li data-id="checklist_4_23"><a href="http://darksouls3.wiki.fextralife.com/Rapport">Rapport</a>: </li>
+          <li data-id="checklist_4_24"><a href="http://darksouls3.wiki.fextralife.com/Boulder%20Heave">Boulder Heave</a>: </li>
+          <li data-id="checklist_4_25"><a href="http://darksouls3.wiki.fextralife.com/Black+Flame">Black Flame</a>: </li>
+          <li data-id="checklist_4_26"><a href="http://darksouls3.wiki.fextralife.com/Black+Fire+Orb">Black Fire Orb</a>: </li>
+          <li data-id="checklist_4_27"><a href="http://darksouls3.wiki.fextralife.com/Black+Serpent">Black Serpent</a>: </li>
+        </ul>
+
+        <h3 id="Master_of_Miracles">Master of Miracles: Acquire all <a href="http://darksouls3.wiki.fextralife.com/Miracles">miracles</a> <span id="checklist_totals_5"></span></h3>
+        <ul>
+          <li data-id="checklist_5_1"><a href="http://darksouls3.wiki.fextralife.com/Heal+Aid">Heal Aid</a>: Purchased from <a href="http://darksouls3.wiki.fextralife.com/Shrine+Handmaid">Shrine Handmaid</a> for 500 souls</li>
+          <li data-id="checklist_5_2"><a href="http://darksouls3.wiki.fextralife.com/Heal">Heal</a>: Purchased from <a href="http://darksouls3.wiki.fextralife.com/Irina+of+Carim">Irina of Carim</a> for 1000 souls</li>
+          <li data-id="checklist_5_3"><a href="http://darksouls3.wiki.fextralife.com/Med+Heal">Med Heal</a>: Purchased from <a href="http://darksouls3.wiki.fextralife.com/Irina+of+Carim">Irina of Carim</a> for 3500 souls</li>
+          <li data-id="checklist_5_4"><a href="http://darksouls3.wiki.fextralife.com/Great+Heal">Great Heal</a>: </li>
+          <li data-id="checklist_5_5"><a href="http://darksouls3.wiki.fextralife.com/Soothing+Sunlight">Soothing Sunlight</a>: </li>
+          <li data-id="checklist_5_6"><a href="http://darksouls3.wiki.fextralife.com/Replenishment">Replenishment</a>: Purchased from <a href="http://darksouls3.wiki.fextralife.com/Irina+of+Carim">Irina of Carim</a> for 1000 souls</li>
+          <li data-id="checklist_5_7"><a href="http://darksouls3.wiki.fextralife.com/Bountiful+Light">Bountiful Light</a>: Purchased from <a href="http://darksouls3.wiki.fextralife.com/Irina+of+Carim">Irina of Carim</a> for 5000 souls</li>
+          <li data-id="checklist_5_8"><a href="http://darksouls3.wiki.fextralife.com/Caressing%20Tears">Bountiful Sunlight</a>: </li>
+          <li data-id="checklist_5_9"><a href="http://darksouls3.wiki.fextralife.com/Caressing%20Tears">Caressing Tears</a>: Purchased from <a href="http://darksouls3.wiki.fextralife.com/Irina+of+Carim">Irina of Carim</a> for 1500 souls</li>
+          <li data-id="checklist_5_10"><a href="http://darksouls3.wiki.fextralife.com/Tears+of+Denial">Tears of Denial</a>: Purchased from <a href="http://darksouls3.wiki.fextralife.com/Irina+of+Carim">Irina of Carim</a> for 10,000 souls</li>
+          <li data-id="checklist_5_11"><a href="http://darksouls3.wiki.fextralife.com/Homeward">Homeward</a>: Purchased from <a href="http://darksouls3.wiki.fextralife.com/Irina+of+Carim">Irina of Carim</a> for 3000 souls</li>
+          <li data-id="checklist_5_12"><a href="http://darksouls3.wiki.fextralife.com/Seek+Guidance">Seek Guidance</a>: </li>
+          <li data-id="checklist_5_13"><a href="http://darksouls3.wiki.fextralife.com/Sacred+Oath">Sacred Oath</a>: </li>
+          <li data-id="checklist_5_14"><a href="http://darksouls3.wiki.fextralife.com/Force">Force</a>: Purchased from <a href="http://darksouls3.wiki.fextralife.com/Irina+of+Carim">Irina of Carim</a> for 1000 souls</li>
+          <li data-id="checklist_5_15"><a href="http://darksouls3.wiki.fextralife.com/Emit+Force">Emit Force</a>: </li>
+          <li data-id="checklist_5_16"><a href="http://darksouls3.wiki.fextralife.com/Wrath+of+the+Gods">Wrath of the Gods</a>: </li>
+          <li data-id="checklist_5_17"><a href="http://darksouls3.wiki.fextralife.com/Lightning+Spear">Lightning Spear</a>: </li>
+          <li data-id="checklist_5_18"><a href="http://darksouls3.wiki.fextralife.com/Great+Lightning+Spear">Great Lightning Spear</a>: </li>
+          <li data-id="checklist_5_19"><a href="http://darksouls3.wiki.fextralife.com/Sunlight+Spear">Sunlight Spear</a>: </li>
+          <li data-id="checklist_5_20"><a href="http://darksouls3.wiki.fextralife.com/Lightning+Stake">Lightning Stake</a>: </li>
+          <li data-id="checklist_5_21"><a href="http://darksouls3.wiki.fextralife.com/Lightning+Storm">Lightning Storm</a>: </li>
+          <li data-id="checklist_5_22"><a href="http://darksouls3.wiki.fextralife.com/Divine+Pillars+of+Light">Divine Pillars of Light</a>: </li>
+          <li data-id="checklist_5_23"><a href="http://darksouls3.wiki.fextralife.com/Blessed+Weapon">Blessed Weapon</a>: </li>
+          <li data-id="checklist_5_24"><a href="http://darksouls3.wiki.fextralife.com/Lightning+Blade">Lightning Blade</a>: </li>
+          <li data-id="checklist_5_25"><a href="http://darksouls3.wiki.fextralife.com/Darkmoon%20Blade">Darkmoon Blade</a>: </li>
+          <li data-id="checklist_5_26"><a href="http://darksouls3.wiki.fextralife.com/Magic+Barrier">Magic Barrier</a>: </li>
+          <li data-id="checklist_5_27"><a href="http://darksouls3.wiki.fextralife.com/Great+Magic+Barrier">Great Magic Barrier</a>: </li>
+          <li data-id="checklist_5_28"><a href="http://darksouls3.wiki.fextralife.com/Dark+Blade">Dark Blade</a>: Purchased from <a href="http://darksouls3.wiki.fextralife.com/Irina+of+Carim">Irina of Carim</a> for 10,000 souls</li>
+          <li data-id="checklist_5_29"><a href="http://darksouls3.wiki.fextralife.com/Vow+of+Silence">Vow of Silence</a>: Purchased from <a href="http://darksouls3.wiki.fextralife.com/Irina+of+Carim">Irina of Carim</a> for 15,000 souls</li>
+          <li data-id="checklist_5_30"><a href="http://darksouls3.wiki.fextralife.com/Dead+Again">Dead Again</a>: Purchased from <a href="http://darksouls3.wiki.fextralife.com/Irina+of+Carim">Irina of Carim</a> for 5000 souls</li>
+          <li data-id="checklist_5_31"><a href="http://darksouls3.wiki.fextralife.com/Atonement">Atonement</a>: </li>
+          <li data-id="checklist_5_32"><a href="http://darksouls3.wiki.fextralife.com/Deep+Protection">Deep Protection</a>: Purchased from <a href="http://darksouls3.wiki.fextralife.com/Irina+of+Carim">Irina of Carim</a> for 4000 souls</li>
+          <li data-id="checklist_5_33"><a href="http://darksouls3.wiki.fextralife.com/Gnaw">Gnaw</a>: Purchased from <a href="http://darksouls3.wiki.fextralife.com/Irina+of+Carim">Irina of Carim</a> for 2000 souls</li>
+          <li data-id="checklist_5_34"><a href="http://darksouls3.wiki.fextralife.com/Dorhy's%20Gnawing">Dorhy's Gnawing</a>: </li>
+          <li data-id="checklist_5_35"><a href="http://darksouls3.wiki.fextralife.com/Lifehunt+Scythe">Lifehunt Scythe</a>: </li>
+        </ul>
+
+    </div>
+
+    <div class="tab-pane" id="tabInformation">
+      <h2>Information</h2>
+      <ul>
+        <li><a href="#Coldblood_Types">Coldblood Types</a></li>
+      </ul>
+      <hr />
+
+      <h3 id="Soul_Types">Soul Types</h3>
+      <table class="table-striped">
+        <thead>
+          <tr><th>Name</th><th>Souls</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href=""></a></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      <div class="tab-pane" id="tabHelp">
+        <h2>Help</h2>
+
+        <h3>Is this a guide?</h3>
+        <p>Nope, not really. This is a set of checklists and information that you can use while playing Dark Souls to make sure you don't miss an item, action, conversation or boss. If you need playthroughs then you can click on the links scattered throughout the page to find them in the wiki.</p>
+
+        <h3>Do I need to follow the playthrough in this exact order?</h3>
+        <p>Dark Souls 3 is not a liner game and has multiple ways of progressing. This is generally the way I like to play through the game, so feel free to follow it if you like or mix it up. You can always jump back and forth and check things off in a different order.</p>
+
+        <h3>Can I use this for multiple characters?</h3>
+        <p>Yup, use the profile selector and buttons at the top right of the page to setup multiple characters.</p>
+
+        <h3>How do I help with feedback, corrections, suggestions or additions?</h3>
+        <p>You can post in <a href="">this Reddit thread</a> or if you know your way about Git/GitHub then fork <a href="https://github.com/ZKjellberg/Dark Souls 3-cheat-sheet/">my repo</a> and submit a pull request.</p>
+
+        <h3>How does the checklist status get saved?</h3>
+        <p>It gets saved to the local storage in your browser and not to any database or API. So if you are clearing your browser cache make sure not to delete the site data or your checklists will get reset.</p>
+      </div>
+    </div>
+    <div id="profileModal" class="modal hide fade">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 id="profileModalTitle">Profile</h3>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal">
+          <div class="control-group">
+            <label class="control-label" for="profileModalName">Name</label>
+            <div class="controls">
+              <input type="text" id="profileModalName" placeholder="Enter profile name">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <a href="#" id="profileModalClose" class="btn">Close</a>
+        <a href="#" id="profileModalAdd" class="btn btn-primary">Add</a>
+        <a href="#" id="profileModalUpdate" class="btn btn-primary">Update</a>
+        <a href="#" id="profileModalDelete" class="btn btn-danger">Delete</a>
+      </div>
+    </div>
+  </body>
+</html>

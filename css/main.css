@@ -1,0 +1,17 @@
+table { width: 100%; }
+th { text-align: left;}
+.table-striped tbody tr:nth-child(odd) td, .table-striped tbody tr:nth-child(odd) th { background-color: #E9E9E9;}
+.in_progress { color: #CC6600; }
+.done { color: #009933; }
+
+@media print {
+    body { color: #000; }
+    .navbar, #intro, input[type="checkbox"], .done, .in_progress { display: none; }
+    a { color: #000; text-decoration: underline; }
+    .tab-content > .tab-pane, .pill-content > .pill-pane { display: block; }
+    .tab-pane { page-break-after: always; }
+}
+
+ul {
+    list-style-type: none;
+}
