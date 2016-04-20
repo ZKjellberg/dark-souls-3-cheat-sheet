@@ -15,6 +15,8 @@
   <script src="https://code.jquery.com/jquery-latest.js"></script>
   <script src="js/jstorage.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jets/0.8.0/jets.min.js"></script>
+  <script src="js/jquery.highlight.js"></script>
   <script type="text/javascript">
   var profilesKey = 'darksouls3_profiles';
   </script>
@@ -27,6 +29,7 @@
   ga('create', 'UA-66576837-1', 'auto');
   ga('send', 'pageview');
   </script>
+
 </head>
 <body>
   <div class="container">
@@ -83,6 +86,12 @@
         </ul>
         <hr />
 
+        <div class="form-group">
+          <input type="search" id="playthrough_search" class="form-control" placeholder="Start typing to filter results..." />
+        </div>
+
+        <div id="playthrough_list">
+
         <h3 id="Firelink_Shrine"><a href="http://darksouls3.wiki.fextralife.com/Firelink+Shrine">Firelink Shrine</a> <span id="playthrough_totals_1"></span></h3>
         <ul>
           <li data-id="playthrough_1_1">Talk to <a href="http://darksouls3.wiki.fextralife.com/Fire+Keeper">Fire Keeper</a></li>
@@ -95,6 +104,8 @@
         <ul>
           <li data-id="playthrough_2_1">Free Greirat below the Tower on the Wall bonfire with the Cell Key, which is found at the bottom of the building that is past the same bonfire. Talk to him and agreed to give the Blue Tearstone Ring to Loretta. He will then return to Firelink Shrine.</li>
           <li data-id="playthrough_2_2">Andre Progress: Grab Estus Shard on an altar in the room where you get the Cell Key.</li>
+          <li data-id="playthrough_2_3">After lighting the Tower on the Wall bonfire, return to Firelink Shrine and talk to Leonhard, who will give you 5 Cracked Red-Eye Orbs. He'll be by Prince Lothric's throne, if he isn't at this point, try killing Vordt and check again.</li>
+          <li data-id="playthrough_2_4">Talk to Emma, who is found the opposite direction of where Vordt is located, to receive the Way of Bluecovenant and the Small Lothric Banner, which allows you to access the Undead Settlement.</li>
           <li data-id="playthrough_2_3">After lighting the Tower on the Wall bonfire, return to Firelink Shrine and talk to Leonhard, who will give you 5Cracked Red-Eye Orbs. He'll be by Prince Lothric's throne, if he isn't at this point, try killing Vordt and check again.</li>
           <li data-id="playthrough_2_4">Talk to Emma, who is found the opposite direction of where Vordt is located, to receive the Way of Blue covenant and the Small Lothric Banner, which allows you to access the Undead Settlement.</li>
         </ul>
@@ -295,6 +306,7 @@
           <li data-id="playthrough_13_23">Ending 4: If you followed the Yoel/Yuria quest line to this point and "married" Anri, you can usurp the flame by wrestling the flame from its mantle triggering the 'Usurpation of Fire' ending. To progress this option, you must have 8 total Dark Sigils. The 5 from Yoel's Draw Out True Strengths and the 3 from "marrying" Anri. Simply interact with the First Flame at this point and it'll activate</li>
         </ul>
       </div>
+    </div>
 
       <!-- CHECKLIST START -->
       <div class="tab-pane" id="tabChecklists">
@@ -309,6 +321,12 @@
 
         <hr />
 
+        <div class="form-group">
+          <input type="search" id="item_search" class="form-control" placeholder="Start typing to filter results..." />
+        </div>
+
+        <div id="item_list">
+
         <h3 id="Master_of_Expression">Master of Expression: Learn all <a href="http://darksouls3.wiki.fextralife.com/Gestures">gestures</a> <span id="checklist_totals_1"></span></h3>
         <ul>
           <li data-id="checklist_1_1"><strong>Beckon</strong>: Talk to <a href="http://darksouls3.wiki.fextralife.com/Yoel+of+Londor">Yoel of Londor</a> not far from the Foot of the High Wall bonfire</li>
@@ -322,7 +340,7 @@
           <li data-id="checklist_1_9"><strong>My Thanks!</strong>: Obtained from <a href="http://darksouls3.wiki.fextralife.com/Knight+Slayer+Tsorig">Knight Slayer Tsorig</a> deep in the Demon Ruins, regardless of who wins the fight.</li>
           <li data-id="checklist_1_10"><strong>Proper Bow</strong>: Kill <a href="http://darksouls3.wiki.fextralife.com/Yellowfinger+Heysel">Yellowfinger Heysel</a>, the NPC invader in Farron Keep. Then give a pale tongue to the Rosaria's Fingers covenant. Yellowfinger Heyzel's summon sign appears next to the tower full of slugs near the Keep Ruins bonfire. Summon her to receive the gesture. Abyss Watchers must be alive</li>
           <li data-id="checklist_1_11"><strong>Dignified Bow</strong>: Received from meeting <a href="http://darksouls3.wiki.fextralife.com/Yuria+of+Londor">Yuria of Londor</a></li>
-          <li data-id="checklist_1_12"><strong>Duel Bow</strong>: Received after summoning <a href="http://darksouls3.wiki.fextralife.com/Londor+Pale+Shade">Londor Pale Shade</a> before Pontiff Sulyvahn.
+          <li data-id="checklist_1_12"><strong>Duel Bow</strong>: Received after summoning <a href="http://darksouls3.wiki.fextralife.com/Londor+Pale+Shade">Londor Pale Shade</a> before Pontiff Sulyvahn.</li>
           <li data-id="checklist_1_13"><strong>Legion Etiquette</strong>: Pray to the Old Wolf of Farron in the Farron Swamp</li>
           <li data-id="checklist_1_14"><strong>Darkmoon Loyalty</strong>: Received from speaking with <a href="http://darksouls3.wiki.fextralife.com/Sirris+of+the+Sunless+Realms">Sirris of the Sunless Realms</a> in Firelink Shrine after she arrives</li>
           <li data-id="checklist_1_15"><strong>By My Sword</strong>: Received from summoning <a href="http://darksouls3.wiki.fextralife.com/Black+Hand+Gotthard">Black Hand Gotthard</a>. He will perform the gesture as he is summoned</li>
@@ -521,6 +539,7 @@
           <li data-id="checklist_5_70"><a href="http://darksouls3.wiki.fextralife.com/Ring+of+Sacrifice">Ring of Sacrifice</a>: </li>
         </ul>
       </div>
+    </div>
 
       <!-- INFORMATION START -->
       <div class="tab-pane" id="tabInformation">
@@ -678,5 +697,27 @@
       </div>
     </div> <!-- tab-content -->
   </div> <!-- container -->
-</body>
+  <script>
+    var jets = new Jets({
+      searchTag: '#playthrough_search',
+      contentTag: '#playthrough_list ul'
+    });
+
+    var jets = new Jets({
+      searchTag: '#item_search',
+      contentTag: '#item_list ul'
+    });
+  </script>
+  <script>
+    $('#playthrough_search').keyup(function() {
+      $('#playthrough_list').unhighlight();
+      $('#playthrough_list').highlight($(this).val());
+    });
+    $('#item_search').keyup(function() {
+      $('#item_list').unhighlight();
+      $('#item_list').highlight($(this).val());
+    });
+
+  </script>
+  </body>
 </html>
