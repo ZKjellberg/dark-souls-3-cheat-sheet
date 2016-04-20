@@ -15,3 +15,7 @@ th { text-align: left;}
 ul {
     list-style-type: none;
 }
+
+.highlight {
+    background-color: rgb(255, 246, 18);
+}
