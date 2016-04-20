@@ -24,7 +24,6 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
   ga('create', 'UA-66576837-1', 'auto');
   ga('send', 'pageview');
   </script>
@@ -525,7 +524,7 @@
         <h3 id="Pickle_Pee_Pump-a-Rum_Crow"><a href="http://darksouls3.wiki.fextralife.com/Pickle+Pee,+Pump-a-Rum+Crow">Pickle Pee, Pump-a-Rum Crow</a> <span id="crow_totals_1"></span></h3>
         <ul>
           <li data-id="crow_1_1">Trade <a href="http://darksouls3.wiki.fextralife.com/Firebomb">Firebomb</a> or <a href="http://darksouls3.wiki.fextralife.com/Rope+Firebomb">Rope Firebomb</a> for <a href="http://darksouls3.wiki.fextralife.com/Large+Titanite+Shard">Large Titanite Shard</a></li>
-          <li data-id="crow_1_2">Trade <a href="http://darksouls3.wiki.fextralife.com/Black+Firebomb">Black Firebomb</a> or <a href="http://darksouls3.wiki.fextralife.com/Rope+Black+Firebomb">Rope Black Firebomb for <a href="http://darksouls3.wiki.fextralife.com/Titanite+Chunk">Titanite Chunk</a></li>
+          <li data-id="crow_1_2">Trade <a href="http://darksouls3.wiki.fextralife.com/Black+Firebomb">Black Firebomb</a> or <a href="http://darksouls3.wiki.fextralife.com/Rope+Black+Firebomb">Rope Black Firebomb</a> for <a href="http://darksouls3.wiki.fextralife.com/Titanite+Chunk">Titanite Chunk</a></li>
           <li data-id="crow_1_3">Trade <a href="http://darksouls3.wiki.fextralife.com/Prism+Stone">Prism Stone</a> for <a href="http://darksouls3.wiki.fextralife.com/Twinkling+Titanite">Twinkling Titanite</a></li>
           <li data-id="crow_1_4">Trade <a href="http://darksouls3.wiki.fextralife.com/Loretta's+Bone">Loretta's Bone</a> for <a href="http://darksouls3.wiki.fextralife.com/Lightning+Gem">Lightning Gem</a> / <a href="http://darksouls3.wiki.fextralife.com/Ring+of+Sacrifice">Ring of Sacrifice</a></li>
           <li data-id="crow_1_5">Trade <a href="http://darksouls3.wiki.fextralife.com/+Avelyn">Avelyn</a> for (3) <a href="http://darksouls3.wiki.fextralife.com/Titanite+Scale">Titanite Scale</a></li>
@@ -645,28 +644,29 @@
         <h3>How does the checklist status get saved?</h3>
         <p>It gets saved to the local storage in your browser and not to any database or API. So if you are clearing your browser cache make sure not to delete the site data or your checklists will get reset.</p>
       </div>
-    </div>
-    <div id="profileModal" class="modal hide fade">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h3 id="profileModalTitle">Profile</h3>
-      </div>
-      <div class="modal-body">
-        <form class="form-horizontal">
-          <div class="control-group">
-            <label class="control-label" for="profileModalName">Name</label>
-            <div class="controls">
-              <input type="text" id="profileModalName" placeholder="Enter profile name">
+      <div id="profileModal" class="modal hide fade">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h3 id="profileModalTitle">Profile</h3>
+        </div>
+        <div class="modal-body">
+          <form class="form-horizontal">
+            <div class="control-group">
+              <label class="control-label" for="profileModalName">Name</label>
+              <div class="controls">
+                <input type="text" id="profileModalName" placeholder="Enter profile name">
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <a href="#" id="profileModalClose" class="btn">Close</a>
+          <a href="#" id="profileModalAdd" class="btn btn-primary">Add</a>
+          <a href="#" id="profileModalUpdate" class="btn btn-primary">Update</a>
+          <a href="#" id="profileModalDelete" class="btn btn-danger">Delete</a>
+        </div>
       </div>
-      <div class="modal-footer">
-        <a href="#" id="profileModalClose" class="btn">Close</a>
-        <a href="#" id="profileModalAdd" class="btn btn-primary">Add</a>
-        <a href="#" id="profileModalUpdate" class="btn btn-primary">Update</a>
-        <a href="#" id="profileModalDelete" class="btn btn-danger">Delete</a>
-      </div>
-    </div>
-  </body>
+    </div> <!-- tab-content -->
+  </div> <!-- container -->
+</body>
 </html>
