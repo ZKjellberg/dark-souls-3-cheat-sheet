@@ -23,6 +23,9 @@
                 addCheckbox(this);
             }
         });
+        
+        // Open external links in new tab
+        $("a[href^='http']").attr('target','_blank');
 
         populateProfiles();
 
