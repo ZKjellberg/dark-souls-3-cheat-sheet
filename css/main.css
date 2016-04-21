@@ -19,3 +19,7 @@ ul {
 .highlight {
     background-color: rgb(255, 246, 18);
 }
+
+.stroked {
+    text-decoration: line-through;
+}
