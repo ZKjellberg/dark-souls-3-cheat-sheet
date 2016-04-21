@@ -197,6 +197,7 @@
         $(el).html(lines.join('\n'));
         if (profiles[profilesKey][profiles.current].checklistData[$(el).attr('data-id')] == true) {
             $('#' + $(el).attr('data-id')).prop('checked', true);
+	    $(el).addClass('stroked');
         }
     }
 
