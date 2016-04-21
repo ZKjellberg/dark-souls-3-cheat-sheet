@@ -33,6 +33,11 @@
             var id = $(this).attr('id');
             var isChecked = profiles[profilesKey][profiles.current].checklistData[id] = $(this).prop('checked');
             //_gaq.push(['_trackEvent', 'Checkbox', (isChecked ? 'Check' : 'Uncheck'), id]);
+	    if (isChecked === true) {
+		$('[data-id="'+id+'"]').addClass('stroked');
+	    } else {
+		$('[data-id="'+id+'"]').removeClass('stroked');
+	    }
             $(this).parent().parent().find('li > label > input[type="checkbox"]').each(function() {
                 var id = $(this).attr('id');
                 profiles[profilesKey][profiles.current].checklistData[id] = isChecked;
