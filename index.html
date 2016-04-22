@@ -28,26 +28,40 @@
   </script>
 </head>
 <body>
-  <div class="container">
-    <div class="navbar">
-      <div class="navbar-inner">
-        <h1>Dark Souls 3 Cheat Sheet</h1>
-        <ul class="nav nav-tabs">
+  
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Dark Souls 3 Cheat Sheet</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="nav-collapse">
+        <ul class="nav navbar-nav">
           <li class="active"><a href="#tabPlaythrough" data-toggle="tab">Playthrough</a></li>
           <li><a href="#tabChecklists" data-toggle="tab">Item Checklists</a></li>
           <li><a href="#tabInformation" data-toggle="tab">Information</a></li>
           <li><a href="#tabHelp" data-toggle="tab">Help</a></li>
-        </ul>
-        <div class="profile" style="float: right;">
-          <div class="input-append">
-            <select id="profiles">
-            </select>
-            <button class="btn" type="button" id="profileAdd">Add</button>
-            <button class="btn" type="button" id="profileEdit">Edit</button>
+        </ul><!-- /.nav.navbar-nav -->
+        <form class="navbar-form navbar-right">
+          <div class="form-group">
+            <select class="form-control" id="profiles"></select>
           </div>
-        </div>
-      </div>
-    </div>
+          <button class="btn btn-default" type="button" id="profileAdd">Add</button>
+          <button class="btn btn-default" type="button" id="profileEdit">Edit</button>
+        </form><!-- /.navbar-form.navbar-right -->
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div class="container">
 
     <div id="intro">
       <p>
