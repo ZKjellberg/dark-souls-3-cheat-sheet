@@ -193,7 +193,7 @@
 
     function addCheckbox(el) {
         var lines = $(el).html().split('\n');
-        lines[0] = '<label class="checkbox"><input type="checkbox" id="' + $(el).attr('data-id') + '">' + lines[0] + '</label>';
+        lines[0] = '<div class="checkbox"><label><input type="checkbox" id="' + $(el).attr('data-id') + '">' + lines[0] + '</label></div>';
         $(el).html(lines.join('\n'));
         if (profiles[profilesKey][profiles.current].checklistData[$(el).attr('data-id')] == true) {
             $('#' + $(el).attr('data-id')).prop('checked', true);
