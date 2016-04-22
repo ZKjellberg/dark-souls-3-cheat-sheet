@@ -1,4 +1,5 @@
 (function($) {
+    'use strict';
 
     var defaultProfiles = {
         'current': 'Default Profile'
@@ -7,7 +8,7 @@
         'Default Profile': {
             checklistData: {}
         }
-    }
+    };
     var profiles = $.jStorage.get(profilesKey, defaultProfiles);
 
     jQuery(document).ready(function($) {
@@ -154,7 +155,7 @@
                 var count = 0, checked = 0;
                 for (var j = 1; ; j++) {
                     var checkbox = $('#' + type + '_' + i + '_' + j);
-                    if (checkbox.length == 0) {
+                    if (checkbox.length === 0) {
                         break;
                     }
                     count++;
@@ -188,7 +189,7 @@
         var lines = $(el).html().split('\n');
         lines[0] = '<div class="checkbox"><label><input type="checkbox" id="' + $(el).attr('data-id') + '">' + lines[0] + '</label></div>';
         $(el).html(lines.join('\n'));
-        if (profiles[profilesKey][profiles.current].checklistData[$(el).attr('data-id')] == true) {
+        if (profiles[profilesKey][profiles.current].checklistData[$(el).attr('data-id')] === true) {
             $('#' + $(el).attr('data-id')).prop('checked', true);
 	    $(el).addClass('stroked');
         }
