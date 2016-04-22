@@ -684,28 +684,32 @@
         <h3>How does the checklist status get saved?</h3>
         <p>It gets saved to the local storage in your browser and not to any database or API. So if you are clearing your browser cache make sure not to delete the site data or your checklists will get reset.</p>
       </div>
-      <div id="profileModal" class="modal hide fade">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h3 id="profileModalTitle">Profile</h3>
-        </div>
-        <div class="modal-body">
-          <form class="form-horizontal">
-            <div class="control-group">
-              <label class="control-label" for="profileModalName">Name</label>
-              <div class="controls">
-                <input type="text" id="profileModalName" placeholder="Enter profile name">
-              </div>
+      <div id="profileModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h3 id="profileModalTitle">Profile</h3>
             </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <a href="#" id="profileModalClose" class="btn">Close</a>
-          <a href="#" id="profileModalAdd" class="btn btn-primary">Add</a>
-          <a href="#" id="profileModalUpdate" class="btn btn-primary">Update</a>
-          <a href="#" id="profileModalDelete" class="btn btn-danger">Delete</a>
-        </div>
-      </div>
+            <div class="modal-body">
+              <form class="form-horizontal">
+                <div class="control-group">
+                  <label class="control-label" for="profileModalName">Name</label>
+                  <div class="controls">
+                    <input type="text" class="form-control" id="profileModalName" placeholder="Enter profile name">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <a href="#" id="profileModalClose" class="btn btn-default">Close</a>
+              <a href="#" id="profileModalAdd" class="btn btn-primary">Add</a>
+              <a href="#" id="profileModalUpdate" class="btn btn-primary">Update</a>
+              <a href="#" id="profileModalDelete" class="btn btn-danger">Delete</a>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
     </div> <!-- tab-content -->
   </div> <!-- container -->
   <script>
