@@ -90,7 +90,6 @@
                 populateProfiles();
                 populateChecklists();
             }
-            $('#profileModal').modal('hide');
             //_gaq.push(['_trackEvent', 'Profile', 'Create', profile]);
         });
 
@@ -123,12 +122,6 @@
             populateChecklists();
             $('#profileModal').modal('hide');
             //_gaq.push(['_trackEvent', 'Profile', 'Delete']);
-        });
-
-        $('#profileModalClose').click(function(event) {
-            event.preventDefault();
-            $('#profileModal').modal('hide');
-            //_gaq.push(['_trackEvent', 'Profile', 'Close']);
         });
 
         calculateTotals();
