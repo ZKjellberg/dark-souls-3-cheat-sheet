@@ -34,11 +34,11 @@
             var id = $(this).attr('id');
             var isChecked = profiles[profilesKey][profiles.current].checklistData[id] = $(this).prop('checked');
             //_gaq.push(['_trackEvent', 'Checkbox', (isChecked ? 'Check' : 'Uncheck'), id]);
-	    if (isChecked === true) {
-		$('[data-id="'+id+'"]').addClass('stroked');
-	    } else {
-		$('[data-id="'+id+'"]').removeClass('stroked');
-	    }
+        if (isChecked === true) {
+        $('[data-id="'+id+'"] label').addClass('stroked');
+        } else {
+        $('[data-id="'+id+'"] label').removeClass('stroked');
+        }
             $(this).parent().parent().find('li > label > input[type="checkbox"]').each(function() {
                 var id = $(this).attr('id');
                 profiles[profilesKey][profiles.current].checklistData[id] = isChecked;
@@ -191,7 +191,7 @@
         $(el).html(lines.join('\n'));
         if (profiles[profilesKey][profiles.current].checklistData[$(el).attr('data-id')] === true) {
             $('#' + $(el).attr('data-id')).prop('checked', true);
-	    $(el).addClass('stroked');
+            $('label', $(el)).addClass('stroked');
         }
     }
 
