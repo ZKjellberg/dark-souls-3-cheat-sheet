@@ -1,4 +1,5 @@
 (function($) {
+    'use strict';
 
     var defaultProfiles = {
         'current': 'Default Profile'
@@ -7,7 +8,7 @@
         'Default Profile': {
             checklistData: {}
         }
-    }
+    };
     var profiles = $.jStorage.get(profilesKey, defaultProfiles);
 
     jQuery(document).ready(function($) {
@@ -24,12 +25,20 @@
             }
         });
 
+        // Open external links in new tab
+        $("a[href^='http']").attr('target','_blank');
+
         populateProfiles();
 
         $('input[type="checkbox"]').click(function() {
             var id = $(this).attr('id');
             var isChecked = profiles[profilesKey][profiles.current].checklistData[id] = $(this).prop('checked');
             //_gaq.push(['_trackEvent', 'Checkbox', (isChecked ? 'Check' : 'Uncheck'), id]);
+            if (isChecked === true) {
+              $('[data-id="'+id+'"] label').addClass('stroked');
+            } else {
+              $('[data-id="'+id+'"] label').removeClass('stroked');
+            }
             $(this).parent().parent().find('li > label > input[type="checkbox"]').each(function() {
                 var id = $(this).attr('id');
                 profiles[profilesKey][profiles.current].checklistData[id] = isChecked;
@@ -82,7 +91,6 @@
                 populateProfiles();
                 populateChecklists();
             }
-            $('#profileModal').modal('hide');
             //_gaq.push(['_trackEvent', 'Profile', 'Create', profile]);
         });
 
@@ -116,16 +124,50 @@
             $('#profileModal').modal('hide');
             //_gaq.push(['_trackEvent', 'Profile', 'Delete']);
         });
+        /*
+        *  The only stipulation with this method is that it will only work with
+        *  HTML5 ready browsers, should be the vast majority now...
+        */
+        $('#profileExport').click(function(){
+          var filename = "profiles.json";
+          var text = JSON.stringify(profiles);
+          var element = document.createElement('a');
+          element.setAttribute('href', 'data:text/plain;charset=utf-8,'
+            + encodeURIComponent(text));
+          element.setAttribute('download', filename);
+          element.style.display = 'none';
+          document.body.appendChild(element);
+          element.click();
+          document.body.removeChild(element);
+        });
 
-        $('#profileModalClose').click(function(event) {
-            event.preventDefault();
-            $('#profileModal').modal('hide');
-            //_gaq.push(['_trackEvent', 'Profile', 'Close']);
+        $('#profileImport').click(function(){
+          $('#fileInput').trigger('click');
+        });
+        /* Will reject if an incorrect file or no file is selected */
+        $('input#fileInput').change(function(){
+          var fileInput = document.getElementById('fileInput');
+          if(!fileInput.files || !fileInput.files[0] || !/\.json$/.test(fileInput.files[0].name)){
+            return;
+          }
+          var fr = new FileReader();
+          fr.readAsText(fileInput.files[0]);
+          fr.onload = dataLoadCallback;
         });
 
         calculateTotals();
 
     });
+
+    function dataLoadCallback(arg){
+      var jsonProfileData = JSON.parse(arg.currentTarget.result);
+      profiles = jsonProfileData;
+      $.jStorage.set(profilesKey, profiles);
+      populateProfiles();
+      populateChecklists();
+      $('#profiles').trigger("change");
+      location.reload();
+    }
 
     function populateProfiles() {
         $('#profiles').empty();
@@ -153,7 +195,7 @@
                 var count = 0, checked = 0;
                 for (var j = 1; ; j++) {
                     var checkbox = $('#' + type + '_' + i + '_' + j);
-                    if (checkbox.length == 0) {
+                    if (checkbox.length === 0) {
                         break;
                     }
                     count++;
@@ -185,10 +227,11 @@
 
     function addCheckbox(el) {
         var lines = $(el).html().split('\n');
-        lines[0] = '<label class="checkbox"><input type="checkbox" id="' + $(el).attr('data-id') + '">' + lines[0] + '</label>';
+        lines[0] = '<div class="checkbox"><label><input type="checkbox" id="' + $(el).attr('data-id') + '">' + lines[0] + '</label></div>';
         $(el).html(lines.join('\n'));
-        if (profiles[profilesKey][profiles.current].checklistData[$(el).attr('data-id')] == true) {
+        if (profiles[profilesKey][profiles.current].checklistData[$(el).attr('data-id')] === true) {
             $('#' + $(el).attr('data-id')).prop('checked', true);
+            $('label', $(el)).addClass('stroked');
         }
     }
 
