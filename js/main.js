@@ -36,6 +36,11 @@
             //_gaq.push(['_trackEvent', 'Checkbox', (isChecked ? 'Check' : 'Uncheck'), id]);
             if (isChecked === true) {
               $('[data-id="'+id+'"] label').addClass('stroked');
+			  
+			  if ($("#toggleHideCompleted").data("hidden") === true) { 
+				$('[data-id="'+id+'"] label').hide();
+			  }
+			  
             } else {
               $('[data-id="'+id+'"] label').removeClass('stroked');
             }
@@ -154,6 +159,20 @@
           fr.readAsText(fileInput.files[0]);
           fr.onload = dataLoadCallback;
         });
+		
+		$("#toggleHideCompleted").click(function() {
+			var hidden = $(this).data("hidden");
+			
+			if (hidden === true) {
+				$(this).text("Hide completed");
+			} else { 
+				$(this).text("Show completed");
+			}
+			
+			$(this).data("hidden", !hidden);
+			
+			toggleCompletedCheckboxes(!hidden);
+		});
 
         calculateTotals();
 
@@ -248,5 +267,15 @@
             return profile;
         }
     }
+	
+	function toggleCompletedCheckboxes(hide) {
+		$("li .checkbox .stroked").parentsUntil("ul").each(function(index) {
+			if (hide === true) { 
+				$(this).hide(); 
+			} else { 
+				$(this).show();
+			};
+		});
+	}
 
 })( jQuery );
