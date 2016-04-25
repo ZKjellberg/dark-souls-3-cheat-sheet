@@ -6,50 +6,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Cheat sheet for Dark Souls 3. Checklist of things to do, items to get etc.">
   <meta name="author" content="Zachary Kjellberg">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link href="css/main.css" rel="stylesheet">
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  <script src="https://code.jquery.com/jquery-latest.js"></script>
-  <script src="js/jstorage.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script type="text/javascript">
-  var profilesKey = 'darksouls3_profiles';
-  </script>
-  <script src="js/main.js"></script>
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-66576837-1', 'auto');
-  ga('send', 'pageview');
-  </script>
 </head>
 <body>
-  <div class="container">
-    <div class="navbar">
-      <div class="navbar-inner">
-        <h1>Dark Souls 3 Cheat Sheet</h1>
-        <ul class="nav nav-tabs">
+  
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Dark Souls 3 Cheat Sheet</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="nav-collapse">
+        <ul class="nav navbar-nav">
           <li class="active"><a href="#tabPlaythrough" data-toggle="tab">Playthrough</a></li>
           <li><a href="#tabChecklists" data-toggle="tab">Item Checklists</a></li>
           <li><a href="#tabInformation" data-toggle="tab">Information</a></li>
           <li><a href="#tabHelp" data-toggle="tab">Help</a></li>
-        </ul>
-        <div class="profile" style="float: right;">
-          <div class="input-append">
-            <select id="profiles">
-            </select>
-            <button class="btn" type="button" id="profileAdd">Add</button>
-            <button class="btn" type="button" id="profileEdit">Edit</button>
+        </ul><!-- /.nav.navbar-nav -->
+        <form class="navbar-form navbar-right">
+          <div class="form-group">
+            <select class="form-control" id="profiles"></select>
           </div>
-        </div>
-      </div>
-    </div>
+          <button class="btn btn-default" type="button" id="profileAdd">Add</button>
+          <button class="btn btn-default" type="button" id="profileEdit">Edit</button>
+        </form><!-- /.navbar-form.navbar-right -->
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div class="container">
 
     <div id="intro">
       <p>
@@ -73,6 +70,8 @@
           <li><a href="#Cathedral_of_the_Deep">Cathedral of the Deep</a> <span id="playthrough_nav_totals_5"></span></li>
           <li><a href="#Farron_Keep">Farron Keep</a> <span id="playthrough_nav_totals_6"></span></li>
           <li><a href="#Catacombs_of_Carthus">Catacombs of Carthus</a> <span id="playthrough_nav_totals_7"></span></li>
+          <li><a href="#Smouldering_Lake">Smouldering Lake</a> <span id="playthrough_nav_totals_14"></span></li>
+          <li><a href="#Irithyll_of_the_Boreal_Valley">Irithyll of the Boreal Valley</a> <span id="playthrough_nav_totals_15"></span></li>
           <li><a href="#Anor_Londo">Anor Londo</a> <span id="playthrough_nav_totals_8"></span></li>
           <li><a href="#Profaned_Capital">Profaned Capital</a> <span id="playthrough_nav_totals_9"></span></li>
           <li><a href="#Consumed_Kings_Garden">Consumed King's Garden</a> <span id="playthrough_nav_totals_10"></span></li>
@@ -81,6 +80,12 @@
           <li><a href="#Lothric_Castle">Lothric Castle</a> <span id="playthrough_nav_totals_13"></span></li>
         </ul>
         <hr />
+
+        <div class="form-group">
+          <input type="search" id="playthrough_search" class="form-control" placeholder="Start typing to filter results..." />
+        </div>
+
+        <div id="playthrough_list">
 
         <h3 id="Firelink_Shrine"><a href="http://darksouls3.wiki.fextralife.com/Firelink+Shrine">Firelink Shrine</a> <span id="playthrough_totals_1"></span></h3>
         <ul>
@@ -94,15 +99,15 @@
         <ul>
           <li data-id="playthrough_2_1">Free Greirat below the Tower on the Wall bonfire with the Cell Key, which is found at the bottom of the building that is past the same bonfire. Talk to him and agreed to give the Blue Tearstone Ring to Loretta. He will then return to Firelink Shrine.</li>
           <li data-id="playthrough_2_2">Andre Progress: Grab Estus Shard on an altar in the room where you get the Cell Key.</li>
-          <li data-id="playthrough_2_3">After lighting the Tower on the Wall bonfire, return to Firelink Shrine and talk to Leonhard, who will give you 5Cracked Red-Eye Orbs. He'll be by Prince Lothric's throne, if he isn't at this point, try killing Vordt and check again.</li>
-          <li data-id="playthrough_2_4">Talk to Emma, who is found the opposite direction of where Vordt is located, to receive the Way of Bluecovenant and the Small Lothric Banner, which allows you to access the Undead Settlement.</li>
+          <li data-id="playthrough_2_3">After lighting the Tower on the Wall bonfire, return to Firelink Shrine and talk to Leonhard, who will give you 5 Cracked Red-Eye Orbs. He'll be by Prince Lothric's throne, if he isn't at this point, try killing Vordt and check again.</li>
+          <li data-id="playthrough_2_4">Talk to Emma, who is found the opposite direction of where Vordt is located, to receive the Way of Blue covenant and the Small Lothric Banner, which allows you to access the Undead Settlement.</li>
         </ul>
 
         <h3 id="Undead_Settlement"><a href="http://darksouls3.wiki.fextralife.com/Undead+Settlement">Undead Settlement</a> <span id="playthrough_totals_3"></span></h3>
         <ul>
           <li data-id="playthrough_3_1">Find Yoel below the Foot of the High Wall bonfire amongst several other Pilgrims. Talk to him and agree to his request and he'll head to Firelink Shrine</li>
           <li data-id="playthrough_3_2">Yoel Progress: Head back to Firelink Shrine and talk to Yoel (Receive Beckon Gesture). If you want to pursue the Usurpation of Fire ending, follow next step</li>
-          <li data-id="playthrough_3_3">Yoel Progress: Accept Yoel's offer to Draw Out True Strength. You'll gain a free level, but also gain a Dark Sigil, which will start your Hollowing clock. Each time you die from here on out, you'll gain 1 Hollowing and become more and more Hollow, which also affects your appearance. Yoel will offer 4 more Draw Out True Strengths at Hollowing Level 2, 6, 12, and 20. Each additional Dark Sigil acts as…Double XP for your Hollowing Level, so it shouldn't take long to all 5 Dark Sigils (Just throw yourself off the cliff of Firelink Shrine over and over). If you do not do this step before reaching the Catacombs of Carthus, Yoel will automatically expire and you'll lose your chance at the Usurpation of Fire Ending</li>
+          <li data-id="playthrough_3_3">Yoel Progress: Accept Yoel's offer to Draw Out True Strength. You'll gain a free level, but also gain a Dark Sigil, which will start your Hollowing clock. Each time you die from here on out, you'll gain 1 Hollowing and become more and more Hollow, which also affects your appearance. Yoel will offer 4 more Draw Out True Strengths at Hollowing Level 2, 6, 12, and 16. Each additional Dark Sigil acts as…Double XP for your Hollowing Level, so it shouldn't take long to all 5 Dark Sigils (Just throw yourself off the cliff of Firelink Shrine over and over). If you do not do this step before reaching the Catacombs of Carthus, Yoel will automatically expire and you'll lose your chance at the Usurpation of Fire Ending</li>
           <li data-id="playthrough_3_4">If you get all 5 Dark Sigils and refresh the world, Yoel will be dead and Yuria will be located near his dead body. Talk to her (Receive Dignified Bow Gesture) and buy the Londor Braille Divine Tome. You can give it to Irina when you get her if you want, but note that buying any of the spells it offers will lead to her bad ending. Otherwise, hang onto it until you find Karla later in the game</li>
           <li data-id="playthrough_3_5">Greirat Progress: To find Loretta's Bone in Undead Settlement, spawn at the Undead Settlement bonfire and continue into the first house. Walk out onto the balcony and you'll see a hanging body you can cut down, which contains Loretta's Bone. Return to Firelink Shrine and give Greirat the item and he'll state you can keep the Blue Tearstone Ring</li>
           <li data-id="playthrough_3_6">Andre Progress: Grab Estus Shard by the burning tree with worshipping undead. This is to the left of the Undead Settlement Bonfire, past the house</li>
@@ -115,9 +120,9 @@
           <li data-id="playthrough_3_13">Firelink Shrine Bonfire Progress: Grab the Undead Bone Shard to the right of the White tree on a platform you can jump to with a dead body</li>
           <li data-id="playthrough_3_14">Return to Firelink Shrine and purchase the Grave Key, which opens the locked door in the sewer area with the rats next to the Dilapidated Bridge bonfire in Undead Settlement. Upon talking to Irina, she'll teleport to Firelink Shrine if you allow her</li>
           <li data-id="playthrough_3_15">Return to Firelink Shrine and talk to Irina (Receive Prayer Gesture)</li>
-          <li data-id="playthrough_3_16">Find Siegward, who is inside the Tower near Irina and Eygon. He'll be taking the elevator down and question the mechanics of the thing. Get on the elevator and you'll go to the basement which has a Outrider Knight and the entrance to Road of Sacrifices. Kill the Outrider Knight and rest at the bonfire nearby. If you die, that works too. Return to the Tower entrance and take the lift up to the actual top of the Tower (If you keep going to the basement, hit the switch on the elevator while at the main entrance and then quickly jump off to reveal the lift that takes you up). Roll off at the mid-way point to land on a wooden platform. Head outside and speak to Siegward again. Run down and begin fighting the Fire Demon, Siegward will eventually come and help. After killing the Fire Demon, speak to Siegward three times (Receive Siegbrau, Toast Gesture, and Rest Gesture)</li>
+          <li data-id="playthrough_3_16">Find Siegward, who is inside the Tower near Irina and Eygon. He'll be taking the elevator down and question the mechanics of the thing. Get on the elevator and you'll go to the basement which has a Outrider Knight and the entrance to Road of Sacrifices. Kill the Outrider Knight and rest at the bonfire nearby. If you die, that works too. Return to the Tower entrance and take the lift up to the actual top of the Tower (If you keep going to the basement, hit the switch on the elevator while at the main entrance and then quickly jump off to reveal the lift that takes you up). Roll off at the mid-way point to land on a wooden platform. Head outside and speak to Siegward again. Run down and begin fighting the Fire Demon, Siegward will eventually come and help. After killing the Fire Demon, speak to Siegward three times (Receive Siegbrau, Toast Gesture, and Sleep Gesture)</li>
           <li data-id="playthrough_3_17">Kill the Curse-rotted Greenwood to get the Transposing Kiln, which you can give to Ludleth of Courtland back at Firelink Shrine to turn boss souls into special weapons and items</li>
-          <li data-id="playthrough_3_18">Leonhard Progress: Return to Firelink Shrine and talk to Leonhard (Receive Applause Gesture)</li>
+          <li data-id="playthrough_3_18">Leonhard Progress: Leonhard should be at Firelink Shrine by this point once again. If he isn’t, continue on until you get a Pale Tongue and he should appear. He’ll give you a Lift-Chamber Key that you can use on a door below the Tower on the Wall bonfire of High Wall of Lothric. It'll lead to a Darkwraith that upon death will drop a Red Eye Orb. Return to Firelink Shrine and talk to Leonhard to receive the Applause Gesture</li>
           <li data-id="playthrough_3_19">Hawkwood Progress: Talk to Hawkwood after killing the Curse-rotted Greatwood (Receive Heavy Gem). If he doesn't give you anything, come back to him after killing the Crystal Sage</li>
         </ul>
 
@@ -127,7 +132,7 @@
           <li data-id="playthrough_4_2">Irina Progress: You can find the Braille Divine Tome of Carim below the bridge right before the Halfway Fortress bonfire. Give it to her at Firelink Shrine and buy all the spells it offers if you want her to become a Fire Keeper later in the game</li>
           <li data-id="playthrough_4_3">Talk to Anri and Horace at the Halfway Fortress bonfire. Horace will give you the Blue Sentinels covenant when spoken to. Make sure to deplete Anri's dialogue before continuing on</li>
           <li data-id="playthrough_4_4">Cornyx Progress: In the swamp area with the two giant enemy crabs, the Great Swamp Pyromancy Tome will be in an area of the swamp that causes you to fat roll</li>
-          <li data-id="playthrough_4_5">Kill Yellowfinger Heysel, who will invade your world if your are embered around the area where the two giant crabs are</li>
+          <li data-id="playthrough_4_5">Kill Yellowfinger Heysel, who will invade your world if you are embered around the area where the two giant crabs are</li>
           <li data-id="playthrough_4_6">Andre Progress: At the Halfway Fortress bonfire in Road of Sacrifices, head out and drop down from the ledges on the right side, keep going straight along the right wall and enter a doorway in the end. Turn left and you will see a Black Knight guarding a few bodies, the body at the end of the hall holds the Farron Coal, which grants you Heavy, Sharp and Poison Infusions</li>
           <li data-id="playthrough_4_7">Andre Progress: Grab the Estus Shard on the side of the ruins near the Crucifixion Woods bonfire. It will be near a fire that has two Lycanthropes</li>
           <li data-id="playthrough_4_8">Enter the ruins near the Crucifixion Woods bonfire, head up the stairs, cross the bridge, and you'll notice an area to the left right after getting off the bridge that'll lead you to the upper area of the ruins that contains Orbeck. Talk to him and he'll agree to teach you in sorceries only if you have at least a 10 in Intelligence. You'll also make him a promise to give him scrolls to learn more spells, you MUST give him a scroll before defeating the Abyss Watchers or else he will leave</li>
@@ -140,6 +145,7 @@
           <li data-id="playthrough_5_3">Andre Progress: Grab the Estus Shard right outside the Cleansing Chapel bonfire where enemies are praying</li>
           <li data-id="playthrough_5_4">Irina/Karla Progress: The Deep Braille Divine Tome can be found on a mimic chest. Remember, giving this to Irina and buying any of the spells it unlocks will lock you into the bad ending of her quest. I recommend saving this for Karla, unless you really want some of the spells</li>
           <li data-id="playthrough_5_5">Firelink Shrine Bonfire Progress: Grab the Undead Bone Shard near a white tree that the Giant throws spears around, on the roof area of the Cathedral after navigating the graveyard and crossing a bridge</li>
+          <li data-id="playthrough_5_17">Kill Longfinger Kirk, who will invade your world if you are embered on the ground floor of the cathedral between the area where the two giants are. He drops the Barbed Straight Sword & Spiked Shield, you will then be able to pick up the rest of his armor later in Rosaria's chamber.</li>
           <li data-id="playthrough_5_6">Continue through the Cathedral of the Deep until you have made it to the fog door before the Deacons of the Deep boss fight. Head to the nearby lift to activate the final shortcut of the level (Opening the large blue double doors that lead out to the Cathedral's roof)</li>
           <li data-id="playthrough_5_7">If you leave the Cathedral completely (Go to Firelink Shrine and come back) and then head back into the Cathedral through the large blue double doors you just opened, you may notice that a new bridge has been activated and Siegward is standing next to them. Talk to him and then cross the bridge to trigger a cutscene where it is revealed it was really Patches. Depending on if you killed the Giants or not, you'll either have to fight one or nothing happens</li>
           <li data-id="playthrough_5_8">Patches Progress: From here, head out to the 2nd shortcut back to the Cleansing Chapel bonfire and use the lift to get to a crossbow undead's tower. Kill him and move towards the edge of the tower, but don't drop down. Instead, look to see that you can move towards the left and find a ladder. Ascend the ladder and continue up the roof to eventually reach the rafters of the Cathedral. You'll now be able to drop down to the other side of the bridge that Patches activated. Patches will be waiting here and pretend to not be responsible for what just happened. Tell him "You know who I am" (Receive Prostration Gesture). You can then buy Siegward's Armor Set from him</li>
@@ -148,7 +154,7 @@
           <li data-id="playthrough_5_11">Andre Progress: Head back to the Tower and get to the bridge that overlooks Firelink Shrine. Drop down onto the roof and move around the roof until you find some windows you can go through. A Estus Shard will be on the rafters</li>
           <li data-id="playthrough_5_12">While on the roof, you can talk to Snuggly the Crow. Trading him three items will get you the Call Over Gesture</li>
           <li data-id="playthrough_5_13">Fire Keeper Progress: With the Fire Keeper's Soul, you can heal Dark Sigils that you have in order to completely get rid of your Hollowing Level. If you are following Yoel/Yuria's quest line, however, don't do this until the post game or you'll end up angering Yoel/Yuria</li>
-          <li data-id="playthrough_5_14">Patches Progress: Refresh Firelink Shrine and head to the upper right to find Patches now located there. He'll ask for forgiveness, refuse (Receive Prostration Gesture and Rusted Gold Coin). You can then buySiegward's Armor Set from him. Leaving Firelink Shrine and returning will sometimes allow Patches to be in his squatting position. Interact with him (Receive Patches Squat Gesture)</li>
+          <li data-id="playthrough_5_14">Patches Progress: Refresh Firelink Shrine and head to the upper right to find Patches now located there. He'll ask for forgiveness, refuse (Receive Prostration Gesture and Rusted Gold Coin). You can then buy Siegward's Armor Set from him. Leaving Firelink Shrine and returning will sometimes allow Patches to be in his squatting position. Interact with him (Receive Patches Squat Gesture)</li>
           <li data-id="playthrough_5_15">Siegward Progress: If you can't buy Siegward's Armor Set yet, head to the Cleansing Chapel and check the well at the entrance, where Siegward should be stuck in. After speaking to him, return to whatever location Patches is at for you and buy the armor</li>
           <li data-id="playthrough_5_16">Siegward Progress: Return to the well Siegward is in and drop the armor it to him (Receive Rejoice Gesture)</li>
         </ul>
@@ -158,10 +164,10 @@
           <li data-id="playthrough_6_1">Andre Progress: From the first bonfire of Farron Keep, stay to the left side until you reach a small structure guarded by a darkwraith. The Sage's Coal is in a body inside this structure, which grants you Crystal, Blessed and Deep Infusions</li>
           <li data-id="playthrough_6_2">Andre Progress: Grab the Estus Shard as you come into the area from Road of Sacrifices, towards the left. The shard will be visible against a wall</li>
           <li data-id="playthrough_6_3">Orbeck Progress: Spawn at the Keep Ruins bonfire and go out towards the Wolf Gate and turn left. Follow the wall and you'll eventually find the Sage's Scroll</li>
-          <li data-id="playthrough_6_4">Orbeck Progress: From the first bonfire, head out and go towards the right where you'll start to encounter basilisks. There will be a cave in this area that will contain a chest with the Golden Scroll inside. Make sure to give these scrolls to him before beating the Abyss Watchers or he'll leave forever</li>
+          <li data-id="playthrough_6_4">Orbeck Progress: From the first bonfire, head out and go towards the right where you'll start to encounter basilisks. There will be a cave in this area that will contain a chest with the Golden Scroll inside. Make sure to give him at least one scroll before beating the Abyss Watchers or he'll leave forever</li>
           <li data-id="playthrough_6_5">Firelink Shrine Bonfire Progress: Grab the Undead Bone Shard on the bottom of the tower to the right of the Wolf Gate with the three flames that you have to light. It is surrounded by a bunch of slugs</li>
           <li data-id="playthrough_6_6">Anri Progress: Return to Firelink Shrine to find Anri and Horace left of the thrones. You can speak to them for some additional dialogue</li>
-          <li data-id="playthrough_6_7">Climb the giant ladder near the Keep Ruins bonfire to find the Old Wolf of Farron. Interact with him for theWatchdogs of Farron covenant (Receive Legion Etiquette Gesture)</li>
+          <li data-id="playthrough_6_7">Climb the giant ladder near the Keep Ruins bonfire to find the Old Wolf of Farron. Interact with him for the Watchdogs of Farron covenant (Receive Legion Etiquette Gesture)</li>
           <li data-id="playthrough_6_8">Shrine Handmaid Progress: In this room, you'll see a dead body with something on it. Head out to the stairs and slash a wall once you get up them to reveal a illusory wall that leads to the body to get Dreamchaser's Ashes</li>
           <li data-id="playthrough_6_9">Sirris Progress: Return to Firelink Shrine and after giving the Dreamchaser's Ashes to the Shrine Handmaid, refresh the world with a bonfire. Sirris will once again be there. Talk to her. (Receive Darkmoon Loyalty Gesture)</li>
           <li data-id="playthrough_6_10">Yellowfinger Heysel Progess: You can summon her in Farron Keep right after the Keep Ruins bonfire for the Abyss Watchers fight if you killed her in Road of Sacrifices, but you'll need to have given a Pale Tongue to Rosaria, which will block you out of Sirris' quest line, so I recommend saving this part for another playthrough. You'll gain the Proper Bow Gesture after her summon</li>
@@ -173,49 +179,59 @@
         <ul>
           <li data-id="playthrough_7_1">Hawkwood Progress: Return to Firelink Shrine and talk with Hawkwood (Receive Farron Ring). If Hawkwood isn't in the Shrine, head outside to the grave that normally has an undead dog by it and he may be there</li>
           <li data-id="playthrough_7_2">Hawkwood Progress: Refresh the world and head out to the grave once again and Hawk wood's Shield will be resting on the grave. If this doesn't happen, try again later</li>
-          <li data-id="playthrough_7_3">Corny Progress: About halfway across the first bridge of Catacombs of Carthus, you'll notice a platform you can drop down to on the left side. Do so and you'll find the Carthus Pyro Mancy Tome in that area</li>
-          <li data-id="playthrough_7_4">Enri Progress: Before heading down the giant staircase that a skeleton ball will eventually begin to roll up and down, there will be a hallway to the left you can take. Head down this way and you'll eventually run into Enri, who claims she is looking for Horace. Exhaust her dialogue</li>
+          <li data-id="playthrough_7_3">Cornyx Progress: About halfway across the first bridge of Catacombs of Carthus, you'll notice a platform you can drop down to on the left side. Do so and you'll find the Carthus Pyromancy Tome in that area</li>
+          <li data-id="playthrough_7_4">Anri Progress: Before heading down the giant staircase that a skeleton ball will eventually begin to roll up and down, there will be a hallway to the left you can take. Head down this way and you'll eventually run into Anri, who claims she is looking for Horace. Exhaust her dialogue</li>
           <li data-id="playthrough_7_5">Firelink Shrine Bonfire Progress: Once arriving at the bottom of the giant staircase, you'll notice a skeleton with a hat on its head. Kill it and the next time the skeleton ball hits the bottom gate, it'll explode and reveal an Undead Bone Shard</li>
           <li data-id="playthrough_7_6">Shrine Handmaid Progress: After finding the Catacombs of Carthus bonfire, head down the stairs that the 2nd skeleton ball is going up and down and then head up some other stairs across the way. Once you're at the top of this new area, head to the left and you'll find the Grave Warden's Ashes</li>
-          <li data-id="playthrough_7_7">Enri Progress: Once you make it to the wooden bridge, you'll see Enri above and to the right of it. She'll once again ask if you have found Horace. You haven't yet, but we're about to. Head to the other side of the bridge and slash at it to cut it down and you can then use it as a ladder to descend into the Shouldering Lake</li>
-          <li data-id="playthrough_7_8">Karla Progress: Yes, you don't have Karla yet, but after beating Woolmer, you'll obtain the Grave Warden Pyro Mancy Tome. Corny can't read this Pyro Mancy Tome, so you'll have to wait until you find Karla to turn it in</li>
-          <li data-id="playthrough_7_9">Firelink Shrine Bonfire Progress: When heading towards the Old Demon King fog door, a Carthus Sandworm will appear out of the ground. It may be a difficult fight with the ballista also active or you can use the ballista to your advantage to deal extra damage to the worm. Either way, upon killing it you'll gain a Undead Bone Shard</li>
-          <li data-id="playthrough_7_10">Cornyx Progress: While fighting the Old Demon King, you can summon the NPC phantom Great Swamp Cuculus. Defeat the Old Demon King with this NPC surviving and go back to the cage in Undead Settlement you found Cornyx in (Receive Cornyx's Armor Set and Spotted Whip)</li>
-          <li data-id="playthrough_7_11">Head into the area where the Demon Ruins bonfire is as this'll be where the bulk of the main items for this area are</li>
-          <li data-id="playthrough_7_12">Firelink Shrine Bonfire Progress: The first enemies you encounter in the Demon Ruins are some Demon Clerics. You'll be on a top floor and see stairs nearby. Head down them and then move towards the left where there will be more Demon Clerics. Behind this group is another Undead Bone Shard</li>
-          <li data-id="playthrough_7_13">Andre Progress: Once you locate the Old King's Antechamber bonfire in this area, there will be a illusory wall in the same room. Activate it and then move down the hallway that has loads of Writhing Rotten Flesh enemies on the ceiling and grab the Estus Shard on a body at the end</li>
-          <li data-id="playthrough_7_14">Cornyx Progress: In a room following the Old King's Antechamber, you'll find the Izalith Pyromancy Tome on the ground</li>
-          <li data-id="playthrough_7_15">Karla Progress: Once again, you don't have Karla yet, but you can find the last Pyromancy Tome that she can read. From the Old King's Antechamber bonfire, hit the illusory wall in the room and head back out to the large room with the Demon Clerics. There is a corridor out of this room where you'll see the tome, but there will be a large hole that leads to a giant rat. Head down the hole, kill the rat, head straight, take a left, take another left, and in this room there will be another illusory wall that leads to the Quelana Pyromancy Tome</li>
-          <li data-id="playthrough_7_16">Further into the Demon Ruins, you'll come to a point where there are several basilisks and you'll see some stairs. Instead of going up the stairs, take a left when you get to them and you'll encounter Knight Slayer Tsorig. Defeating him will gain you the My Thanks! Gesture</li>
-          <li data-id="playthrough_7_17">Anri Progress: After shutting off the ballista, you'll notice some cliffs that you can drop onto that will eventually lead you back to the lake. You'll also land right in front of a cave you haven't explored (You can also get here just by running to the right from the Abandoned Tomb bonfire). Head inside and you'll find Horace, who has succumbed to his Dark Sigils and become hostile. Kill him and he'll drop the Llewellyn Shield. The Shrine Handmaid will also now sell Horace's Executioner's Armor Set</li>
-          <li data-id="playthrough_7_18">Anri Progress: Get back to the wooden bridge that allowed you to access the Smouldering Lake and speak if Anri to the upper right of it. Tell her of the Smouldering Lake and she'll give you the Ring of the Evil Eye. If she isn't here for you, you'll have to wait until the next area to find her</li>
-          <li data-id="playthrough_7_19">Sirris Progress: When first arriving in Irthyll, you'll battle one of Sulyvahn's Beasts and then move through a force field to the Central Irithyll bonfire. Refresh the world and return to the middle of the bridge and Sirris' summon sign should be there if you've been following her quest. Activate it and you'll enter her world and have to fight Creighton the Wanderer. She'll thank you and give you a Blessed Mail Breaker for the troubles</li>
-          <li data-id="playthrough_7_20">Anri Progress: This is the major dividing point in Anri's story. From here on out, if you want to follow her quest line to its conclusion, follow Anri A. If you want the Usurpation of Fire ending, follow Anri B</li>
-          <li data-id="playthrough_7_21">Anri A Progress: You'll eventually come across the Church of Yorshka bonfire and Anri will be in the same room. Exhaust her dialogue (Receive Quiet Resolve Gesture) and then look towards the side of the room that has some stone statues. One of these is actually a pilgrim sent by Yuria using the Chameleon spell. Slash away at the statues until you find him and make sure he's dead. He'll drop the Chameleon spell for you as well</li>
-          <li data-id="playthrough_7_22">Anri B Progress: Exhaust Anri's dialogue (Receive Quiet Resolve Gesture) and do nothing in regards to the pilgrim</li>
-          <li data-id="playthrough_7_23">Firelink Shrine Bonfire Progress: Starting at the Church of Yorshka bonfire, go down the hallway stairs, and go right along the cliff. The Undead Bone Shard is located behind the large tombstone at the end of this path. If you helped Sirris, Creighton will invade you here if you're embered. Killing him will gain you the Dragonslayer's Axe and allow you to return to the bridge where you used Sirris' summon sign to grab Creighton's Armor Set</li>
-          <li data-id="playthrough_7_24">Shrine Handmaid Progress: While walking around the sewer area, you'll find a basement that contains several Sewer Centipedes. In the corner opposite some stairs are the Excrement-covered Ashes</li>
-          <li data-id="playthrough_7_25">Siegward Progress: Head up these stairs and you'll find Siegward hanging out by the fire. Exhaust his dialogue and you'll receive the Emit Force Miracle and any gestures you missed from his first encounter</li>
-          <li data-id="playthrough_7_26">Greirat Progress: Return to Firelink Shrine and talk to Greirat. He'll ask to pillage Irithyll. Only do this after confirming Siegward is in Irthyll OR if you have Patches. If you have neither, Greirat will perish and his ashes can be found in the sewer area</li>
-          <li data-id="playthrough_7_27">Patches Progress: If you haven't been following Siegward's quest or just want to be extra safe, refresh Firelink Shrine after sending Greirat out and Patches will ask you where he went. Tell him and Patches will head out to protect Greirat as well</li>
-          <li data-id="playthrough_7_28">Black Hand Gotthard Progress: If you missed him at the Abyss Watchers fight, he can be summoned for the Pontiff Sulyvahn fight and you'll receive the By My Sword Gesture upon his summon</li>
-          <li data-id="playthrough_7_29">Yuria Progress: If you didn't summon the Londor Pale Shade during the Abyss Watchers fight, you get another chance here. Remember, you must be following the Yoel/Yuria quest line to have the ability to summon her. You'll receive the Duel Bow Gesture</li>
-          <li data-id="playthrough_7_30">Yuria/Anri B Progress: Head back to Firelink Shrine after defeating Pontiff and talk to Yuria and she'll discuss that the "marriage ceremony" is almost complete</li>
-          <li data-id="playthrough_7_31">Once you enter the building after the Giant courtyard, there will be a illusory wall on the left side that reveals a long ladder down. Head down and defeat two of Sulyvahn's Beasts and interact with Archdeacon McDonnell to gain the Aldrich Faithful covenant</li>
-          <li data-id="playthrough_7_32">Shrine Handmaid Progress: As you make your way up the building with the Silver Knight archers, you can drop down to a roof below and find the Easterner's Ashes</li>
-          <li data-id="playthrough_7_33">Anri B Progress: Before activating the lift to Anor Londo, there is a illusory wall in the room before the lever. Activate it and you'll find the pilgrim waiting for you. He’ll give you the Sword of Avowal and tell you Anri is waiting ahead. Head down to altar to find Anri's body. Interact with it to begin the ceremony and you'll gain Anri’s Straight Sword and her 3 Dark Sigils, granting you the total amount of 8 Dark Sigils you need for the Usurpation of Fire ending</li>
+          <li data-id="playthrough_7_7">Anri Progress: Once you make it to the wooden bridge, you'll see Anri above and to the right of it. She'll once again ask if you have found Horace. You haven't yet, but we're about to. Head to the other side of the bridge and slash at it to cut it down and you can then use it as a ladder to descend into the Shouldering Lake</li>
+          <li data-id="playthrough_7_8">Karla Progress: Yes, you don't have Karla yet, but after beating Wolnir, you'll obtain the Grave Warden Pyromancy Tome. Cornyx can't read this Pyromancy Tome, so you'll have to wait until you find Karla to turn it in</li>
+        </ul>
+
+        <h3 id="Smouldering_Lake"><a href="http://darksouls3.wiki.fextralife.com/Smouldering+Lake">Smouldering Lake</a> <span id="playthrough_totals_14"></span></h3>
+        <ul>
+          <li data-id="playthrough_14_1">Firelink Shrine Bonfire Progress: When heading towards the Old Demon King fog door, a Carthus Sandworm will appear out of the ground. It may be a difficult fight with the ballista also active or you can use the ballista to your advantage to deal extra damage to the worm. Either way, upon killing it you'll gain a Undead Bone Shard</li>
+          <li data-id="playthrough_14_2">Cornyx Progress: While fighting the Old Demon King, you can summon the NPC phantom Great Swamp Cuculus. Defeat the Old Demon King with this NPC surviving and go back to the cage in Undead Settlement you found Cornyx in (Receive Cornyx's Armor Set and Spotted Whip)</li>
+          <li data-id="playthrough_14_3">Head into the area where the Demon Ruins bonfire is as this'll be where the bulk of the main items for this area are</li>
+          <li data-id="playthrough_14_4">Firelink Shrine Bonfire Progress: The first enemies you encounter in the Demon Ruins are some Demon Clerics. You'll be on a top floor and see stairs nearby. Head down them and then move towards the left where there will be more Demon Clerics. Behind this group is another Undead Bone Shard</li>
+          <li data-id="playthrough_14_5">Andre Progress: Once you locate the Old King's Antechamber bonfire in this area, there will be a illusory wall in the same room. Activate it and then move down the hallway that has loads of Writhing Rotten Flesh enemies on the ceiling and grab the Estus Shard on a body at the end</li>
+          <li data-id="playthrough_14_6">Cornyx Progress: In a room following the Old King's Antechamber, you'll find the Izalith Pyromancy Tome on the ground</li>
+          <li data-id="playthrough_14_7">Karla Progress: Once again, you don't have Karla yet, but you can find the last Pyromancy Tome that she can read. From the Old King's Antechamber bonfire, hit the illusory wall in the room and head back out to the large room with the Demon Clerics. There is a corridor out of this room where you'll see the tome, but there will be a large hole that leads to a giant rat. Head down the hole, kill the rat, head straight, take a left, take another left, and in this room there will be another illusory wall that leads to the Quelana Pyromancy Tome</li>
+          <li data-id="playthrough_14_8">Further into the Demon Ruins, you'll come to a point where there are several basilisks and you'll see some stairs. Instead of going up the stairs, take a left when you get to them and you'll encounter Knight Slayer Tsorig. Defeating him will gain you the My Thanks! Gesture. After killing, the <a href="http://darksouls3.wiki.fextralife.com/Black+Iron+Set">Black Iron Set</a> can be obtained via the <a href="http://darksouls3.wiki.fextralife.com/Shrine+Handmaid">Shrine Handmaid</a></li>
+          <li data-id="playthrough_14_9">Anri Progress: After shutting off the ballista, you'll notice some cliffs that you can drop onto that will eventually lead you back to the lake. You'll also land right in front of a cave you haven't explored (You can also get here just by running to the right from the Abandoned Tomb bonfire). Head inside and you'll find Horace, who has succumbed to his Dark Sigils and become hostile. Kill him and he'll drop the Llewellyn Shield. The Shrine Handmaid will also now sell Horace's Executioner's Armor Set</li>
+          <li data-id="playthrough_14_10">Anri Progress: Get back to the wooden bridge that allowed you to access the Smouldering Lake and speak if Anri to the upper right of it. Tell her of the Smouldering Lake and she'll give you the Ring of the Evil Eye. If she isn't here for you, you'll have to wait until the next area to find her</li>
+        </ul>
+
+        <h3 id="Irithyll_of_the_Boreal_Valley"><a href="http://darksouls3.wiki.fextralife.com/Irithyll+of+the+Boreal+Valley">Irithyll of the Boreal Valley</a> <span id="playthrough_totals_15"></span></h3>
+        <ul>
+          <li data-id="playthrough_15_1">Sirris Progress: When first arriving in Irithyll, you'll battle one of Sulyvahn's Beasts and then move through a force field to the Central Irithyll bonfire. Refresh the world and return to the middle of the bridge and Sirris' summon sign should be there if you've been following her quest. Activate it and you'll enter her world and have to fight Creighton the Wanderer. She'll thank you and give you a Blessed Mail Breaker for the troubles</li>
+          <li data-id="playthrough_15_2">Anri Progress: This is the major dividing point in Anri's story. From here on out, if you want to follow her quest line to its conclusion, follow Anri A. If you want the Usurpation of Fire ending, follow Anri B</li>
+          <li data-id="playthrough_15_3">Anri A Progress: You'll eventually come across the Church of Yorshka bonfire and Anri will be in the same room. Exhaust her dialogue (Receive Quiet Resolve Gesture) and then look towards the side of the room that has some stone statues. One of these is actually a pilgrim sent by Yuria using the Chameleon spell. Slash away at the statues until you find him and make sure he's dead. He'll drop the Chameleon spell for you as well</li>
+          <li data-id="playthrough_15_4">Anri B Progress: Exhaust Anri's dialogue (Receive Quiet Resolve Gesture) and do nothing in regards to the pilgrim</li>
+          <li data-id="playthrough_15_5">Firelink Shrine Bonfire Progress: Starting at the Church of Yorshka bonfire, go down the hallway stairs, and go right along the cliff. The Undead Bone Shard is located behind the large tombstone at the end of this path. If you helped Sirris, Creighton will invade you here if you're embered. Killing him will gain you the Dragonslayer's Axe and allow you to return to the bridge where you used Sirris' summon sign to grab Creighton's Armor Set</li>
+          <li data-id="playthrough_15_6">Shrine Handmaid Progress: While walking around the sewer area, you'll find a basement that contains several Sewer Centipedes. In the corner opposite some stairs are the Excrement-covered Ashes</li>
+          <li data-id="playthrough_15_7">Siegward Progress: Head up these stairs and you'll find Siegward hanging out by the fire. Exhaust his dialogue and you'll receive the Emit Force Miracle and any gestures you missed from his first encounter</li>
+          <li data-id="playthrough_15_16">Head up the stairs and through the room with the silver knights. If you want the Manikin Claws weapon then kill the Dark Spirit of Londor who will only invade your world if you are embered, and you are on bad terms with Yuria (cured the mark or killed the assassin in the Yorshka church)</li>
+          <li data-id="playthrough_15_8">Greirat Progress: Return to Firelink Shrine and talk to Greirat. He'll ask to pillage Irithyll. Only do this after confirming Siegward is in Irithyll OR if you have Patches. If you have neither, Greirat will perish and his ashes can be found in the sewer area</li>
+          <li data-id="playthrough_15_9">Patches Progress: If you haven't been following Siegward's quest or just want to be extra safe, refresh Firelink Shrine after sending Greirat out and Patches will ask you where he went. Tell him and Patches will head out to protect Greirat as well</li>
+          <li data-id="playthrough_15_10">Black Hand Gotthard Progress: If you missed him at the Abyss Watchers fight, he can be summoned for the Pontiff Sulyvahn fight and you'll receive the By My Sword Gesture upon his summon</li>
+          <li data-id="playthrough_15_11">Yuria Progress: If you didn't summon the Londor Pale Shade during the Abyss Watchers fight, you get another chance here. Remember, you must be following the Yoel/Yuria quest line to have the ability to summon her. You'll receive the Duel Bow Gesture</li>
+          <li data-id="playthrough_15_12">Yuria/Anri B Progress: Head back to Firelink Shrine after defeating Pontiff and talk to Yuria and she'll discuss that the "marriage ceremony" is almost complete</li>
+          <li data-id="playthrough_15_13">Once you enter the building after the Giant courtyard, there will be a illusory wall on the left side that reveals a long ladder down. Head down and defeat two of Sulyvahn's Beasts and interact with Archdeacon McDonnell to gain the Aldrich Faithful covenant</li>
+          <li data-id="playthrough_15_14">Shrine Handmaid Progress: As you make your way up the building with the Silver Knight archers, you can drop down to a roof below and find the Easterner's Ashes</li>
+          <li data-id="playthrough_15_15">Anri B Progress: Before activating the lift to Anor Londo, there is a illusory wall in the room before the lever. Activate it and you'll find the pilgrim waiting for you. He’ll give you the Sword of Avowal and tell you Anri is waiting ahead. Head down to altar to find Anri's body. Interact with it to begin the ceremony and you'll gain Anri’s Straight Sword and her 3 Dark Sigils, granting you the total amount of 8 Dark Sigils you need for the Usurpation of Fire ending</li>
         </ul>
 
         <h3 id="Anor_Londo"><a href="http://darksouls3.wiki.fextralife.com/Anor+Londo">Anor Londo</a> <span id="playthrough_totals_8"></span></h3>
         <ul>
           <li data-id="playthrough_8_1">After using the lift to get to Anor Londo, run back down the stairs and you'll be able to see a tower in the distance. Walk across the sky to reveal a invisible floor and continue walking straight until lined up with the tower, then walk towards it. You'll find Yorshka who will allow you into the Blades of the Darkmoon covenant. If she doesn't allow you, perform the Darkmoon Loyalty gesture in front of her to prove you are worthy</li>
-          <li data-id="playthrough_8_2">Andre Progress: Once looking at the Anor Londo main door, head left and you'll find a dead Giant with theGiant's Coal by his body, which will grant you Lightning, Simple and Chaos Infusions</li>
+          <li data-id="playthrough_8_2">Andre Progress: Once looking at the Anor Londo main door, head left and you'll find a dead Giant with the Giant's Coal by his body, which will grant you Lightning, Simple and Chaos Infusions</li>
           <li data-id="playthrough_8_3">Andre Progress: Once inside the main castle, there will be an area on the ground floor with several Writhing Rotten Flesh enemies. Next to them will be a chest with a Estus Shard within it</li>
           <li data-id="playthrough_8_4">Anri A Progress: Open the main doors using the lever and fight the Deep Accursed enemy. You'll then find Anri's summon sign right next to the doors and be summoned to her world to fight her version of Aldrich</li>
           <li data-id="playthrough_8_5">Anri A Progress: After defeating him, return to Firelink Shrine and talk to Ludleth and he'll give you Anri's Straight Sword, stating that she left it for you now that her mission was complete</li>
           <li data-id="playthrough_8_6">Anri A Progress: If you told Anri of the Smouldering Lake, that is where she will be, in the same area where you fought Horace. She has also succumbed to the Dark Sigils and become hostile, so do her a favor and put her out of her misery. If you didn't tell her of the Smouldering Lake, she will instead be near the entrance of the Cathedral of the Deep. Defeating her allows you to purchase her Elite Knight Armor Set from the Shrine Handmaid</li>
           <li data-id="playthrough_8_7">Sirris Progress: After defeating Aldrich, travel to Undead Settlement via either the Cliff Underside or Dilapidated Bridge bonfire and make your way back to the room before the Curse-rotten Greatwood fight. You will find Sirris' summon sign right before the giant hole that leads to the Pit of Hollows. You'll be summoned to fight Holy Knight Hodrick, who turns out to be Sirris' grandfather. Defeating him grants you the Sunset Armor Set. You can then also find the Sunset Shield on his grave, which is located outside Firelink Shrine where the undead dog normally is</li>
           <li data-id="playthrough_8_8">Sirris Progress: Refresh Firelink Shrine and Sirris will appear here and ask to be your knight. Agree and she'll be able to be summoned for the final three main boss fights of the game. Refuse and you'll find her Hollow in the Pit of Hollows and have to kill her</li>
+          <li data-id="playthrough_8_15">From here warp back to the bonfire near the Irithyll swamp. Follow the path down towards the Irithyll Dungeon. When you are outside on a cliffside path Alva Seeker of the Spurned, will invade if you are embered. She drops the Murakumo when killed.</li>
           <li data-id="playthrough_8_9">Andre Progress: A decent amount into the Irithyll Dungeon, you'll eventually get outside the dungeon area for a brief period and then head back into it with a room that as a Mimic chest. Kill the mimic and it'll drop a Estus Shard</li>
           <li data-id="playthrough_8_10">Siegward Progress: In the room with the Giant, kill him and then near where he was, you can talk to Siegward, who is trapped in a cell. The key to get to him is the Old Cell Key, which is in the exact room you're currently in next to a Crystal Lizard. You'll learn how to actually get to Siegward later</li>
           <li data-id="playthrough_8_11">Andre Progress: A little past the previous room and a sewer, you'll come to an area with several Jailers. After coming out of the cell that contained two giant rats, head directly straight and you'll come to another cell that contains four Wretches and the Profaned Coal, which grants Dark, Blood and Hollow Infusions</li>
@@ -286,6 +302,7 @@
           <li data-id="playthrough_13_23">Ending 4: If you followed the Yoel/Yuria quest line to this point and "married" Anri, you can usurp the flame by wrestling the flame from its mantle triggering the 'Usurpation of Fire' ending. To progress this option, you must have 8 total Dark Sigils. The 5 from Yoel's Draw Out True Strengths and the 3 from "marrying" Anri. Simply interact with the First Flame at this point and it'll activate</li>
         </ul>
       </div>
+    </div>
 
       <!-- CHECKLIST START -->
       <div class="tab-pane" id="tabChecklists">
@@ -300,12 +317,18 @@
 
         <hr />
 
+        <div class="form-group">
+          <input type="search" id="item_search" class="form-control" placeholder="Start typing to filter results..." />
+        </div>
+
+        <div id="item_list">
+
         <h3 id="Master_of_Expression">Master of Expression: Learn all <a href="http://darksouls3.wiki.fextralife.com/Gestures">gestures</a> <span id="checklist_totals_1"></span></h3>
         <ul>
           <li data-id="checklist_1_1"><strong>Beckon</strong>: Talk to <a href="http://darksouls3.wiki.fextralife.com/Yoel+of+Londor">Yoel of Londor</a> not far from the Foot of the High Wall bonfire</li>
           <li data-id="checklist_1_2"><strong>Call Over</strong>: Received after your trade a homeward bone with <a href="http://darksouls3.wiki.fextralife.com/Pickle+Pee,+Pump-a-Rum+Crow">Pickle Pee, Pump-a-Rum Crow</a></li>
           <li data-id="checklist_1_3"><strong>Welcome</strong>: Talk to the <a href="http://darksouls3.wiki.fextralife.com/Cornyx+of+the+Great+Swamp">Cornyx of the Great Swamp</a> in the Undead Settlement, and accept his services. Talk to him again at Firelink Shrine to get the gesture</li>
-          <li data-id="checklist_1_4"><strong>Applause</strong>: Received by talking to <a href="http://darksouls3.wiki.fextralife.com/Leonhard">Leonhard</a> after defeating the Darkwraith in <a href="http://darksouls3.wikidot.com/high-wall-of-lothric">High Wall of Lothric</a> at his request.</li>
+          <li data-id="checklist_1_4"><strong>Applause</strong>: Received by talking to <a href="http://darksouls3.wiki.fextralife.com/Leonhard">Leonhard</a> after defeating the Darkwraith in <a href="http://darksouls3.wiki.fextralife.com/High+Wall+of+Lothric">High Wall of Lothric</a> at his request.</li>
           <li data-id="checklist_1_5"><strong>Quiet Resolve</strong>: Finish <a href="http://darksouls3.wiki.fextralife.com/Anri+of+Astora">Anri of Astora</a>'s questline up to Irithyll of the Boreal Valley. They will grant you the gesture when speaking to them at the Church of Yorshka Bonfire</li>
           <li data-id="checklist_1_6"><strong>Rejoice</strong>: Received during the <a href="http://darksouls3.wiki.fextralife.com/Siegward+of+Catarina">Siegward of Catarina</a> questline</li>
           <li data-id="checklist_1_7"><strong>Hurrah!</strong>: Talk to <a href="http://darksouls3.wiki.fextralife.com/Blacksmith+Andre">Blacksmith Andre</a></li>
@@ -313,7 +336,7 @@
           <li data-id="checklist_1_9"><strong>My Thanks!</strong>: Obtained from <a href="http://darksouls3.wiki.fextralife.com/Knight+Slayer+Tsorig">Knight Slayer Tsorig</a> deep in the Demon Ruins, regardless of who wins the fight.</li>
           <li data-id="checklist_1_10"><strong>Proper Bow</strong>: Kill <a href="http://darksouls3.wiki.fextralife.com/Yellowfinger+Heysel">Yellowfinger Heysel</a>, the NPC invader in Farron Keep. Then give a pale tongue to the Rosaria's Fingers covenant. Yellowfinger Heyzel's summon sign appears next to the tower full of slugs near the Keep Ruins bonfire. Summon her to receive the gesture. Abyss Watchers must be alive</li>
           <li data-id="checklist_1_11"><strong>Dignified Bow</strong>: Received from meeting <a href="http://darksouls3.wiki.fextralife.com/Yuria+of+Londor">Yuria of Londor</a></li>
-          <li data-id="checklist_1_12"><strong>Duel Bow</strong>: Received after summoning <a href="http://darksouls3.wiki.fextralife.com/Londor+Pale+Shade">Londor Pale Shade</a> before Pontiff Sulyvahn.
+          <li data-id="checklist_1_12"><strong>Duel Bow</strong>: Received after summoning <a href="http://darksouls3.wiki.fextralife.com/Londor+Pale+Shade">Londor Pale Shade</a> before Pontiff Sulyvahn.</li>
           <li data-id="checklist_1_13"><strong>Legion Etiquette</strong>: Pray to the Old Wolf of Farron in the Farron Swamp</li>
           <li data-id="checklist_1_14"><strong>Darkmoon Loyalty</strong>: Received from speaking with <a href="http://darksouls3.wiki.fextralife.com/Sirris+of+the+Sunless+Realms">Sirris of the Sunless Realms</a> in Firelink Shrine after she arrives</li>
           <li data-id="checklist_1_15"><strong>By My Sword</strong>: Received from summoning <a href="http://darksouls3.wiki.fextralife.com/Black+Hand+Gotthard">Black Hand Gotthard</a>. He will perform the gesture as he is summoned</li>
@@ -322,11 +345,11 @@
           <li data-id="checklist_1_18"><strong>Rest</strong>: Received after resting at a bonfire for the first time</li>
           <li data-id="checklist_1_19"><strong>Collapse</strong>: Received from meeting <a href="http://darksouls3.wiki.fextralife.com/Hawkwood">Hawkwood</a></li>
           <li data-id="checklist_1_20"><strong>Patches Squat</strong>: Talk to <a href="http://darksouls3.wiki.fextralife.com/Unbreakable+Patches">Patches</a> while he's sitting in Firelink Shrine</li>
-          <li data-id="checklist_1_21"><strong>Prostration</strong>: Recieved from <a href="http://darksouls3.wiki.fextralife.com/Unbreakable+Patches">Patches</a> after replying no when he asks for forgiveness, or after confronting him in the Cathedral of the Deep after he lowers the bridge with "You know who I am"</li>
+          <li data-id="checklist_1_21"><strong>Prostration</strong>: Received from <a href="http://darksouls3.wiki.fextralife.com/Unbreakable+Patches">Patches</a> after replying no when he asks for forgiveness, or after confronting him in the Cathedral of the Deep after he lowers the bridge with "You know who I am"</li>
           <li data-id="checklist_1_22"><strong>Toast</strong>: Received by talking to <a href="http://darksouls3.wiki.fextralife.com/Siegward+of+Catarina">Siegward of Catarina</a> after defeating the demon in Undead Settlement</li>
           <li data-id="checklist_1_23"><strong>Sleep</strong>: After receiving the Toast gesture from <a href="http://darksouls3.wiki.fextralife.com/Siegward+of+Catarina">Siegward of Catarina</a>, wait for him to go to sleep. Then talk to him again</li>
           <li data-id="checklist_1_24"><strong>Curl Up</strong>: Talk to <a href="http://darksouls3.wiki.fextralife.com/Greirat+of+the+Undead+Settlement">Greirat of the Undead Settlement</a> after giving him <a href="http://darksouls3.wiki.fextralife.com/Loretta's+bone">Loretta's bone</a> and resting at the bonfire.</li>
-          <li data-id="checklist_1_25"><strong>Stretch Out</strong>: Found in the <a href="http://darksouls3.wiki.fextralife.com/Profaned+Capital">Profaned Capital</a> on the corpse next to the first bonfire</li>
+          <li data-id="checklist_1_25"><strong>Stretch Out</strong>: Found on the corpse of Laddersmith Gilligan on the first bonfire in <a href="http://darksouls3.wiki.fextralife.com/Profaned+Capital">Profaned Capital</a></li>
           <li data-id="checklist_1_26"><strong>Path of The Dragon</strong>: Received from corpse after <a href="http://darksouls3.wiki.fextralife.com/Oceiros,+the+Consumed+King">Oceiros, the Consumed King</a></li>
         </ul>
 
@@ -341,7 +364,7 @@
           <li data-id="checklist_2_7"><a href="http://darksouls3.wiki.fextralife.com/Farron+Hail">Farron Hail</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Orbeck+Of+Vinheim">Orbeck Of Vinheim</a> for 5000 souls</li>
           <li data-id="checklist_2_8"><a href="http://darksouls3.wiki.fextralife.com/Homing+Soulmass">Homing Soulmass</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Orbeck+Of+Vinheim">Orbeck Of Vinheim</a> for 6000 souls</li>
           <li data-id="checklist_2_9"><a href="http://darksouls3.wiki.fextralife.com/Homing+Crystal+Soulmass">Homing Crystal Soulmass</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Orbeck+Of+Vinheim">Orbeck Of Vinheim</a> for 18,000 souls</li>
-          <li data-id="checklist_2_10"><a href="http://darksouls3.wiki.fextralife.com/Crystal+Hail">Crystal Hail</a>: Obtained by <a href="http://darksouls3.wiki.fextralife.com/Soul%20of+a+Crystal+Sage+">Soul of a Crystal Sage</a> Transposition</li>
+          <li data-id="checklist_2_10"><a href="http://darksouls3.wiki.fextralife.com/Crystal+Hail">Crystal Hail</a>: Obtained by <a href="http://darksouls3.wiki.fextralife.com/Soul%20of+a+Crystal+Sage">Soul of a Crystal Sage</a> Transposition</li>
           <li data-id="checklist_2_11"><a href="http://darksouls3.wiki.fextralife.com/Soul+Spear">Soul Spear</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Orbeck+Of+Vinheim">Orbeck Of Vinheim</a> for 5000 souls</li>
           <li data-id="checklist_2_12"><a href="http://darksouls3.wiki.fextralife.com/Crystal+Soul+Spear">Crystal Soul Spear</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Orbeck+Of+Vinheim">Orbeck Of Vinheim</a> for 15,000 souls</li>
           <li data-id="checklist_2_13"><a href="http://darksouls3.wiki.fextralife.com/White+Dragon+Breath">White Dragon Breath</a>: Obtained by <a href="http://darksouls3.wiki.fextralife.com/Soul+of+Consumed+Oceiros">Soul of Consumed Oceiros</a> Transposition</li>
@@ -360,7 +383,7 @@
           <li data-id="checklist_2_26"><a href="http://darksouls3.wiki.fextralife.com/Repair">Repair</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Orbeck+Of+Vinheim">Orbeck Of Vinheim</a> for 2000 souls</li>
           <li data-id="checklist_2_27"><a href="http://darksouls3.wiki.fextralife.com/Hidden+Weapon">Hidden Weapon</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Orbeck+Of+Vinheim">Orbeck Of Vinheim</a> for 1500 souls</li>
           <li data-id="checklist_2_28"><a href="http://darksouls3.wiki.fextralife.com/Hidden+Body">Hidden Body</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Orbeck+Of+Vinheim">Orbeck Of Vinheim</a> for 3000 souls</li>
-          <li data-id="checklist_2_29"><a href="http://darksouls3.wiki.fextralife.com/Chameleon">Chameleon</a>: Found in the Church of Yorshka bonfire in <a href="http://darksouls3.wiki.fextralife.com/Irithyll+of+the+Boreal+Valley">Irithyll of the Boreal Valley</a> during Anri's questline. The spell will drop from an assassin disguised as a statue. Found in Darkmoon Tomb from Anri's corpse.</li>
+          <li data-id="checklist_2_29"><a href="http://darksouls3.wiki.fextralife.com/Chameleon">Chameleon</a>: Found in the Church of Yorshka bonfire in <a href="http://darksouls3.wiki.fextralife.com/Irithyll+of+the+Boreal+Valley">Irithyll of the Boreal Valley</a> during Anri's questline. The spell will drop from an assassin disguised as a statue. Found in Darkmoon Tomb on the pilgrim's corpse</li>
           <li data-id="checklist_2_30"><a href="http://darksouls3.wiki.fextralife.com/Twisted+Wall+of+Light">Twisted Wall of Light</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Orbeck+Of+Vinheim">Orbeck Of Vinheim</a> for 6000 souls</li>
           <li data-id="checklist_2_31"><a href="http://darksouls3.wiki.fextralife.com/Deep+Soul">Deep Soul</a>:  Obtained by <a href="http://darksouls3.wiki.fextralife.com/Soul%20of+Deacons+of+the+Deep">Soul of Deacons of the Deep</a> Transposition</li>
           <li data-id="checklist_2_32"><a href="http://darksouls3.wiki.fextralife.com/Great+Deep+Soul">Great Deep Soul</a>: <a href="http://darksouls3.wiki.fextralife.com/Aldrich+Faithful">Aldrich Faithful</a> Rank 1 reward</li>
@@ -374,14 +397,14 @@
           <li data-id="checklist_3_2"><a href="http://darksouls3.wiki.fextralife.com/Fire+Orb">Fire Orb</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Cornyx+of+the+Great+Swamp">Cornyx of the Great Swamp</a> for 3000 souls</li>
           <li data-id="checklist_3_3"><a href="http://darksouls3.wiki.fextralife.com/Bursting+Fireball">Bursting Fireball</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Cornyx+of+the+Great+Swamp">Cornyx of the Great Swamp</a> for 5000 souls</li>
           <li data-id="checklist_3_4"><a href="http://darksouls3.wiki.fextralife.com/Great%20Chaos+Fire+Orb">Great Chaos Fire Orb</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Cornyx+of+the+Great+Swamp">Cornyx of the Great Swamp</a> for 10,000 souls</li>
-          <li data-id="checklist_3_5"><a href="http://darksouls3.wiki.fextralife.com/Chaos+Bed+Vestiges">Chaos Bed Vestiges</a>: Aquired from <a href="http://darksouls3.wiki.fextralife.com/Soul+of+the+Old+Demon+King">Soul of the Old Demon King</a> Transposition</li>
+          <li data-id="checklist_3_5"><a href="http://darksouls3.wiki.fextralife.com/Chaos+Bed+Vestiges">Chaos Bed Vestiges</a>: Acquired from <a href="http://darksouls3.wiki.fextralife.com/Soul+of+the+Old+Demon+King">Soul of the Old Demon King</a> Transposition</li>
           <li data-id="checklist_3_6"><a href="http://darksouls3.wiki.fextralife.com/Fire+Surge">Fire Surge</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Cornyx+of+the+Great+Swamp">Cornyx of the Great Swamp</a> for 1000 souls</li>
           <li data-id="checklist_3_7"><a href="http://darksouls3.wiki.fextralife.com/Fire+Whip">Fire Whip</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Karla">Karla</a> for 10,000 souls</li>
           <li data-id="checklist_3_8"><a href="http://darksouls3.wiki.fextralife.com/Firestorm">Firestorm</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Karla">Karla</a> for 15,000 souls</li>
           <li data-id="checklist_3_9"><a href="http://darksouls3.wiki.fextralife.com/Chaos+Storm">Chaos Storm</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Cornyx+of+the+Great+Swamp">Cornyx of the Great Swamp</a> for 12,000 souls</li>
           <li data-id="checklist_3_10"><a href="http://darksouls3.wiki.fextralife.com/Great+Combustion">Great Combustion</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Cornyx+of+the+Great+Swamp">Cornyx of the Great Swamp</a> for 3,000 souls</li>
           <li data-id="checklist_3_11"><a href="http://darksouls3.wiki.fextralife.com/Sacred+Flame">Sacred Flame</a>: Found within the lava area of <a href="http://darksouls3.wiki.fextralife.com/Smouldering+Lake">Smouldering Lake</a> where you fight Knight Slayer Tsorig</li>
-          <li data-id="checklist_3_12"><a href="http://darksouls3.wiki.fextralife.com/Profaned+Flame">Profaned Flame</a>: Found at the foot of the Giant in <a href="">Irythyll Dungeon</a></li>
+          <li data-id="checklist_3_12"><a href="http://darksouls3.wiki.fextralife.com/Profaned+Flame">Profaned Flame</a>: Found at the foot of the Giant in <a href="http://darksouls3.wiki.fextralife.com/Irithyll+Dungeon">Irithyll Dungeon</a></li>
           <li data-id="checklist_3_13"><a href="http://darksouls3.wiki.fextralife.com/Poison+Mist">Poison Mist</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Cornyx+of+the+Great+Swamp">Cornyx of the Great Swamp</a> for 2,000 souls</li>
           <li data-id="checklist_3_14"><a href="http://darksouls3.wiki.fextralife.com/Toxic+Mist">Toxic Mist</a>: Found on corpse in lava area of the <a href="http://darksouls3.wiki.fextralife.com/Catacombs+of+Carthus">Catacombs of Carthus</a></li>
           <li data-id="checklist_3_15"><a href="http://darksouls3.wiki.fextralife.com/Acid+Surge">Acid Surge</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Cornyx+of+the+Great+Swamp">Cornyx of the Great Swamp</a> for 6,000 souls</li>
@@ -393,10 +416,10 @@
           <li data-id="checklist_3_21"><a href="http://darksouls3.wiki.fextralife.com/Carthus+Flame+Arc">Carthus Flame Arc</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Cornyx+of+the+Great+Swamp">Cornyx of the Great Swamp</a> for 10,000 souls</li>
           <li data-id="checklist_3_22"><a href="http://darksouls3.wiki.fextralife.com/Warmth">Warmth</a>: <a href="http://darksouls3.wiki.fextralife.com/Mound-Maker">Mound Makers</a> Rank 2 reward</li>
           <li data-id="checklist_3_23"><a href="http://darksouls3.wiki.fextralife.com/Rapport">Rapport</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Karla">Karla</a> for 7000 souls</li>
-          <li data-id="checklist_3_24"><a href="http://darksouls3.wiki.fextralife.com/Boulder%20Heave">Boulder Heave</a>: Aquired from <a href="http://darksouls3.wiki.fextralife.com/Soul+of+a+Stray+Demon">Soul of a Stray Demon</a> Transposition</li>
+          <li data-id="checklist_3_24"><a href="http://darksouls3.wiki.fextralife.com/Boulder%20Heave">Boulder Heave</a>: Acquired from <a href="http://darksouls3.wiki.fextralife.com/Soul+of+a+Stray+Demon">Soul of a Stray Demon</a> Transposition</li>
           <li data-id="checklist_3_25"><a href="http://darksouls3.wiki.fextralife.com/Black+Flame">Black Flame</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Karla">Karla</a> for 10,000 souls</li>
           <li data-id="checklist_3_26"><a href="http://darksouls3.wiki.fextralife.com/Black+Fire+Orb">Black Fire Orb</a>: Sold by <a href="http://darksouls3.wiki.fextralife.com/Karla">Karla</a> for 10,000 souls</li>
-          <li data-id="checklist_3_27"><a href="http://darksouls3.wiki.fextralife.com/Black+Serpent">Black Serpent</a>: Aquired from <a href="http://darksouls3.wiki.fextralife.com/High+Lord+Wolnir">Soul of High Lord Wolnir</a> Transposition</li>
+          <li data-id="checklist_3_27"><a href="http://darksouls3.wiki.fextralife.com/Black+Serpent">Black Serpent</a>: Acquired from <a href="http://darksouls3.wiki.fextralife.com/High+Lord+Wolnir">Soul of High Lord Wolnir</a> Transposition</li>
         </ul>
 
         <h3 id="Master_of_Miracles">Master of Miracles: Acquire all <a href="http://darksouls3.wiki.fextralife.com/Miracles">miracles</a> <span id="checklist_totals_4"></span></h3>
@@ -408,7 +431,7 @@
           <li data-id="checklist_4_5"><a href="http://darksouls3.wiki.fextralife.com/Soothing+Sunlight">Soothing Sunlight</a>: Acquired by <a href="http://darksouls3.wiki.fextralife.com/Soul+of+the+Dancer">Soul of the Dancer</a> Transposition</li>
           <li data-id="checklist_4_6"><a href="http://darksouls3.wiki.fextralife.com/Replenishment">Replenishment</a>: Purchased from <a href="http://darksouls3.wiki.fextralife.com/Irina+of+Carim">Irina of Carim</a> for 1000 souls</li>
           <li data-id="checklist_4_7"><a href="http://darksouls3.wiki.fextralife.com/Bountiful+Light">Bountiful Light</a>: Purchased from <a href="http://darksouls3.wiki.fextralife.com/Irina+of+Carim">Irina of Carim</a> for 5000 souls</li>
-          <li data-id="checklist_4_8"><a href="http://darksouls3.wiki.fextralife.com/Caressing%20Tears">Bountiful Sunlight</a>: Acquired by <a href="http://darksouls3.wiki.fextralife.com/Soul+of+Rosaria">Soul of Rosaria</a> Transposition</li>
+          <li data-id="checklist_4_8"><a href="http://darksouls3.wiki.fextralife.com/Bountiful+Sunlight">Bountiful Sunlight</a>: Acquired by <a href="http://darksouls3.wiki.fextralife.com/Soul+of+Rosaria">Soul of Rosaria</a> Transposition</li>
           <li data-id="checklist_4_9"><a href="http://darksouls3.wiki.fextralife.com/Caressing%20Tears">Caressing Tears</a>: Purchased from <a href="http://darksouls3.wiki.fextralife.com/Irina+of+Carim">Irina of Carim</a> for 1500 souls</li>
           <li data-id="checklist_4_10"><a href="http://darksouls3.wiki.fextralife.com/Tears+of+Denial">Tears of Denial</a>: Purchased from <a href="http://darksouls3.wiki.fextralife.com/Irina+of+Carim">Irina of Carim</a> for 10,000 souls</li>
           <li data-id="checklist_4_11"><a href="http://darksouls3.wiki.fextralife.com/Homeward">Homeward</a>: Purchased from <a href="http://darksouls3.wiki.fextralife.com/Irina+of+Carim">Irina of Carim</a> for 3000 souls</li>
@@ -416,8 +439,8 @@
           <li data-id="checklist_4_13"><a href="http://darksouls3.wiki.fextralife.com/Sacred+Oath">Sacred Oath</a>: <a href="http://darksouls3.wiki.fextralife.com/Warrior+of+Sunlight">Warriors of Sunlight</a> Rank 1 reward</li>
           <li data-id="checklist_4_14"><a href="http://darksouls3.wiki.fextralife.com/Force">Force</a>: Purchased from <a href="http://darksouls3.wiki.fextralife.com/Irina+of+Carim">Irina of Carim</a> for 1000 souls</li>
           <li data-id="checklist_4_15"><a href="http://darksouls3.wiki.fextralife.com/Emit+Force">Emit Force</a>: Acquired by <a href="http://darksouls3.wiki.fextralife.com/Siegward+of+Catarina">Siegward of Catarina</a> during third encounter. Below Irithyll of the Boreal Valley in a kitchen just after a sewer area</li>
-          <li data-id="checklist_4_16"><a href="http://darksouls3.wiki.fextralife.com/Wrath+of+the+Gods">Wrath of the Gods</a>: Aquired by dropping from the ledge near the spellcaster on the roof in Profaned Capital</li>
-          <li data-id="checklist_4_17"><a href="http://darksouls3.wiki.fextralife.com/Lightning+Spear">Lightning Spear</a>: Use the elevator near the Old Wolf of Farron and take the stairs up. Turn to the right and run to the closed gate. On the right side of the gate drop down and follow the path, one of the items there is Lighning Spear</li>
+          <li data-id="checklist_4_16"><a href="http://darksouls3.wiki.fextralife.com/Wrath+of+the+Gods">Wrath of the Gods</a>: Acquired by dropping from the ledge near the spellcaster on the roof in Profaned Capital</li>
+          <li data-id="checklist_4_17"><a href="http://darksouls3.wiki.fextralife.com/Lightning+Spear">Lightning Spear</a>: Use the elevator near the Old Wolf of Farron and take the stairs up. Turn to the right and run to the closed gate. On the right side of the gate drop down and follow the path, one of the items there is Lightning Spear</li>
           <li data-id="checklist_4_18"><a href="http://darksouls3.wiki.fextralife.com/Great+Lightning+Spear">Great Lightning Spear</a>: <a href="http://darksouls3.wiki.fextralife.com/Warrior+of+Sunlight">Warriors of Sunlight</a> Rank 2 reward</li>
           <li data-id="checklist_4_19"><a href="http://darksouls3.wiki.fextralife.com/Sunlight+Spear">Sunlight Spear</a>: Acquired by <a href="http://darksouls3.wiki.fextralife.com/Soul+of+the+Lords">Soul of the Lords</a> Transposition</li>
           <li data-id="checklist_4_20"><a href="http://darksouls3.wiki.fextralife.com/Lightning+Stake">Lightning Stake</a>: Dropped by the giant worm just before the <a href="http://darksouls3.wiki.fextralife.com/Old+Demon+King">Old Demon King</a> boss fight</li>
@@ -435,7 +458,7 @@
           <li data-id="checklist_4_32"><a href="http://darksouls3.wiki.fextralife.com/Deep+Protection">Deep Protection</a>: Purchased from <a href="http://darksouls3.wiki.fextralife.com/Irina+of+Carim">Irina of Carim</a> for 4000 souls</li>
           <li data-id="checklist_4_33"><a href="http://darksouls3.wiki.fextralife.com/Gnaw">Gnaw</a>: Purchased from <a href="http://darksouls3.wiki.fextralife.com/Irina+of+Carim">Irina of Carim</a> for 2000 souls</li>
           <li data-id="checklist_4_34"><a href="http://darksouls3.wiki.fextralife.com/Dorhy's%20Gnawing">Dorhy's Gnawing</a>: Guaranteed kill reward for the screaming Evangelist in Irithyll of the Boreal Valley, found behind an illusionary fence</li>
-          <li data-id="checklist_4_35"><a href="http://darksouls3.wiki.fextralife.com/Lifehunt+Scythe">Lifehunt Scythe</a>: Aquired from <a href="http://darksouls3.wiki.fextralife.com/Soul+of+Aldrich">Soul of Aldrich</a> Transposition</li>
+          <li data-id="checklist_4_35"><a href="http://darksouls3.wiki.fextralife.com/Lifehunt+Scythe">Lifehunt Scythe</a>: Acquired from <a href="http://darksouls3.wiki.fextralife.com/Soul+of+Aldrich">Soul of Aldrich</a> Transposition</li>
         </ul>
 
         <h3 id="Master_of_Rings">Master of Rings: Acquire all <a href="http://darksouls3.wiki.fextralife.com/Rings">rings</a> <span id="checklist_totals_5"></span></h3>
@@ -549,6 +572,7 @@
           <li data-id="checklist_5_70"><a href="http://darksouls3.wiki.fextralife.com/Ring+of+Sacrifice">Ring of Sacrifice</a>: Found on an ledge/awning above a courtyard in High Wall of Lothric. Found in the watery area between the Church of Yorshka and Distant Manor Bonfires. Sold by Yuria in Firelink.</li>
         </ul>
       </div>
+    </div>
 
       <!-- INFORMATION START -->
       <div class="tab-pane" id="tabInformation">
@@ -562,7 +586,7 @@
         <h3 id="Pickle_Pee_Pump-a-Rum_Crow"><a href="http://darksouls3.wiki.fextralife.com/Pickle+Pee,+Pump-a-Rum+Crow">Pickle Pee, Pump-a-Rum Crow</a> <span id="crow_totals_1"></span></h3>
         <ul>
           <li data-id="crow_1_1">Trade <a href="http://darksouls3.wiki.fextralife.com/Firebomb">Firebomb</a> or <a href="http://darksouls3.wiki.fextralife.com/Rope+Firebomb">Rope Firebomb</a> for <a href="http://darksouls3.wiki.fextralife.com/Large+Titanite+Shard">Large Titanite Shard</a></li>
-          <li data-id="crow_1_2">Trade <a href="http://darksouls3.wiki.fextralife.com/Black+Firebomb">Black Firebomb</a> or <a href="http://darksouls3.wiki.fextralife.com/Rope+Black+Firebomb">Rope Black Firebomb for <a href="http://darksouls3.wiki.fextralife.com/Titanite+Chunk">Titanite Chunk</a></li>
+          <li data-id="crow_1_2">Trade <a href="http://darksouls3.wiki.fextralife.com/Black+Firebomb">Black Firebomb</a> or <a href="http://darksouls3.wiki.fextralife.com/Rope+Black+Firebomb">Rope Black Firebomb</a> for <a href="http://darksouls3.wiki.fextralife.com/Titanite+Chunk">Titanite Chunk</a></li>
           <li data-id="crow_1_3">Trade <a href="http://darksouls3.wiki.fextralife.com/Prism+Stone">Prism Stone</a> for <a href="http://darksouls3.wiki.fextralife.com/Twinkling+Titanite">Twinkling Titanite</a></li>
           <li data-id="crow_1_4">Trade <a href="http://darksouls3.wiki.fextralife.com/Loretta's+Bone">Loretta's Bone</a> for <a href="http://darksouls3.wiki.fextralife.com/Lightning+Gem">Lightning Gem</a> / <a href="http://darksouls3.wiki.fextralife.com/Ring+of+Sacrifice">Ring of Sacrifice</a></li>
           <li data-id="crow_1_5">Trade <a href="http://darksouls3.wiki.fextralife.com/+Avelyn">Avelyn</a> for (3) <a href="http://darksouls3.wiki.fextralife.com/Titanite+Scale">Titanite Scale</a></li>
@@ -587,7 +611,7 @@
         </ul>
 
         <h3 id="Soul_Types">Soul Types</h3>
-        <table class="table-striped">
+        <table class="table table-striped">
           <thead>
             <tr><th>Name</th><th>Souls</th></tr>
           </thead>
@@ -666,7 +690,7 @@
         <p>Nope, not really. This is a set of checklists and information that you can use while playing Dark Souls to make sure you don't miss an item, action, conversation or boss. If you need playthroughs then you can click on the links scattered throughout the page to find them in the wiki.</p>
 
         <h3>Do I need to follow the playthrough in this exact order?</h3>
-        <p>Dark Souls 3 is not a liner game and has multiple ways of progressing. This is generally the way I like to play through the game, so feel free to follow it if you like or mix it up. You can always jump back and forth and check things off in a different order.</p>
+        <p>Dark Souls 3 is not a linear game and has multiple ways of progressing. This is generally the way I like to play through the game, so feel free to follow it if you like or mix it up. You can always jump back and forth and check things off in a different order.</p>
 
         <h3>Can I use this for multiple characters?</h3>
         <p>Yup, use the profile selector and buttons at the top right of the page to setup multiple characters.</p>
@@ -682,28 +706,69 @@
         <h3>How does the checklist status get saved?</h3>
         <p>It gets saved to the local storage in your browser and not to any database or API. So if you are clearing your browser cache make sure not to delete the site data or your checklists will get reset.</p>
       </div>
-    </div>
-    <div id="profileModal" class="modal hide fade">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h3 id="profileModalTitle">Profile</h3>
-      </div>
-      <div class="modal-body">
-        <form class="form-horizontal">
-          <div class="control-group">
-            <label class="control-label" for="profileModalName">Name</label>
-            <div class="controls">
-              <input type="text" id="profileModalName" placeholder="Enter profile name">
+      <div id="profileModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3 id="profileModalTitle" class="modal-title">Profile</h3>
             </div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <a href="#" id="profileModalClose" class="btn">Close</a>
-        <a href="#" id="profileModalAdd" class="btn btn-primary">Add</a>
-        <a href="#" id="profileModalUpdate" class="btn btn-primary">Update</a>
-        <a href="#" id="profileModalDelete" class="btn btn-danger">Delete</a>
-      </div>
-    </div>
+            <div class="modal-body">
+              <form class="form-horizontal">
+                <div class="control-group">
+                  <label class="control-label" for="profileModalName">Name</label>
+                  <div class="controls">
+                    <input type="text" class="form-control" id="profileModalName" placeholder="Enter profile name">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <a href="#" id="profileModalClose" class="btn btn-default" data-dismiss="modal">Close</a>
+              <a href="#" id="profileModalAdd" class="btn btn-primary" data-dismiss="modal">Add</a>
+              <a href="#" id="profileModalUpdate" class="btn btn-primary">Update</a>
+              <a href="#" id="profileModalDelete" class="btn btn-danger">Delete</a>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    </div> <!-- tab-content -->
+  </div> <!-- container -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="https://cdn.rawgit.com/andris9/jStorage/v0.4.12/jstorage.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jets/0.8.0/jets.min.js"></script>
+  <script src="js/jquery.highlight.js"></script>
+  <script type="text/javascript">var profilesKey = 'darksouls3_profiles';</script>
+  <script src="js/main.js"></script>
+  <script>
+    var jets = new Jets({
+      searchTag: '#playthrough_search',
+      contentTag: '#playthrough_list ul'
+    });
+
+    var jets = new Jets({
+      searchTag: '#item_search',
+      contentTag: '#item_list ul'
+    });
+  </script>
+  <script>
+    $('#playthrough_search').keyup(function() {
+      $('#playthrough_list').unhighlight();
+      $('#playthrough_list').highlight($(this).val());
+    });
+    $('#item_search').keyup(function() {
+      $('#item_list').unhighlight();
+      $('#item_list').highlight($(this).val());
+    });
+  </script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-66576837-1', 'auto');
+  ga('send', 'pageview');
+  </script>
   </body>
 </html>
