@@ -21,3 +21,9 @@ ul {
 .stroked {
     text-decoration: line-through;
 }
+
+.hiddenfile {
+ width: 0px;
+ height: 0px;
+ overflow: hidden;
+}
