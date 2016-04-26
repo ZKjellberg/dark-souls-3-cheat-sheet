@@ -50,6 +50,6 @@ ul {
     content:"\e082";
   }
   /* Icon when the collapsible content is hidden */
-  .btn-collpase.collapsed:after {
+  .btn-collapse.collapsed:after {
     content:"\e081";
   }
