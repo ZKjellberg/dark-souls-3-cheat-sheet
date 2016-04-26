@@ -43,3 +43,13 @@ ul {
 .back-to-top:hover{
 	background-color: rgba(135, 135, 135, 0.50);
 }
+
+/* Icon when the collapsible content is shown */
+  .btn-collapse:after {
+    font-family: 'Glyphicons Halflings';
+    content:"\e082";
+  }
+  /* Icon when the collapsible content is hidden */
+  .btn-collpase.collapsed:after {
+    content:"\e081";
+  }
