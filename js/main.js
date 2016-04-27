@@ -24,7 +24,7 @@
                 addCheckbox(this);
             }
         });
-        
+
         // Open external links in new tab
         $("a[href^='http']").attr('target','_blank');
 
@@ -34,11 +34,15 @@
             var id = $(this).attr('id');
             var isChecked = profiles[profilesKey][profiles.current].checklistData[id] = $(this).prop('checked');
             //_gaq.push(['_trackEvent', 'Checkbox', (isChecked ? 'Check' : 'Uncheck'), id]);
-        if (isChecked === true) {
-        $('[data-id="'+id+'"] label').addClass('stroked');
-        } else {
-        $('[data-id="'+id+'"] label').removeClass('stroked');
-        }
+            if (isChecked === true) {
+              $('[data-id="'+id+'"] label').addClass('stroked');
+
+              if ($("#toggleHideCompleted").data("hidden") === true) {
+                $('[data-id="'+id+'"] label').hide();
+              }
+            } else {
+              $('[data-id="'+id+'"] label').removeClass('stroked');
+            }
             $(this).parent().parent().find('li > label > input[type="checkbox"]').each(function() {
                 var id = $(this).attr('id');
                 profiles[profilesKey][profiles.current].checklistData[id] = isChecked;
@@ -124,10 +128,64 @@
             $('#profileModal').modal('hide');
             //_gaq.push(['_trackEvent', 'Profile', 'Delete']);
         });
+        /*
+        *  The only stipulation with this method is that it will only work with
+        *  HTML5 ready browsers, should be the vast majority now...
+        */
+        $('#profileExport').click(function(){
+          var filename = "profiles.json";
+          var text = JSON.stringify(profiles);
+          var element = document.createElement('a');
+          element.setAttribute('href', 'data:text/plain;charset=utf-8,'
+            + encodeURIComponent(text));
+          element.setAttribute('download', filename);
+          element.style.display = 'none';
+          document.body.appendChild(element);
+          element.click();
+          document.body.removeChild(element);
+        });
+
+        $('#profileImport').click(function(){
+          $('#fileInput').trigger('click');
+        });
+        /* Will reject if an incorrect file or no file is selected */
+        $('input#fileInput').change(function(){
+          var fileInput = document.getElementById('fileInput');
+          if(!fileInput.files || !fileInput.files[0] || !/\.json$/.test(fileInput.files[0].name)){
+            return;
+          }
+          var fr = new FileReader();
+          fr.readAsText(fileInput.files[0]);
+          fr.onload = dataLoadCallback;
+        });
+
+        $("#toggleHideCompleted").click(function() {
+            var hidden = $(this).data("hidden");
+
+            if (hidden === true) {
+                $(this).text("Hide completed");
+            } else {
+                $(this).text("Show completed");
+            }
+
+            $(this).data("hidden", !hidden);
+
+            toggleCompletedCheckboxes(!hidden);
+        });
 
         calculateTotals();
 
     });
+
+    function dataLoadCallback(arg){
+      var jsonProfileData = JSON.parse(arg.currentTarget.result);
+      profiles = jsonProfileData;
+      $.jStorage.set(profilesKey, profiles);
+      populateProfiles();
+      populateChecklists();
+      $('#profiles').trigger("change");
+      location.reload();
+    }
 
     function populateProfiles() {
         $('#profiles').empty();
@@ -166,20 +224,20 @@
                     }
                 }
                 if (checked == count) {
-                    this.innerHTML = $('#' + type + '_nav_totals_' + i)[0].innerHTML = '[DONE]';
+                    this.innerHTML = $('#' + type + '_nav_totals_' + i)[0].innerHTML = 'DONE';
                     $(this).removeClass('in_progress').addClass('done');
                     $($('#' + type + '_nav_totals_' + i)[0]).removeClass('in_progress').addClass('done');
                 } else {
-                    this.innerHTML = $('#' + type + '_nav_totals_' + i)[0].innerHTML = '[' + checked + '/' + count + ']';
+                    this.innerHTML = $('#' + type + '_nav_totals_' + i)[0].innerHTML =  checked + '/' + count;
                     $(this).removeClass('done').addClass('in_progress');
                     $($('#' + type + '_nav_totals_' + i)[0]).removeClass('done').addClass('in_progress');
                 }
             });
             if (overallChecked == overallCount) {
-                this.innerHTML = '[DONE]';
+                this.innerHTML = 'DONE';
                 $(this).removeClass('in_progress').addClass('done');
             } else {
-                this.innerHTML = '[' + overallChecked + '/' + overallCount + ']';
+                this.innerHTML = overallChecked + '/' + overallCount;
                 $(this).removeClass('done').addClass('in_progress');
             }
         });
@@ -207,6 +265,16 @@
         for (var profile in profiles[profilesKey]) {
             return profile;
         }
+    }
+
+    function toggleCompletedCheckboxes(hide) {
+        $("li .checkbox .stroked").parentsUntil("ul").each(function() {
+            if (hide === true) {
+                $(this).hide();
+            } else {
+                $(this).show();
+            };
+        });
     }
 
 })( jQuery );

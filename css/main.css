@@ -1,4 +1,14 @@
-.in_progress { color: #CC6600; }
+.in_progress,
+.done {
+  color: #C60;
+  border: 1px solid;
+  border-radius: 3px;
+  padding: .1em 0.4em;
+  font-weight: normal;
+  margin-left: .2em;
+  vertical-align: middle;
+  font-size: 0.9em;
+}
 .done { color: #009933; }
 
 @media print {
@@ -10,8 +20,31 @@
 }
 
 ul {
-    list-style-type: none;
-	padding-left: 20px;
+  list-style-type: none;
+	padding-left: 22px;
+  margin-bottom: 30px;
+}
+ul li ul {
+  padding-top: 0;
+}
+h3 {
+  margin-bottom: 0;
+}
+.checkbox label,
+.radio label {
+  padding-left: 24px;
+}
+.checkbox input[type=checkbox],
+.checkbox-inline input[type=checkbox],
+.radio input[type=radio],
+.radio-inline input[type=radio] {
+  margin-left: -24px;
+}
+
+.table_of_contents {
+  margin-left: 0;
+  padding: 0;
+  line-height: 1.8;
 }
 
 .highlight {
@@ -20,4 +53,42 @@ ul {
 
 .stroked {
     text-decoration: line-through;
+}
+
+.hiddenfile {
+ width: 0px;
+ height: 0px;
+ overflow: hidden;
+}
+
+.back-to-top {
+	position: fixed;
+	bottom: 2em;
+	right: 0px;
+	text-decoration: none;
+	color: #000000;
+	background-color: rgba(235, 235, 235, 0.80);
+	font-size: 12px;
+	padding: 1em;
+	display: none;
+}
+
+.back-to-top:hover{
+	background-color: rgba(135, 135, 135, 0.50);
+}
+
+.btn-collapse {
+  padding: 4px 10px 1px;
+  margin-right: 10px;
+  vertical-align: top;
+}
+
+/* Icon when the collapsible content is shown */
+.btn-collapse:after {
+  font-family: 'Glyphicons Halflings';
+  content:"\e082";
+}
+/* Icon when the collapsible content is hidden */
+.btn-collapse.collapsed:after {
+  content:"\e081";
 }
