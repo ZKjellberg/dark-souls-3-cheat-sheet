@@ -37,9 +37,9 @@
             if (isChecked === true) {
               $('[data-id="'+id+'"] label').addClass('stroked');
 
-              if ($("#toggleHideCompleted").data("hidden") === true) { 
+              if ($("#toggleHideCompleted").data("hidden") === true) {
                 $('[data-id="'+id+'"] label').hide();
-              }           
+              }
             } else {
               $('[data-id="'+id+'"] label').removeClass('stroked');
             }
@@ -158,18 +158,18 @@
           fr.readAsText(fileInput.files[0]);
           fr.onload = dataLoadCallback;
         });
-        
+
         $("#toggleHideCompleted").click(function() {
             var hidden = $(this).data("hidden");
-            
+
             if (hidden === true) {
                 $(this).text("Hide completed");
-            } else { 
+            } else {
                 $(this).text("Show completed");
             }
-            
+
             $(this).data("hidden", !hidden);
-            
+
             toggleCompletedCheckboxes(!hidden);
         });
 
@@ -224,20 +224,20 @@
                     }
                 }
                 if (checked == count) {
-                    this.innerHTML = $('#' + type + '_nav_totals_' + i)[0].innerHTML = '[DONE]';
+                    this.innerHTML = $('#' + type + '_nav_totals_' + i)[0].innerHTML = 'DONE';
                     $(this).removeClass('in_progress').addClass('done');
                     $($('#' + type + '_nav_totals_' + i)[0]).removeClass('in_progress').addClass('done');
                 } else {
-                    this.innerHTML = $('#' + type + '_nav_totals_' + i)[0].innerHTML = '[' + checked + '/' + count + ']';
+                    this.innerHTML = $('#' + type + '_nav_totals_' + i)[0].innerHTML =  checked + '/' + count;
                     $(this).removeClass('done').addClass('in_progress');
                     $($('#' + type + '_nav_totals_' + i)[0]).removeClass('done').addClass('in_progress');
                 }
             });
             if (overallChecked == overallCount) {
-                this.innerHTML = '[DONE]';
+                this.innerHTML = 'DONE';
                 $(this).removeClass('in_progress').addClass('done');
             } else {
-                this.innerHTML = '[' + overallChecked + '/' + overallCount + ']';
+                this.innerHTML = overallChecked + '/' + overallCount;
                 $(this).removeClass('done').addClass('in_progress');
             }
         });
@@ -266,12 +266,12 @@
             return profile;
         }
     }
-    
+
     function toggleCompletedCheckboxes(hide) {
         $("li .checkbox .stroked").parentsUntil("ul").each(function() {
-            if (hide === true) { 
-                $(this).hide(); 
-            } else { 
+            if (hide === true) {
+                $(this).hide();
+            } else {
                 $(this).show();
             };
         });
