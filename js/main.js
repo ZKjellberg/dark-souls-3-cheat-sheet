@@ -41,7 +41,7 @@ var stateKey = 'darksouls3_state';
               $('[data-id="'+id+'"] label').addClass('stroked');
 
               if ($("#toggleHideCompleted").data("hidden") === true) {
-                $('[data-id="'+id+'"] label').hide();
+                $('[data-id="'+id+'"] label').parent().hide();
               }
             } else {
               $('[data-id="'+id+'"] label').removeClass('stroked');
