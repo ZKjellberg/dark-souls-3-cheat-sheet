@@ -92,3 +92,8 @@ h3 {
 .btn-collapse.collapsed:after {
   content:"\e081";
 }
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
