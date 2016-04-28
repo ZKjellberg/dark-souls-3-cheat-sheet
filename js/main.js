@@ -1,3 +1,6 @@
+var profilesKey = 'darksouls3_profiles';
+var stateKey = 'darksouls3_state';
+
 (function($) {
     'use strict';
 
@@ -11,15 +14,15 @@
     };
     var profiles = $.jStorage.get(profilesKey, defaultProfiles);
 
+    var stateStorage = $.jStorage.get(stateKey, {
+        collapsed: {},
+        current_tab: '#tabPlaythrough',
+        hide_completed: false
+    });
+
     jQuery(document).ready(function($) {
 
-        // TODO Find a better way to do this in one pass
-        $('ul li li').each(function(index) {
-            if ($(this).attr('data-id')) {
-                addCheckbox(this);
-            }
-        });
-        $('ul li').each(function(index) {
+        $('ul li li[data-id], ul li[data-id]').each(function(index) {
             if ($(this).attr('data-id')) {
                 addCheckbox(this);
             }
@@ -38,7 +41,7 @@
               $('[data-id="'+id+'"] label').addClass('stroked');
 
               if ($("#toggleHideCompleted").data("hidden") === true) {
-                $('[data-id="'+id+'"] label').hide();
+                $('[data-id="'+id+'"] label').parent().hide();
               }
             } else {
               $('[data-id="'+id+'"] label').removeClass('stroked');
@@ -136,8 +139,8 @@
           var filename = "profiles.json";
           var text = JSON.stringify(profiles);
           var element = document.createElement('a');
-          element.setAttribute('href', 'data:text/plain;charset=utf-8,'
-            + encodeURIComponent(text));
+          element.setAttribute('href', 'data:text/plain;charset=utf-8,' +
+            encodeURIComponent(text));
           element.setAttribute('download', filename);
           element.style.display = 'none';
           document.body.appendChild(element);
@@ -171,6 +174,10 @@
             $(this).data("hidden", !hidden);
 
             toggleCompletedCheckboxes(!hidden);
+
+            stateStorage.hide_completed = !hidden;
+
+            $.jStorage.set(stateKey, stateStorage);
         });
 
         calculateTotals();
@@ -273,8 +280,107 @@
                 $(this).hide();
             } else {
                 $(this).show();
-            };
+            }
         });
     }
 
+    /*
+     * ----------------------------------
+     * Search and highlight functionality
+     * ----------------------------------
+     */
+    $(function() {
+        var jets = [new Jets({
+            searchTag: '#playthrough_search',
+            contentTag: '#playthrough_list ul'
+        }), new Jets({
+            searchTag: '#item_search',
+            contentTag: '#item_list ul'
+        }), new Jets({
+            searchTag: '#weapons_search',
+            contentTag: '#weapons_list ul'
+        }), new Jets({
+            searchTag: '#armors_search',
+            contentTag: '#armors_list ul'
+        })];
+
+        $('#playthrough_search').keyup(function() {
+            $('#playthrough_list').unhighlight();
+            $('#playthrough_list').highlight($(this).val());
+        });
+        $('#item_search').keyup(function() {
+            $('#item_list').unhighlight();
+            $('#item_list').highlight($(this).val());
+        });
+        $('#weapons_search').keyup(function() {
+            $('#weapons_list').unhighlight();
+            $('#weapons_list').highlight($(this).val());
+        });
+        $('#armors_search').keyup(function() {
+            $('#armors_list').unhighlight();
+            $('#armors_list').highlight($(this).val());
+        });
+    });
+
+    /*
+     * -------------------------
+     * Back to top functionality
+     * -------------------------
+     */
+    $(function() {
+        var offset = 220;
+        var duration = 500;
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > offset) {
+                $('.back-to-top').fadeIn(duration);
+            } else {
+                $('.back-to-top').fadeOut(duration);
+            }
+        });
+
+        $('.back-to-top').click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, duration);
+            return false;
+        });
+    });
+
+    /*
+     * ------------------------------------------
+     * Restore tabs/hidden sections functionality
+     * ------------------------------------------
+     */
+     $(function() {
+        // restore collapsed state on page load
+        $.each(stateStorage.collapsed, function(key, val) {
+            if (val) {
+                $('a[href="' + key + '"]').click();
+            }
+        });
+
+        if (stateStorage.current_tab) {
+            $('.nav.navbar-nav li a[href="' + stateStorage.current_tab + '"]').click();
+        }
+
+        if (typeof stateStorage.hide_completed !== 'undefined' &&
+            stateStorage.hide_completed !== null && stateStorage.hide_completed === true) {
+            $("#toggleHideCompleted").click();
+        }
+
+        // register on click handlers to store state
+        $('a[href$="_col"]').on('click', function(el) {
+            var collapsed_key = $(this).attr('href');
+            var saved_tab_state = !!stateStorage.collapsed[collapsed_key];
+
+            stateStorage.collapsed[$(this).attr('href')] = !saved_tab_state;
+
+            $.jStorage.set(stateKey, stateStorage);
+        });
+
+        $('.nav.navbar-nav li a').on('click', function(el) {
+            stateStorage.current_tab = $(this).attr('href');
+
+            $.jStorage.set(stateKey, stateStorage);
+        });
+     });
 })( jQuery );
