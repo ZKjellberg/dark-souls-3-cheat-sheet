@@ -1,4 +1,5 @@
 var profilesKey = 'darksouls3_profiles';
+var stateKey = 'darksouls3_state';
 
 (function($) {
     'use strict';
@@ -12,6 +13,12 @@ var profilesKey = 'darksouls3_profiles';
         }
     };
     var profiles = $.jStorage.get(profilesKey, defaultProfiles);
+
+    var stateStorage = $.jStorage.get(stateKey, {
+        collapsed: {},
+        current_tab: '#tabPlaythrough',
+        hide_completed: false
+    });
 
     jQuery(document).ready(function($) {
 
@@ -167,6 +174,10 @@ var profilesKey = 'darksouls3_profiles';
             $(this).data("hidden", !hidden);
 
             toggleCompletedCheckboxes(!hidden);
+
+            stateStorage.hide_completed = !hidden;
+
+            $.jStorage.set(stateKey, stateStorage);
         });
 
         calculateTotals();
@@ -333,4 +344,43 @@ var profilesKey = 'darksouls3_profiles';
             return false;
         });
     });
+
+    /*
+     * ------------------------------------------
+     * Restore tabs/hidden sections functionality
+     * ------------------------------------------
+     */
+     $(function() {
+        // restore collapsed state on page load
+        $.each(stateStorage.collapsed, function(key, val) {
+            if (val) {
+                $('a[href="' + key + '"]').click();
+            }
+        });
+
+        if (stateStorage.current_tab) {
+            $('.nav.navbar-nav li a[href="' + stateStorage.current_tab + '"]').click();
+        }
+
+        if (typeof stateStorage.hide_completed !== 'undefined' &&
+            stateStorage.hide_completed !== null && stateStorage.hide_completed === true) {
+            $("#toggleHideCompleted").click();
+        }
+
+        // register on click handlers to store state
+        $('a[href$="_col"]').on('click', function(el) {
+            var collapsed_key = $(this).attr('href');
+            var saved_tab_state = !!stateStorage.collapsed[collapsed_key];
+
+            stateStorage.collapsed[$(this).attr('href')] = !saved_tab_state;
+
+            $.jStorage.set(stateKey, stateStorage);
+        });
+
+        $('.nav.navbar-nav li a').on('click', function(el) {
+            stateStorage.current_tab = $(this).attr('href');
+
+            $.jStorage.set(stateKey, stateStorage);
+        });
+     });
 })( jQuery );
