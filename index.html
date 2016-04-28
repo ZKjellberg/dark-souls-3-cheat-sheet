@@ -1508,52 +1508,19 @@
       </div><!-- /.modal -->
     </div> <!-- tab-content -->
   </div> <!-- container -->
+
+  <div class="hiddenfile">
+    <input name="upload" type="file" id="fileInput"/>
+  </div>
+
+  <a href="#" class="back-to-top">Back to Top</a>
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="https://cdn.rawgit.com/andris9/jStorage/v0.4.12/jstorage.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jets/0.8.0/jets.min.js"></script>
   <script src="js/jquery.highlight.js"></script>
-  <script type="text/javascript">var profilesKey = 'darksouls3_profiles';</script>
   <script src="js/main.js"></script>
-  <script>
-    var jets = new Jets({
-      searchTag: '#playthrough_search',
-      contentTag: '#playthrough_list ul'
-    });
-
-    var jets = new Jets({
-      searchTag: '#item_search',
-      contentTag: '#item_list ul'
-    });
-
-    var jets = new Jets({
-      searchTag: '#weapons_search',
-      contentTag: '#weapons_list ul'
-    });
-
-    var jets = new Jets({
-      searchTag: '#armors_search',
-      contentTag: '#armors_list ul'
-    });
-  </script>
-  <script>
-    $('#playthrough_search').keyup(function() {
-      $('#playthrough_list').unhighlight();
-      $('#playthrough_list').highlight($(this).val());
-    });
-    $('#item_search').keyup(function() {
-      $('#item_list').unhighlight();
-      $('#item_list').highlight($(this).val());
-    });
-    $('#weapons_search').keyup(function() {
-      $('#weapons_list').unhighlight();
-      $('#weapons_list').highlight($(this).val());
-    });
-    $('#armors_search').keyup(function() {
-      $('#armors_list').unhighlight();
-      $('#armors_list').highlight($(this).val());
-    });
-  </script>
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -1562,30 +1529,5 @@
   ga('create', 'UA-66576837-1', 'auto');
   ga('send', 'pageview');
   </script>
-
-  <div class="hiddenfile">
-    <input name="upload" type="file" id="fileInput"/>
-  </div>
-
-  <a href="#" class="back-to-top">Back to Top</a>
-  <script>
-  jQuery(document).ready(function() {
-    var offset = 220;
-    var duration = 500;
-    jQuery(window).scroll(function() {
-        if (jQuery(this).scrollTop() > offset) {
-            jQuery('.back-to-top').fadeIn(duration);
-        } else {
-            jQuery('.back-to-top').fadeOut(duration);
-        }
-    });
-
-    jQuery('.back-to-top').click(function(event) {
-        event.preventDefault();
-        jQuery('html, body').animate({scrollTop: 0}, duration);
-        return false;
-    })
-	});
-	</script>
   </body>
 </html>

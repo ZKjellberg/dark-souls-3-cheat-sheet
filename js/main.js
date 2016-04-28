@@ -1,3 +1,5 @@
+var profilesKey = 'darksouls3_profiles';
+
 (function($) {
     'use strict';
 
@@ -13,13 +15,7 @@
 
     jQuery(document).ready(function($) {
 
-        // TODO Find a better way to do this in one pass
-        $('ul li li').each(function(index) {
-            if ($(this).attr('data-id')) {
-                addCheckbox(this);
-            }
-        });
-        $('ul li').each(function(index) {
+        $('ul li li[data-id], ul li[data-id]').each(function(index) {
             if ($(this).attr('data-id')) {
                 addCheckbox(this);
             }
@@ -136,8 +132,8 @@
           var filename = "profiles.json";
           var text = JSON.stringify(profiles);
           var element = document.createElement('a');
-          element.setAttribute('href', 'data:text/plain;charset=utf-8,'
-            + encodeURIComponent(text));
+          element.setAttribute('href', 'data:text/plain;charset=utf-8,' +
+            encodeURIComponent(text));
           element.setAttribute('download', filename);
           element.style.display = 'none';
           document.body.appendChild(element);
@@ -273,8 +269,68 @@
                 $(this).hide();
             } else {
                 $(this).show();
-            };
+            }
         });
     }
 
+    /*
+     * ----------------------------------
+     * Search and highlight functionality
+     * ----------------------------------
+     */
+    $(function() {
+        var jets = [new Jets({
+            searchTag: '#playthrough_search',
+            contentTag: '#playthrough_list ul'
+        }), new Jets({
+            searchTag: '#item_search',
+            contentTag: '#item_list ul'
+        }), new Jets({
+            searchTag: '#weapons_search',
+            contentTag: '#weapons_list ul'
+        }), new Jets({
+            searchTag: '#armors_search',
+            contentTag: '#armors_list ul'
+        })];
+
+        $('#playthrough_search').keyup(function() {
+            $('#playthrough_list').unhighlight();
+            $('#playthrough_list').highlight($(this).val());
+        });
+        $('#item_search').keyup(function() {
+            $('#item_list').unhighlight();
+            $('#item_list').highlight($(this).val());
+        });
+        $('#weapons_search').keyup(function() {
+            $('#weapons_list').unhighlight();
+            $('#weapons_list').highlight($(this).val());
+        });
+        $('#armors_search').keyup(function() {
+            $('#armors_list').unhighlight();
+            $('#armors_list').highlight($(this).val());
+        });
+    });
+
+    /*
+     * -------------------------
+     * Back to top functionality
+     * -------------------------
+     */
+    $(function() {
+        var offset = 220;
+        var duration = 500;
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > offset) {
+                $('.back-to-top').fadeIn(duration);
+            } else {
+                $('.back-to-top').fadeOut(duration);
+            }
+        });
+
+        $('.back-to-top').click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, duration);
+            return false;
+        });
+    });
 })( jQuery );
