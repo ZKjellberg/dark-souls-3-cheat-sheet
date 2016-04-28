@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Cheat sheet for Dark Souls 3. Checklist of things to do, items to get etc.">
   <meta name="author" content="Zachary Kjellberg">
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link id="bootstrap" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
   <link href="css/main.css" rel="stylesheet">
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -36,6 +36,11 @@
           <li><a href="#tabHelp" data-toggle="tab">Help</a></li>
         </ul><!-- /.nav.navbar-nav -->
         <form class="navbar-form navbar-right">
+          <div class="form-group">
+            <select class="form-control" id="themes">
+              <!-- Gets filled by jQuery. -->
+            </select>
+          </div>
           <div class="form-group">
             <select class="form-control" id="profiles"></select>
           </div>
