@@ -180,6 +180,42 @@ var stateKey = 'darksouls3_state';
             $.jStorage.set(stateKey, stateStorage);
         });
 
+        $("#togglefilter_quest").click(function() {
+            toggleFilterButton($(this), "[X] Quests", "[ ] Quests");
+            toggleFilteredClasses("f_quest");
+            calculateTotals();
+        });
+        $("#togglefilter_estus").click(function() {
+            toggleFilterButton($(this), "[X] Estus", "[ ] Estus");
+            toggleFilteredClasses("f_estus");
+            calculateTotals();
+        });
+        $("#togglefilter_weapon").click(function() {
+            toggleFilterButton($(this), "[X] Weapons", "[ ] Weapons");
+            toggleFilteredClasses("f_wpn");
+            calculateTotals();
+        });
+        $("#togglefilter_armor").click(function() {
+            toggleFilterButton($(this), "[X] Armors", "[ ] Armors");
+            toggleFilteredClasses("f_armor");
+            calculateTotals();
+        });
+        $("#togglefilter_ring").click(function() {
+            toggleFilterButton($(this), "[X] Rings", "[ ] Rings");
+            toggleFilteredClasses("f_ring");
+            calculateTotals();
+        });
+        $("#togglefilter_materials").click(function() {
+            toggleFilterButton($(this), "[X] Materials", "[ ] Materials");
+            toggleFilteredClasses("f_mat");
+            calculateTotals();
+        });
+        $("#togglefilter_misc").click(function() {
+            toggleFilterButton($(this), "[X] Misc", "[ ] Misc");
+            toggleFilteredClasses("f_misc");
+            calculateTotals();
+        });
+
         calculateTotals();
 
     });
@@ -216,12 +252,17 @@ var stateKey = 'darksouls3_state';
             var overallCount = 0, overallChecked = 0;
             $('[id^="' + type + '_totals_"]').each(function(index) {
                 var regex = new RegExp(type + '_totals_(.*)');
+                var regexFilter = new RegExp('^playthrough_(.*)');
                 var i = parseInt(this.id.match(regex)[1]);
                 var count = 0, checked = 0;
                 for (var j = 1; ; j++) {
                     var checkbox = $('#' + type + '_' + i + '_' + j);
                     if (checkbox.length === 0) {
                         break;
+                    }
+                    if (checkbox.is(':hidden') && checkbox.prop('id').match(regexFilter)) {
+                       console.log(checkbox.prop('id'));
+                       continue;
                     }
                     count++;
                     overallCount++;
@@ -281,6 +322,22 @@ var stateKey = 'darksouls3_state';
             } else {
                 $(this).show();
             }
+        });
+    }
+
+    function toggleFilterButton(button, shown_txt, hidden_txt) {
+        var hidden = button.data("hidden");
+        if (hidden) {
+            button.text(shown_txt);
+        } else {
+            button.text(hidden_txt);
+        }
+        button.data("hidden", !hidden);
+    }
+
+    function toggleFilteredClasses(str) {
+        $("li." + str).each(function() {
+             $(this).toggle();
         });
     }
 
