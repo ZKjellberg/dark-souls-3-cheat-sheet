@@ -29,7 +29,7 @@ var stateKey = 'darksouls3_state';
         "Superhero" : "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/superhero/bootstrap.min.css",
         "United" : "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/united/bootstrap.min.css",
         "Yeti" : "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/yeti/bootstrap.min.css"
-    }
+    };
     var profiles = $.jStorage.get(profilesKey, defaultProfiles);
 
     var stateStorage = $.jStorage.get(stateKey, {
@@ -241,7 +241,7 @@ var stateKey = 'darksouls3_state';
     
     // Setup ("bootstrap", haha) styling
     function themeSetup(stylesheet) {
-        if(stylesheet == null || stylesheet == undefined) { // if we didn't get a param, then
+        if(stylesheet === null || stylesheet === undefined) { // if we didn't get a param, then
             stylesheet = $.jStorage.get("style") || "Standard"; // fall back on "light" if cookie not set
         }
         $("#bootstrap").attr("href", themes[stylesheet]);
@@ -253,8 +253,8 @@ var stateKey = 'darksouls3_state';
         $.each(themes, function(key, value){
             themeSelect.append(
                 $('<option></option>').val(key).html(key + " Theme")
-            )
-        })
+            );
+        });
         themeSelect.val(style);
         return style;
     }
@@ -309,7 +309,7 @@ var stateKey = 'darksouls3_state';
                         overallChecked++;
                     }
                 }
-                if (checked == count) {
+                if (checked === count) {
                     this.innerHTML = $('#' + type + '_nav_totals_' + i)[0].innerHTML = 'DONE';
                     $(this).removeClass('in_progress').addClass('done');
                     $($('#' + type + '_nav_totals_' + i)[0]).removeClass('in_progress').addClass('done');
@@ -319,7 +319,7 @@ var stateKey = 'darksouls3_state';
                     $($('#' + type + '_nav_totals_' + i)[0]).removeClass('done').addClass('in_progress');
                 }
             });
-            if (overallChecked == overallCount) {
+            if (overallChecked === overallCount) {
                 this.innerHTML = 'DONE';
                 $(this).removeClass('in_progress').addClass('done');
             } else {
