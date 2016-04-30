@@ -252,7 +252,7 @@ var stateKey = 'darksouls3_state';
                     if (checkbox.length === 0) {
                         break;
                     }
-                    if (checkbox.is(':hidden') && checkbox.prop('id').match(regexFilter)) {
+                    if (checkbox.is(':hidden') && checkbox.prop('id').match(regexFilter) && canFilter(checkbox.closest('li'))) {
                         continue;
                     }
                     count++;
