@@ -311,7 +311,8 @@ var stateKey = 'darksouls3_state';
             if (hide === true) {
                 $(this).hide();
             } else {
-                if ($(this).is('li') && canFilter($(this).closest('li'))) {
+                var regexFilter = new RegExp('^playthrough_(.*)');
+                if ($(this).is('li') && $(this).closest('li').attr('data-id').match(regexFilter) && canFilter($(this).closest('li'))) {
                     return;
                 }
                 $(this).show();
