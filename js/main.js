@@ -20,6 +20,9 @@ var stateKey = 'darksouls3_state';
         hide_completed: false
     });
 
+    var filter_categ = ["f_quest", "f_estus", "f_wpn", "f_armor", "f_ring", "f_mat", "f_misc"];
+    var filter_bools = [false, false, false, false, false, false, false];
+
     jQuery(document).ready(function($) {
 
         $('ul li li[data-id], ul li[data-id]').each(function(index) {
@@ -164,20 +167,45 @@ var stateKey = 'darksouls3_state';
 
         $("#toggleHideCompleted").click(function() {
             var hidden = $(this).data("hidden");
-
             if (hidden === true) {
                 $(this).text("Hide completed");
             } else {
                 $(this).text("Show completed");
             }
-
             $(this).data("hidden", !hidden);
-
+            $(this).button('toggle');
             toggleCompletedCheckboxes(!hidden);
-
             stateStorage.hide_completed = !hidden;
-
             $.jStorage.set(stateKey, stateStorage);
+        });
+
+        $("#togglefilter_quest").click(function() {
+            filter_bools[0] = toggleFilterButton($(this), filter_bools[0], "\u2611 Quests", "\u2610 Quests");
+            toggleFilteredClasses("f_quest");
+        });
+        $("#togglefilter_estus").click(function() {
+            filter_bools[1] = toggleFilterButton($(this), filter_bools[1], "\u2611 Estus", "\u2610 Estus");
+            toggleFilteredClasses("f_estus");
+        });
+        $("#togglefilter_weapon").click(function() {
+            filter_bools[2] = toggleFilterButton($(this), filter_bools[2], "\u2611 Weapons/Shields", "\u2610 Weapons/Shields");
+            toggleFilteredClasses("f_wpn");
+        });
+        $("#togglefilter_armor").click(function() {
+            filter_bools[3] = toggleFilterButton($(this), filter_bools[3], "\u2611 Armors", "\u2610 Armors");
+            toggleFilteredClasses("f_armor");
+        });
+        $("#togglefilter_ring").click(function() {
+            filter_bools[4] = toggleFilterButton($(this), filter_bools[4], "\u2611 Rings", "\u2610 Rings");
+            toggleFilteredClasses("f_ring");
+        });
+        $("#togglefilter_materials").click(function() {
+            filter_bools[5] = toggleFilterButton($(this), filter_bools[5], "\u2611 Materials", "\u2610 Materials");
+            toggleFilteredClasses("f_mat");
+        });
+        $("#togglefilter_misc").click(function() {
+            filter_bools[6] = toggleFilterButton($(this), filter_bools[6], "\u2611 Misc", "\u2610 Misc");
+            toggleFilteredClasses("f_misc");
         });
 
         calculateTotals();
@@ -216,12 +244,16 @@ var stateKey = 'darksouls3_state';
             var overallCount = 0, overallChecked = 0;
             $('[id^="' + type + '_totals_"]').each(function(index) {
                 var regex = new RegExp(type + '_totals_(.*)');
+                var regexFilter = new RegExp('^playthrough_(.*)');
                 var i = parseInt(this.id.match(regex)[1]);
                 var count = 0, checked = 0;
                 for (var j = 1; ; j++) {
                     var checkbox = $('#' + type + '_' + i + '_' + j);
                     if (checkbox.length === 0) {
                         break;
+                    }
+                    if (checkbox.is(':hidden') && checkbox.prop('id').match(regexFilter) && canFilter(checkbox.closest('li'))) {
+                        continue;
                     }
                     count++;
                     overallCount++;
@@ -279,9 +311,54 @@ var stateKey = 'darksouls3_state';
             if (hide === true) {
                 $(this).hide();
             } else {
+                var regexFilter = new RegExp('^playthrough_(.*)');
+                if ($(this).is('li') && $(this).closest('li').attr('data-id').match(regexFilter) && canFilter($(this).closest('li'))) {
+                    return;
+                }
                 $(this).show();
             }
         });
+    }
+
+    function toggleFilterButton(button, f_hidden, shown_txt, hidden_txt) {
+        if (f_hidden) {
+            button.text(shown_txt);
+        } else {
+            button.text(hidden_txt);
+        }
+        button.button('toggle');
+        return !f_hidden;
+    }
+
+    function canFilter(entry) {
+        var regexFilter = new RegExp('^f_(.*)');
+        if (entry.hasClass('') === true) {
+            return true;
+        }
+        var classList = entry.attr('class').split(/\s+/);
+        for (var i = 0; i < classList.length; i++) {
+            if (!classList[i].match(regexFilter)) {
+                continue;
+            }
+            var filterIndex = $.inArray(classList[i] , filter_categ);
+            if(filterIndex !== -1) {
+                if(!filter_bools[filterIndex]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    function toggleFilteredClasses(str) {
+        $("li." + str).each(function() {
+            if(canFilter($(this))) {
+                $(this).hide();
+            } else {
+                $(this).show();
+            }
+        });
+        calculateTotals();
     }
 
     /*
