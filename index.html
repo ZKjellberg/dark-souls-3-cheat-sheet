@@ -16,7 +16,7 @@
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
+	  <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
@@ -33,10 +33,12 @@
           <li><a href="#tabWeaponsShields" data-toggle="tab">Weapons/Shields</a></li>
           <li><a href="#tabArmors" data-toggle="tab">Armor</a></li>
           <li><a href="#tabInformation" data-toggle="tab">Information</a></li>
-          <li><a href="#tabHelp" data-toggle="tab">Help & Options</a></li>
+		  <li><a href="#tabHelp" data-toggle="tab"><span class="glyphicon glyphicon-question-sign"></span></a></li>
+		  <li><a href="#tabOptions" data-toggle="tab"><span class="glyphicon glyphicon-cog"></span></a></li>
+		  </div>
         </ul><!-- /.nav.navbar-nav -->
 
-      </div><!-- /.navbar-collapse -->
+      <!--</div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
 
@@ -55,9 +57,7 @@
       <p>
         <em>Warning: Contains Spoilers!</em>
       </p>
-      <div class="btn-group" role="group">
-          <button type="button" class="btn btn-default" id="toggleHideCompleted" data-hidden="false">Hide completed</button>
-      </div>
+
     </div>
 
     <div class="tab-content">
@@ -1460,32 +1460,8 @@
           </tbody>
         </table>
       </div>
+	  
       <div class="tab-pane" id="tabHelp">
-      <h2>Options</h2>
-      <div class="row">
-        <div class="col col-md-8">
-          <h4>The theme selection changes the look and feel of this site.</h4>
-        </div>
-        <div class="col col-md-4">
-          <select class="form-control" id="themes"><!-- Gets filled by jQuery. --></select>
-        </div>
-      </div>
-        <div class="row">
-          <div class="col col-md-6">
-            <h4>Switch your profiles at will</h4>
-          </div>
-          <div class="col col-md-6">
-            <form class="form-inline  pull-right">
-              <div class="form-group">
-                <select class="form-control" id="profiles"></select>
-              </div>
-              <button class="btn btn-default" type="button" id="profileAdd">Add</button>
-              <button class="btn btn-default" type="button" id="profileEdit">Edit</button>
-              <button class="btn btn-default" type="button" id="profileImport">Import</button>
-              <button class="btn btn-default" type="button" id="profileExport">Export</button>
-            </form>
-          </div>
-        </div>
 
         <h2>Help</h2>
         <h3>Is this a guide?</h3>
@@ -1508,7 +1484,39 @@
         <h3>How does the checklist status get saved?</h3>
         <p>It gets saved to the local storage in your browser and not to any database or API. So if you are clearing your browser cache make sure not to delete the site data or your checklists will get reset.</p>
       </div>
-      <div id="profileModal" class="modal fade" tabindex="-1" role="dialog">
+	  
+      <div class="tab-pane" id="tabOptions">
+		  <h2>Options</h2>
+	   <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default" id="toggleHideCompleted" data-hidden="false">Hide completed</button>
+       </div>
+		  <div class="row">
+			<div class="col col-md-8">
+			  <h4>The theme selection changes the look and feel of this site.</h4>
+			</div>
+			<div class="col col-md-4">
+			  <select class="form-control" id="themes"><!-- Gets filled by jQuery. --></select>
+			</div>
+		  </div>
+			<div class="row">
+			  <div class="col col-md-6">
+				<h4>Switch your profiles at will</h4>
+			  </div>
+			  <div class="col col-md-6">
+				<form class="form-inline  pull-right">
+				  <div class="form-group">
+					<select class="form-control" id="profiles"></select>
+				  </div>
+				  <button class="btn btn-default" type="button" id="profileAdd">Add</button>
+				  <button class="btn btn-default" type="button" id="profileEdit">Edit</button>
+				  <button class="btn btn-default" type="button" id="profileImport">Import</button>
+				  <button class="btn btn-default" type="button" id="profileExport">Export</button>
+				</form>
+			  </div>
+			</div>
+		  </div>
+
+		  <div id="profileModal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
