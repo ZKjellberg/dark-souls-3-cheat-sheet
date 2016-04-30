@@ -311,6 +311,9 @@ var stateKey = 'darksouls3_state';
             if (hide === true) {
                 $(this).hide();
             } else {
+                if ($(this).is('li') && canFilter($(this).closest('li'))) {
+                    return;
+                }
                 $(this).show();
             }
         });
