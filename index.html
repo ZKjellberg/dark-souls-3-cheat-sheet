@@ -63,16 +63,15 @@
       <p>
         <em>Warning: Contains Spoilers!</em>
       </p>
+      <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default" id="toggleHideCompleted" data-hidden="false">Hide completed</button>
+      </div>
     </div>
 
     <div class="tab-content">
         <!-- PLAYTHROUGH START -->
         <div class="tab-pane active" id="tabPlaythrough">
             <!-- Toolbar -->
-            <div class="btn-toolbar" role="toolbar">
-            <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default" id="toggleHideCompleted" data-hidden="false">Hide completed</button>
-            </div>
             <div class="btn-group" role="group">
                 <button type="button" class="btn btn-default" id="togglefilter_quest">&#9745; Quests</button>
                 <button type="button" class="btn btn-default" id="togglefilter_estus">&#9745; Estus</button>
@@ -81,7 +80,6 @@
                 <button type="button" class="btn btn-default" id="togglefilter_ring">&#9745; Rings</button>
                 <button type="button" class="btn btn-default" id="togglefilter_materials">&#9745; Materials</button>
                 <button type="button" class="btn btn-default" id="togglefilter_misc">&#9745; Misc</button>
-            </div>
             </div>    
         <h2>Playthrough Checklist <span id="playthrough_overall_total"></span></h2>
         <ul class="table_of_contents">
