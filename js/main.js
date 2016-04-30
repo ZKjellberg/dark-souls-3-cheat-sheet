@@ -20,6 +20,9 @@ var stateKey = 'darksouls3_state';
         hide_completed: false
     });
 
+    var filter_categ = ["f_quest", "f_estus", "f_wpn", "f_armor", "f_ring", "f_mat", "f_misc"];
+    var filter_bools = [false, false, false, false, false, false, false];
+
     jQuery(document).ready(function($) {
 
         $('ul li li[data-id], ul li[data-id]').each(function(index) {
@@ -181,39 +184,32 @@ var stateKey = 'darksouls3_state';
         });
 
         $("#togglefilter_quest").click(function() {
-            toggleFilterButton($(this), "[X] Quests", "[ ] Quests");
+            filter_bools[0] = toggleFilterButton($(this), filter_bools[0], "[X] Quests", "[ ] Quests");
             toggleFilteredClasses("f_quest");
-            calculateTotals();
         });
         $("#togglefilter_estus").click(function() {
-            toggleFilterButton($(this), "[X] Estus", "[ ] Estus");
+            filter_bools[1] = toggleFilterButton($(this), filter_bools[1], "[X] Estus", "[ ] Estus");
             toggleFilteredClasses("f_estus");
-            calculateTotals();
         });
         $("#togglefilter_weapon").click(function() {
-            toggleFilterButton($(this), "[X] Weapons", "[ ] Weapons");
+            filter_bools[2] = toggleFilterButton($(this), filter_bools[2], "[X] Weapons", "[ ] Weapons");
             toggleFilteredClasses("f_wpn");
-            calculateTotals();
         });
         $("#togglefilter_armor").click(function() {
-            toggleFilterButton($(this), "[X] Armors", "[ ] Armors");
+            filter_bools[3] = toggleFilterButton($(this), filter_bools[3], "[X] Armors", "[ ] Armors");
             toggleFilteredClasses("f_armor");
-            calculateTotals();
         });
         $("#togglefilter_ring").click(function() {
-            toggleFilterButton($(this), "[X] Rings", "[ ] Rings");
+            filter_bools[4] = toggleFilterButton($(this), filter_bools[4], "[X] Rings", "[ ] Rings");
             toggleFilteredClasses("f_ring");
-            calculateTotals();
         });
         $("#togglefilter_materials").click(function() {
-            toggleFilterButton($(this), "[X] Materials", "[ ] Materials");
+            filter_bools[5] = toggleFilterButton($(this), filter_bools[5], "[X] Materials", "[ ] Materials");
             toggleFilteredClasses("f_mat");
-            calculateTotals();
         });
         $("#togglefilter_misc").click(function() {
-            toggleFilterButton($(this), "[X] Misc", "[ ] Misc");
+            filter_bools[6] = toggleFilterButton($(this), filter_bools[6], "[X] Misc", "[ ] Misc");
             toggleFilteredClasses("f_misc");
-            calculateTotals();
         });
 
         calculateTotals();
@@ -261,7 +257,6 @@ var stateKey = 'darksouls3_state';
                         break;
                     }
                     if (checkbox.is(':hidden') && checkbox.prop('id').match(regexFilter)) {
-                       console.log(checkbox.prop('id'));
                        continue;
                     }
                     count++;
@@ -325,20 +320,42 @@ var stateKey = 'darksouls3_state';
         });
     }
 
-    function toggleFilterButton(button, shown_txt, hidden_txt) {
-        var hidden = button.data("hidden");
-        if (hidden) {
+    function toggleFilterButton(button, f_hidden, shown_txt, hidden_txt) {
+        if (f_hidden) {
             button.text(shown_txt);
         } else {
             button.text(hidden_txt);
         }
-        button.data("hidden", !hidden);
+        button.button('toggle');
+        return !f_hidden;
+    }
+
+    function canFilter(entry) {
+        var regexFilter = new RegExp('^f_(.*)');
+        var classList = entry.attr('class').split(/\s+/);
+        for (var i = 0; i < classList.length; i++) {
+            if (!classList[i].match(regexFilter)) {
+                continue;
+            }
+            var filterIndex = $.inArray(classList[i] , filter_categ);
+            if(filterIndex !== -1) {
+                if(!filter_bools[filterIndex]) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     function toggleFilteredClasses(str) {
         $("li." + str).each(function() {
-             $(this).toggle();
+            if(canFilter($(this))) {
+                $(this).hide();
+            } else {
+                $(this).show();
+            }
         });
+        calculateTotals();
     }
 
     /*
