@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Cheat sheet for Dark Souls 3. Checklist of things to do, items to get etc.">
   <meta name="author" content="Zachary Kjellberg">
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link id="bootstrap" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
   <link href="css/main.css" rel="stylesheet">
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -33,17 +33,9 @@
           <li><a href="#tabWeaponsShields" data-toggle="tab">Weapons/Shields</a></li>
           <li><a href="#tabArmors" data-toggle="tab">Armor</a></li>
           <li><a href="#tabInformation" data-toggle="tab">Information</a></li>
-          <li><a href="#tabHelp" data-toggle="tab">Help</a></li>
+          <li><a href="#tabHelp" data-toggle="tab">Help & Options</a></li>
         </ul><!-- /.nav.navbar-nav -->
-        <form class="navbar-form navbar-right">
-          <div class="form-group">
-            <select class="form-control" id="profiles"></select>
-          </div>
-          <button class="btn btn-default" type="button" id="profileAdd">Add</button>
-          <button class="btn btn-default" type="button" id="profileEdit">Edit</button>
-          <button class="btn btn-default" type="button" id="profileImport">Import</button>
-          <button class="btn btn-default" type="button" id="profileExport">Export</button>
-        </form><!-- /.navbar-form.navbar-right -->
+
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
@@ -1469,8 +1461,33 @@
         </table>
       </div>
       <div class="tab-pane" id="tabHelp">
-        <h2>Help</h2>
+      <h2>Options</h2>
+      <div class="row">
+        <div class="col col-md-8">
+          <h4>The theme selection changes the look and feel of this site.</h4>
+        </div>
+        <div class="col col-md-4">
+          <select class="form-control" id="themes"><!-- Gets filled by jQuery. --></select>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col col-md-6">
+            <h4>Switch your profiles at will</h4>
+          </div>
+          <div class="col col-md-6">
+            <form class="form-inline  pull-right">
+              <div class="form-group">
+                <select class="form-control" id="profiles"></select>
+              </div>
+              <button class="btn btn-default" type="button" id="profileAdd">Add</button>
+              <button class="btn btn-default" type="button" id="profileEdit">Edit</button>
+              <button class="btn btn-default" type="button" id="profileImport">Import</button>
+              <button class="btn btn-default" type="button" id="profileExport">Export</button>
+            </form>
+          </div>
+        </div>
 
+        <h2>Help</h2>
         <h3>Is this a guide?</h3>
         <p>Nope, not really. This is a set of checklists and information that you can use while playing Dark Souls to make sure you don't miss an item, action, conversation or boss. If you need playthroughs then you can click on the links scattered throughout the page to find them in the wiki.</p>
 
