@@ -188,7 +188,7 @@ var stateKey = 'darksouls3_state';
             toggleFilteredClasses("f_estus");
         });
         $("#togglefilter_weapon").click(function() {
-            filter_bools[2] = toggleFilterButton($(this), filter_bools[2], "\u2611 Weapons", "\u2610 Weapons");
+            filter_bools[2] = toggleFilterButton($(this), filter_bools[2], "\u2611 Weapons/Shields", "\u2610 Weapons/Shields");
             toggleFilteredClasses("f_wpn");
         });
         $("#togglefilter_armor").click(function() {
