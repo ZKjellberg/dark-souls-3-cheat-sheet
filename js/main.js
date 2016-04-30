@@ -167,19 +167,15 @@ var stateKey = 'darksouls3_state';
 
         $("#toggleHideCompleted").click(function() {
             var hidden = $(this).data("hidden");
-
             if (hidden === true) {
                 $(this).text("Hide completed");
             } else {
                 $(this).text("Show completed");
             }
-
             $(this).data("hidden", !hidden);
-
+            $(this).button('toggle');
             toggleCompletedCheckboxes(!hidden);
-
             stateStorage.hide_completed = !hidden;
-
             $.jStorage.set(stateKey, stateStorage);
         });
 
@@ -257,7 +253,7 @@ var stateKey = 'darksouls3_state';
                         break;
                     }
                     if (checkbox.is(':hidden') && checkbox.prop('id').match(regexFilter)) {
-                       continue;
+                        continue;
                     }
                     count++;
                     overallCount++;
