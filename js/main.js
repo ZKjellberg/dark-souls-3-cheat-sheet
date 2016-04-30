@@ -180,31 +180,31 @@ var stateKey = 'darksouls3_state';
         });
 
         $("#togglefilter_quest").click(function() {
-            filter_bools[0] = toggleFilterButton($(this), filter_bools[0], "[X] Quests", "[ ] Quests");
+            filter_bools[0] = toggleFilterButton($(this), filter_bools[0], "\u2611 Quests", "\u2610 Quests");
             toggleFilteredClasses("f_quest");
         });
         $("#togglefilter_estus").click(function() {
-            filter_bools[1] = toggleFilterButton($(this), filter_bools[1], "[X] Estus", "[ ] Estus");
+            filter_bools[1] = toggleFilterButton($(this), filter_bools[1], "\u2611 Estus", "\u2610 Estus");
             toggleFilteredClasses("f_estus");
         });
         $("#togglefilter_weapon").click(function() {
-            filter_bools[2] = toggleFilterButton($(this), filter_bools[2], "[X] Weapons", "[ ] Weapons");
+            filter_bools[2] = toggleFilterButton($(this), filter_bools[2], "\u2611 Weapons", "\u2610 Weapons");
             toggleFilteredClasses("f_wpn");
         });
         $("#togglefilter_armor").click(function() {
-            filter_bools[3] = toggleFilterButton($(this), filter_bools[3], "[X] Armors", "[ ] Armors");
+            filter_bools[3] = toggleFilterButton($(this), filter_bools[3], "\u2611 Armors", "\u2610 Armors");
             toggleFilteredClasses("f_armor");
         });
         $("#togglefilter_ring").click(function() {
-            filter_bools[4] = toggleFilterButton($(this), filter_bools[4], "[X] Rings", "[ ] Rings");
+            filter_bools[4] = toggleFilterButton($(this), filter_bools[4], "\u2611 Rings", "\u2610 Rings");
             toggleFilteredClasses("f_ring");
         });
         $("#togglefilter_materials").click(function() {
-            filter_bools[5] = toggleFilterButton($(this), filter_bools[5], "[X] Materials", "[ ] Materials");
+            filter_bools[5] = toggleFilterButton($(this), filter_bools[5], "\u2611 Materials", "\u2610 Materials");
             toggleFilteredClasses("f_mat");
         });
         $("#togglefilter_misc").click(function() {
-            filter_bools[6] = toggleFilterButton($(this), filter_bools[6], "[X] Misc", "[ ] Misc");
+            filter_bools[6] = toggleFilterButton($(this), filter_bools[6], "\u2611 Misc", "\u2610 Misc");
             toggleFilteredClasses("f_misc");
         });
 
