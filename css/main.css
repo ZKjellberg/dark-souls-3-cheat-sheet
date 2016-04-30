@@ -83,6 +83,11 @@ h3 {
   vertical-align: top;
 }
 
+.btn:focus, .btn.active:focus {
+    outline: none;
+    outline: 0;
+}
+
 /* Icon when the collapsible content is shown */
 .btn-collapse:after {
   font-family: 'Glyphicons Halflings';
