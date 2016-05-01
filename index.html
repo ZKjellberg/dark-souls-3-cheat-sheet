@@ -62,14 +62,36 @@
         <!-- PLAYTHROUGH START -->
         <div class="tab-pane active" id="tabPlaythrough">
             <!-- Toolbar -->
+            <h3>Filter Checklist</h3></br>
             <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default" id="togglefilter_quest">&#9745; Quests</button>
-                <button type="button" class="btn btn-default" id="togglefilter_estus">&#9745; Estus</button>
-                <button type="button" class="btn btn-default" id="togglefilter_weapon">&#9745; Weapons/Shields</button>
-                <button type="button" class="btn btn-default" id="togglefilter_armor">&#9745; Armors</button>
-                <button type="button" class="btn btn-default" id="togglefilter_ring">&#9745; Rings</button>
-                <button type="button" class="btn btn-default" id="togglefilter_materials">&#9745; Materials</button>
-                <button type="button" class="btn btn-default" id="togglefilter_misc">&#9745; Misc</button>
+                <button type="button" class="btn btn-default filter-inactive" id="togglefilter_quest">
+                    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Quests
+                </button>
+                <button type="button" class="btn btn-default filter-inactive" id="togglefilter_estus">
+                    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Estus
+                </button>
+                <button type="button" class="btn btn-default filter-inactive" id="togglefilter_weapon">
+                    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Weapons/Shields
+                </button>
+                <button type="button" class="btn btn-default filter-inactive" id="togglefilter_armor">
+                    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Armors
+                </button>
+                <button type="button" class="btn btn-default filter-inactive" id="togglefilter_ring">
+                    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Rings
+                </button>
+                <button type="button" class="btn btn-default filter-inactive" id="togglefilter_materials">
+                    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Materials
+                </button>
+                <button type="button" class="btn btn-default filter-inactive" id="togglefilter_misc">
+                    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Misc
+                </button>
             </div>
         <h2>Playthrough Checklist <span id="playthrough_overall_total"></span></h2>
         <ul class="table_of_contents">
@@ -156,7 +178,7 @@
           <li data-id="playthrough_3_3">Yoel Progress: Accept Yoel's offer to Draw Out True Strength. You'll gain a free level, but also gain a Dark Sigil, which will start your Hollowing clock. Each time you die from here on out, you'll gain 1 Hollowing and become more and more Hollow, which also affects your appearance. Yoel will offer 4 more Draw Out True Strengths at Hollowing Level 2, 6, 12, and 16. Each additional Dark Sigil acts as…Double XP for your Hollowing Level, so it shouldn't take long to all 5 Dark Sigils (Just throw yourself off the cliff of Firelink Shrine over and over). If you do not do this step before reaching the Catacombs of Carthus, Yoel will automatically expire and you'll lose your chance at the Usurpation of Fire Ending</li>
           <li data-id="playthrough_3_4">If you get all 5 Dark Sigils and refresh the world, Yoel will be dead and Yuria will be located near his dead body. Talk to her (Receive Dignified Bow Gesture) and buy the Londor Braille Divine Tome. You can give it to Irina when you get her if you want, but note that buying any of the spells it offers will lead to her bad ending. Otherwise, hang onto it until you find Karla later in the game</li>
           <li data-id="playthrough_3_5">Greirat Progress: To find Loretta's Bone in Undead Settlement, spawn at the Undead Settlement bonfire and continue into the first house. Walk out onto the balcony and you'll see a hanging body you can cut down, which contains Loretta's Bone. Return to Firelink Shrine and give Greirat the item and he'll state you can keep the Blue Tearstone Ring</li>
-          <li data-id="playthrough_3_6">Andre Progress: Grab Estus Shard by the burning tree with worshipping undead. This is to the left of the Undead Settlement Bonfire, past the house</li>
+          <li class="f_estus" data-id="playthrough_3_6">Andre Progress: Grab Estus Shard by the burning tree with worshipping undead. This is to the left of the Undead Settlement Bonfire, past the house</li>
           <li data-id="playthrough_3_7">You can find the Warriors of Sunlight covenant in a hidden room in the building after the congregation in front of the tree. There will be a hole in the floor that you can drop into. Room also has an Estus Soup for reference</li>
           <li data-id="playthrough_3_8">You can find the Mound-Makers covenant by climbing into the cage of the saw wielding enemy with an empty cage on his back, across the bridge and over the house from the Undead Settlement bonfire. You can only do this before the Curse-rotted Greatwood has been slain or else Holy Knight Hodrick will die from the floor breaking during the boss fight. If this does occur, you can acquire the covenant later through Sirris' side quest</li>
           <li data-id="playthrough_3_9">Find Cornyx in the Undead Settlement above the Cliff Underside bonfire, which can be gotten by dropping to a ledge below the bridge that is right in front of the building that has 3 firebomb throwing undead on top of it. From the bonfire, get to the top of the building and kill the undead. You'll find a cage on the balcony that contains Cornyx. Agree to let him go to Firelink Shrine and he'll teleport there</li>
@@ -180,7 +202,7 @@
           <li data-id="playthrough_4_4">Cornyx Progress: In the swamp area with the two giant enemy crabs, the Great Swamp Pyromancy Tome will be in an area of the swamp that causes you to fat roll</li>
           <li data-id="playthrough_4_5">Kill Yellowfinger Heysel, who will invade your world if you are embered around the area where the two giant crabs are</li>
           <li data-id="playthrough_4_6">Andre Progress: At the Halfway Fortress bonfire in Road of Sacrifices, head out and drop down from the ledges on the right side, keep going straight along the right wall and enter a doorway in the end. Turn left and you will see a Black Knight guarding a few bodies, the body at the end of the hall holds the Farron Coal, which grants you Heavy, Sharp and Poison Infusions</li>
-          <li data-id="playthrough_4_7">Andre Progress: Grab the Estus Shard on the side of the ruins near the Crucifixion Woods bonfire. It will be near a fire that has two Lycanthropes</li>
+          <li class="f_estus" data-id="playthrough_4_7">Andre Progress: Grab the Estus Shard on the side of the ruins near the Crucifixion Woods bonfire. It will be near a fire that has two Lycanthropes</li>
           <li data-id="playthrough_4_8">Enter the ruins near the Crucifixion Woods bonfire, head up the stairs, cross the bridge, and you'll notice an area to the left right after getting off the bridge that'll lead you to the upper area of the ruins that contains Orbeck. Talk to him and he'll agree to teach you in sorceries only if you have at least a 10 in Intelligence. You'll also make him a promise to give him scrolls to learn more spells, you MUST give him a scroll before defeating the Abyss Watchers or else he will leave</li>
           <li data-id="playthrough_4_9">Defeat the <a href="http://darksouls3.wiki.fextralife.com/Crystal+Sage"> Crystal Sage</a></li>
         </ul>
@@ -189,7 +211,7 @@
         <ul id="Cathedral_of_the_Deep_col" class="collapse in">
           <li data-id="playthrough_5_1">Talk to Sirris at Firelink Shrine to begin her quest line</li>
           <li data-id="playthrough_5_2">Shrine Handmaid Progress: Near the first bonfire behind a hostile NPC are the Paladin's Ashes</li>
-          <li data-id="playthrough_5_3">Andre Progress: Grab the Estus Shard right outside the Cleansing Chapel bonfire where enemies are praying</li>
+          <li class="f_estus" data-id="playthrough_5_3">Andre Progress: Grab the Estus Shard right outside the Cleansing Chapel bonfire where enemies are praying</li>
           <li data-id="playthrough_5_4">Irina/Karla Progress: The Deep Braille Divine Tome can be found on a mimic chest. Remember, giving this to Irina and buying any of the spells it unlocks will lock you into the bad ending of her quest. I recommend saving this for Karla, unless you really want some of the spells</li>
           <li data-id="playthrough_5_5">Firelink Shrine Bonfire Progress: Grab the Undead Bone Shard near a white tree that the Giant throws spears around, on the roof area of the Cathedral after navigating the graveyard and crossing a bridge</li>
           <li data-id="playthrough_5_17">Kill Longfinger Kirk, who will invade your world if you are embered on the ground floor of the cathedral between the area where the two giants are. He drops the Barbed Straight Sword and Spiked Shield, you will then be able to pick up the rest of his armor later in Rosaria's chamber.</li>
@@ -199,7 +221,7 @@
           <li data-id="playthrough_5_8">Patches Progress: From here, head out to the 2nd shortcut back to the Cleansing Chapel bonfire and use the lift to get to a crossbow undead's tower. Kill him and move towards the edge of the tower, but don't drop down. Instead, look to see that you can move towards the left and find a ladder. Ascend the ladder and continue up the roof to eventually reach the rafters of the Cathedral. You'll now be able to drop down to the other side of the bridge that Patches activated. Patches will be waiting here and pretend to not be responsible for what just happened. Tell him "You know who I am" (Receive Prostration Gesture). You can then buy Siegward's Armor Set from him</li>
           <li data-id="playthrough_5_9">Leonhard Progress: Before leaving this area, continue on up the nearby stairs and you'll eventually find yourself at the Rosaria's Chamber bonfire. Speak with Rosaria to obtain the Rosaria's Fingers covenant. Do not do anything further with this covenant if you intend to do Sirris' quest line. Don't give Rosaria any Pale Tongues and don't equip the Rosaria's Fingers covenant item. We'll continue this side quest closer to the end of the game</li>
           <li data-id="playthrough_5_10">Patches Progress: If Patches didn't spawn at the Cathedral, return to Firelink Shrine and purchase the Tower Key if you haven't already and head into the Tower behind Firelink Shrine now. As you ascend the lift to the top, you'll hear a door shut behind you. Grab the Fire Keeper's Soul at the top and then come back down to encounter Patches. He has locked the door and you'll need to drop down from the bridge onto coffins to escape</li>
-          <li data-id="playthrough_5_11">Andre Progress: Head back to the Tower and get to the bridge that overlooks Firelink Shrine. Drop down onto the roof and move around the roof until you find some windows you can go through. A Estus Shard will be on the rafters</li>
+          <li class="f_estus" data-id="playthrough_5_11">Andre Progress: Head back to the Tower and get to the bridge that overlooks Firelink Shrine. Drop down onto the roof and move around the roof until you find some windows you can go through. A Estus Shard will be on the rafters</li>
           <li data-id="playthrough_5_12">While on the roof, you can talk to Snuggly the Crow. Trading with him will get you the Call Over Gesture</li>
           <li data-id="playthrough_5_13">Fire Keeper Progress: With the Fire Keeper's Soul, you can heal Dark Sigils that you have in order to completely get rid of your Hollowing Level. If you are following Yoel/Yuria's quest line, however, don't do this until the post game or you'll end up angering Yoel/Yuria</li>
           <li data-id="playthrough_5_14">Patches Progress: Refresh Firelink Shrine and head to the upper right to find Patches now located there. He'll ask for forgiveness, refuse (Receive Prostration Gesture and Rusted Gold Coin). You can then buy Siegward's Armor Set from him. Leaving Firelink Shrine and returning will sometimes allow Patches to be in his squatting position. Interact with him (Receive Patches Squat Gesture)</li>
@@ -211,7 +233,7 @@
         <ul id="Farron_Keep_col" class="collapse in">
           <li data-id="playthrough_6_6">Anri Progress: After defeating the Deacons of the Deep, return to Firelink Shrine to find Anri and Horace. You can speak to them for some additional dialogue</li>
           <li data-id="playthrough_6_1">Andre Progress: From the first bonfire of Farron Keep, stay to the left side until you reach a small structure guarded by a darkwraith. The Sage's Coal is in a body inside this structure, which grants you Crystal, Blessed and Deep Infusions</li>
-          <li data-id="playthrough_6_2">Andre Progress: Grab the Estus Shard as you come into the area from Road of Sacrifices, towards the left. The shard will be visible against a wall</li>
+          <li class="f_estus" data-id="playthrough_6_2">Andre Progress: Grab the Estus Shard as you come into the area from Road of Sacrifices, towards the left. The shard will be visible against a wall</li>
           <li data-id="playthrough_6_3">Orbeck Progress: Spawn at the Keep Ruins bonfire and go out towards the Wolf Gate and turn left. Follow the wall and you'll eventually find the Sage's Scroll</li>
           <li data-id="playthrough_6_4">Orbeck Progress: From the first bonfire, head out and go towards the right where you'll start to encounter basilisks. There will be a cave in this area that will contain a chest with the Golden Scroll inside. Make sure to give him at least one scroll before beating the Abyss Watchers or he'll leave forever</li>
           <li data-id="playthrough_6_5">Firelink Shrine Bonfire Progress: Grab the Undead Bone Shard on the bottom of the tower to the right of the Wolf Gate with the three flames that you have to light. It is surrounded by a bunch of slugs</li>
@@ -245,7 +267,7 @@
           <li data-id="playthrough_14_2">Cornyx Progress: While fighting the <a href="http://darksouls3.wiki.fextralife.com/Old+Demon+King">Old Demon King</a>, you can summon the NPC phantom Great Swamp Cuculus. Defeat the <a href="http://darksouls3.wiki.fextralife.com/Old+Demon+King">Old Demon King</a> with this NPC surviving and go back to the cage in Undead Settlement you found Cornyx in (Receive <a href="http://darksouls3.wiki.fextralife.com/Cornyx's+Set">Cornyx's Armor Set</a> and <a href="http://darksouls3.wiki.fextralife.com/Spotted%20Whip">Spotted Whip</a>)</li>
           <li data-id="playthrough_14_3">Head into the area where the Demon Ruins bonfire is as this'll be where the bulk of the main items for this area are</li>
           <li data-id="playthrough_14_4">Firelink Shrine Bonfire Progress: The first enemies you encounter in the Demon Ruins are some Demon Clerics. You'll be on a top floor and see stairs nearby. Head down them and then move towards the left where there will be more Demon Clerics. Behind this group is another Undead Bone Shard</li>
-          <li data-id="playthrough_14_5">Andre Progress: Once you locate the Old King's Antechamber bonfire in this area, there will be a illusory wall in the same room. Activate it and then move down the hallway that has loads of Writhing Rotten Flesh enemies on the ceiling and grab the Estus Shard on a body at the end</li>
+          <li class="f_estus" data-id="playthrough_14_5">Andre Progress: Once you locate the Old King's Antechamber bonfire in this area, there will be a illusory wall in the same room. Activate it and then move down the hallway that has loads of Writhing Rotten Flesh enemies on the ceiling and grab the Estus Shard on a body at the end</li>
           <li data-id="playthrough_14_6">Cornyx Progress: In a room following the Old King's Antechamber, you'll find the Izalith Pyromancy Tome on the ground</li>
           <li data-id="playthrough_14_7">Karla Progress: Once again, you don't have Karla yet, but you can find the last Pyromancy Tome that she can read. From the Old King's Antechamber bonfire, hit the illusory wall in the room and head back out to the large room with the Demon Clerics. There is a corridor out of this room where you'll see the tome, but there will be a large hole that leads to a giant rat. Head down the hole, kill the rat, head straight, take a left, take another left, and in this room there will be another illusory wall that leads to the Quelana Pyromancy Tome</li>
           <li data-id="playthrough_14_8">Further into the Demon Ruins, you'll come to a point where there are several basilisks and you'll see some stairs. Instead of going up the stairs, take a left when you get to them and you'll encounter Knight Slayer Tsorig. Defeating him will gain you the My Thanks! Gesture. After killing him, the <a href="http://darksouls3.wiki.fextralife.com/Black+Iron+Set">Black Iron Set</a> can be obtained via the <a href="http://darksouls3.wiki.fextralife.com/Shrine+Handmaid">Shrine Handmaid</a></li>
@@ -278,7 +300,7 @@
         <ul id="Anor_Londo_col" class="collapse in">
           <li data-id="playthrough_8_1">After using the lift to get to Anor Londo, run back down the stairs and you'll be able to see a tower in the distance. Walk across the sky to reveal a invisible floor and continue walking straight until lined up with the tower, then walk towards it. You'll find Yorshka who will allow you into the Blades of the Darkmoon covenant. If she doesn't allow you, perform the Darkmoon Loyalty gesture in front of her to prove you are worthy</li>
           <li data-id="playthrough_8_2">Andre Progress: Once looking at the Anor Londo main door, head left and you'll find a dead Giant with the Giant's Coal by his body, which will grant you Lightning, Simple and Chaos Infusions</li>
-          <li data-id="playthrough_8_3">Andre Progress: Once inside the main castle, there will be an area on the ground floor with several Writhing Rotten Flesh enemies. Next to them will be a chest with a Estus Shard within it</li>
+          <li class="f_estus" data-id="playthrough_8_3">Andre Progress: Once inside the main castle, there will be an area on the ground floor with several Writhing Rotten Flesh enemies. Next to them will be a chest with a Estus Shard within it</li>
           <li data-id="playthrough_8_4">Anri A Progress: Open the main doors using the lever and fight the Deep Accursed enemy. You'll then find Anri's summon sign right next to the doors and be summoned to her world to fight her version of Aldrich</li>
           <li data-id="playthrough_8_9">Defeat <a href="http://darksouls3.wiki.fextralife.com/Aldrich,+Devourer+of+Gods">Aldrich, Devourer of Gods</a></li>
           <li data-id="playthrough_8_5">Anri A Progress: After defeating him, return to Firelink Shrine and talk to Ludleth and he'll give you Anri's Straight Sword, stating that she left it for you now that her mission was complete</li>
@@ -290,7 +312,7 @@
         <h3 id="Irithyll_Dungeon"><a href="#Irithyll_Dungeon_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Irithyll+Dungeon">Irithyll Dungeon</a> <span id="playthrough_totals_16"></span></h3>
         <ul id="Irithyll_Dungeon_col" class="collapse in">
           <li data-id="playthrough_16_1">From here warp back to the bonfire near the Irithyll swamp. Follow the path down towards the Irithyll Dungeon. When you are outside on a cliffside path Alva Seeker of the Spurned, will invade if you are embered. She drops the Murakumo when killed.</li>
-          <li data-id="playthrough_16_2">Andre Progress: A decent amount into the Irithyll Dungeon, you'll eventually get outside the dungeon area for a brief period and then head back into it with a room that as a Mimic chest. Kill the mimic and it'll drop a Estus Shard</li>
+          <li class="f_estus" data-id="playthrough_16_2">Andre Progress: A decent amount into the Irithyll Dungeon, you'll eventually get outside the dungeon area for a brief period and then head back into it with a room that as a Mimic chest. Kill the mimic and it'll drop a Estus Shard</li>
           <li data-id="playthrough_16_3">Siegward Progress: In the room with the Giant, kill him and then near where he was, you can talk to Siegward, who is trapped in a cell. The key to get to him is the Old Cell Key, which is in the exact room you're currently in next to a Crystal Lizard. You'll learn how to actually get to Siegward later</li>
           <li data-id="playthrough_16_4">Andre Progress: A little past the previous room and a sewer, you'll come to an area with several Jailers. After coming out of the cell that contained two giant rats, head directly straight and you'll come to another cell that contains four Wretches and the Profaned Coal, which grants Dark, Blood and Hollow Infusions</li>
           <li data-id="playthrough_16_5">Shrine Handmaid Progress: On the same side of the room will be another cell that contains the Xanthous Ashes</li>
@@ -312,7 +334,7 @@
 
         <h3 id="Consumed_Kings_Garden"><a href="#Consumed_Kings_Garden_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Consumed+King's+Garden">Consumed King's Garden</a> <span id="playthrough_totals_10"></span></h3>
         <ul id="Consumed_Kings_Garden_col" class="collapse in">
-          <li data-id="playthrough_10_1">Andre Progress: After defeating the Dancer of the Boreal Valley and activating the ladder that was behind Emma, head up it and take the first left to reach a lift. Halfway down, jump off to a platform and then head down the stairs to the right to find a Estus Shard</li>
+          <li class="f_estus" data-id="playthrough_10_1">Andre Progress: After defeating the Dancer of the Boreal Valley and activating the ladder that was behind Emma, head up it and take the first left to reach a lift. Halfway down, jump off to a platform and then head down the stairs to the right to find a Estus Shard</li>
           <li data-id="playthrough_10_2">Hawkwood Progress: You can summon Hawkwood here for assistance against the enemies around the level and Oceiros, the Consumed King</li>
           <li data-id="playthrough_10_5">Defeat <a href="http://darksouls3.wiki.fextralife.com/Oceiros,+the+Consumed+King">Oceiros the Consumed King</a></li>
           <li data-id="playthrough_10_3">After defeating Oceiros, continue on down and you'll find the Path of the Dragon Gesture on a body</li>
@@ -358,7 +380,7 @@
           <li data-id="playthrough_18_1">Orbeck Progress: Once inside the Grand Archives, you'll notice a Crystal Sage. Killing her will give you the Crystal Scroll</li>
           <li data-id="playthrough_18_2">Orbeck Progress: Orbeck grants you different rewards based on certain criteria. The Young Dragon Ring is given to you after buying three of his spells and giving him at least one scroll. The Slumbering Dragon Ring is given to you after buying Aural Decoy, Farron Flashsword, and Pestilent Mercury. He'll also give you the Silent Ally Gesture through this. Giving him all 4 scrolls and buying every spell he offers will cause him to tell you he is departing. You'll now be able to summon him for the Twin Princes fight</li>
           <li data-id="playthrough_18_3">Firelink Shrine Bonfire Progress: In the area of the rooftops where you fight some Gargoyles, there will be a broken window that you have to enter. The Undead Bone Shard will be on this balcony on a dead body in a chair</li>
-          <li data-id="playthrough_18_4">Andre Progress: On the very top of the Grand Archives while looking at the stairs to the Twin Princes fight, turn around and go up another roof where the three Gertrude's Knights are. You'll find a Estus Shard on the very back of this roof</li>
+          <li class="f_estus" data-id="playthrough_18_4">Andre Progress: On the very top of the Grand Archives while looking at the stairs to the Twin Princes fight, turn around and go up another roof where the three Gertrude's Knights are. You'll find a Estus Shard on the very back of this roof</li>
           <li data-id="playthrough_18_10">Defeat the <a href="http://darksouls3.wiki.fextralife.com/Lothric,+Younger+Prince">Twin Princes</a></li>
           <li data-id="playthrough_18_5">Orbeck Progress: After beating the Twin Princes, you can find his dead body in the Grand Archives if he departed from your Firelink Shrine after you bought all his spells. You can give his ashes to the Shrine Handmaid for her to sell his spells or give them to Yuria for the <a href="http://darksouls3.wiki.fextralife.com/Morion+Blade">Morion Blade</a></li>
           <li data-id="playthrough_18_6">Sirris Progress: Return to her grandfather's grave after the Twin Princes fight and you'll find her body with the Sunless Talisman on it. You can also now buy Sirris' Sunless Armor Set from the Shrine Handmaid</li>
@@ -1493,7 +1515,7 @@
 
         <p>Thanks to the following people for their suggestions, fixes and improvements</p>
         <ul>
-          <li><a href="">?</a></li>
+          <li><a href="https://github.com/Harry-Harrison">Harry Harrison</a></li>
         </ul>
 
         <h3>How does the checklist status get saved?</h3>
