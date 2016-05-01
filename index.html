@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Dark Souls 3 Cheat Sheet</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon-precomposed" href="favicon-152.png">
   <meta name="description" content="Cheat sheet for Dark Souls 3. Checklist of things to do, items to get etc.">
   <meta name="author" content="Zachary Kjellberg">
   <link id="bootstrap" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
@@ -62,14 +63,36 @@
         <!-- PLAYTHROUGH START -->
         <div class="tab-pane active" id="tabPlaythrough">
             <!-- Toolbar -->
+            <h3>Filter Checklist</h3></br>
             <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default" id="togglefilter_quest">&#9745; Quests</button>
-                <button type="button" class="btn btn-default" id="togglefilter_estus">&#9745; Estus</button>
-                <button type="button" class="btn btn-default" id="togglefilter_weapon">&#9745; Weapons/Shields</button>
-                <button type="button" class="btn btn-default" id="togglefilter_armor">&#9745; Armors</button>
-                <button type="button" class="btn btn-default" id="togglefilter_ring">&#9745; Rings</button>
-                <button type="button" class="btn btn-default" id="togglefilter_materials">&#9745; Materials</button>
-                <button type="button" class="btn btn-default" id="togglefilter_misc">&#9745; Misc</button>
+                <button type="button" class="btn btn-default filter-inactive" id="togglefilter_quest">
+                    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Quests
+                </button>
+                <button type="button" class="btn btn-default filter-inactive" id="togglefilter_estus">
+                    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Estus
+                </button>
+                <button type="button" class="btn btn-default filter-inactive" id="togglefilter_weapon">
+                    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Weapons/Shields
+                </button>
+                <button type="button" class="btn btn-default filter-inactive" id="togglefilter_armor">
+                    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Armors
+                </button>
+                <button type="button" class="btn btn-default filter-inactive" id="togglefilter_ring">
+                    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Rings
+                </button>
+                <button type="button" class="btn btn-default filter-inactive" id="togglefilter_materials">
+                    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Materials
+                </button>
+                <button type="button" class="btn btn-default filter-inactive" id="togglefilter_misc">
+                    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Misc
+                </button>
             </div>
         <h2>Playthrough Checklist <span id="playthrough_overall_total"></span></h2>
         <ul class="table_of_contents">
@@ -104,19 +127,19 @@
         <h3 id="Cemetery_of_Ash"><a href="#Cemetery_of_Ash_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Cemetery+of+Ash">Cemetery of Ash</a> <span id="playthrough_totals_17"></span></h3>
         <ul id="Cemetery_of_Ash_col" class="collapse in">
           <li class="f_misc" data-id="playthrough_17_1">From the start head right at the first turn and pick up the <a href="http://darksouls3.wiki.fextralife.com/Soul+of+a+Deserted+Corpse">Soul of a Deserted Corpse</a></li>
-          <li class="f_estus" data-id="playthrough_17_2">Loot the corpse on the fountain to obtain the <a href="http://darksouls3.wiki.fextralife.com/Ashen+Estus+Flask"> Ashen Estus Flask</a></li>
-          <li class="f_mat f_misc" data-id="playthrough_17_3">Turn right after the fountain and head down the path through a flooded passage. Kill the <a href="http://darksouls3.wiki.fextralife.com/Crystal+Lizard"> Ravenous Crystal Lizard</a> to get a <a href="http://darksouls3.wiki.fextralife.com/Titanite+Scale"> Titanite Scale</a> then pick up the <a href="http://darksouls3.wiki.fextralife.com/Soul+of+an+Unknown+Traveler">Soul of an Unknown Traveler</a> from the corspe in the area</li>
+          <li class="f_estus" data-id="playthrough_17_2">Loot the corpse on the fountain to obtain the <a href="http://darksouls3.wiki.fextralife.com/Ashen+Estus+Flask">Ashen Estus Flask</a></li>
+          <li class="f_mat f_misc" data-id="playthrough_17_3">Turn right after the fountain and head down the path through a flooded passage. Kill the <a href="http://darksouls3.wiki.fextralife.com/Crystal+Lizard">Ravenous Crystal Lizard</a> to get a <a href="http://darksouls3.wiki.fextralife.com/Titanite+Scale">Titanite Scale</a> then pick up the <a href="http://darksouls3.wiki.fextralife.com/Soul+of+an+Unknown+Traveler">Soul of an Unknown Traveler</a> from the corspe in the area</li>
           <li class="f_quest" data-id="playthrough_17_4">Head back to the fountain and take the path straight ahead. Climb the cliff and rest at the Cemetery of Ash bonfire to receive the Rest gesture</li>
-          <li class="f_mat" data-id="playthrough_17_5">From the bonfire head down the left path and make the jump from the cliff over to the corpse on the tomb to pick up a <a href="http://darksouls3.wiki.fextralife.com/Titanite+Shard"> Titanite Shard</a></li>
-          <li class="f_misc" data-id="playthrough_17_6">Take the side ridge down from the large cliff face on the right to pick up five <a href="http://darksouls3.wiki.fextralife.com/Firebomb"> Firebombs</a> from the corpse</li>
-          <li class="f_misc" data-id="playthrough_17_7">Back on the main path head through the archway and take the sword embedded in the statue. Kill <a href="http://darksouls3.wiki.fextralife.com/Iudex+Gundyr"> Iudex Gundyr</a> to receive the <a href="http://darksouls3.wiki.fextralife.com/Coiled+Sword"> Coiled Sword</a></li>
-          <li class="f_misc" data-id="playthrough_17_8">Congratulate yourself on beating the first boss of Dark Souls 3 and rest at the <a href="http://darksouls3.wiki.fextralife.com/Iudex+Gundyr"> Iudex Gundyr</a> bonfire</li>
-          <li class="f_misc" data-id="playthrough_17_9">Continue through the large door and pick up the <a href="http://darksouls3.wiki.fextralife.com/Broken+Straight+Sword"> Broken Straight Sword</a> from the corpse leaning on the tombstone</li>
-          <li class="f_misc" data-id="playthrough_17_10">Head over to the large cliff edge and pick up the<a href="http://darksouls3.wiki.fextralife.com/Homeward+Bone"> Homeward Bone</a> at the edge of the ridge</li>
-          <li class="f_wpn" data-id="playthrough_17_11">Take the left path up the cliff and turn left just before <a href="http://darksouls3.wiki.fextralife.com/Firelink+Shrine"> Firelink Shrine</a> and grab the <a href="http://darksouls3.wiki.fextralife.com/East-West+Shield"> East-West Shield</a> from the corpse in the tree</li>
-          <li class="f_wpn f_armor" data-id="playthrough_17_12">If you're feeling brave kill <a href="http://darksouls3.wiki.fextralife.com/Sword+Master"> Sword Master Saber</a> to get the <a href="http://darksouls3.wiki.fextralife.com/Uchigatana"> Uchigatana</a>, <a href="http://darksouls3.wiki.fextralife.com/Master's+Attire"> Master's Attire</a>, and <a href="http://darksouls3.wiki.fextralife.com/Master's+Gloves"> Master's Gloves</a> </li>
-          <li class="f_misc" data-id="playthrough_17_13">Head back and up the path to the left to pick up an <a href="http://darksouls3.wiki.fextralife.com/Ember"> Ember</a> from a corpse above the entrance above <a href="http://darksouls3.wiki.fextralife.com/Firelink+Shrine">Firelink Shrine</a></li>
-          <li class="f_misc" data-id="playthrough_17_14">Continue across to the other side picking up a <a href="http://darksouls3.wiki.fextralife.com/Homeward+Bone"> Homeward Bone</a> from a corpse behind a tomb and another <a href="http://darksouls3.wiki.fextralife.com/Ember"> Ember</a> from the lower ridge </li>
+          <li class="f_mat" data-id="playthrough_17_5">From the bonfire head down the left path and make the jump from the cliff over to the corpse on the tomb to pick up a <a href="http://darksouls3.wiki.fextralife.com/Titanite+Shard">Titanite Shard</a></li>
+          <li class="f_misc" data-id="playthrough_17_6">Take the side ridge down from the large cliff face on the right to pick up five <a href="http://darksouls3.wiki.fextralife.com/Firebomb">Firebombs</a> from the corpse</li>
+          <li class="f_misc" data-id="playthrough_17_7">Back on the main path head through the archway and take the sword embedded in the statue. Kill <a href="http://darksouls3.wiki.fextralife.com/Iudex+Gundyr">Iudex Gundyr</a> to receive the <a href="http://darksouls3.wiki.fextralife.com/Coiled+Sword">Coiled Sword</a></li>
+          <li class="f_misc" data-id="playthrough_17_8">Congratulate yourself on beating the first boss of Dark Souls 3 and rest at the <a href="http://darksouls3.wiki.fextralife.com/Iudex+Gundyr">Iudex Gundyr</a> bonfire</li>
+          <li class="f_misc" data-id="playthrough_17_9">Continue through the large door and pick up the <a href="http://darksouls3.wiki.fextralife.com/Broken+Straight+Sword">Broken Straight Sword</a> from the corpse leaning on the tombstone</li>
+          <li class="f_misc" data-id="playthrough_17_10">Head over to the large cliff edge and pick up the<a href="http://darksouls3.wiki.fextralife.com/Homeward+Bone">Homeward Bone</a> at the edge of the ridge</li>
+          <li class="f_wpn" data-id="playthrough_17_11">Take the left path up the cliff and turn left just before <a href="http://darksouls3.wiki.fextralife.com/Firelink+Shrine">Firelink Shrine</a> and grab the <a href="http://darksouls3.wiki.fextralife.com/East-West+Shield">East-West Shield</a> from the corpse in the tree</li>
+          <li class="f_wpn f_armor" data-id="playthrough_17_12">If you're feeling brave kill <a href="http://darksouls3.wiki.fextralife.com/Sword+Master">Sword Master Saber</a> to get the <a href="http://darksouls3.wiki.fextralife.com/Uchigatana">Uchigatana</a>, <a href="http://darksouls3.wiki.fextralife.com/Master's+Attire">Master's Attire</a>, and <a href="http://darksouls3.wiki.fextralife.com/Master's+Gloves">Master's Gloves</a> </li>
+          <li class="f_misc" data-id="playthrough_17_13">Head back and up the path to the left to pick up an <a href="http://darksouls3.wiki.fextralife.com/Ember">Ember</a> from a corpse above the entrance above <a href="http://darksouls3.wiki.fextralife.com/Firelink+Shrine">Firelink Shrine</a></li>
+          <li class="f_misc" data-id="playthrough_17_14">Continue across to the other side picking up a <a href="http://darksouls3.wiki.fextralife.com/Homeward+Bone">Homeward Bone</a> from a corpse behind a tomb and another <a href="http://darksouls3.wiki.fextralife.com/Ember">Ember</a> from the lower ridge </li>
           <li class="f_misc" data-id="playthrough_17_15">Go back to the main path and head on in to the central hub of Dark Souls 3, the <a href="http://darksouls3.wiki.fextralife.com/Firelink+Shrine">Firelink Shrine</a></li>
         </ul>
 
@@ -129,23 +152,24 @@
           <li class="f_misc" data-id="playthrough_1_5">Go out the top of <a href="http://darksouls3.wiki.fextralife.com/Firelink+Shrine">Firelink shrine</a> and pick up the <a href="http://darksouls3.wiki.fextralife.com/Soul+of+a+Deserted+Corpse">Soul of a Deserted Corpse</a> from the corpse next to the small decrepit tower </li>
           <li class="f_quest" data-id="playthrough_1_6">When you have the <a href="http://darksouls3.wiki.fextralife.com/Tower+Key">Tower Key</a> unlock the small decrepit tower and head up to the bridge leading to the Bell Tower</li>
           <li class="f_misc" data-id="playthrough_1_7">Roll off the bridge onto the <a href="http://darksouls3.wiki.fextralife.com/Firelink+Shrine">Firelink Shrine</a> roof and kick down the ladder shortcut</li>
-          <li class="f_mat" data-id="playthrough_1_8">Just behind the roof kill the <a href="http://darksouls3.wiki.fextralife.com/Crystal+Lizard"> Crystal Lizard</a> to get a <a href="http://darksouls3.wiki.fextralife.com/Twinkling+Titanite"> Twinkling Titanite</a> </li>
-          <li class="f_misc" data-id="playthrough_1_9">Pick up the <a href="http://darksouls3.wiki.fextralife.com/Homeward+Bone"> Homeward Bone</a> from the lower part of the roof</li>
+          <li class="f_mat" data-id="playthrough_1_8">Just behind the roof kill the <a href="http://darksouls3.wiki.fextralife.com/Crystal+Lizard">Crystal Lizard</a> to get a <a href="http://darksouls3.wiki.fextralife.com/Twinkling+Titanite"> Twinkling Titanite</a> </li>
+          <li class="f_misc" data-id="playthrough_1_9">Pick up the <a href="http://darksouls3.wiki.fextralife.com/Homeward+Bone">Homeward Bone</a> from the lower part of the roof</li>
           <li class="f_estus" data-id="playthrough_1_10">Inside the roof pick up the <a href="http://darksouls3.wiki.fextralife.com/Estus+Shard"> Estus Flask Shard</a> from up in the rafters</li>
           <li class="f_quest" data-id="playthrough_1_11">Trade any possible item with <a href="http://darksouls3.wiki.fextralife.com/Pickle+Pee,+Pump-a-Rum+Crow"> Pickle-Pee, Pump-a-Rum</a> crow to receive the Call Over gesture</li>
           <li class="f_ring" data-id="playthrough_1_12">Hit the <a href="http://darksouls3.wiki.fextralife.com/Illusory+Walls">Illusory Wall</a> at the back of the rafters and drop down to get the <a href="http://darksouls3.wiki.fextralife.com/Covetous+Silver+Serpent+Ring">Covetous Silver Serpent Ring</a> from the chest</li>
-          <li class="f_armor" data-id="playthrough_1_13">Head into the Bell Tower and look down to the left. Carefully jump down to the tombstone and pick up the <a href="http://darksouls3.wiki.fextralife.com/Fire+Keeper+Set">Fire Keeper Set </a> from the corpse</li>
-          <li class="f_ring" data-id="playthrough_1_14">Make your way down to the bottom and pick up the <a href="http://darksouls3.wiki.fextralife.com/Estus+Ring"> Estus Ring </a> from another corpse</li>
-          <li class="f_quest" data-id="playthrough_1_15">Open the door and head back to the Bell Tower. Go up the lift and <a href="http://darksouls3.wiki.fextralife.com/Unbreakable+Patches"> Patches </a> may close it behind you depending on progress </li>
-          <li class="f_quest" data-id="playthrough_1_16">At the top of the Bell Tower pick up the <a href="http://darksouls3.wiki.fextralife.com/Fire%20Keeper+Soul"> Fire Keeper Soul </a> </li>
+          <li class="f_armor" data-id="playthrough_1_13">Head into the Bell Tower and look down to the left. Carefully jump down to the tombstone and pick up the <a href="http://darksouls3.wiki.fextralife.com/Fire+Keeper+Set">Fire Keeper Set</a> from the corpse</li>
+          <li class="f_ring" data-id="playthrough_1_14">Make your way down to the bottom and pick up the <a href="http://darksouls3.wiki.fextralife.com/Estus+Ring">Estus Ring</a> from another corpse</li>
+          <li class="f_quest" data-id="playthrough_1_15">Open the door and head back to the Bell Tower. Go up the lift and <a href="http://darksouls3.wiki.fextralife.com/Unbreakable+Patches">Patches</a> may close it behind you depending on progress </li>
+          <li class="f_quest" data-id="playthrough_1_16">At the top of the Bell Tower pick up the <a href="http://darksouls3.wiki.fextralife.com/Fire%20Keeper+Soul">Fire Keeper Soul</a> </li>
         </ul>
 
         <h3 id="High_Wall_of_Lothric"><a href="#High_Wall_of_Lothric_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/High+Wall+of+Lothric">High Wall of Lothric</a> <span id="playthrough_totals_2"></span></h3>
         <ul id="High_Wall_of_Lothric_col" class="collapse in">
-          <li class="f_quest" data-id="playthrough_2_1">Free Greirat below the Tower on the Wall bonfire with the Cell Key, which is found at the bottom of the building that is past the same bonfire. Talk to him and agreed to give the Blue Tearstone Ring to Loretta. He will then return to Firelink Shrine.</li>
-          <li class="f_estus" data-id="playthrough_2_2">Andre Progress: Grab Estus Shard on an altar in the room where you get the Cell Key.</li>
-          <li class="f_quest" data-id="playthrough_2_3">After lighting the Tower on the Wall bonfire, return to Firelink Shrine and talk to Leonhard, who will give you 5 Cracked Red-Eye Orbs. He'll be by Prince Lothric's throne, if he isn't at this point, try killing Vordt and check again.</li>
-          <li class="f_quest" data-id="playthrough_2_4">Talk to Emma, who is found the opposite direction of where Vordt is located, to receive the Way of Blue covenant and the Small Lothric Banner, which allows you to access the Undead Settlement.</li>
+          <li class="f_quest" data-id="playthrough_2_1">Free Greirat below the Tower on the Wall bonfire with the Cell Key, which is found at the bottom of the building that is past the same bonfire. Talk to him and agreed to give the Blue Tearstone Ring to Loretta. He will then return to Firelink Shrine</li>
+          <li class="f_estus" data-id="playthrough_2_2">Andre Progress: Grab Estus Shard on an altar in the room where you get the Cell Key</li>
+          <li class="f_quest" data-id="playthrough_2_3">After lighting the Tower on the Wall bonfire, return to Firelink Shrine and talk to Leonhard, who will give you 5 Cracked Red-Eye Orbs. He'll be by Prince Lothric's throne, if he isn't at this point, try killing Vordt and check again</li>
+          <li class="f_quest" data-id="playthrough_2_4">Talk to Emma, who is found the opposite direction of where Vordt is located, to receive the Way of Blue covenant and the Small Lothric Banner, which allows you to access the Undead Settlement</li>
+          <li data-id="playthrough_2_5">Defeat <a href="http://darksouls3.wiki.fextralife.com/Vordt+of+the+Boreal+Valley"> Vordt of the Boreal Valley</a></li>
         </ul>
 
         <h3 id="Undead_Settlement"><a href="#Undead_Settlement_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Undead+Settlement">Undead Settlement</a> <span id="playthrough_totals_3"></span></h3>
@@ -155,7 +179,7 @@
           <li data-id="playthrough_3_3">Yoel Progress: Accept Yoel's offer to Draw Out True Strength. You'll gain a free level, but also gain a Dark Sigil, which will start your Hollowing clock. Each time you die from here on out, you'll gain 1 Hollowing and become more and more Hollow, which also affects your appearance. Yoel will offer 4 more Draw Out True Strengths at Hollowing Level 2, 6, 12, and 16. Each additional Dark Sigil acts as…Double XP for your Hollowing Level, so it shouldn't take long to all 5 Dark Sigils (Just throw yourself off the cliff of Firelink Shrine over and over). If you do not do this step before reaching the Catacombs of Carthus, Yoel will automatically expire and you'll lose your chance at the Usurpation of Fire Ending</li>
           <li data-id="playthrough_3_4">If you get all 5 Dark Sigils and refresh the world, Yoel will be dead and Yuria will be located near his dead body. Talk to her (Receive Dignified Bow Gesture) and buy the Londor Braille Divine Tome. You can give it to Irina when you get her if you want, but note that buying any of the spells it offers will lead to her bad ending. Otherwise, hang onto it until you find Karla later in the game</li>
           <li data-id="playthrough_3_5">Greirat Progress: To find Loretta's Bone in Undead Settlement, spawn at the Undead Settlement bonfire and continue into the first house. Walk out onto the balcony and you'll see a hanging body you can cut down, which contains Loretta's Bone. Return to Firelink Shrine and give Greirat the item and he'll state you can keep the Blue Tearstone Ring</li>
-          <li data-id="playthrough_3_6">Andre Progress: Grab Estus Shard by the burning tree with worshipping undead. This is to the left of the Undead Settlement Bonfire, past the house</li>
+          <li class="f_estus" data-id="playthrough_3_6">Andre Progress: Grab Estus Shard by the burning tree with worshipping undead. This is to the left of the Undead Settlement Bonfire, past the house</li>
           <li data-id="playthrough_3_7">You can find the Warriors of Sunlight covenant in a hidden room in the building after the congregation in front of the tree. There will be a hole in the floor that you can drop into. Room also has an Estus Soup for reference</li>
           <li data-id="playthrough_3_8">You can find the Mound-Makers covenant by climbing into the cage of the saw wielding enemy with an empty cage on his back, across the bridge and over the house from the Undead Settlement bonfire. You can only do this before the Curse-rotted Greatwood has been slain or else Holy Knight Hodrick will die from the floor breaking during the boss fight. If this does occur, you can acquire the covenant later through Sirris' side quest</li>
           <li data-id="playthrough_3_9">Find Cornyx in the Undead Settlement above the Cliff Underside bonfire, which can be gotten by dropping to a ledge below the bridge that is right in front of the building that has 3 firebomb throwing undead on top of it. From the bonfire, get to the top of the building and kill the undead. You'll find a cage on the balcony that contains Cornyx. Agree to let him go to Firelink Shrine and he'll teleport there</li>
@@ -166,7 +190,7 @@
           <li data-id="playthrough_3_14">Return to Firelink Shrine and purchase the Grave Key, which opens the locked door in the sewer area with the rats next to the Dilapidated Bridge bonfire in Undead Settlement. This area will lead you to Irina's jail and Velka's statue</li>
           <li data-id="playthrough_3_15">Return to Firelink Shrine and talk to Irina (Receive Prayer Gesture)</li>
           <li data-id="playthrough_3_16">Find Siegward, who is inside the Tower near Irina and Eygon. He'll be taking the elevator down and question the mechanics of the thing. Get on the elevator and you'll go to the basement which has a Outrider Knight and the entrance to Road of Sacrifices. Kill the Outrider Knight and rest at the bonfire nearby. If you die, that works too. Return to the Tower entrance and take the lift up to the actual top of the Tower (If you keep going to the basement, hit the switch on the elevator while at the main entrance and then quickly jump off to reveal the lift that takes you up). Roll off at the mid-way point to land on a wooden platform. Head outside and speak to Siegward again. Run down and begin fighting the Fire Demon, Siegward will eventually come and help. After killing the Fire Demon, speak to Siegward three times (Receive Siegbrau, Toast Gesture, and Sleep Gesture)</li>
-          <li data-id="playthrough_3_17">Kill the Curse-rotted Greenwood to get the Transposing Kiln, which you can give to Ludleth of Courtland back at Firelink Shrine to turn boss souls into special weapons and items</li>
+          <li data-id="playthrough_3_17">Defeat the <a href="http://darksouls3.wiki.fextralife.com/Curse-Rotted+Greatwood"> Curse-Rotted Greatwood </a> to get the Transposing Kiln, which you can give to Ludleth of Courtland back at Firelink Shrine to turn boss souls into special weapons and items</li>
           <li data-id="playthrough_3_18">Leonhard Progress: If you have obtained a Pale Tongue, Leonhard should return to Firelink Shrine. If he hasn’t, you can obtain a Pale Tongue by shooting down a corpse to obtain in the area with the Fire Demon and Siegward. Leonhard will give you a Lift-Chamber Key that you can use on a door below the Tower on the Wall bonfire of High Wall of Lothric. It'll lead to a Darkwraith that upon death will drop a Red Eye Orb. Return to Firelink Shrine and talk to Leonhard to receive the Applause Gesture</li>
           <li data-id="playthrough_3_19">Hawkwood Progress: Talk to Hawkwood after killing the Curse-rotted Greatwood (Receive Heavy Gem). If he doesn't give you anything, come back to him after killing the Crystal Sage</li>
         </ul>
@@ -179,24 +203,26 @@
           <li data-id="playthrough_4_4">Cornyx Progress: In the swamp area with the two giant enemy crabs, the Great Swamp Pyromancy Tome will be in an area of the swamp that causes you to fat roll</li>
           <li data-id="playthrough_4_5">Kill Yellowfinger Heysel, who will invade your world if you are embered around the area where the two giant crabs are</li>
           <li data-id="playthrough_4_6">Andre Progress: At the Halfway Fortress bonfire in Road of Sacrifices, head out and drop down from the ledges on the right side, keep going straight along the right wall and enter a doorway in the end. Turn left and you will see a Black Knight guarding a few bodies, the body at the end of the hall holds the Farron Coal, which grants you Heavy, Sharp and Poison Infusions</li>
-          <li data-id="playthrough_4_7">Andre Progress: Grab the Estus Shard on the side of the ruins near the Crucifixion Woods bonfire. It will be near a fire that has two Lycanthropes</li>
+          <li class="f_estus" data-id="playthrough_4_7">Andre Progress: Grab the Estus Shard on the side of the ruins near the Crucifixion Woods bonfire. It will be near a fire that has two Lycanthropes</li>
           <li data-id="playthrough_4_8">Enter the ruins near the Crucifixion Woods bonfire, head up the stairs, cross the bridge, and you'll notice an area to the left right after getting off the bridge that'll lead you to the upper area of the ruins that contains Orbeck. Talk to him and he'll agree to teach you in sorceries only if you have at least a 10 in Intelligence. You'll also make him a promise to give him scrolls to learn more spells, you MUST give him a scroll before defeating the Abyss Watchers or else he will leave</li>
+          <li data-id="playthrough_4_9">Defeat the <a href="http://darksouls3.wiki.fextralife.com/Crystal+Sage"> Crystal Sage</a></li>
         </ul>
 
         <h3 id="Cathedral_of_the_Deep"><a href="#Cathedral_of_the_Deep_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Cathedral+of+the+Deep">Cathedral of the Deep</a> <span id="playthrough_totals_5"></span></h3>
         <ul id="Cathedral_of_the_Deep_col" class="collapse in">
           <li data-id="playthrough_5_1">Talk to Sirris at Firelink Shrine to begin her quest line</li>
           <li data-id="playthrough_5_2">Shrine Handmaid Progress: Near the first bonfire behind a hostile NPC are the Paladin's Ashes</li>
-          <li data-id="playthrough_5_3">Andre Progress: Grab the Estus Shard right outside the Cleansing Chapel bonfire where enemies are praying</li>
+          <li class="f_estus" data-id="playthrough_5_3">Andre Progress: Grab the Estus Shard right outside the Cleansing Chapel bonfire where enemies are praying</li>
           <li data-id="playthrough_5_4">Irina/Karla Progress: The Deep Braille Divine Tome can be found on a mimic chest. Remember, giving this to Irina and buying any of the spells it unlocks will lock you into the bad ending of her quest. I recommend saving this for Karla, unless you really want some of the spells</li>
           <li data-id="playthrough_5_5">Firelink Shrine Bonfire Progress: Grab the Undead Bone Shard near a white tree that the Giant throws spears around, on the roof area of the Cathedral after navigating the graveyard and crossing a bridge</li>
           <li data-id="playthrough_5_17">Kill Longfinger Kirk, who will invade your world if you are embered on the ground floor of the cathedral between the area where the two giants are. He drops the Barbed Straight Sword and Spiked Shield, you will then be able to pick up the rest of his armor later in Rosaria's chamber.</li>
           <li data-id="playthrough_5_6">Continue through the Cathedral of the Deep until you have made it to the fog door before the Deacons of the Deep boss fight. Head to the nearby lift to activate the final shortcut of the level (Opening the large blue double doors that lead out to the Cathedral's roof)</li>
+          <li data-id="playthrough_5_18">Defeat the <a href="http://darksouls3.wiki.fextralife.com/Deacons+of+the+Deep">Deacons of the Deep</a></li>
           <li data-id="playthrough_5_7">If you leave the Cathedral completely (Go to Firelink Shrine and come back) and then head back into the Cathedral through the large blue double doors you just opened, you may notice that a new bridge has been activated and Siegward is standing next to them. Talk to him and then cross the bridge to trigger a cutscene where it is revealed it was really Patches. Depending on if you killed the Giants or not, you'll either have to fight one or nothing happens</li>
           <li data-id="playthrough_5_8">Patches Progress: From here, head out to the 2nd shortcut back to the Cleansing Chapel bonfire and use the lift to get to a crossbow undead's tower. Kill him and move towards the edge of the tower, but don't drop down. Instead, look to see that you can move towards the left and find a ladder. Ascend the ladder and continue up the roof to eventually reach the rafters of the Cathedral. You'll now be able to drop down to the other side of the bridge that Patches activated. Patches will be waiting here and pretend to not be responsible for what just happened. Tell him "You know who I am" (Receive Prostration Gesture). You can then buy Siegward's Armor Set from him</li>
           <li data-id="playthrough_5_9">Leonhard Progress: Before leaving this area, continue on up the nearby stairs and you'll eventually find yourself at the Rosaria's Chamber bonfire. Speak with Rosaria to obtain the Rosaria's Fingers covenant. Do not do anything further with this covenant if you intend to do Sirris' quest line. Don't give Rosaria any Pale Tongues and don't equip the Rosaria's Fingers covenant item. We'll continue this side quest closer to the end of the game</li>
           <li data-id="playthrough_5_10">Patches Progress: If Patches didn't spawn at the Cathedral, return to Firelink Shrine and purchase the Tower Key if you haven't already and head into the Tower behind Firelink Shrine now. As you ascend the lift to the top, you'll hear a door shut behind you. Grab the Fire Keeper's Soul at the top and then come back down to encounter Patches. He has locked the door and you'll need to drop down from the bridge onto coffins to escape</li>
-          <li data-id="playthrough_5_11">Andre Progress: Head back to the Tower and get to the bridge that overlooks Firelink Shrine. Drop down onto the roof and move around the roof until you find some windows you can go through. A Estus Shard will be on the rafters</li>
+          <li class="f_estus" data-id="playthrough_5_11">Andre Progress: Head back to the Tower and get to the bridge that overlooks Firelink Shrine. Drop down onto the roof and move around the roof until you find some windows you can go through. A Estus Shard will be on the rafters</li>
           <li data-id="playthrough_5_12">While on the roof, you can talk to Snuggly the Crow. Trading with him will get you the Call Over Gesture</li>
           <li data-id="playthrough_5_13">Fire Keeper Progress: With the Fire Keeper's Soul, you can heal Dark Sigils that you have in order to completely get rid of your Hollowing Level. If you are following Yoel/Yuria's quest line, however, don't do this until the post game or you'll end up angering Yoel/Yuria</li>
           <li data-id="playthrough_5_14">Patches Progress: Refresh Firelink Shrine and head to the upper right to find Patches now located there. He'll ask for forgiveness, refuse (Receive Prostration Gesture and Rusted Gold Coin). You can then buy Siegward's Armor Set from him. Leaving Firelink Shrine and returning will sometimes allow Patches to be in his squatting position. Interact with him (Receive Patches Squat Gesture)</li>
@@ -208,7 +234,7 @@
         <ul id="Farron_Keep_col" class="collapse in">
           <li data-id="playthrough_6_6">Anri Progress: After defeating the Deacons of the Deep, return to Firelink Shrine to find Anri and Horace. You can speak to them for some additional dialogue</li>
           <li data-id="playthrough_6_1">Andre Progress: From the first bonfire of Farron Keep, stay to the left side until you reach a small structure guarded by a darkwraith. The Sage's Coal is in a body inside this structure, which grants you Crystal, Blessed and Deep Infusions</li>
-          <li data-id="playthrough_6_2">Andre Progress: Grab the Estus Shard as you come into the area from Road of Sacrifices, towards the left. The shard will be visible against a wall</li>
+          <li class="f_estus" data-id="playthrough_6_2">Andre Progress: Grab the Estus Shard as you come into the area from Road of Sacrifices, towards the left. The shard will be visible against a wall</li>
           <li data-id="playthrough_6_3">Orbeck Progress: Spawn at the Keep Ruins bonfire and go out towards the Wolf Gate and turn left. Follow the wall and you'll eventually find the Sage's Scroll</li>
           <li data-id="playthrough_6_4">Orbeck Progress: From the first bonfire, head out and go towards the right where you'll start to encounter basilisks. There will be a cave in this area that will contain a chest with the Golden Scroll inside. Make sure to give him at least one scroll before beating the Abyss Watchers or he'll leave forever</li>
           <li data-id="playthrough_6_5">Firelink Shrine Bonfire Progress: Grab the Undead Bone Shard on the bottom of the tower to the right of the Wolf Gate with the three flames that you have to light. It is surrounded by a bunch of slugs</li>
@@ -218,6 +244,7 @@
           <li data-id="playthrough_6_10">Yellowfinger Heysel Progess: You can summon her in Farron Keep right after the Keep Ruins bonfire for the Abyss Watchers fight if you killed her in Road of Sacrifices, but you'll need to have given a Pale Tongue to Rosaria, which will block you out of Sirris' quest line, so I recommend saving this part for another playthrough. You'll gain the Proper Bow Gesture after her summon</li>
           <li data-id="playthrough_6_11">Black Hand Gotthard can be summoned for the Abyss Watchers fight and will grant you the By My Sword Gesture upon summon</li>
           <li data-id="playthrough_6_12">Yuria Progress: If you are doing the Yoel/Yuria side quest, you'll also be able to summon the Londor Pale Shade for the Abyss Watchers fight and gain the Duel Bow Gesture</li>
+          <li data-id="playthrough_6_13">Defeat the <a href="http://darksouls3.wiki.fextralife.com/Abyss+Watchers">Aybss Watchers</a></li>
         </ul>
 
         <h3 id="Catacombs_of_Carthus"><a href="#Catacombs_of_Carthus_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Catacombs+of+Carthus">Catacombs of Carthus</a> <span id="playthrough_totals_7"></span></h3>
@@ -229,23 +256,24 @@
           <li data-id="playthrough_7_5">Firelink Shrine Bonfire Progress: Once arriving at the bottom of the giant staircase, you'll notice a skeleton with a hat on its head. Kill it and the next time the skeleton ball hits the bottom gate, it'll explode and reveal an Undead Bone Shard</li>
           <li data-id="playthrough_7_6">Shrine Handmaid Progress: After finding the Catacombs of Carthus bonfire, head down the stairs that the 2nd skeleton ball is going up and down and then head up some other stairs across the way. Once you're at the top of this new area, head to the left and you'll find the Grave Warden's Ashes</li>
           <li data-id="playthrough_7_7">Anri Progress: Once you make it to the wooden bridge, you'll see Anri above and to the right of it. She'll once again ask if you have found Horace. You haven't yet, but we're about to. Head to the other side of the bridge and slash at it to cut it down and you can then use it as a ladder to descend into the Shouldering Lake</li>
-          <li data-id="playthrough_7_8">Karla Progress: Yes, you don't have Karla yet, but after beating Wolnir, you'll obtain the Grave Warden Pyromancy Tome. Cornyx can't read this Pyromancy Tome, so you'll have to wait until you find Karla to turn it in</li>
           <li data-id="playthrough_7_9">From the Catacombs Of Carthus bonfire, follow the skeleton ball and enter the empty jail to the right where you will be invaded by <a href="http://darksouls3.wiki.fextralife.com/Knight+Slayer+Tsorig">Knight Slayer Tsorig</a>. Regardless of who wins the fight, you will receive the My Thanks! Gesture. Defeating him will grant you the <a href="http://darksouls3.wiki.fextralife.com/Knight+Slayer's+Ring">Knight Slayer's Ring</a></li>
+          <li data-id="playthrough_7_10">Defeat <a href="http://darksouls3.wiki.fextralife.com/High+Lord+Wolnir">High Lord Wolnir</a></li>
+          <li data-id="playthrough_7_8">Karla Progress: After beating Wolnir, you'll obtain the <a href="http://darksouls3.wiki.fextralife.com/Grave+Warden+Pyromancy+Tome">Grave Warden Pyromancy Tome</a>. Cornyx can't read this Pyromancy Tome, so you'll have to wait until you find Karla to turn it in</li>
         </ul>
 
         <h3 id="Smouldering_Lake"><a href="#Smouldering_Lake_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Smouldering+Lake">Smouldering Lake</a> <span id="playthrough_totals_14"></span></h3>
         <ul id="Smouldering_Lake_col" class="collapse in">
-          <li data-id="playthrough_14_1">Firelink Shrine Bonfire Progress: When heading towards the Old Demon King fog door, a Carthus Sandworm will appear out of the ground. It may be a difficult fight with the ballista active, but you can use the ballista to your advantage to deal extra damage to the worm. Upon killing the Carthus Sandworm, you'll gain the Lightning Stake miracle and an Undead Bone Shard</li>
-          <li data-id="playthrough_14_2">Cornyx Progress: While fighting the Old Demon King, you can summon the NPC phantom Great Swamp Cuculus. Defeat the Old Demon King with this NPC surviving and go back to the cage in Undead Settlement you found Cornyx in (Receive Cornyx's Armor Set and Spotted Whip)</li>
+          <li data-id="playthrough_14_1">Firelink Shrine Bonfire Progress: When heading towards the Old Demon King fog door, a Carthus Sandworm will appear out of the ground. It may be a difficult fight with the ballista active, but you can use the ballista to your advantage to deal extra damage to the worm. Upon killing the Carthus Sandworm, you'll gain the <a href="http://darksouls3.wiki.fextralife.com/Lightning+Stake">Lightning Stake</a> miracle and an Undead Bone Shard</li>
+          <li data-id="playthrough_14_11">Obtain the <a href="http://darksouls3.wiki.fextralife.com/Speckled+Stoneplate+Ring">Speckled Stoneplate Ring</a> which is located on a corpse in Smouldering Lake behind a brick wall along a large rock formation. You will need to trick the ballista into destroying the brick wall</li>
+          <li data-id="playthrough_14_2">Cornyx Progress: While fighting the <a href="http://darksouls3.wiki.fextralife.com/Old+Demon+King">Old Demon King</a>, you can summon the NPC phantom Great Swamp Cuculus. Defeat the <a href="http://darksouls3.wiki.fextralife.com/Old+Demon+King">Old Demon King</a> with this NPC surviving and go back to the cage in Undead Settlement you found Cornyx in (Receive <a href="http://darksouls3.wiki.fextralife.com/Cornyx's+Set">Cornyx's Armor Set</a> and <a href="http://darksouls3.wiki.fextralife.com/Spotted%20Whip">Spotted Whip</a>)</li>
           <li data-id="playthrough_14_3">Head into the area where the Demon Ruins bonfire is as this'll be where the bulk of the main items for this area are</li>
           <li data-id="playthrough_14_4">Firelink Shrine Bonfire Progress: The first enemies you encounter in the Demon Ruins are some Demon Clerics. You'll be on a top floor and see stairs nearby. Head down them and then move towards the left where there will be more Demon Clerics. Behind this group is another Undead Bone Shard</li>
-          <li data-id="playthrough_14_5">Andre Progress: Once you locate the Old King's Antechamber bonfire in this area, there will be a illusory wall in the same room. Activate it and then move down the hallway that has loads of Writhing Rotten Flesh enemies on the ceiling and grab the Estus Shard on a body at the end</li>
+          <li class="f_estus" data-id="playthrough_14_5">Andre Progress: Once you locate the Old King's Antechamber bonfire in this area, there will be a illusory wall in the same room. Activate it and then move down the hallway that has loads of Writhing Rotten Flesh enemies on the ceiling and grab the Estus Shard on a body at the end</li>
           <li data-id="playthrough_14_6">Cornyx Progress: In a room following the Old King's Antechamber, you'll find the Izalith Pyromancy Tome on the ground</li>
           <li data-id="playthrough_14_7">Karla Progress: Once again, you don't have Karla yet, but you can find the last Pyromancy Tome that she can read. From the Old King's Antechamber bonfire, hit the illusory wall in the room and head back out to the large room with the Demon Clerics. There is a corridor out of this room where you'll see the tome, but there will be a large hole that leads to a giant rat. Head down the hole, kill the rat, head straight, take a left, take another left, and in this room there will be another illusory wall that leads to the Quelana Pyromancy Tome</li>
           <li data-id="playthrough_14_8">Further into the Demon Ruins, you'll come to a point where there are several basilisks and you'll see some stairs. Instead of going up the stairs, take a left when you get to them and you'll encounter Knight Slayer Tsorig. Defeating him will gain you the My Thanks! Gesture. After killing him, the <a href="http://darksouls3.wiki.fextralife.com/Black+Iron+Set">Black Iron Set</a> can be obtained via the <a href="http://darksouls3.wiki.fextralife.com/Shrine+Handmaid">Shrine Handmaid</a></li>
           <li data-id="playthrough_14_9">Anri Progress: After shutting off the ballista, you'll notice some cliffs that you can drop onto that will eventually lead you back to the lake. You'll also land right in front of a cave you haven't explored (You can also get here just by running to the right from the Abandoned Tomb bonfire). Head inside and you'll find Horace, who has succumbed to his Dark Sigils and become hostile. Kill him and he'll drop the Llewellyn Shield. The Shrine Handmaid will also now sell Horace's Executioner's Armor Set</li>
           <li data-id="playthrough_14_10">Anri Progress: Get back to the wooden bridge that allowed you to access the Smouldering Lake and speak if Anri to the upper right of it. Tell her of the Smouldering Lake and she'll give you the Ring of the Evil Eye. If she isn't here for you, you'll have to wait until the next area to find her</li>
-          <li data-id="playthrough_14_11">Obtain the <a href="http://darksouls3.wiki.fextralife.com/Speckled+Stoneplate+Ring">Speckled Stoneplate Ring</a> which is located on a corpse in Smouldering Lake behind a brick wall along a large rock formation</li>
         </ul>
 
         <h3 id="Irithyll_of_the_Boreal_Valley"><a href="#Irithyll_of_the_Boreal_Valley_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Irithyll+of+the+Boreal+Valley">Irithyll of the Boreal Valley</a> <span id="playthrough_totals_15"></span></h3>
@@ -261,6 +289,7 @@
           <li data-id="playthrough_15_8">Greirat Progress: Return to Firelink Shrine and talk to Greirat. He'll ask to pillage Irithyll. Only do this after confirming Siegward is in Irithyll OR if you have Patches. If you have neither, Greirat will perish and his ashes can be found in the sewer area</li>
           <li data-id="playthrough_15_9">Patches Progress: If you haven't been following Siegward's quest or just want to be extra safe, refresh Firelink Shrine after sending Greirat out and Patches will ask you where he went. Tell him and Patches will head out to protect Greirat as well</li>
           <li data-id="playthrough_15_10">Black Hand Gotthard Progress: If you missed him at the Abyss Watchers fight, he can be summoned for the Pontiff Sulyvahn fight and you'll receive the By My Sword Gesture upon his summon</li>
+          <li data-id="playthrough_15_17">Defeat <a href="http://darksouls3.wiki.fextralife.com/Pontiff+Sulyvahn">Pontiff Sulyvahn</a></li>
           <li data-id="playthrough_15_11">Yuria Progress: If you didn't summon the Londor Pale Shade during the Abyss Watchers fight, you get another chance here. Remember, you must be following the Yoel/Yuria quest line to have the ability to summon her. You'll receive the Duel Bow Gesture</li>
           <li data-id="playthrough_15_12">Yuria/Anri B Progress: Head back to Firelink Shrine after defeating Pontiff and talk to Yuria and she'll discuss that the "marriage ceremony" is almost complete</li>
           <li data-id="playthrough_15_13">Once you enter the building after the Giant courtyard, there will be a illusory wall on the left side that reveals a long ladder down. Head down and defeat two of Sulyvahn's Beasts and interact with Archdeacon McDonnell to gain the Aldrich Faithful covenant</li>
@@ -272,8 +301,9 @@
         <ul id="Anor_Londo_col" class="collapse in">
           <li data-id="playthrough_8_1">After using the lift to get to Anor Londo, run back down the stairs and you'll be able to see a tower in the distance. Walk across the sky to reveal a invisible floor and continue walking straight until lined up with the tower, then walk towards it. You'll find Yorshka who will allow you into the Blades of the Darkmoon covenant. If she doesn't allow you, perform the Darkmoon Loyalty gesture in front of her to prove you are worthy</li>
           <li data-id="playthrough_8_2">Andre Progress: Once looking at the Anor Londo main door, head left and you'll find a dead Giant with the Giant's Coal by his body, which will grant you Lightning, Simple and Chaos Infusions</li>
-          <li data-id="playthrough_8_3">Andre Progress: Once inside the main castle, there will be an area on the ground floor with several Writhing Rotten Flesh enemies. Next to them will be a chest with a Estus Shard within it</li>
+          <li class="f_estus" data-id="playthrough_8_3">Andre Progress: Once inside the main castle, there will be an area on the ground floor with several Writhing Rotten Flesh enemies. Next to them will be a chest with a Estus Shard within it</li>
           <li data-id="playthrough_8_4">Anri A Progress: Open the main doors using the lever and fight the Deep Accursed enemy. You'll then find Anri's summon sign right next to the doors and be summoned to her world to fight her version of Aldrich</li>
+          <li data-id="playthrough_8_9">Defeat <a href="http://darksouls3.wiki.fextralife.com/Aldrich,+Devourer+of+Gods">Aldrich, Devourer of Gods</a></li>
           <li data-id="playthrough_8_5">Anri A Progress: After defeating him, return to Firelink Shrine and talk to Ludleth and he'll give you Anri's Straight Sword, stating that she left it for you now that her mission was complete</li>
           <li data-id="playthrough_8_6">Anri A Progress: If you told Anri of the Smouldering Lake, that is where she will be, in the same area where you fought Horace. She has also succumbed to the Dark Sigils and become hostile, so do her a favor and put her out of her misery. If you didn't tell her of the Smouldering Lake, she will instead be near the entrance of the Cathedral of the Deep. Defeating her allows you to purchase her Elite Knight Armor Set from the Shrine Handmaid</li>
           <li data-id="playthrough_8_7">Sirris Progress: After defeating Aldrich, travel to Undead Settlement via either the Cliff Underside or Dilapidated Bridge bonfire and make your way back to the room before the Curse-rotten Greatwood fight. You will find Sirris' summon sign right before the giant hole that leads to the Pit of Hollows. You'll be summoned to fight Holy Knight Hodrick, who turns out to be Sirris' grandfather. After defeating Holy Knight Hodrick, his <a href="http://darksouls3.wiki.fextralife.com/Sunset+Armor+Set">Sunset Armor Set</a> will be available in the Pit of Hollows bonfire area. You will also find the <a href="http://darksouls3.wiki.fextralife.com/Sunset+Shield">Sunset Shield</a> on a grave outside Firelink Shrine</li>
@@ -283,7 +313,7 @@
         <h3 id="Irithyll_Dungeon"><a href="#Irithyll_Dungeon_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Irithyll+Dungeon">Irithyll Dungeon</a> <span id="playthrough_totals_16"></span></h3>
         <ul id="Irithyll_Dungeon_col" class="collapse in">
           <li data-id="playthrough_16_1">From here warp back to the bonfire near the Irithyll swamp. Follow the path down towards the Irithyll Dungeon. When you are outside on a cliffside path Alva Seeker of the Spurned, will invade if you are embered. She drops the Murakumo when killed.</li>
-          <li data-id="playthrough_16_2">Andre Progress: A decent amount into the Irithyll Dungeon, you'll eventually get outside the dungeon area for a brief period and then head back into it with a room that as a Mimic chest. Kill the mimic and it'll drop a Estus Shard</li>
+          <li class="f_estus" data-id="playthrough_16_2">Andre Progress: A decent amount into the Irithyll Dungeon, you'll eventually get outside the dungeon area for a brief period and then head back into it with a room that as a Mimic chest. Kill the mimic and it'll drop a Estus Shard</li>
           <li data-id="playthrough_16_3">Siegward Progress: In the room with the Giant, kill him and then near where he was, you can talk to Siegward, who is trapped in a cell. The key to get to him is the Old Cell Key, which is in the exact room you're currently in next to a Crystal Lizard. You'll learn how to actually get to Siegward later</li>
           <li data-id="playthrough_16_4">Andre Progress: A little past the previous room and a sewer, you'll come to an area with several Jailers. After coming out of the cell that contained two giant rats, head directly straight and you'll come to another cell that contains four Wretches and the Profaned Coal, which grants Dark, Blood and Hollow Infusions</li>
           <li data-id="playthrough_16_5">Shrine Handmaid Progress: On the same side of the room will be another cell that contains the Xanthous Ashes</li>
@@ -300,19 +330,21 @@
           <li data-id="playthrough_9_5">Siegward Progress: Head back out to the rooftop of the building and you should notice another building with windows near the stairs. You can run from the roof and jump through one of the windows, so do so. This leads to the cell that Siegward is stuck in. Open it and exhaust his dialogue, he'll give you a Titanite Slab for saving him</li>
           <li data-id="playthrough_9_6">Karla Progress: Return to where Karla's cell was and you can now free her and send her to Firelink Shrine. Give her the two Pyromancy Tomes and with some effort, you can also give her the Londor Braille Divine Tome and Deep Braille Divine Tome to prevent corrupting Irina</li>
           <li data-id="playthrough_9_7">Shrine Handmaid Progress: With your new Jailer's Key Ring, you can also open a cell that was in the first area of Irithyll Dungeon that contains the Prison Chief's Ashes</li>
-          <li data-id="playthrough_9_8">Siegward Progress: Head into the Yhorm fight and the intro cutscene will show Siegward has come with you to help put his old friend to rest. Upon defeating him, you'll probably be teleported to the High Wall of Lothric, so come back to the Yhorm boss room later to find Siegward's Catarina Armor Set, the Pierce Shield, and another Storm Ruler</li>
+          <li data-id="playthrough_9_8">Defeat <a href="http://darksouls3.wiki.fextralife.com/Yhorm+the+Giant"> Yhorm the Giant</a>. If you have kept up with Siegward's quest so far, upon entering the Yhorm fight the intro cutscene will show Siegward has come with you, to help put his old friend to rest. Upon defeating Yhorm, you'll probably be teleported to the High Wall of Lothric, so come back to the Yhorm boss room later to find Siegward's Catarina Armor Set, the Pierce Shield, and another Storm Ruler</li>
         </ul>
 
         <h3 id="Consumed_Kings_Garden"><a href="#Consumed_Kings_Garden_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Consumed+King's+Garden">Consumed King's Garden</a> <span id="playthrough_totals_10"></span></h3>
         <ul id="Consumed_Kings_Garden_col" class="collapse in">
-          <li data-id="playthrough_10_1">Andre Progress: After defeating the Dancer of the Boreal Valley and activating the ladder that was behind Emma, head up it and take the first left to reach a lift. Halfway down, jump off to a platform and then head down the stairs to the right to find a Estus Shard</li>
+          <li class="f_estus" data-id="playthrough_10_1">Andre Progress: After defeating the Dancer of the Boreal Valley and activating the ladder that was behind Emma, head up it and take the first left to reach a lift. Halfway down, jump off to a platform and then head down the stairs to the right to find a Estus Shard</li>
           <li data-id="playthrough_10_2">Hawkwood Progress: You can summon Hawkwood here for assistance against the enemies around the level and Oceiros, the Consumed King</li>
+          <li data-id="playthrough_10_5">Defeat <a href="http://darksouls3.wiki.fextralife.com/Oceiros,+the+Consumed+King">Oceiros the Consumed King</a></li>
           <li data-id="playthrough_10_3">After defeating Oceiros, continue on down and you'll find the Path of the Dragon Gesture on a body</li>
           <li data-id="playthrough_10_4">Continue further and you'll find a chest. The wall behind the chest is a illusory wall, so activate it and you'll arrive at the Untended Graves</li>
         </ul>
 
         <h3 id="Untended_Graves"><a href="#Untended_Graves_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Untended+Graves">Untended Graves</a> <span id="playthrough_totals_11"></span></h3>
         <ul id="Untended_Graves_col" class="collapse in">
+          <li data-id="playthrough_11_4">Make your way through the graves and defeat <a href="http://darksouls3.wiki.fextralife.com/Champion+Gundyr">Champion Gundyr</a></li>
           <li data-id="playthrough_11_1">Fire Keeper Progress: At the very end of the Untended Graves when you reach the alternate version of Firelink Shrine, activate the illusory wall to where Irina normally is and you'll find the Eyes of a Fire Keeper. These can be given to the Fire Keeper to trigger the End of Fire ending</li>
           <li data-id="playthrough_11_2">Shrine Handmaid Progress: There is another Shrine Handmaid here that sells the Wolf Knight Armor Set, the Priestess Ring, and other merchandise. Unlike the regular Handmaid, if you kill this one, she will not respawn, so be careful</li>
           <li data-id="playthrough_11_3">Pick up the <a href="http://darksouls3.wiki.fextralife.com/Coiled+Sword+Fragment">Coiled Sword Fragment</a></li>
@@ -321,20 +353,23 @@
         <h3 id="Archdragon_Peak"><a href="#Archdragon_Peak_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Archdragon+Peak">Archdragon Peak</a> <span id="playthrough_totals_12"></span></h3>
         <ul id="Archdragon_Peak_col" class="collapse in">
           <li data-id="playthrough_12_1">Remember that area in the Irithyll Dungeon I said to remember? You know, with the dragon statue? Go there now. Use the Path of the Dragon gesture right next to the dragon statue and wait a bit and you'll be teleported to Archdragon Peak</li>
-          <li data-id="playthrough_12_2">Hawkwood Progress: Beat the Ancient Wyvern boss and you'll receive the Dragon Head Stone</li>
+          <li data-id="playthrough_12_2">Hawkwood Progress: Beat the <a href="http://darksouls3.wiki.fextralife.com/Ancient+Wyvern">Ancient Wyvern</a> boss and you'll receive the Dragon Head Stone</li>
           <li data-id="playthrough_12_6">Continue past the Ancient Wyvern boss area to ring the bell that begins the next boss battle</li>
           <li data-id="playthrough_12_3">Hawkwood Progress: You can summon Hawkwood a little outside the Great Belfry bonfire and he'll assist you to get to the top of the stairway with loads of enemies in the path. Use the Path of the Dragon gesture at the altar at the very top of the stairway (Hawkwood will show you where) and you'll get the Twinkling Dragon Torso Stone</li>
           <li data-id="playthrough_12_4">Shrine Handmaid Progress: On the way to get the Twinkling Dragon Torso Stone, you can find the Dragon Chaser's Ashes off to the side</li>
           <li data-id="playthrough_12_5">Hawkwood Progress: Head back to Firelink Shrine and talk to Andre. He'll give you a message from Hawkwood asking you to come to the Abyss Watchers bonfire to settle things. Head there and battle Hawkwood. If you win, you gain the Twinkling Dragon Head Stone. If you lose, Hawkwood takes your Twinkling Dragon Torso Stone. You can battle him as many times as you like until you beat him</li>
-          <li data-id="playthrough_12_7">In the area where you see Havel standing in front of a dead dragon, you will find the spell <a href="http://darksouls3.wiki.fextralife.com/Great+Magic+Barrier" target="_blank">Great Magic Barrier</a> off the ledge to the left</li>
+          <li data-id="playthrough_12_7">In the area where you see Havel standing in front of a dead dragon, you will find the spell <a href="http://darksouls3.wiki.fextralife.com/Great+Magic+Barrier">Great Magic Barrier</a> off the ledge to the left</li>
+          <li data-id="playthrough_12_8">Defeat the <a href="http://darksouls3.wiki.fextralife.com/Nameless+King">Nameless King</a></li>
         </ul>
 
         <h3 id="Lothric_Castle"><a href="#Lothric_Castle_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Lothric+Castle">Lothric Castle</a> <span id="playthrough_totals_13"></span></h3>
         <ul id="Lothric_Castle_col" class="collapse in">
+          <li data-id="playthrough_13_9">Defeat <a href="http://darksouls3.wiki.fextralife.com/Dancer+of+the+Boreal+Valley">Dancer of the Boreal Valley</a></li>
           <li data-id="playthrough_13_1">Greirat Progress: From this point on, if Greirat offers to pillage Lothric Castle, refuse. No matter what happens, he will die on this trip. Even if you tell Patches of his whereabouts after he departs, Patches can't even save him</li>
           <li data-id="playthrough_13_2">Firelink Shrine Bonfire Progress: Starting at the Dragon Barracks bonfire, go up the stairs and to the bride where the two dragons are. Run almost all the way across the bridge and drop off at the end. A Undead Bone Shard is underneath the bridge</li>
           <li data-id="playthrough_13_3">Looking at the fog door for the Dragonslayer Armour, turn around and use the ladder on the building to climb up it. Head over the roofs to the windows of an opposite building. Climb down the ladder in this room and move through the bridge to reach a altar. Pray at it to receive the Praise the Sun Gesture</li>
           <li data-id="playthrough_13_4">Eygon Progress: If to this point, you have not purchased any Dark Miracles from Irina or not even given her the Londor and Deep Tomes, Eygon can be summoned for the Dragonslayer Armour fight. His dead body can be found in Irina's original cell in the Undead Settlement after this fight. You can then purchase Morne's Armor Set from the Shrine Handmaid</li>
+          <li data-id="playthrough_13_9">Defeat the <a href="http://darksouls3.wiki.fextralife.com/Dragonslayer+Armour">Dragonslayer Armour</a></li>
           <li data-id="playthrough_13_5">Irina Progress: After defeating Dragonslayer Armour and activating the bonfire, turn around and you'll find the Braille Divine Tome of Lothric down some stairs</li>
           <li data-id="playthrough_13_6">Irina Progress: There are two ends to Irina's side quest depending on if you follow what I've told you to do or not. Irina A is the good end, Irina B is the bad end</li>
           <li data-id="playthrough_13_7">Irina A Progress: By giving her just the Braille Divine Tome of Carim and Braille Divine Tome of Lothric, or by giving her all 4 Tomes, but not buying any Dark Miracles, you can make Irina a Fire Keeper. Just buy all her standard spells, plus Med Heal, Tears of Denial, Force, Bountiful Light, Blessed Weapon, and Magic Barrier. She'll move to the bottom of the tower to the left of Firelink Shrine after you refresh the world and now act as a Fire Keeper. If you did give her the Londor and Deep Tome instead of Karla, they will be on the ground beside her and you can now give them to Karla</li>
@@ -346,7 +381,8 @@
           <li data-id="playthrough_18_1">Orbeck Progress: Once inside the Grand Archives, you'll notice a Crystal Sage. Killing her will give you the Crystal Scroll</li>
           <li data-id="playthrough_18_2">Orbeck Progress: Orbeck grants you different rewards based on certain criteria. The Young Dragon Ring is given to you after buying three of his spells and giving him at least one scroll. The Slumbering Dragon Ring is given to you after buying Aural Decoy, Farron Flashsword, and Pestilent Mercury. He'll also give you the Silent Ally Gesture through this. Giving him all 4 scrolls and buying every spell he offers will cause him to tell you he is departing. You'll now be able to summon him for the Twin Princes fight</li>
           <li data-id="playthrough_18_3">Firelink Shrine Bonfire Progress: In the area of the rooftops where you fight some Gargoyles, there will be a broken window that you have to enter. The Undead Bone Shard will be on this balcony on a dead body in a chair</li>
-          <li data-id="playthrough_18_4">Andre Progress: On the very top of the Grand Archives while looking at the stairs to the Twin Princes fight, turn around and go up another roof where the three Gertrude's Knights are. You'll find a Estus Shard on the very back of this roof</li>
+          <li class="f_estus" data-id="playthrough_18_4">Andre Progress: On the very top of the Grand Archives while looking at the stairs to the Twin Princes fight, turn around and go up another roof where the three Gertrude's Knights are. You'll find a Estus Shard on the very back of this roof</li>
+          <li data-id="playthrough_18_10">Defeat the <a href="http://darksouls3.wiki.fextralife.com/Lothric,+Younger+Prince">Twin Princes</a></li>
           <li data-id="playthrough_18_5">Orbeck Progress: After beating the Twin Princes, you can find his dead body in the Grand Archives if he departed from your Firelink Shrine after you bought all his spells. You can give his ashes to the Shrine Handmaid for her to sell his spells or give them to Yuria for the <a href="http://darksouls3.wiki.fextralife.com/Morion+Blade">Morion Blade</a></li>
           <li data-id="playthrough_18_6">Sirris Progress: Return to her grandfather's grave after the Twin Princes fight and you'll find her body with the Sunless Talisman on it. You can also now buy Sirris' Sunless Armor Set from the Shrine Handmaid</li>
           <li data-id="playthrough_18_7">Leonhard Progress: With Sirris' side quest complete, you are now free to finally continue Leonhard's. Head to the Rosaria's Bed Chamber bonfire and either give her a Pale Tongue or equip the Rosaria's Fingers covenant item. Refresh the world and Leonhard will now be in this room. Exhaust his dialogue. Refresh the world again and Rosaria will now be dead with a Black Eye Orb on her body</li>
@@ -357,6 +393,7 @@
         <h3 id="Kiln_of_the_First_Flame"><a href="#Kiln_of_the_First_Flame_col" data-toggle="collapse" class="btn btn-primary btn-collapse btn-sm"></a><a href="http://darksouls3.wiki.fextralife.com/Kiln+of+the+First+Flame">Kiln of the First Flame</a> <span id="playthrough_totals_19"></span></h3>
         <ul id="Kiln_of_the_First_Flame_col" class="collapse in">
           <li data-id="playthrough_19_1">Yuria Progress: You can summon Yuria for the Soul of Cinder fight. After the fight, go to Firelink Shrine and where Yuria normally is will now be her Black Armor Set and Darkdrift</li>
+          <li data-id="playthrough_19_7">Defeat the <a href="http://darksouls3.wiki.fextralife.com/Soul+of+Cinder">Soul of Cinder</a></li>
           <li data-id="playthrough_19_2">Ending Guide: Depending on what you've done at this point, you will have certain options for the endings you can select</li>
           <li data-id="playthrough_19_3">Ending 1: Simply interact with the First Flame results in the 'To Link the First Flame' ending. This is the standard ending</li>
           <li data-id="playthrough_19_4">Ending 2: If you obtained the Eyes of a Fire Keeper from the Untended Graves area and gave them to the Fire Keeper you can use a summon sign next to the bonfire to trigger the 'The End of Fire' ending</li>
@@ -687,6 +724,7 @@
             <li data-id="weapons_1_1"><a href="http://darksouls3.wiki.fextralife.com/Dagger">Dagger</a></li>
             <li data-id="weapons_1_2"><a href="http://darksouls3.wiki.fextralife.com/Parrying+Dagger">Parrying Dagger</a></li>
             <li data-id="weapons_1_3"><a href="http://darksouls3.wiki.fextralife.com/Mail+Breaker">Mail Breaker</a></li>
+            <li data-id="weapons_1_11"><a href="http://darksouls3.wiki.fextralife.com/Harpe">Harpe</a></li>
             <li data-id="weapons_1_4"><a href="http://darksouls3.wiki.fextralife.com/Bandit's+Knife">Bandit's Knife</a></li>
             <li data-id="weapons_1_5"><a href="http://darksouls3.wiki.fextralife.com/Rotten+Ghru+Dagger">Rotten Ghru Dagger</a></li>
             <li data-id="weapons_1_6"><a href="http://darksouls3.wiki.fextralife.com/Corvian+Greatknife">Corvian Greatknife</a></li>
@@ -694,7 +732,6 @@
             <li data-id="weapons_1_8"><a href="http://darksouls3.wiki.fextralife.com/Scholar's+Candlestick">Scholar's Candlestick</a></li>
             <li data-id="weapons_1_9"><a href="http://darksouls3.wiki.fextralife.com/Tailbone+Short+Sword">Tailbone Short Sword</a></li>
             <li data-id="weapons_1_10"><a href="http://darksouls3.wiki.fextralife.com/Brigand+Twindaggers">Brigand Twindaggers</a></li>
-            <li data-id="weapons_1_11"><a href="http://darksouls3.wiki.fextralife.com/Harpe">Harpe</a></li>
           </ul>
           <h4><a href="http://darksouls3.wiki.fextralife.com/Straight+Swords">Straight Swords</a></h4>
           <ul>
@@ -718,119 +755,165 @@
           <ul>
             <li data-id="weapons_1_27"><a href="http://darksouls3.wiki.fextralife.com/Bastard+Sword">Bastard Sword</a></li>
             <li data-id="weapons_1_28"><a href="http://darksouls3.wiki.fextralife.com/Claymore">Claymore</a></li>
-            <li data-id="weapons_1_29"><a href="http://darksouls3.wiki.fextralife.com/Hollowslayer+Greatsword">Hollowslayer Greatsword</a></li>
-            <li data-id="weapons_1_30"><a href="http://darksouls3.wiki.fextralife.com/Firelink+Greatsword">Firelink Greatsword</a></li>
-            <li data-id="weapons_1_31"><a href="http://darksouls3.wiki.fextralife.com/Black+Knight+Sword">Black Knight Sword</a></li>
             <li data-id="weapons_1_32"><a href="http://darksouls3.wiki.fextralife.com/Flamberge">Flamberge</a></li>
+            <li data-id="weapons_1_40"><a href="http://darksouls3.wiki.fextralife.com/Drakeblood+Greatsword">Drakeblood Greatsword</a></li>
             <li data-id="weapons_1_33"><a href="http://darksouls3.wiki.fextralife.com/Executioner's+Greatsword">Executioner's Greatsword</a></li>
-            <li data-id="weapons_1_34"><a href="http://darksouls3.wiki.fextralife.com/Wolf+Knight's+Greatsword">Wolf Knight's Greatsword</a></li>
+            <li data-id="weapons_1_31"><a href="http://darksouls3.wiki.fextralife.com/Black+Knight+Sword">Black Knight Sword</a></li>
+            <li data-id="weapons_1_29"><a href="http://darksouls3.wiki.fextralife.com/Hollowslayer+Greatsword">Hollowslayer Greatsword</a></li>
             <li data-id="weapons_1_35"><a href="http://darksouls3.wiki.fextralife.com/Wolnir's+Holy+Sword">Wolnir's Holy Sword</a></li>
             <li data-id="weapons_1_36"><a href="http://darksouls3.wiki.fextralife.com/Greatsword+of+Judgment">Greatsword of Judgement</a></li>
             <li data-id="weapons_1_37"><a href="http://darksouls3.wiki.fextralife.com/Storm+Ruler">Storm Ruler</a></li>
+            <li data-id="weapons_1_34"><a href="http://darksouls3.wiki.fextralife.com/Wolf+Knight's+Greatsword">Wolf Knight's Greatsword</a></li>
             <li data-id="weapons_1_38"><a href="http://darksouls3.wiki.fextralife.com/Moonlight+Greatsword">Moonlight Greatsword</a></li>
+            <li data-id="weapons_1_30"><a href="http://darksouls3.wiki.fextralife.com/Firelink+Greatsword">Firelink Greatsword</a></li>
             <li data-id="weapons_1_39"><a href="http://darksouls3.wiki.fextralife.com/Twin+Princes'+Greatsword">Twin Princes' Greatsword</a></li>
-            <li data-id="weapons_1_40"><a href="http://darksouls3.wiki.fextralife.com/Drakeblood+Greatsword">Drakeblood Greatsword</a></li>
           </ul>
           <h4><a href="http://darksouls3.wiki.fextralife.com/Ultra%20Greatswords">Ultra Greatswords</a></h4>
           <ul>
             <li data-id="weapons_1_41"><a href="http://darksouls3.wiki.fextralife.com/Zweihander">Zweihander</a></li>
             <li data-id="weapons_1_42"><a href="http://darksouls3.wiki.fextralife.com/Greatsword">Greatsword</a></li>
             <li data-id="weapons_1_43"><a href="http://darksouls3.wiki.fextralife.com/Astora+Greatsword">Astora Greatsword</a></li>
-            <li data-id="weapons_1_44"><a href="http://darksouls3.wiki.fextralife.com/Farron+Greatsword">Farron Greatsword</a></li>
-            <li data-id="weapons_1_45"><a href="http://darksouls3.wiki.fextralife.com/Fume+Ultra+Greatsword">Fume Ultra Greatsword</a></li>
-            <li data-id="weapons_1_46"><a href="http://darksouls3.wiki.fextralife.com/Profaned+Greatsword">Profaned Greatsword</a></li>
+            <li data-id="weapons_1_50"><a href="http://darksouls3.wiki.fextralife.com/Lothric+Knight+Greatsword">Lothric Knight Greatsword</a></li>
             <li data-id="weapons_1_47"><a href="http://darksouls3.wiki.fextralife.com/Cathedral+Knight+Greatsword">Cathedral Knight Greatsword</a></li>
             <li data-id="weapons_1_48"><a href="http://darksouls3.wiki.fextralife.com/Black+Knight+Greatsword">Black Knight Greatsword</a></li>
-            <li data-id="weapons_1_49"><a href="http://darksouls3.wiki.fextralife.com/Lorian's+Greatsword">Lorian's Greatsword</a></li>
-            <li data-id="weapons_1_50"><a href="http://darksouls3.wiki.fextralife.com/Lothric+Knight+Greatsword">Lothric Knight Greatsword</a></li>
+            <li data-id="weapons_1_45"><a href="http://darksouls3.wiki.fextralife.com/Fume+Ultra+Greatsword">Fume Ultra Greatsword</a></li>
+            <li data-id="weapons_1_46"><a href="http://darksouls3.wiki.fextralife.com/Profaned+Greatsword">Profaned Greatsword</a></li>
+            <li data-id="weapons_1_44"><a href="http://darksouls3.wiki.fextralife.com/Farron+Greatsword">Farron Greatsword</a></li>
+            <li data-id="weapons_1_49"><a href="http://darksouls3.wiki.fextralife.com/Lorian's+Greatsword">Lorian's Greatsword</a></li>   <!-- might not be sorted correctly -->
           </ul>
           <h4><a href="http://darksouls3.wiki.fextralife.com/Curved+Swords">Curved Swords</a></h4>
           <ul>
-            <li data-id="weapons_1_51"><a href="http://darksouls3.wiki.fextralife.com/Crescent+Moon+Sword">Crescent Moon Sword</a></li>
             <li data-id="weapons_1_52"><a href="http://darksouls3.wiki.fextralife.com/Scimitar">Scimitar</a></li>
-            <li data-id="weapons_1_53"><a href="http://darksouls3.wiki.fextralife.com/Pontiff+Knight+Curved+Sword">Pontiff Knight Curved Sword</a></li>
             <li data-id="weapons_1_54"><a href="http://darksouls3.wiki.fextralife.com/Falchion">Falchion</a></li>
-            <li data-id="weapons_1_55"><a href="http://darksouls3.wiki.fextralife.com/Sellsword+Twinblades">Sellsword Twinblades</a></li>
-            <li data-id="weapons_1_56"><a href="http://darksouls3.wiki.fextralife.com/Warden+Twinblades">Warden Twinblades</a></li>
             <li data-id="weapons_1_57"><a href="http://darksouls3.wiki.fextralife.com/Shotel">Shotel</a></li>
-            <li data-id="weapons_1_58"><a href="http://darksouls3.wiki.fextralife.com/Painting+Guardian's+Curved+Sword">Painting Guardian's Curved Sword</a></li>
-            <li data-id="weapons_1_59"><a href="http://darksouls3.wiki.fextralife.com/Dancer's+Enchanted+Swords">Dancer's Enchanted Swords</a></li>
-            <li data-id="weapons_1_60"><a href="http://darksouls3.wiki.fextralife.com/Storm+Curved+Sword">Storm Curved Sword</a></li>
             <li data-id="weapons_1_61"><a href="http://darksouls3.wiki.fextralife.com/Carthus+Curved+Sword">Carthus Curved Sword</a></li>
             <li data-id="weapons_1_62"><a href="http://darksouls3.wiki.fextralife.com/Carthus+Shotel">Carthus Shotel</a></li>
             <li data-id="weapons_1_63"><a href="http://darksouls3.wiki.fextralife.com/Rotten+Ghru+Curved+Sword">Rotten Ghru Curved Sword</a></li>
+            <li data-id="weapons_1_58"><a href="http://darksouls3.wiki.fextralife.com/Painting+Guardian's+Curved+Sword">Painting Guardian's Curved Sword</a></li>
+            <li data-id="weapons_1_53"><a href="http://darksouls3.wiki.fextralife.com/Pontiff+Knight+Curved+Sword">Pontiff Knight Curved Sword</a></li>
+            <li data-id="weapons_1_51"><a href="http://darksouls3.wiki.fextralife.com/Crescent+Moon+Sword">Crescent Moon Sword</a></li>
+            <li data-id="weapons_1_60"><a href="http://darksouls3.wiki.fextralife.com/Storm+Curved+Sword">Storm Curved Sword</a></li>
+            <li data-id="weapons_1_55"><a href="http://darksouls3.wiki.fextralife.com/Sellsword+Twinblades">Sellsword Twinblades</a></li>
+            <li data-id="weapons_1_56"><a href="http://darksouls3.wiki.fextralife.com/Warden+Twinblades">Warden Twinblades</a></li>
+            <li data-id="weapons_1_59"><a href="http://darksouls3.wiki.fextralife.com/Dancer's+Enchanted+Swords">Dancer's Enchanted Swords</a></li>
           </ul>
           <h4><a href="http://darksouls3.wiki.fextralife.com/Curved+Greatswords">Curved Greatswords</a></h4>
           <ul>
             <li data-id="weapons_1_64"><a href="http://darksouls3.wiki.fextralife.com/Murakumo">Murakumo</a></li>
+            <li data-id="weapons_1_67"><a href="http://darksouls3.wiki.fextralife.com/Carthus+Curved+Greatsword">Carthus Curved Greatsword</a></li>
             <li data-id="weapons_1_65"><a href="http://darksouls3.wiki.fextralife.com/Exile+Greatsword">Exile Greatsword</a></li>
             <li data-id="weapons_1_66"><a href="http://darksouls3.wiki.fextralife.com/Old+Wolf+Curved+Sword">Old Wolf Curved Sword</a></li>
-            <li data-id="weapons_1_67"><a href="http://darksouls3.wiki.fextralife.com/Carthus+Curved+Greatsword">Carthus Curved Greatsword</a></li>
-          </ul>
-          <h4><a href="http://darksouls3.wiki.fextralife.com/Katanas">Katanas</a></h4>
-          <ul>
-            <li data-id="weapons_1_68"><a href="http://darksouls3.wiki.fextralife.com/Darkdrift">Darkdrift</a></li>
-            <li data-id="weapons_1_69"><a href="http://darksouls3.wiki.fextralife.com/Uchigatana">Uchigatana</a></li>
-            <li data-id="weapons_1_70"><a href="http://darksouls3.wiki.fextralife.com/Washing+Pole">Washing Pole</a></li>
-            <li data-id="weapons_1_71"><a href="http://darksouls3.wiki.fextralife.com/Onikiri+and+Ubadachi">Onikiri and Ubadachi</a></li>
-            <li data-id="weapons_1_72"><a href="http://darksouls3.wiki.fextralife.com/Black+Blade">Black Blade</a></li>
-            <li data-id="weapons_1_73"><a href="http://darksouls3.wiki.fextralife.com/Chaos+Blade">Chaos Blade</a></li>
-            <li data-id="weapons_1_74"><a href="http://darksouls3.wiki.fextralife.com/Bloodlust">Bloodlust</a></li>
           </ul>
           <h4><a href="http://darksouls3.wiki.fextralife.com/Thrusting+Swords">Thrusting Swords</a></h4>
           <ul>
-            <li data-id="weapons_1_75"><a href="http://darksouls3.wiki.fextralife.com/Estoc">Estoc</a></li>
             <li data-id="weapons_1_76"><a href="http://darksouls3.wiki.fextralife.com/Rapier">Rapier</a></li>
+            <li data-id="weapons_1_75"><a href="http://darksouls3.wiki.fextralife.com/Estoc">Estoc</a></li>
             <li data-id="weapons_1_77"><a href="http://darksouls3.wiki.fextralife.com/Ricard's+Rapier">Ricard's Rapier</a></li>
-            <li data-id="weapons_1_78"><a href="http://darksouls3.wiki.fextralife.com/Crystal+Sage's+Rapier">Crystal Sage's Rapier</a></li>
             <li data-id="weapons_1_79"><a href="http://darksouls3.wiki.fextralife.com/Irithyll+Rapier">Irithyll Rapier</a></li>
+            <li data-id="weapons_1_78"><a href="http://darksouls3.wiki.fextralife.com/Crystal+Sage's+Rapier">Crystal Sage's Rapier</a></li>
+          </ul>
+          <h4><a href="http://darksouls3.wiki.fextralife.com/Katanas">Katanas</a></h4>
+          <ul>
+            <li data-id="weapons_1_69"><a href="http://darksouls3.wiki.fextralife.com/Uchigatana">Uchigatana</a></li>
+            <li data-id="weapons_1_70"><a href="http://darksouls3.wiki.fextralife.com/Washing+Pole">Washing Pole</a></li>
+            <li data-id="weapons_1_72"><a href="http://darksouls3.wiki.fextralife.com/Black+Blade">Black Blade</a></li>
+            <li data-id="weapons_1_74"><a href="http://darksouls3.wiki.fextralife.com/Bloodlust">Bloodlust</a></li>
+            <li data-id="weapons_1_73"><a href="http://darksouls3.wiki.fextralife.com/Chaos+Blade">Chaos Blade</a></li>
+            <li data-id="weapons_1_68"><a href="http://darksouls3.wiki.fextralife.com/Darkdrift">Darkdrift</a></li>
+            <li data-id="weapons_1_71"><a href="http://darksouls3.wiki.fextralife.com/Onikiri+and+Ubadachi">Onikiri and Ubadachi</a></li>
           </ul>
           <h4><a href="http://darksouls3.wiki.fextralife.com/Axes">Axes</a></h4>
           <ul>
-            <li data-id="weapons_1_80"><a href="http://darksouls3.wiki.fextralife.com/Battle+Axe">Battle Axe</a></li>
             <li data-id="weapons_1_81"><a href="http://darksouls3.wiki.fextralife.com/Hand+Axe">Hand Axe</a></li>
             <li data-id="weapons_1_82"><a href="http://darksouls3.wiki.fextralife.com/Thrall+Axe">Thrall Axe</a></li>
+            <li data-id="weapons_1_80"><a href="http://darksouls3.wiki.fextralife.com/Battle+Axe">Battle Axe</a></li>
             <li data-id="weapons_1_83"><a href="http://darksouls3.wiki.fextralife.com/Brigand+Axe">Brigand Axe</a></li>
             <li data-id="weapons_1_84"><a href="http://darksouls3.wiki.fextralife.com/Dragonslayer's+Axe">Dragonslayer's Axe</a></li>
-            <li data-id="weapons_1_85"><a href="http://darksouls3.wiki.fextralife.com/Butcher+Knife">Butcher Knife</a></li>
-            <li data-id="weapons_1_86"><a href="http://darksouls3.wiki.fextralife.com/Winged+Knight+Twinaxes">Winged Knight Twinaxes</a></li>
-            <li data-id="weapons_1_87"><a href="http://darksouls3.wiki.fextralife.com/Eleonora">Eleonora</a></li>
             <li data-id="weapons_1_88"><a href="http://darksouls3.wiki.fextralife.com/Man+Serpent+Hatchet">Man Serpent Hatchet</a></li>
+            <li data-id="weapons_1_85"><a href="http://darksouls3.wiki.fextralife.com/Butcher+Knife">Butcher Knife</a></li>
+            <li data-id="weapons_1_87"><a href="http://darksouls3.wiki.fextralife.com/Eleonora">Eleonora</a></li>
+            <li data-id="weapons_1_86"><a href="http://darksouls3.wiki.fextralife.com/Winged+Knight+Twinaxes">Winged Knight Twinaxes</a></li>
           </ul>
           <h4><a href="http://darksouls3.wiki.fextralife.com/Greataxes">Greataxes</a></h4>
           <ul>
             <li data-id="weapons_1_89"><a href="http://darksouls3.wiki.fextralife.com/Greataxe">Greataxe</a></li>
-            <li data-id="weapons_1_90"><a href="http://darksouls3.wiki.fextralife.com/Dragonslayer+Greataxe">Dragonslayer Greataxe</a></li>
-            <li data-id="weapons_1_91"><a href="http://darksouls3.wiki.fextralife.com/Demon's+Greataxe">Demon's Greataxe</a></li>
             <li data-id="weapons_1_92"><a href="http://darksouls3.wiki.fextralife.com/Great+Machete">Great Machete</a></li>
-            <li data-id="weapons_1_93"><a href="http://darksouls3.wiki.fextralife.com/Yhorm's+Great+Machete">Yhorm's Great Machete</a></li>
             <li data-id="weapons_1_94"><a href="http://darksouls3.wiki.fextralife.com/Black+Knight+Greataxe">Black Knight Greataxe</a></li>
+            <li data-id="weapons_1_91"><a href="http://darksouls3.wiki.fextralife.com/Demon's+Greataxe">Demon's Greataxe</a></li>
+            <li data-id="weapons_1_90"><a href="http://darksouls3.wiki.fextralife.com/Dragonslayer+Greataxe">Dragonslayer Greataxe</a></li>
+            <li data-id="weapons_1_93"><a href="http://darksouls3.wiki.fextralife.com/Yhorm's+Great+Machete">Yhorm's Great Machete</a></li>
           </ul>
           <h4><a href="http://darksouls3.wiki.fextralife.com/Hammers">Hammers</a></h4>
           <ul>
             <li data-id="weapons_1_95"><a href="http://darksouls3.wiki.fextralife.com/Club">Club</a></li>
-            <li data-id="weapons_1_96"><a href="http://darksouls3.wiki.fextralife.com/Drang+Hammers">Drang Hammers</a></li>
+            <li data-id="weapons_1_99"><a href="http://darksouls3.wiki.fextralife.com/Reinforced+Club">Reinforced Club</a></li>
             <li data-id="weapons_1_97"><a href="http://darksouls3.wiki.fextralife.com/Mace">Mace</a></li>
             <li data-id="weapons_1_98"><a href="http://darksouls3.wiki.fextralife.com/Morning+Star">Morning Star</a></li>
-            <li data-id="weapons_1_99"><a href="http://darksouls3.wiki.fextralife.com/Reinforced+Club">Reinforced Club</a></li>
-            <li data-id="weapons_1_100"><a href="http://darksouls3.wiki.fextralife.com/Heysel+Pick">Heysel Pick</a></li>
             <li data-id="weapons_1_101"><a href="http://darksouls3.wiki.fextralife.com/Warpick">Warpick</a></li>
             <li data-id="weapons_1_102"><a href="http://darksouls3.wiki.fextralife.com/Blacksmith+Hammer">Blacksmith Hammer</a></li>
+            <li data-id="weapons_1_100"><a href="http://darksouls3.wiki.fextralife.com/Heysel+Pick">Heysel Pick</a></li>
+            <li data-id="weapons_1_96"><a href="http://darksouls3.wiki.fextralife.com/Drang+Hammers">Drang Hammers</a></li>
           </ul>
           <h4><a href="http://darksouls3.wiki.fextralife.com/Great+Hammers">Great Hammers</a></h4>
           <ul>
-            <li data-id="weapons_1_103"><a href="http://darksouls3.wiki.fextralife.com/Gargoyle+Flame+Hammer">Gargoyle Flame Hammer</a></li>
-            <li data-id="weapons_1_104"><a href="http://darksouls3.wiki.fextralife.com/Great+Mace">Great Mace</a></li>
             <li data-id="weapons_1_105"><a href="http://darksouls3.wiki.fextralife.com/Large+Club">Large Club</a></li>
-            <li data-id="weapons_1_106"><a href="http://darksouls3.wiki.fextralife.com/Vordt's+Great+Hammer">Vordt's Great Hammer</a></li>
-            <li data-id="weapons_1_107"><a href="http://darksouls3.wiki.fextralife.com/Morne's+Great+Hammer">Morne's Great Hammer</a></li>
-            <li data-id="weapons_1_108"><a href="http://darksouls3.wiki.fextralife.com/Great+Wooden+Hammer">Great Wooden Hammer</a></li>
             <li data-id="weapons_1_109"><a href="http://darksouls3.wiki.fextralife.com/Great+Club">Great Club</a></li>
-            <li data-id="weapons_1_110"><a href="http://darksouls3.wiki.fextralife.com/Smough's+Great+Hammer">Smough's Great Hammer</a></li>
-            <li data-id="weapons_1_111"><a href="http://darksouls3.wiki.fextralife.com/Old+King's+Great+Hammer">Old King's Great Hammer</a></li>
-            <li data-id="weapons_1_112"><a href="http://darksouls3.wiki.fextralife.com/Pickaxe">Pickaxe</a></li>
-            <li data-id="weapons_1_113"><a href="http://darksouls3.wiki.fextralife.com/Dragon+Tooth">Dragon Tooth</a></li>
+            <li data-id="weapons_1_104"><a href="http://darksouls3.wiki.fextralife.com/Great+Mace">Great Mace</a></li>
             <li data-id="weapons_1_114"><a href="http://darksouls3.wiki.fextralife.com/Spiked+Mace">Spiked Mace</a></li>
+            <li data-id="weapons_1_112"><a href="http://darksouls3.wiki.fextralife.com/Pickaxe">Pickaxe</a></li>
+            <li data-id="weapons_1_108"><a href="http://darksouls3.wiki.fextralife.com/Great+Wooden+Hammer">Great Wooden Hammer</a></li>
+            <li data-id="weapons_1_103"><a href="http://darksouls3.wiki.fextralife.com/Gargoyle+Flame+Hammer">Gargoyle Flame Hammer</a></li>
+            <li data-id="weapons_1_107"><a href="http://darksouls3.wiki.fextralife.com/Morne's+Great+Hammer">Morne's Great Hammer</a></li>
+            <li data-id="weapons_1_110"><a href="http://darksouls3.wiki.fextralife.com/Smough's+Great+Hammer">Smough's Great Hammer</a></li>
+            <li data-id="weapons_1_106"><a href="http://darksouls3.wiki.fextralife.com/Vordt's+Great+Hammer">Vordt's Great Hammer</a></li>
+            <li data-id="weapons_1_111"><a href="http://darksouls3.wiki.fextralife.com/Old+King's+Great+Hammer">Old King's Great Hammer</a></li>
+            <li data-id="weapons_1_113"><a href="http://darksouls3.wiki.fextralife.com/Dragon+Tooth">Dragon Tooth</a></li>
+          </ul>
+          <h4><a href="http://darksouls3.wiki.fextralife.com/Spears">Spears</a> and <a href="http://darksouls3.wiki.fextralife.com/Pikes">Pikes</a></h4>
+          <ul>
+            <li data-id="weapons_1_123"><a href="http://darksouls3.wiki.fextralife.com/Spear">Spear</a></li>
+            <li data-id="weapons_1_126"><a href="http://darksouls3.wiki.fextralife.com/Winged+Spear">Winged Spear</a></li>
+            <li data-id="weapons_1_130"><a href="http://darksouls3.wiki.fextralife.com/Partizan">Partizan</a></li>
+            <li data-id="weapons_1_129"><a href="http://darksouls3.wiki.fextralife.com/Rotten+Ghru+Spear">Rotten Ghru Spear</a></li>
+            <li data-id="weapons_1_127"><a href="http://darksouls3.wiki.fextralife.com/Four-Pronged+Plow">Four-Pronged Plow</a></li>
+            <li data-id="weapons_1_128"><a href="http://darksouls3.wiki.fextralife.com/Saint+Bident">Saint Bident</a></li>
+            <li data-id="weapons_1_122"><a href="http://darksouls3.wiki.fextralife.com/Gargoyle+Flame+Spear">Gargoyle Flame Spear</a></li>
+            <li data-id="weapons_1_135"><a href="http://darksouls3.wiki.fextralife.com/Soldering+Iron">Soldering Iron</a></li>
+            <li data-id="weapons_1_131"><a href="http://darksouls3.wiki.fextralife.com/Yorshka's+Spear">Yorshka's Spear</a></li>
+            <li data-id="weapons_1_132"><a href="http://darksouls3.wiki.fextralife.com/Dragonslayer+Spear">Dragonslayer Spear</a></li>
+            <li data-id="weapons_1_134"><a href="http://darksouls3.wiki.fextralife.com/Golden+Ritual+Spear">Golden Ritual Spear</a></li>
+            <li data-id="weapons_1_124"><a href="http://darksouls3.wiki.fextralife.com/Tailbone+Spear">Tailbone Spear</a></li>
+            <li data-id="weapons_1_120"><a href="http://darksouls3.wiki.fextralife.com/Arstor's+Spear">Arstor's Spear</a></li>
+            <li data-id="weapons_1_133"><a href="http://darksouls3.wiki.fextralife.com/Dragonslayer+Swordspear">Dragonslayer Swordspear</a></li>
+            <li data-id="weapons_1_121"><a href="http://darksouls3.wiki.fextralife.com/Drang+Twinspears">Drang Twinspears</a></li>
+            <li data-id="weapons_1_125"><a href="http://darksouls3.wiki.fextralife.com/Pike">Pike</a></li>
+            <li data-id="weapons_1_137"><a href="http://darksouls3.wiki.fextralife.com/Greatlance">Greatlance</a></li>
+            <li data-id="weapons_1_136"><a href="http://darksouls3.wiki.fextralife.com/Lothric+Knight+Long+Spear">Lothric Knight Long Spear</a></li>
+          </ul>
+          <h4><a href="http://darksouls3.wiki.fextralife.com/Halberds">Halberds</a></h4>
+          <ul>
+            <li data-id="weapons_1_138"><a href="http://darksouls3.wiki.fextralife.com/Halberd">Halberd</a></li>
+            <li data-id="weapons_1_141"><a href="http://darksouls3.wiki.fextralife.com/Red+Hilted+Halberd">Red Hilted Halberd</a></li>
+            <li data-id="weapons_1_139"><a href="http://darksouls3.wiki.fextralife.com/Lucerne">Lucerne</a></li>
+            <li data-id="weapons_1_142"><a href="http://darksouls3.wiki.fextralife.com/Glaive">Glaive</a></li>
+            <li data-id="weapons_1_143"><a href="http://darksouls3.wiki.fextralife.com/Crescent+Axe">Crescent Axe</a></li>
+            <li data-id="weapons_1_140"><a href="http://darksouls3.wiki.fextralife.com/Winged+Knight+Halberd">Winged Knight Halberd</a></li>
+            <li data-id="weapons_1_145"><a href="http://darksouls3.wiki.fextralife.com/Black+Knight+Glaive">Black Knight Glaive</a></li>
+            <li data-id="weapons_1_146"><a href="http://darksouls3.wiki.fextralife.com/Immolation+Tinder">Immolation Tinder</a></li>
+            <li data-id="weapons_1_144"><a href="http://darksouls3.wiki.fextralife.com/Gundyr's+Halberd">Gundyr's Halberd</a></li>
+          </ul>
+          <h4><a href="http://darksouls3.wiki.fextralife.com/Reapers">Reapers</a></h4>
+          <ul>
+            <li data-id="weapons_1_147"><a href="http://darksouls3.wiki.fextralife.com/Great+Scythe">Great Scythe</a></li>
+            <li data-id="weapons_1_149"><a href="http://darksouls3.wiki.fextralife.com/Great+Corvian+Scythe">Great Corvian Scythe</a></li>
+            <li data-id="weapons_1_148"><a href="http://darksouls3.wiki.fextralife.com/Pontiff+Knight+Great+Scythe">Pontiff Knight Great Scythe</a></li>
+          </ul>
+          <h4><a href="http://darksouls3.wiki.fextralife.com/Whips">Whips</a></h4>
+          <ul>
+            <li data-id="weapons_1_150"><a href="http://darksouls3.wiki.fextralife.com/Whip">Whip</a></li>
+            <li data-id="weapons_1_151"><a href="http://darksouls3.wiki.fextralife.com/Notched+Whip">Notched Whip</a></li>
+            <li data-id="weapons_1_153"><a href="http://darksouls3.wiki.fextralife.com/Spotted+Whip">Spotted Whip</a></li>
+            <li data-id="weapons_1_152"><a href="http://darksouls3.wiki.fextralife.com/Witch's+Locks">Witch's Locks</a></li>
           </ul>
           <h4><a href="http://darksouls3.wiki.fextralife.com/Fist%20&amp;%20Claws">Fists and Claws</a></h4>
           <ul>
@@ -840,172 +923,127 @@
             <li data-id="weapons_1_118"><a href="http://darksouls3.wiki.fextralife.com/Claw">Claw</a></li>
             <li data-id="weapons_1_119"><a href="http://darksouls3.wiki.fextralife.com/Manikin+Claws">Manikin Claws</a></li>
           </ul>
-          <h4><a href="http://darksouls3.wiki.fextralife.com/Spears">Spears</a> and <a href="http://darksouls3.wiki.fextralife.com/Pikes">Pikes</a></h4>
-          <ul>
-            <li data-id="weapons_1_120"><a href="http://darksouls3.wiki.fextralife.com/Arstor's+Spear">Arstor's Spear</a></li>
-            <li data-id="weapons_1_121"><a href="http://darksouls3.wiki.fextralife.com/Drang+Twinspears">Drang Twinspears</a></li>
-            <li data-id="weapons_1_122"><a href="http://darksouls3.wiki.fextralife.com/Gargoyle+Flame+Spear">Gargoyle Flame Spear</a></li>
-            <li data-id="weapons_1_123"><a href="http://darksouls3.wiki.fextralife.com/Spear">Spear</a></li>
-            <li data-id="weapons_1_124"><a href="http://darksouls3.wiki.fextralife.com/Tailbone+Spear">Tailbone Spear</a></li>
-            <li data-id="weapons_1_125"><a href="http://darksouls3.wiki.fextralife.com/Pike">Pike</a></li>
-            <li data-id="weapons_1_126"><a href="http://darksouls3.wiki.fextralife.com/Winged+Spear">Winged Spear</a></li>
-            <li data-id="weapons_1_127"><a href="http://darksouls3.wiki.fextralife.com/Four-Pronged+Plow">Four-Pronged Plow</a></li>
-            <li data-id="weapons_1_128"><a href="http://darksouls3.wiki.fextralife.com/Saint+Bident">Saint Bident</a></li>
-            <li data-id="weapons_1_129"><a href="http://darksouls3.wiki.fextralife.com/Rotten+Ghru+Spear">Rotten Ghru Spear</a></li>
-            <li data-id="weapons_1_130"><a href="http://darksouls3.wiki.fextralife.com/Partizan">Partizan</a></li>
-            <li data-id="weapons_1_131"><a href="http://darksouls3.wiki.fextralife.com/Yorshka's+Spear">Yorshka's Spear</a></li>
-            <li data-id="weapons_1_132"><a href="http://darksouls3.wiki.fextralife.com/Dragonslayer+Spear">Dragonslayer Spear</a></li>
-            <li data-id="weapons_1_133"><a href="http://darksouls3.wiki.fextralife.com/Dragonslayer+Swordspear">Dragonslayer Swordspear</a></li>
-            <li data-id="weapons_1_134"><a href="http://darksouls3.wiki.fextralife.com/Golden+Ritual+Spear">Golden Ritual Spear</a></li>
-            <li data-id="weapons_1_135"><a href="http://darksouls3.wiki.fextralife.com/Soldering+Iron">Soldering Iron</a></li>
-            <li data-id="weapons_1_136"><a href="http://darksouls3.wiki.fextralife.com/Lothric+Knight+Long+Spear">Lothric Knight Long Spear</a></li>
-            <li data-id="weapons_1_137"><a href="http://darksouls3.wiki.fextralife.com/Greatlance">Greatlance</a></li>
-          </ul>
-          <h4><a href="http://darksouls3.wiki.fextralife.com/Halberds">Halberds</a></h4>
-          <ul>
-            <li data-id="weapons_1_138"><a href="http://darksouls3.wiki.fextralife.com/Halberd">Halberd</a></li>
-            <li data-id="weapons_1_139"><a href="http://darksouls3.wiki.fextralife.com/Lucerne">Lucerne</a></li>
-            <li data-id="weapons_1_140"><a href="http://darksouls3.wiki.fextralife.com/Winged+Knight+Halberd">Winged Knight Halberd</a></li>
-            <li data-id="weapons_1_141"><a href="http://darksouls3.wiki.fextralife.com/Red+Hilted+Halberd">Red Hilted Halberd</a></li>
-            <li data-id="weapons_1_142"><a href="http://darksouls3.wiki.fextralife.com/Glaive">Glaive</a></li>
-            <li data-id="weapons_1_143"><a href="http://darksouls3.wiki.fextralife.com/Crescent+Axe">Crescent Axe</a></li>
-            <li data-id="weapons_1_144"><a href="http://darksouls3.wiki.fextralife.com/Gundyr's+Halberd">Gundyr's Halberd</a></li>
-            <li data-id="weapons_1_145"><a href="http://darksouls3.wiki.fextralife.com/Black+Knight+Glaive">Black Knight Glaive</a></li>
-            <li data-id="weapons_1_146"><a href="http://darksouls3.wiki.fextralife.com/Immolation+Tinder">Immolation Tinder</a></li>
-          </ul>
-          <h4><a href="http://darksouls3.wiki.fextralife.com/Reapers">Reapers</a></h4>
-          <ul>
-            <li data-id="weapons_1_147"><a href="http://darksouls3.wiki.fextralife.com/Great+Scythe">Great Scythe</a></li>
-            <li data-id="weapons_1_148"><a href="http://darksouls3.wiki.fextralife.com/Pontiff+Knight+Great+Scythe">Pontiff Knight Great Scythe</a></li>
-            <li data-id="weapons_1_149"><a href="http://darksouls3.wiki.fextralife.com/Great+Corvian+Scythe">Great Corvian Scythe</a></li>
-          </ul>
-          <h4><a href="http://darksouls3.wiki.fextralife.com/Whips">Whips</a></h4>
-          <ul>
-            <li data-id="weapons_1_150"><a href="http://darksouls3.wiki.fextralife.com/Whip">Whip</a></li>
-            <li data-id="weapons_1_151"><a href="http://darksouls3.wiki.fextralife.com/Notched+Whip">Notched Whip</a></li>
-            <li data-id="weapons_1_152"><a href="http://darksouls3.wiki.fextralife.com/Witch's+Locks">Witch's Locks</a></li>
-            <li data-id="weapons_1_153"><a href="http://darksouls3.wiki.fextralife.com/Spotted+Whip">Spotted Whip</a></li>
-          </ul>
           <h4><a href="http://darksouls3.wiki.fextralife.com/Bows">Bows</a></h4>
           <ul>
-            <li data-id="weapons_1_154"><a href="http://darksouls3.wiki.fextralife.com/Black+Bow+of+Pharis">Black Bow of Pharis</a></li>
-            <li data-id="weapons_1_155"><a href="http://darksouls3.wiki.fextralife.com/Longbow">Longbow</a></li>
             <li data-id="weapons_1_156"><a href="http://darksouls3.wiki.fextralife.com/Short+Bow">Short Bow</a></li>
-            <li data-id="weapons_1_157"><a href="http://darksouls3.wiki.fextralife.com/Dragonrider+Bow">Dragonrider Bow</a></li>
             <li data-id="weapons_1_158"><a href="http://darksouls3.wiki.fextralife.com/Composite+Bow">Composite Bow</a></li>
+            <li data-id="weapons_1_155"><a href="http://darksouls3.wiki.fextralife.com/Longbow">Longbow</a></li>
+            <li data-id="weapons_1_154"><a href="http://darksouls3.wiki.fextralife.com/Black+Bow+of+Pharis">Black Bow of Pharis</a></li>
+            <li data-id="weapons_1_157"><a href="http://darksouls3.wiki.fextralife.com/Dragonrider+Bow">Dragonrider Bow</a></li>
             <li data-id="weapons_1_159"><a href="http://darksouls3.wiki.fextralife.com/Darkmoon+Longbow">Darkmoon Longbow</a></li>
           </ul>
           <h4><a href="http://darksouls3.wiki.fextralife.com/Greatbows">Greatbows</a></h4>
           <ul>
-            <li data-id="weapons_1_160"><a href="http://darksouls3.wiki.fextralife.com/Onislayer+Greatbow">Onislayer Greatbow</a></li>
             <li data-id="weapons_1_161"><a href="http://darksouls3.wiki.fextralife.com/Dragonslayer+Greatbow">Dragonslayer Greatbow</a></li>
+            <li data-id="weapons_1_160"><a href="http://darksouls3.wiki.fextralife.com/Onislayer+Greatbow">Onislayer Greatbow</a></li>
           </ul>
           <h4><a href="http://darksouls3.wiki.fextralife.com/Crossbows">Crossbows</a></h4>
           <ul>
             <li data-id="weapons_1_162"><a href="http://darksouls3.wiki.fextralife.com/Light+Crossbow">Light Crossbow</a></li>
-            <li data-id="weapons_1_163"><a href="http://darksouls3.wiki.fextralife.com/Knight's+Crossbow">Knight's Crossbow</a></li>
-            <li data-id="weapons_1_164"><a href="http://darksouls3.wiki.fextralife.com/Arbalest">Arbalest</a></li>
-            <li data-id="weapons_1_165"><a href="http://darksouls3.wiki.fextralife.com/Sniper+Crossbow">Sniper Crossbow</a></li>
-            <li data-id="weapons_1_166"><a href="http://darksouls3.wiki.fextralife.com/Avelyn">Avelyn</a></li>
             <li data-id="weapons_1_167"><a href="http://darksouls3.wiki.fextralife.com/Heavy+Crossbow">Heavy Crossbow</a></li>
+            <li data-id="weapons_1_165"><a href="http://darksouls3.wiki.fextralife.com/Sniper+Crossbow">Sniper Crossbow</a></li>
+            <li data-id="weapons_1_164"><a href="http://darksouls3.wiki.fextralife.com/Arbalest">Arbalest</a></li>
+            <li data-id="weapons_1_163"><a href="http://darksouls3.wiki.fextralife.com/Knight's+Crossbow">Knight's Crossbow</a></li>
+            <li data-id="weapons_1_166"><a href="http://darksouls3.wiki.fextralife.com/Avelyn">Avelyn</a></li>
           </ul>
           <h4><a href="http://darksouls3.wiki.fextralife.com/Staves">Staves</a></h4>
           <ul>
             <li data-id="weapons_1_168"><a href="http://darksouls3.wiki.fextralife.com/Sorcerer's+Staff">Sorcerer's Staff</a></li>
             <li data-id="weapons_1_169"><a href="http://darksouls3.wiki.fextralife.com/Heretic's+Staff">Heretic's Staff</a></li>
-            <li data-id="weapons_1_170"><a href="http://darksouls3.wiki.fextralife.com/Witchtree+Branch">Witchtree Branch</a></li>
-            <li data-id="weapons_1_171"><a href="http://darksouls3.wiki.fextralife.com/Sage's+Crystal+Staff">Sage's Crystal Staff</a></li>
-            <li data-id="weapons_1_172"><a href="http://darksouls3.wiki.fextralife.com/Izalith+Staff">Izalith Staff</a></li>
             <li data-id="weapons_1_173"><a href="http://darksouls3.wiki.fextralife.com/Court+Sorcerer's+Staff">Court Sorcerer's Staff</a></li>
-            <li data-id="weapons_1_174"><a href="http://darksouls3.wiki.fextralife.com/Man-Grub's+Staff">Man-Grub's Staff</a></li>
+            <li data-id="weapons_1_170"><a href="http://darksouls3.wiki.fextralife.com/Witchtree+Branch">Witchtree Branch</a></li>
             <li data-id="weapons_1_175"><a href="http://darksouls3.wiki.fextralife.com/Storyteller's%20Staff">Storyteller's Staff</a></li>
             <li data-id="weapons_1_176"><a href="http://darksouls3.wiki.fextralife.com/Medicant's%20Staff">Medicant's Staff</a></li>
+            <li data-id="weapons_1_172"><a href="http://darksouls3.wiki.fextralife.com/Izalith+Staff">Izalith Staff</a></li>
             <li data-id="weapons_1_177"><a href="http://darksouls3.wiki.fextralife.com/Archdeacons%2BGreat%2BStaff">Archdeacon Great Staff</a></li>
+            <li data-id="weapons_1_171"><a href="http://darksouls3.wiki.fextralife.com/Sage's+Crystal+Staff">Sage's Crystal Staff</a></li>
+            <li data-id="weapons_1_174"><a href="http://darksouls3.wiki.fextralife.com/Man-Grub's+Staff">Man-Grub's Staff</a></li>  <!-- not sure if sorted correctly -->
           </ul>
           <h4><a href="http://darksouls3.wiki.fextralife.com/Flames">Flames</a>, <a href="http://darksouls3.wiki.fextralife.com/Talismans">Talismans</a> and <a href="http://darksouls3.wiki.fextralife.com/Chimes">Chimes</a></h4>
           <ul>
             <li data-id="weapons_1_178"><a href="http://darksouls3.wiki.fextralife.com/Pyromancy+Flame">Pyromancy Flame</a></li>
             <li data-id="weapons_1_179"><a href="http://darksouls3.wiki.fextralife.com/Talisman">Talisman</a></li>
+            <li data-id="weapons_1_182"><a href="http://darksouls3.wiki.fextralife.com/Canvas+Talisman">Canvas Talisman</a></li>
             <li data-id="weapons_1_180"><a href="http://darksouls3.wiki.fextralife.com/Saint's+Talisman">Saint's Talisman</a></li>
             <li data-id="weapons_1_181"><a href="http://darksouls3.wiki.fextralife.com/Sunlight+Talisman">Sunlight Talisman</a></li>
-            <li data-id="weapons_1_182"><a href="http://darksouls3.wiki.fextralife.com/Canvas+Talisman">Canvas Talisman</a></li>
-            <li data-id="weapons_1_183"><a href="http://darksouls3.wiki.fextralife.com/White+Hair+Talisman">White Hair Talisman</a></li>
             <li data-id="weapons_1_184"><a href="http://darksouls3.wiki.fextralife.com/Sunless+Talisman">Sunless Talisman</a></li>
+            <li data-id="weapons_1_183"><a href="http://darksouls3.wiki.fextralife.com/White+Hair+Talisman">White Hair Talisman</a></li>
             <li data-id="weapons_1_185"><a href="http://darksouls3.wiki.fextralife.com/Cleric's+Sacred+Chime">Cleric's Sacred Chime</a></li>
             <li data-id="weapons_1_186"><a href="http://darksouls3.wiki.fextralife.com/Priest's+Chime">Priest's Chime</a></li>
-            <li data-id="weapons_1_187"><a href="http://darksouls3.wiki.fextralife.com/Crystal+Chime">Crystal Chime</a></li>
-            <li data-id="weapons_1_188"><a href="http://darksouls3.wiki.fextralife.com/Caitha's+Chime">Caitha's Chime</a></li>
             <li data-id="weapons_1_189"><a href="http://darksouls3.wiki.fextralife.com/Saint-tree+Bellvine">Saint-tree Bellvine</a></li>
             <li data-id="weapons_1_190"><a href="http://darksouls3.wiki.fextralife.com/Yorshka's+Chime">Yorshka's Chime</a></li>
+            <li data-id="weapons_1_188"><a href="http://darksouls3.wiki.fextralife.com/Caitha's+Chime">Caitha's Chime</a></li>
+            <li data-id="weapons_1_187"><a href="http://darksouls3.wiki.fextralife.com/Crystal+Chime">Crystal Chime</a></li>
           </ul>
 
           <h3 id="Shields"><a href="http://darksouls3.wiki.fextralife.com/Shields">Shields</a> <span id="weapons_totals_2"></span></h3>
           <h4><a href="http://darksouls3.wiki.fextralife.com/Small+Shields">Small Shields</a></h4>
           <ul>
+            <li data-id="weapons_2_59"><a href="http://darksouls3.wiki.fextralife.com/Torch">Torch</a></li>
             <li data-id="weapons_2_1"><a href="http://darksouls3.wiki.fextralife.com/Buckler">Buckler</a></li>
-            <li data-id="weapons_2_2"><a href="http://darksouls3.wiki.fextralife.com/Red+and+White+Shield">Red and White Shield</a></li>
-            <li data-id="weapons_2_3"><a href="http://darksouls3.wiki.fextralife.com/Elkhorn+Round+Shield">Elkhorn Round Shield</a></li>
             <li data-id="weapons_2_4"><a href="http://darksouls3.wiki.fextralife.com/Target+Shield">Target Shield</a></li>
-            <li data-id="weapons_2_5"><a href="http://darksouls3.wiki.fextralife.com/Iron+Round+Shield">Iron Round Shield</a></li>
-            <li data-id="weapons_2_6"><a href="http://darksouls3.wiki.fextralife.com/Warrior's+Round+Shield">Warrior's Round Shield</a></li>
-            <li data-id="weapons_2_7"><a href="http://darksouls3.wiki.fextralife.com/Hawkwood's+Shield">Hawkwood's Shield</a></li>
-            <li data-id="weapons_2_8"><a href="http://darksouls3.wiki.fextralife.com/Caduceus+Round+Shield">Caduceous Round Shield</a></li>
-            <li data-id="weapons_2_9"><a href="http://darksouls3.wiki.fextralife.com/Crimson+Parma">Crimson Parma</a></li>
-            <li data-id="weapons_2_10"><a href="http://darksouls3.wiki.fextralife.com/Leather+Shield">Leather Shield</a></li>
-            <li data-id="weapons_2_11"><a href="http://darksouls3.wiki.fextralife.com/Sacred+Bloom+Shield">Sacred Bloom Shield</a></li>
             <li data-id="weapons_2_12"><a href="http://darksouls3.wiki.fextralife.com/Small+Leather+Shield">Small Leather Shield</a></li>
-            <li data-id="weapons_2_13"><a href="http://darksouls3.wiki.fextralife.com/Llewellyn+Shield">Llewellyn Shield</a></li>
-            <li data-id="weapons_2_14"><a href="http://darksouls3.wiki.fextralife.com/Golden+Falcon+Shield">Golden Falcon Shield</a></li>
-            <li data-id="weapons_2_15"><a href="http://darksouls3.wiki.fextralife.com/Eastern+Iron+Shield">Eastern Iron Shield</a></li>
+            <li data-id="weapons_2_10"><a href="http://darksouls3.wiki.fextralife.com/Leather+Shield">Leather Shield</a></li>
+            <li data-id="weapons_2_9"><a href="http://darksouls3.wiki.fextralife.com/Crimson+Parma">Crimson Parma</a></li>
+            <li data-id="weapons_2_2"><a href="http://darksouls3.wiki.fextralife.com/Red+and+White+Shield">Red and White Shield</a></li>
+            <li data-id="weapons_2_8"><a href="http://darksouls3.wiki.fextralife.com/Caduceus+Round+Shield">Caduceous Round Shield</a></li>
+            <li data-id="weapons_2_3"><a href="http://darksouls3.wiki.fextralife.com/Elkhorn+Round+Shield">Elkhorn Round Shield</a></li>
+            <li data-id="weapons_2_6"><a href="http://darksouls3.wiki.fextralife.com/Warrior's+Round+Shield">Warrior's Round Shield</a></li>
             <li data-id="weapons_2_16"><a href="http://darksouls3.wiki.fextralife.com/Plank+Shield">Plank Shield</a></li>
             <li data-id="weapons_2_17"><a href="http://darksouls3.wiki.fextralife.com/Ghru+Rotshield">Ghru Rotshield</a></li>
+            <li data-id="weapons_2_5"><a href="http://darksouls3.wiki.fextralife.com/Iron+Round+Shield">Iron Round Shield</a></li>
+            <li data-id="weapons_2_7"><a href="http://darksouls3.wiki.fextralife.com/Hawkwood's+Shield">Hawkwood's Shield</a></li>
+            <li data-id="weapons_2_13"><a href="http://darksouls3.wiki.fextralife.com/Llewellyn+Shield">Llewellyn Shield</a></li>
+            <li data-id="weapons_2_15"><a href="http://darksouls3.wiki.fextralife.com/Eastern+Iron+Shield">Eastern Iron Shield</a></li>
+            <li data-id="weapons_2_14"><a href="http://darksouls3.wiki.fextralife.com/Golden+Falcon+Shield">Golden Falcon Shield</a></li>
+            <li data-id="weapons_2_11"><a href="http://darksouls3.wiki.fextralife.com/Sacred+Bloom+Shield">Sacred Bloom Shield</a></li>
           </ul>
           <h4><a href="http://darksouls3.wiki.fextralife.com/Standard+Shields">Standard Shields</a></h4>
           <ul>
-            <li data-id="weapons_2_18"><a href="http://darksouls3.wiki.fextralife.com/Wargod+Wooden+Shield">Wargod Wooden Shield</a></li>
-            <li data-id="weapons_2_19"><a href="http://darksouls3.wiki.fextralife.com/Spider+Shield">Spider Shield</a></li>
-            <li data-id="weapons_2_20"><a href="http://darksouls3.wiki.fextralife.com/Sunset+Shield">Sunset Shield</a></li>
-            <li data-id="weapons_2_21"><a href="http://darksouls3.wiki.fextralife.com/Shield+of+Want">Shield of Want</a></li>
-            <li data-id="weapons_2_22"><a href="http://darksouls3.wiki.fextralife.com/Silver+Eagle+Kite+Shield">Silver Eagle Kite Shield</a></li>
-            <li data-id="weapons_2_23"><a href="http://darksouls3.wiki.fextralife.com/Kite+Shield">Kite Shield</a></li>
-            <li data-id="weapons_2_24"><a href="http://darksouls3.wiki.fextralife.com/Pierce+Shield">Pierce Shield</a></li>
-            <li data-id="weapons_2_25"><a href="http://darksouls3.wiki.fextralife.com/Stone+Parma">Stone Parma</a></li>
-            <li data-id="weapons_2_26"><a href="http://darksouls3.wiki.fextralife.com/Spiked+Shield">Spiked Shield</a></li>
-            <li data-id="weapons_2_27"><a href="http://darksouls3.wiki.fextralife.com/Crest+Shield">Crest Shield</a></li>
-            <li data-id="weapons_2_28"><a href="http://darksouls3.wiki.fextralife.com/Grass+Crest+Shield">Grass Crest Shield</a></li>
-            <li data-id="weapons_2_29"><a href="http://darksouls3.wiki.fextralife.com/Dragon+Crest+Shield">Dragon Crest Shield</a></li>
+            <li data-id="weapons_2_39"><a href="http://darksouls3.wiki.fextralife.com/Large+Leather+Shield">Large Leather Shield</a></li>
+            <li data-id="weapons_2_43"><a href="http://darksouls3.wiki.fextralife.com/Carthus+Shield">Carthus Shield</a></li>
             <li data-id="weapons_2_30"><a href="http://darksouls3.wiki.fextralife.com/East-West+Shield">East-West Shield</a></li>
             <li data-id="weapons_2_31"><a href="http://darksouls3.wiki.fextralife.com/Blue+Wooden+Shield">Blue Wooden Shield</a></li>
-            <li data-id="weapons_2_32"><a href="http://darksouls3.wiki.fextralife.com/Knight+Shield">Knight Shield</a></li>
-            <li data-id="weapons_2_33"><a href="http://darksouls3.wiki.fextralife.com/Pontiff+Knight+Shield">Pontiff Knight Shield</a></li>
-            <li data-id="weapons_2_34"><a href="http://darksouls3.wiki.fextralife.com/Silver+Knight+Shield">Silver Knight Shield</a></li>
-            <li data-id="weapons_2_35"><a href="http://darksouls3.wiki.fextralife.com/Porcine+Shield">Porcine Shield</a></li>
-            <li data-id="weapons_2_36"><a href="http://darksouls3.wiki.fextralife.com/Spirit+Tree+Crest+Shield">Spirit Tree Crest Shield</a></li>
-            <li data-id="weapons_2_37"><a href="http://darksouls3.wiki.fextralife.com/Black+Knight+Shield">Black Knight Shield</a></li>
-            <li data-id="weapons_2_38"><a href="http://darksouls3.wiki.fextralife.com/Golden+Wing+Crest+Shield">Golden Wing Crest Shield</a></li>
-            <li data-id="weapons_2_39"><a href="http://darksouls3.wiki.fextralife.com/Large+Leather+Shield">Large Leather Shield</a></li>
-            <li data-id="weapons_2_40"><a href="http://darksouls3.wiki.fextralife.com/Wooden+Shield">Wooden Shield</a></li>
-            <li data-id="weapons_2_41"><a href="http://darksouls3.wiki.fextralife.com/Lothric+Knight+Shield">Lothric Knight Shield</a></li>
-            <li data-id="weapons_2_42"><a href="http://darksouls3.wiki.fextralife.com/Sunlight+Shield">Sunlight Shield</a></li>
-            <li data-id="weapons_2_43"><a href="http://darksouls3.wiki.fextralife.com/Carthus+Shield">Carthus Shield</a></li>
             <li data-id="weapons_2_44"><a href="http://darksouls3.wiki.fextralife.com/Round+Shield">Round Shield</a></li>
+            <li data-id="weapons_2_40"><a href="http://darksouls3.wiki.fextralife.com/Wooden+Shield">Wooden Shield</a></li>
+            <li data-id="weapons_2_18"><a href="http://darksouls3.wiki.fextralife.com/Wargod+Wooden+Shield">Wargod Wooden Shield</a></li>
+            <li data-id="weapons_2_23"><a href="http://darksouls3.wiki.fextralife.com/Kite+Shield">Kite Shield</a></li>
+            <li data-id="weapons_2_22"><a href="http://darksouls3.wiki.fextralife.com/Silver+Eagle+Kite+Shield">Silver Eagle Kite Shield</a></li>
+            <li data-id="weapons_2_32"><a href="http://darksouls3.wiki.fextralife.com/Knight+Shield">Knight Shield</a></li>
+            <li data-id="weapons_2_41"><a href="http://darksouls3.wiki.fextralife.com/Lothric+Knight+Shield">Lothric Knight Shield</a></li>
+            <li data-id="weapons_2_19"><a href="http://darksouls3.wiki.fextralife.com/Spider+Shield">Spider Shield</a></li>
+            <li data-id="weapons_2_20"><a href="http://darksouls3.wiki.fextralife.com/Sunset+Shield">Sunset Shield</a></li>
+            <li data-id="weapons_2_42"><a href="http://darksouls3.wiki.fextralife.com/Sunlight+Shield">Sunlight Shield</a></li>
+            <li data-id="weapons_2_25"><a href="http://darksouls3.wiki.fextralife.com/Stone+Parma">Stone Parma</a></li>
+            <li data-id="weapons_2_26"><a href="http://darksouls3.wiki.fextralife.com/Spiked+Shield">Spiked Shield</a></li>
+            <li data-id="weapons_2_24"><a href="http://darksouls3.wiki.fextralife.com/Pierce+Shield">Pierce Shield</a></li>
+            <li data-id="weapons_2_35"><a href="http://darksouls3.wiki.fextralife.com/Porcine+Shield">Porcine Shield</a></li>
+            <li data-id="weapons_2_28"><a href="http://darksouls3.wiki.fextralife.com/Grass+Crest+Shield">Grass Crest Shield</a></li>
+            <li data-id="weapons_2_27"><a href="http://darksouls3.wiki.fextralife.com/Crest+Shield">Crest Shield</a></li>
+            <li data-id="weapons_2_29"><a href="http://darksouls3.wiki.fextralife.com/Dragon+Crest+Shield">Dragon Crest Shield</a></li>
+            <li data-id="weapons_2_36"><a href="http://darksouls3.wiki.fextralife.com/Spirit+Tree+Crest+Shield">Spirit Tree Crest Shield</a></li>
+            <li data-id="weapons_2_38"><a href="http://darksouls3.wiki.fextralife.com/Golden+Wing+Crest+Shield">Golden Wing Crest Shield</a></li>
+            <li data-id="weapons_2_33"><a href="http://darksouls3.wiki.fextralife.com/Pontiff+Knight+Shield">Pontiff Knight Shield</a></li>
+            <li data-id="weapons_2_37"><a href="http://darksouls3.wiki.fextralife.com/Black+Knight+Shield">Black Knight Shield</a></li>
+            <li data-id="weapons_2_34"><a href="http://darksouls3.wiki.fextralife.com/Silver+Knight+Shield">Silver Knight Shield</a></li>
+            <li data-id="weapons_2_21"><a href="http://darksouls3.wiki.fextralife.com/Shield+of+Want">Shield of Want</a></li>
           </ul>
           <h4><a href="http://darksouls3.wiki.fextralife.com/Greatshields">Greatshields</a></h4>
           <ul>
-            <li data-id="weapons_2_45"><a href="http://darksouls3.wiki.fextralife.com/Black+Iron+Greatshield">Black Iron Greatshield</a></li>
-            <li data-id="weapons_2_46"><a href="http://darksouls3.wiki.fextralife.com/Bonewheel+Shield">Bonewheel Shield</a></li>
-            <li data-id="weapons_2_47"><a href="http://darksouls3.wiki.fextralife.com/Moaning+Shield">Moaning Shield</a></li>
             <li data-id="weapons_2_48"><a href="http://darksouls3.wiki.fextralife.com/Twin+Dragon+Greatshield">Twin Dragon Greatshield</a></li>
-            <li data-id="weapons_2_49"><a href="http://darksouls3.wiki.fextralife.com/Stone+Greatshield">Stone Greatshield</a></li>
+            <li data-id="weapons_2_45"><a href="http://darksouls3.wiki.fextralife.com/Black+Iron+Greatshield">Black Iron Greatshield</a></li>
             <li data-id="weapons_2_50"><a href="http://darksouls3.wiki.fextralife.com/Lothric+Knight+Greatshield">Lothric Knight Greatshield</a></li>
-            <li data-id="weapons_2_51"><a href="http://darksouls3.wiki.fextralife.com/Curse+Ward+Greatshield">Curse Ward Greatshield</a></li>
-            <li data-id="weapons_2_52"><a href="http://darksouls3.wiki.fextralife.com/Yhorm's+Greatshield">Yhorm's Greatshield</a></li>
-            <li data-id="weapons_2_53"><a href="http://darksouls3.wiki.fextralife.com/Greatshield+of+Glory">Greatshield of Glory</a></li>
-            <li data-id="weapons_2_54"><a href="http://darksouls3.wiki.fextralife.com/Dragonslayer+Greatshield">Dragonslayer Greatshield</a></li>
-            <li data-id="weapons_2_55"><a href="http://darksouls3.wiki.fextralife.com/Havel's+Greatshield">Havel's Greatshield</a></li>
-            <li data-id="weapons_2_56"><a href="http://darksouls3.wiki.fextralife.com/Ancient+Dragon+Greatshield">Ancient Dragon Greatshield</a></li>
-            <li data-id="weapons_2_57"><a href="http://darksouls3.wiki.fextralife.com/Wolf+Knight's+Greatshield">Wolf Knight's Greatshield</a></li>
             <li data-id="weapons_2_58"><a href="http://darksouls3.wiki.fextralife.com/Cathedral+Knight+Greatshield">Cathedral Knight Greatshield</a></li>
+            <li data-id="weapons_2_49"><a href="http://darksouls3.wiki.fextralife.com/Stone+Greatshield">Stone Greatshield</a></li>
+            <li data-id="weapons_2_46"><a href="http://darksouls3.wiki.fextralife.com/Bonewheel+Shield">Bonewheel Shield</a></li>
+            <li data-id="weapons_2_56"><a href="http://darksouls3.wiki.fextralife.com/Ancient+Dragon+Greatshield">Ancient Dragon Greatshield</a></li>
+            <li data-id="weapons_2_53"><a href="http://darksouls3.wiki.fextralife.com/Greatshield+of+Glory">Greatshield of Glory</a></li>
+            <li data-id="weapons_2_47"><a href="http://darksouls3.wiki.fextralife.com/Moaning+Shield">Moaning Shield</a></li>
+            <li data-id="weapons_2_57"><a href="http://darksouls3.wiki.fextralife.com/Wolf+Knight's+Greatshield">Wolf Knight's Greatshield</a></li>
+            <li data-id="weapons_2_55"><a href="http://darksouls3.wiki.fextralife.com/Havel's+Greatshield">Havel's Greatshield</a></li>
+            <li data-id="weapons_2_51"><a href="http://darksouls3.wiki.fextralife.com/Curse+Ward+Greatshield">Curse Ward Greatshield</a></li>
+            <li data-id="weapons_2_54"><a href="http://darksouls3.wiki.fextralife.com/Dragonslayer+Greatshield">Dragonslayer Greatshield</a></li>
+            <li data-id="weapons_2_52"><a href="http://darksouls3.wiki.fextralife.com/Yhorm's+Greatshield">Yhorm's Greatshield</a></li>
           </ul>
       </div>
     </div>
@@ -1460,7 +1498,7 @@
           </tbody>
         </table>
       </div>
-	  
+
       <div class="tab-pane" id="tabHelp">
 
         <h2>Help</h2>
@@ -1478,13 +1516,13 @@
 
         <p>Thanks to the following people for their suggestions, fixes and improvements</p>
         <ul>
-          <li><a href="">?</a></li>
+          <li><a href="https://github.com/Harry-Harrison">Harry Harrison</a></li>
         </ul>
 
         <h3>How does the checklist status get saved?</h3>
         <p>It gets saved to the local storage in your browser and not to any database or API. So if you are clearing your browser cache make sure not to delete the site data or your checklists will get reset.</p>
       </div>
-	  
+
       <div class="tab-pane" id="tabOptions">
 		  <h2>Options</h2>
 	   <div class="btn-group" role="group">

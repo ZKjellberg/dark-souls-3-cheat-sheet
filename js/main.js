@@ -44,7 +44,7 @@ var stateKey = 'darksouls3_state';
     jQuery(document).ready(function($) {
         // Get the right style going...
         themeSetup(buildThemeSelection());
-        
+
         $('ul li li[data-id], ul li[data-id]').each(function(index) {
             if ($(this).attr('data-id')) {
                 addCheckbox(this);
@@ -77,11 +77,11 @@ var stateKey = 'darksouls3_state';
             $.jStorage.set(profilesKey, profiles);
             calculateTotals();
         });
-        
+
         // Theme callback
         $('#themes').change(function(event) {
             var stylesheet = $('#themes').val();
-            themeSetup(stylesheet); 
+            themeSetup(stylesheet);
             $.jStorage.set("style", stylesheet);
         });
 
@@ -207,38 +207,38 @@ var stateKey = 'darksouls3_state';
         });
 
         $("#togglefilter_quest").click(function() {
-            filter_bools[0] = toggleFilterButton($(this), filter_bools[0], "\u2611 Quests", "\u2610 Quests");
+            filter_bools[0] = toggleFilterButton($(this), filter_bools[0]);
             toggleFilteredClasses("f_quest");
         });
         $("#togglefilter_estus").click(function() {
-            filter_bools[1] = toggleFilterButton($(this), filter_bools[1], "\u2611 Estus", "\u2610 Estus");
+            filter_bools[1] = toggleFilterButton($(this), filter_bools[1]);
             toggleFilteredClasses("f_estus");
         });
         $("#togglefilter_weapon").click(function() {
-            filter_bools[2] = toggleFilterButton($(this), filter_bools[2], "\u2611 Weapons/Shields", "\u2610 Weapons/Shields");
+            filter_bools[2] = toggleFilterButton($(this), filter_bools[2]);
             toggleFilteredClasses("f_wpn");
         });
         $("#togglefilter_armor").click(function() {
-            filter_bools[3] = toggleFilterButton($(this), filter_bools[3], "\u2611 Armors", "\u2610 Armors");
+            filter_bools[3] = toggleFilterButton($(this), filter_bools[3]);
             toggleFilteredClasses("f_armor");
         });
         $("#togglefilter_ring").click(function() {
-            filter_bools[4] = toggleFilterButton($(this), filter_bools[4], "\u2611 Rings", "\u2610 Rings");
+            filter_bools[4] = toggleFilterButton($(this), filter_bools[4]);
             toggleFilteredClasses("f_ring");
         });
         $("#togglefilter_materials").click(function() {
-            filter_bools[5] = toggleFilterButton($(this), filter_bools[5], "\u2611 Materials", "\u2610 Materials");
+            filter_bools[5] = toggleFilterButton($(this), filter_bools[5]);
             toggleFilteredClasses("f_mat");
         });
         $("#togglefilter_misc").click(function() {
-            filter_bools[6] = toggleFilterButton($(this), filter_bools[6], "\u2611 Misc", "\u2610 Misc");
+            filter_bools[6] = toggleFilterButton($(this), filter_bools[6]);
             toggleFilteredClasses("f_misc");
         });
 
         calculateTotals();
 
     });
-    
+
     // Setup ("bootstrap", haha) styling
     function themeSetup(stylesheet) {
         if(stylesheet === null || stylesheet === undefined) { // if we didn't get a param, then
@@ -246,7 +246,7 @@ var stateKey = 'darksouls3_state';
         }
         $("#bootstrap").attr("href", themes[stylesheet]);
     }
-    
+
     function buildThemeSelection() {
         var style = $.jStorage.get("style") || "Standard";
         var themeSelect = $("#themes");
@@ -367,11 +367,11 @@ var stateKey = 'darksouls3_state';
         });
     }
 
-    function toggleFilterButton(button, f_hidden, shown_txt, hidden_txt) {
+    function toggleFilterButton(button, f_hidden) {
         if (f_hidden) {
-            button.text(shown_txt);
+            button.removeClass('filter-active').addClass('filter-inactive');
         } else {
-            button.text(hidden_txt);
+            button.removeClass('filter-inactive').addClass('filter-active');
         }
         button.button('toggle');
         return !f_hidden;
