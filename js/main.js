@@ -380,9 +380,10 @@ var stateKey = 'darksouls3_state';
     function canFilter(entry) {
         var regexFilter = new RegExp('^f_(.*)');
         if (entry.hasClass('') === true) {
-            return true;
+            return false;
         }
         var classList = entry.attr('class').split(/\s+/);
+        var foundMatch = 0;
         for (var i = 0; i < classList.length; i++) {
             if (!classList[i].match(regexFilter)) {
                 continue;
@@ -392,7 +393,11 @@ var stateKey = 'darksouls3_state';
                 if(!filter_bools[filterIndex]) {
                     return false;
                 }
+                foundMatch = 1;
             }
+        }
+        if (foundMatch === 0) {
+            return false;
         }
         return true;
     }
