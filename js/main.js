@@ -1,3 +1,6 @@
+var profilesKey = 'darksouls3_profiles';
+var stateKey = 'darksouls3_state';
+
 (function($) {
     'use strict';
 
@@ -9,17 +12,40 @@
             checklistData: {}
         }
     };
+    var themes = {
+        "Standard" : "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css",
+        "Cosmo" : "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cosmo/bootstrap.min.css",
+        "Cyborg" : "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cyborg/bootstrap.min.css",
+        "Darkly" : "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/darkly/bootstrap.min.css",
+        "Flatly" : "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css",
+        "Journal" : "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/journal/bootstrap.min.css",
+        "Lumen" : "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/lumen/bootstrap.min.css",
+        "Paper" : "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/paper/bootstrap.min.css",
+        "Readable" : "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/readable/bootstrap.min.css",
+        "Sandstone" : "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/sandstone/bootstrap.min.css",
+        "Simplex" : "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/simplex/bootstrap.min.css",
+        "Slate" : "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/slate/bootstrap.min.css",
+        "Spacelab" : "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/spacelab/bootstrap.min.css",
+        "Superhero" : "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/superhero/bootstrap.min.css",
+        "United" : "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/united/bootstrap.min.css",
+        "Yeti" : "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/yeti/bootstrap.min.css"
+    };
     var profiles = $.jStorage.get(profilesKey, defaultProfiles);
 
-    jQuery(document).ready(function($) {
+    var stateStorage = $.jStorage.get(stateKey, {
+        collapsed: {},
+        current_tab: '#tabPlaythrough',
+        hide_completed: false
+    });
 
-        // TODO Find a better way to do this in one pass
-        $('ul li li').each(function(index) {
-            if ($(this).attr('data-id')) {
-                addCheckbox(this);
-            }
-        });
-        $('ul li').each(function(index) {
+    var filter_categ = ["f_quest", "f_estus", "f_wpn", "f_armor", "f_ring", "f_mat", "f_misc"];
+    var filter_bools = [false, false, false, false, false, false, false];
+
+    jQuery(document).ready(function($) {
+        // Get the right style going...
+        themeSetup(buildThemeSelection());
+
+        $('ul li li[data-id], ul li[data-id]').each(function(index) {
             if ($(this).attr('data-id')) {
                 addCheckbox(this);
             }
@@ -36,6 +62,10 @@
             //_gaq.push(['_trackEvent', 'Checkbox', (isChecked ? 'Check' : 'Uncheck'), id]);
             if (isChecked === true) {
               $('[data-id="'+id+'"] label').addClass('stroked');
+
+              if ($("#toggleHideCompleted").data("hidden") === true) {
+                $('[data-id="'+id+'"] label').parent().hide();
+              }
             } else {
               $('[data-id="'+id+'"] label').removeClass('stroked');
             }
@@ -46,6 +76,13 @@
             });
             $.jStorage.set(profilesKey, profiles);
             calculateTotals();
+        });
+
+        // Theme callback
+        $('#themes').change(function(event) {
+            var stylesheet = $('#themes').val();
+            themeSetup(stylesheet);
+            $.jStorage.set("style", stylesheet);
         });
 
         $('#profiles').change(function(event) {
@@ -132,8 +169,8 @@
           var filename = "profiles.json";
           var text = JSON.stringify(profiles);
           var element = document.createElement('a');
-          element.setAttribute('href', 'data:text/plain;charset=utf-8,'
-            + encodeURIComponent(text));
+          element.setAttribute('href', 'data:text/plain;charset=utf-8,' +
+            encodeURIComponent(text));
           element.setAttribute('download', filename);
           element.style.display = 'none';
           document.body.appendChild(element);
@@ -155,9 +192,72 @@
           fr.onload = dataLoadCallback;
         });
 
+        $("#toggleHideCompleted").click(function() {
+            var hidden = $(this).data("hidden");
+            if (hidden === true) {
+                $(this).text("Hide completed");
+            } else {
+                $(this).text("Show completed");
+            }
+            $(this).data("hidden", !hidden);
+            $(this).button('toggle');
+            toggleCompletedCheckboxes(!hidden);
+            stateStorage.hide_completed = !hidden;
+            $.jStorage.set(stateKey, stateStorage);
+        });
+
+        $("#togglefilter_quest").click(function() {
+            filter_bools[0] = toggleFilterButton($(this), filter_bools[0]);
+            toggleFilteredClasses("f_quest");
+        });
+        $("#togglefilter_estus").click(function() {
+            filter_bools[1] = toggleFilterButton($(this), filter_bools[1]);
+            toggleFilteredClasses("f_estus");
+        });
+        $("#togglefilter_weapon").click(function() {
+            filter_bools[2] = toggleFilterButton($(this), filter_bools[2]);
+            toggleFilteredClasses("f_wpn");
+        });
+        $("#togglefilter_armor").click(function() {
+            filter_bools[3] = toggleFilterButton($(this), filter_bools[3]);
+            toggleFilteredClasses("f_armor");
+        });
+        $("#togglefilter_ring").click(function() {
+            filter_bools[4] = toggleFilterButton($(this), filter_bools[4]);
+            toggleFilteredClasses("f_ring");
+        });
+        $("#togglefilter_materials").click(function() {
+            filter_bools[5] = toggleFilterButton($(this), filter_bools[5]);
+            toggleFilteredClasses("f_mat");
+        });
+        $("#togglefilter_misc").click(function() {
+            filter_bools[6] = toggleFilterButton($(this), filter_bools[6]);
+            toggleFilteredClasses("f_misc");
+        });
+
         calculateTotals();
 
     });
+
+    // Setup ("bootstrap", haha) styling
+    function themeSetup(stylesheet) {
+        if(stylesheet === null || stylesheet === undefined) { // if we didn't get a param, then
+            stylesheet = $.jStorage.get("style") || "Standard"; // fall back on "light" if cookie not set
+        }
+        $("#bootstrap").attr("href", themes[stylesheet]);
+    }
+
+    function buildThemeSelection() {
+        var style = $.jStorage.get("style") || "Standard";
+        var themeSelect = $("#themes");
+        $.each(themes, function(key, value){
+            themeSelect.append(
+                $('<option></option>').val(key).html(key + " Theme")
+            );
+        });
+        themeSelect.val(style);
+        return style;
+    }
 
     function dataLoadCallback(arg){
       var jsonProfileData = JSON.parse(arg.currentTarget.result);
@@ -191,12 +291,16 @@
             var overallCount = 0, overallChecked = 0;
             $('[id^="' + type + '_totals_"]').each(function(index) {
                 var regex = new RegExp(type + '_totals_(.*)');
+                var regexFilter = new RegExp('^playthrough_(.*)');
                 var i = parseInt(this.id.match(regex)[1]);
                 var count = 0, checked = 0;
                 for (var j = 1; ; j++) {
                     var checkbox = $('#' + type + '_' + i + '_' + j);
                     if (checkbox.length === 0) {
                         break;
+                    }
+                    if (checkbox.is(':hidden') && checkbox.prop('id').match(regexFilter) && canFilter(checkbox.closest('li'))) {
+                        continue;
                     }
                     count++;
                     overallCount++;
@@ -205,21 +309,21 @@
                         overallChecked++;
                     }
                 }
-                if (checked == count) {
-                    this.innerHTML = $('#' + type + '_nav_totals_' + i)[0].innerHTML = '[DONE]';
+                if (checked === count) {
+                    this.innerHTML = $('#' + type + '_nav_totals_' + i)[0].innerHTML = 'DONE';
                     $(this).removeClass('in_progress').addClass('done');
                     $($('#' + type + '_nav_totals_' + i)[0]).removeClass('in_progress').addClass('done');
                 } else {
-                    this.innerHTML = $('#' + type + '_nav_totals_' + i)[0].innerHTML = '[' + checked + '/' + count + ']';
+                    this.innerHTML = $('#' + type + '_nav_totals_' + i)[0].innerHTML =  checked + '/' + count;
                     $(this).removeClass('done').addClass('in_progress');
                     $($('#' + type + '_nav_totals_' + i)[0]).removeClass('done').addClass('in_progress');
                 }
             });
-            if (overallChecked == overallCount) {
-                this.innerHTML = '[DONE]';
+            if (overallChecked === overallCount) {
+                this.innerHTML = 'DONE';
                 $(this).removeClass('in_progress').addClass('done');
             } else {
-                this.innerHTML = '[' + overallChecked + '/' + overallCount + ']';
+                this.innerHTML = overallChecked + '/' + overallCount;
                 $(this).removeClass('done').addClass('in_progress');
             }
         });
@@ -249,4 +353,163 @@
         }
     }
 
+    function toggleCompletedCheckboxes(hide) {
+        $("li .checkbox .stroked").parentsUntil("ul").each(function() {
+            if (hide === true) {
+                $(this).hide();
+            } else {
+                var regexFilter = new RegExp('^playthrough_(.*)');
+                if ($(this).is('li') && $(this).closest('li').attr('data-id').match(regexFilter) && canFilter($(this).closest('li'))) {
+                    return;
+                }
+                $(this).show();
+            }
+        });
+    }
+
+    function toggleFilterButton(button, f_hidden) {
+        if (f_hidden) {
+            button.removeClass('filter-active').addClass('filter-inactive');
+        } else {
+            button.removeClass('filter-inactive').addClass('filter-active');
+        }
+        button.button('toggle');
+        return !f_hidden;
+    }
+
+    function canFilter(entry) {
+        var regexFilter = new RegExp('^f_(.*)');
+        if (entry.hasClass('') === true) {
+            return false;
+        }
+        var classList = entry.attr('class').split(/\s+/);
+        var foundMatch = 0;
+        for (var i = 0; i < classList.length; i++) {
+            if (!classList[i].match(regexFilter)) {
+                continue;
+            }
+            var filterIndex = $.inArray(classList[i] , filter_categ);
+            if(filterIndex !== -1) {
+                if(!filter_bools[filterIndex]) {
+                    return false;
+                }
+                foundMatch = 1;
+            }
+        }
+        if (foundMatch === 0) {
+            return false;
+        }
+        return true;
+    }
+
+    function toggleFilteredClasses(str) {
+        $("li." + str).each(function() {
+            if(canFilter($(this))) {
+                $(this).hide();
+            } else {
+                $(this).show();
+            }
+        });
+        calculateTotals();
+    }
+
+    /*
+     * ----------------------------------
+     * Search and highlight functionality
+     * ----------------------------------
+     */
+    $(function() {
+        var jets = [new Jets({
+            searchTag: '#playthrough_search',
+            contentTag: '#playthrough_list ul'
+        }), new Jets({
+            searchTag: '#item_search',
+            contentTag: '#item_list ul'
+        }), new Jets({
+            searchTag: '#weapons_search',
+            contentTag: '#weapons_list ul'
+        }), new Jets({
+            searchTag: '#armors_search',
+            contentTag: '#armors_list ul'
+        })];
+
+        $('#playthrough_search').keyup(function() {
+            $('#playthrough_list').unhighlight();
+            $('#playthrough_list').highlight($(this).val());
+        });
+        $('#item_search').keyup(function() {
+            $('#item_list').unhighlight();
+            $('#item_list').highlight($(this).val());
+        });
+        $('#weapons_search').keyup(function() {
+            $('#weapons_list').unhighlight();
+            $('#weapons_list').highlight($(this).val());
+        });
+        $('#armors_search').keyup(function() {
+            $('#armors_list').unhighlight();
+            $('#armors_list').highlight($(this).val());
+        });
+    });
+
+    /*
+     * -------------------------
+     * Back to top functionality
+     * -------------------------
+     */
+    $(function() {
+        var offset = 220;
+        var duration = 500;
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > offset) {
+                $('.back-to-top').fadeIn(duration);
+            } else {
+                $('.back-to-top').fadeOut(duration);
+            }
+        });
+
+        $('.back-to-top').click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, duration);
+            return false;
+        });
+    });
+
+    /*
+     * ------------------------------------------
+     * Restore tabs/hidden sections functionality
+     * ------------------------------------------
+     */
+     $(function() {
+        // restore collapsed state on page load
+        $.each(stateStorage.collapsed, function(key, val) {
+            if (val) {
+                $('a[href="' + key + '"]').click();
+            }
+        });
+
+        if (stateStorage.current_tab) {
+            $('.nav.navbar-nav li a[href="' + stateStorage.current_tab + '"]').click();
+        }
+
+        if (typeof stateStorage.hide_completed !== 'undefined' &&
+            stateStorage.hide_completed !== null && stateStorage.hide_completed === true) {
+            $("#toggleHideCompleted").click();
+        }
+
+        // register on click handlers to store state
+        $('a[href$="_col"]').on('click', function(el) {
+            var collapsed_key = $(this).attr('href');
+            var saved_tab_state = !!stateStorage.collapsed[collapsed_key];
+
+            stateStorage.collapsed[$(this).attr('href')] = !saved_tab_state;
+
+            $.jStorage.set(stateKey, stateStorage);
+        });
+
+        $('.nav.navbar-nav li a').on('click', function(el) {
+            stateStorage.current_tab = $(this).attr('href');
+
+            $.jStorage.set(stateKey, stateStorage);
+        });
+     });
 })( jQuery );
