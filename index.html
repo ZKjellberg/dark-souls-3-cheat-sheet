@@ -62,40 +62,54 @@
     </div>
 
     <div class="tab-content">
-        <!-- PLAYTHROUGH START -->
-        <div class="tab-pane active" id="tabPlaythrough">
-            <!-- Toolbar -->
-            <h3>Filter Checklist</h3><br>
-            <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default filter-inactive" id="togglefilter_quest">
-                    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Quests
-                </button>
-                <button type="button" class="btn btn-default filter-inactive" id="togglefilter_estus">
-                    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Estus
-                </button>
-                <button type="button" class="btn btn-default filter-inactive" id="togglefilter_weapon">
-                    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Weapons/Shields
-                </button>
-                <button type="button" class="btn btn-default filter-inactive" id="togglefilter_armor">
-                    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Armors
-                </button>
-                <button type="button" class="btn btn-default filter-inactive" id="togglefilter_ring">
-                    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Rings
-                </button>
-                <button type="button" class="btn btn-default filter-inactive" id="togglefilter_materials">
-                    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Materials
-                </button>
-                <button type="button" class="btn btn-default filter-inactive" id="togglefilter_misc">
-                    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Misc
-                </button>
-            </div>
+      <!-- PLAYTHROUGH START -->
+      <div class="tab-pane active" id="tabPlaythrough">
+        <!-- Toolbar -->
+        <h3>Filter Checklist</h3></br>
+          <div class="btn-group" role="group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" id="togglefilter_quest" data-item-toggle="f_quest" />
+                <span class="glyphicon glyphicon-eye-close"></span>
+                <span class="glyphicon glyphicon-eye-open"></span>
+                Quests
+            </label>
+            <label class="btn btn-default">
+                <input type="checkbox" id="togglefilter_estus" data-item-toggle="f_estus" />
+                <span class="glyphicon glyphicon-eye-close"></span>
+                <span class="glyphicon glyphicon-eye-open"></span>
+                Estus
+            </label>
+            <label class="btn btn-default">
+                <input type="checkbox" id="togglefilter_weapon" data-item-toggle="f_wpn" />
+                <span class="glyphicon glyphicon-eye-close"></span>
+                <span class="glyphicon glyphicon-eye-open"></span>
+                Weapons/Shields
+            </label>
+            <label class="btn btn-default">
+                <input type="checkbox" id="togglefilter_armor" data-item-toggle="f_armor" />
+                <span class="glyphicon glyphicon-eye-close"></span>
+                <span class="glyphicon glyphicon-eye-open"></span>
+                Armors
+            </label>
+            <label class="btn btn-default">
+                <input type="checkbox" id="togglefilter_ring" data-item-toggle="f_ring" />
+                <span class="glyphicon glyphicon-eye-close"></span>
+                <span class="glyphicon glyphicon-eye-open"></span>
+                Rings
+            </label>
+            <label class="btn btn-default">
+                <input type="checkbox" id="togglefilter_materials" data-item-toggle="f_mat" />
+                <span class="glyphicon glyphicon-eye-close"></span>
+                <span class="glyphicon glyphicon-eye-open"></span>
+                Materials
+            </label>
+            <label class="btn btn-default">
+                <input type="checkbox" id="togglefilter_misc" data-item-toggle="f_misc" />
+                <span class="glyphicon glyphicon-eye-close"></span>
+                <span class="glyphicon glyphicon-eye-open"></span>
+                Misc
+            </label>
+          </div>
         <h2>Playthrough Checklist <span id="playthrough_overall_total"></span></h2>
         <ul class="table_of_contents">
           <li><a href="#Cemetery_of_Ash">Cemetery of Ash</a> <span id="playthrough_nav_totals_17"></span></li>

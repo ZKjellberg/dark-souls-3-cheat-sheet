@@ -51,10 +51,6 @@ h3 {
     background-color: rgb(255, 246, 18);
 }
 
-.stroked {
-    text-decoration: line-through;
-}
-
 .hiddenfile {
  width: 0px;
  height: 0px;
@@ -115,3 +111,19 @@ h1 {
   margin-top: 0;
   margin-bottom: 20px;
 }
+
+body.hide_completed .completed {
+  display: none !important;
+}
+
+input[type="checkbox"]:checked + .item_content {
+  text-decoration: line-through;
+}
+
+input[type="checkbox"] ~ .glyphicon-eye-close { display:none; }
+
+input[type="checkbox"]:checked ~ .glyphicon-eye-close { display: inline-block; }
+
+input[type="checkbox"] ~ .glyphicon-eye-open { display: inline-block; }
+
+input[type="checkbox"]:checked ~ .glyphicon-eye-open { display: none; }
