@@ -54,10 +54,8 @@ var stateKey = 'darksouls3_state';
         // Get the right style going...
         themeSetup(buildThemeSelection());
 
-        $('ul li li[data-id], ul li[data-id]').each(function(index) {
-            if ($(this).attr('data-id')) {
-                addCheckbox(this);
-            }
+        $('ul li[data-id]').each(function() {
+            addCheckbox(this);
         });
 
         // Open external links in new tab
@@ -336,12 +334,24 @@ var stateKey = 'darksouls3_state';
     }
 
     function addCheckbox(el) {
-        var lines = $(el).html().split('\n');
-        lines[0] = '<div class="checkbox"><label><input type="checkbox" id="' + $(el).attr('data-id') + '"><span class="item_content">' + lines[0] + '</span></label></div>';
-        $(el).html(lines.join('\n'));
-        if (profiles[profilesKey][profiles.current].checklistData[$(el).attr('data-id')] === true) {
-            $('#' + $(el).attr('data-id')).prop('checked', true);
-            $('label', $(el)).addClass('completed');
+        var $el = $(el);
+        // assuming all content lies on the first line
+        var content = $el.html().split('\n')[0];
+        var sublists = $el.children('ul');
+
+        content =
+            '<div class="checkbox">' +
+                '<label>' +
+                    '<input type="checkbox" id="' + $el.attr('data-id') + '">' +
+                    '<span class="item_content">' + content + '</span>' +
+                '</label>' +
+            '</div>';
+
+        $el.html(content).append(sublists);
+
+        if (profiles[profilesKey][profiles.current].checklistData[$el.attr('data-id')] === true) {
+            $('#' + $el.attr('data-id')).prop('checked', true);
+            $('label', $el).addClass('completed');
         }
     }
 
