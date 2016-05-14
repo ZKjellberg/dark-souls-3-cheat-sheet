@@ -763,7 +763,6 @@
 
     <!-- WEAPONS/SHIELD START -->
     <div class="tab-pane" id="tabWeaponsShields">
-        <!-- ADD CORRECT TOTAL -->
         <h2>Weapons and Shields Checklists <span id="weapons_overall_total"></span></h2>
         <ul class="table_of_contents">
           <li><a href="#Weapons">Weapons</a> <span id="weapons_nav_totals_1"></span></li>
@@ -1108,7 +1107,6 @@
 
     <!-- ARMOR START -->
     <div class="tab-pane" id="tabArmors">
-        <!-- ADD CORRECT TOTAL -->
         <h2>Armor Checklists <span id="armors_overall_total"></span></h2>
         <ul class="table_of_contents">
           <li><a href="#Helms">Helms</a> <span id="armors_nav_totals_1"></span></li>
@@ -1569,7 +1567,7 @@
         <p>Yup, use the profile selector and buttons at the top right of the page to setup multiple characters.</p>
 
         <h3>How do I help with feedback, corrections, suggestions or additions?</h3>
-        <p>You can <a href="https://github.com/ZKjellberg/dark-souls-3-cheat-sheet/issues">create an Issue on Github</a> or post in <a href="https://www.reddit.com/r/darksouls3/comments/4fmjyu/dark_souls_3_cheat_sheet_checklist/">this Reddit thread</a> or if you know your way about Git/GitHub then fork <a href="https://github.com/ZKjellberg/dark-souls-3-cheat-sheet">my repo</a> and submit a pull request.</p>
+        <p>You can visit the <a href="https://github.com/ZKjellberg/dark-souls-3-cheat-sheet">GitHub repository</a> and <a href="https://github.com/ZKjellberg/dark-souls-3-cheat-sheet/issues">report Issues</a> or create a fork and submit a Pull Request. You can also post in <a href="https://www.reddit.com/r/darksouls3/comments/4fmjyu/dark_souls_3_cheat_sheet_checklist/">the Reddit thread</a>, but you will receive a slower response.</p>
 
         <p><a href="https://github.com/ZKjellberg/dark-souls-3-cheat-sheet/graphs/contributors">Thanks to the many contributors for their suggestions, fixes and improvements</a></p>
 
@@ -1578,34 +1576,29 @@
       </div>
 
       <div class="tab-pane" id="tabOptions">
-		  <h2>Options</h2>
-	   <div class="btn-group" role="group">
+  		  <h2>Options</h2>
+        <!-- Hide Completed Toggle -->
+        <div class="btn-group" role="group">
           <button type="button" class="btn btn-default" id="toggleHideCompleted" data-hidden="false">Hide completed</button>
-       </div>
-		  <div class="row">
-			<div class="col col-md-8">
-			  <h4>The theme selection changes the look and feel of this site.</h4>
-			</div>
-			<div class="col col-md-4">
-			  <select class="form-control" id="themes"><!-- Gets filled by jQuery. --></select>
-			</div>
-		  </div>
-			<div class="row">
-			  <div class="col col-md-6">
-				<h4>Switch your profiles at will</h4>
-			  </div>
-			  <div class="col col-md-6">
-				<form class="form-inline  pull-right">
-				  <div class="form-group">
-					<select class="form-control" id="profiles"></select>
-				  </div>
-				  <button class="btn btn-default" type="button" id="profileAdd">Add</button>
-				  <button class="btn btn-default" type="button" id="profileEdit">Edit</button>
-				  <button class="btn btn-default" type="button" id="profileImport">Import</button>
-				  <button class="btn btn-default" type="button" id="profileExport">Export</button>
-				</form>
-			  </div>
-			</div>
+        </div>
+        <!-- Theme Selection -->
+  		  <div class="row">
+    			<div class="col col-md-8"><h4>The theme selection changes the look and feel of this site.</h4></div>
+    			<div class="col col-md-4"><select class="form-control" id="themes"><!-- Gets filled by jQuery. --></select></div>
+  		  </div>
+        <!-- Profile Selection -->
+  			<div class="row">
+  			  <div class="col col-md-6"><h4>Switch your profiles at will</h4></div>
+  			  <div class="col col-md-6">
+    				<form class="form-inline  pull-right">
+    				  <div class="form-group"><select class="form-control" id="profiles"></select></div>
+    				  <button class="btn btn-default" type="button" id="profileAdd">Add</button>
+    				  <button class="btn btn-default" type="button" id="profileEdit">Edit</button>
+    				  <button class="btn btn-default" type="button" id="profileImport">Import</button>
+    				  <button class="btn btn-default" type="button" id="profileExport">Export</button>
+    				</form>
+  			  </div>
+  			</div>
 		  </div>
 
 		  <div id="profileModal" class="modal fade" tabindex="-1" role="dialog">
