@@ -37,8 +37,8 @@
           <li><a href="#tabWeaponsShields" data-toggle="tab">Weapons/Shields</a></li>
           <li><a href="#tabArmors" data-toggle="tab">Armor</a></li>
           <li><a href="#tabInformation" data-toggle="tab">Information</a></li>
-		  <li><a href="#tabHelp" data-toggle="tab"><span class="glyphicon glyphicon-question-sign"></span></a></li>
-		  <li><a href="#tabOptions" data-toggle="tab"><span class="glyphicon glyphicon-cog"></span></a></li>
+    		  <li><a href="#tabHelp" data-toggle="tab"><span class="glyphicon glyphicon-question-sign"></span></a></li>
+    		  <li><a href="#tabOptions" data-toggle="tab"><span class="glyphicon glyphicon-cog"></span></a></li>
         </ul><!-- /.nav.navbar-nav -->
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -50,7 +50,12 @@
         <h1>Dark&nbsp;Souls&nbsp;3 Cheat&nbsp;Sheet</h1>
       </div>
     </div>
+
     <div class="tab-content">
+      <!-- Hide Completed Toggle -->
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default" id="toggleHideCompleted" data-hidden="false">Hide completed</button>
+      </div>
       <!-- PLAYTHROUGH START -->
       <div class="tab-pane active" id="tabPlaythrough">
         <!-- Toolbar -->
@@ -1600,10 +1605,7 @@
 
       <div class="tab-pane" id="tabOptions">
   		  <h2>Options</h2>
-        <!-- Hide Completed Toggle -->
-        <div class="btn-group" role="group">
-          <button type="button" class="btn btn-default" id="toggleHideCompleted" data-hidden="false">Hide completed</button>
-        </div>
+
         <!-- Theme Selection -->
   		  <div class="row">
     			<div class="col col-md-8"><h4>The theme selection changes the look and feel of this site.</h4></div>
