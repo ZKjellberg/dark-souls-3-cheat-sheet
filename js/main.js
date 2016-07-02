@@ -46,6 +46,7 @@ var stateKey = 'darksouls3_state';
             f_wpn: false,
             f_armor: false,
             f_ring: false,
+            f_spell: false,
             f_mat: false,
             f_misc: false
         };
