@@ -43,8 +43,7 @@ var stateKey = 'darksouls3_state';
         stateStorage.hidden_categories = {
             f_quest: false,
             f_estus: false,
-            f_wpn: false,
-            f_armor: false,
+            f_gear: false,
             f_ring: false,
             f_spell: false,
             f_mat: false,
