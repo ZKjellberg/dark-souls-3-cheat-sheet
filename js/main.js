@@ -42,6 +42,7 @@ var stateKey = 'darksouls3_state';
     if (!('hidden_categories' in stateStorage))
         stateStorage.hidden_categories = {
             f_quest: false,
+            f_npc: false,
             f_estus: false,
             f_gear: false,
             f_ring: false,

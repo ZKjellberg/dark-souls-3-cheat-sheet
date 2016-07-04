@@ -18,14 +18,15 @@ For some background on how the guide code is written, here is a sample item on t
 
 The **data-id** is a unique ID used to store the user's progress. For example, ***playthrough_17_12*** was the 12th task in zone 17. You can add new elements out of order, but they must be added in ascending order.
 
-The **class="f_wpn f_armor"** field is used for the filtering system. This task provides the user with weapon and armor, so we use ***f_wpn*** and ***f_armor***. The full list of filter classes are listed below.
+The **class="f_gear f_ring"** field is used for the filtering system. This task provides the user with gear and a ring, so we use ***f_gear*** and ***f_ring***. The full list of filter classes are listed below.
 
-| Category  | Class   |
-|---        |---      |
-| Quest     | f_quest |
-| Etus      | f_estus |
-| Weapon    | f_wpn   |
-| Armor     | f_armor |
-| Ring      | f_ring  |
-| Materials | f_mat   |
-| Misc      | f_misc  |
+| Class    | Description |
+|---       |---          |
+| f_quest  | Quest       |
+| f_side   | Sidequsts   |
+| f_estus  | Etus        |
+| f_gear   | Gear        |
+| f_ring   | Ring        |
+| f_spells | Spells      |
+| f_mat    | Materials   |
+| f_misc   | Misc        |
