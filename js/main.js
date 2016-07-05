@@ -21,6 +21,7 @@ var profilesKey = 'darksouls3_profiles';
         "United" : "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/united/bootstrap.min.css",
         "Yeti" : "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/yeti/bootstrap.min.css"
     };
+
     var profiles = $.jStorage.get(profilesKey, {});
 
     /// assure default values are set
@@ -260,7 +261,7 @@ var profilesKey = 'darksouls3_profiles';
 
         $.each(profiles[profilesKey][profile_name].hidden_categories, function(key, value) {
             var $el = $('[data-item-toggle="' + key + '"');
-            var active = $el.siblings('glyphicon-eye-close').is(':hidden');
+            var active = $el.is(':checked');
 
             if ((value && !active) || (!value && active)) {
                 $el.click();
