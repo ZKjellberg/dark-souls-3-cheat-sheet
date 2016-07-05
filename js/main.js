@@ -182,13 +182,8 @@ var profilesKey = 'darksouls3_profiles';
           fr.onload = dataLoadCallback;
         });
 
-        $("#toggleHideCompleted").click(function() {
-            var hidden = $(this).data("hidden");
-
-            $(this)
-                .text((hidden ? 'Hide' : 'Show') + ' completed')
-                .data("hidden", !hidden)
-                .button('toggle');
+        $("#toggleHideCompleted").change(function() {
+            var hidden = !$(this).is(':checked');
 
             $('body').toggleClass('hide_completed', !hidden);
 
@@ -196,7 +191,7 @@ var profilesKey = 'darksouls3_profiles';
             $.jStorage.set(profilesKey, profiles);
         });
 
-        $('[data-item-toggle]').on('change', function() {
+        $('[data-item-toggle]').change(function() {
             var type = $(this).data('item-toggle');
             var to_hide = $(this).is(':checked');
 
@@ -254,7 +249,7 @@ var profilesKey = 'darksouls3_profiles';
 
         var $button = $("#toggleHideCompleted");
         var hide_completed_state = profiles[profilesKey][profile_name].hide_completed;
-        var button_active = $button.data('hidden');
+        var button_active = $button.is(':checked');
         if ((hide_completed_state && !button_active) || (!hide_completed_state && button_active)) {
             $button.click();
         }

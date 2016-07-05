@@ -54,7 +54,14 @@
     <div class="tab-content">
       <!-- Hide Completed Toggle -->
       <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default" id="toggleHideCompleted" data-hidden="false">Hide completed</button>
+        <div class="btn-group" role="group" data-toggle="buttons">
+          <label class="btn btn-default">
+              <input type="checkbox" id="toggleHideCompleted" />
+              <span class="glyphicon glyphicon-eye-close"></span>
+              <span class="glyphicon glyphicon-eye-open"></span>
+              Hide Completed
+          </label>
+        </div>
       </div>
       <!-- PLAYTHROUGH START -->
       <div class="tab-pane active" id="tabPlaythrough">
