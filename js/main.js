@@ -1,17 +1,8 @@
 var profilesKey = 'darksouls3_profiles';
-var stateKey = 'darksouls3_state';
 
 (function($) {
     'use strict';
 
-    var defaultProfiles = {
-        'current': 'Default Profile'
-    };
-    defaultProfiles[profilesKey] = {
-        'Default Profile': {
-            checklistData: {}
-        }
-    };
     var themes = {
         "Standard" : "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css",
         "Cosmo" : "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cosmo/bootstrap.min.css",
@@ -30,26 +21,15 @@ var stateKey = 'darksouls3_state';
         "United" : "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/united/bootstrap.min.css",
         "Yeti" : "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/yeti/bootstrap.min.css"
     };
-    var profiles = $.jStorage.get(profilesKey, defaultProfiles);
 
-    var stateStorage = $.jStorage.get(stateKey, {});
+    var profiles = $.jStorage.get(profilesKey, {});
 
-    // assure default values are set
-    // necessary 'cause we're abusing local storage to store JSON data
-    if (!('collapsed' in stateStorage)) stateStorage.collapsed = {};
-    if (!('current_tab' in stateStorage)) stateStorage.current_tab = '#tabPlaythrough';
-    if (!('hide_completed' in stateStorage)) stateStorage.hide_completed = false;
-    if (!('hidden_categories' in stateStorage))
-        stateStorage.hidden_categories = {
-            f_quest: false,
-            f_npc: false,
-            f_estus: false,
-            f_gear: false,
-            f_ring: false,
-            f_spell: false,
-            f_mat: false,
-            f_misc: false
-        };
+    /// assure default values are set
+    /// necessary 'cause we're abusing local storage to store JSON data
+    /// done in a more verbose way to be easier to understand
+    if (!('current' in profiles)) profiles.current = 'Default Profile';
+    if (!(profilesKey in profiles)) profiles[profilesKey] = {};
+    initializeProfile(profiles.current);
 
     jQuery(document).ready(function($) {
         // Get the right style going...
@@ -97,9 +77,7 @@ var stateKey = 'darksouls3_state';
 
             populateChecklists();
 
-            $.each(stateStorage.hidden_categories, function(key) {
-                toggleFilteredClasses(key);
-            });
+            restoreState(profiles.current);
 
             calculateTotals();
             //_gaq.push(['_trackEvent', 'Profile', 'Change', profiles.current]);
@@ -133,9 +111,8 @@ var stateKey = 'darksouls3_state';
             event.preventDefault();
             var profile = $.trim($('#profileModalName').val());
             if (profile.length > 0) {
-                if (typeof profiles[profilesKey][profile] == 'undefined') {
-                    profiles[profilesKey][profile] = { checklistData: {} };
-                }
+                initializeProfile(profile);
+
                 profiles.current = profile;
                 $.jStorage.set(profilesKey, profiles);
                 populateProfiles();
@@ -205,26 +182,21 @@ var stateKey = 'darksouls3_state';
           fr.onload = dataLoadCallback;
         });
 
-        $("#toggleHideCompleted").click(function() {
-            var hidden = $(this).data("hidden");
-
-            $(this)
-                .text((hidden ? 'Hide' : 'Show') + ' completed')
-                .data("hidden", !hidden)
-                .button('toggle');
+        $("#toggleHideCompleted").change(function() {
+            var hidden = !$(this).is(':checked');
 
             $('body').toggleClass('hide_completed', !hidden);
 
-            stateStorage.hide_completed = !hidden;
-            $.jStorage.set(stateKey, stateStorage);
+            profiles[profilesKey][profiles.current].hide_completed = !hidden;
+            $.jStorage.set(profilesKey, profiles);
         });
 
-        $('[data-item-toggle]').on('change', function() {
+        $('[data-item-toggle]').change(function() {
             var type = $(this).data('item-toggle');
             var to_hide = $(this).is(':checked');
 
-            stateStorage.hidden_categories[type] = to_hide;
-            $.jStorage.set(stateKey, stateStorage);
+            profiles[profilesKey][profiles.current].hidden_categories[type] = to_hide;
+            $.jStorage.set(profilesKey, profiles);
 
             toggleFilteredClasses(type);
 
@@ -234,6 +206,63 @@ var stateKey = 'darksouls3_state';
         calculateTotals();
 
     });
+
+    function initializeProfile(profile_name) {
+        if (!(profile_name in profiles[profilesKey])) profiles[profilesKey][profile_name] = {};
+        if (!('checklistData' in profiles[profilesKey][profile_name]))
+            profiles[profilesKey][profile_name].checklistData = {};
+
+        if (!('state' in profiles[profilesKey][profile_name]))
+            profiles[profilesKey][profile_name].state = {};
+        if (!('collapsed' in profiles[profilesKey][profile_name]))
+            profiles[profilesKey][profile_name].collapsed = {};
+        if (!('current_tab' in profiles[profilesKey][profile_name]))
+            profiles[profilesKey][profile_name].current_tab = '#tabPlaythrough';
+        if (!('hide_completed' in profiles[profilesKey][profile_name]))
+            profiles[profilesKey][profile_name].hide_completed = false;
+        if (!('hidden_categories' in profiles[profilesKey][profile_name]))
+            profiles[profilesKey][profile_name].hidden_categories = {
+                f_quest: false,
+                f_npc: false,
+                f_estus: false,
+                f_gear: false,
+                f_ring: false,
+                f_spell: false,
+                f_mat: false,
+                f_misc: false
+            };
+    }
+
+    /// restore all saved state, except for the current tab
+    /// used on page load or when switching profiles
+    function restoreState(profile_name) {
+        $.each(profiles[profilesKey][profile_name].collapsed, function(key, value) {
+            var $el = $('a[href="' + key + '"]');
+            var active = $el.hasClass('collapsed');
+
+            // interesting note: this condition is the same as (value ^ active),
+            // but there's no logical xor in JS as far as I know; also, this is more readable
+            if ((value && !active) || (!value && active)) {
+                $el.click();
+            }
+        });
+
+        var $button = $("#toggleHideCompleted");
+        var hide_completed_state = profiles[profilesKey][profile_name].hide_completed;
+        var button_active = $button.is(':checked');
+        if ((hide_completed_state && !button_active) || (!hide_completed_state && button_active)) {
+            $button.click();
+        }
+
+        $.each(profiles[profilesKey][profile_name].hidden_categories, function(key, value) {
+            var $el = $('[data-item-toggle="' + key + '"');
+            var active = $el.is(':checked');
+
+            if ((value && !active) || (!value && active)) {
+                $el.click();
+            }
+        });
+    }
 
     // Setup ("bootstrap", haha) styling
     function themeSetup(stylesheet) {
@@ -380,8 +409,8 @@ var stateKey = 'darksouls3_state';
             if (!classList[i].match(/^f_(.*)/)) {
                 continue;
             }
-            if(classList[i] in stateStorage.hidden_categories) {
-                if(!stateStorage.hidden_categories[classList[i]]) {
+            if(classList[i] in profiles[profilesKey][profiles.current].hidden_categories) {
+                if(!profiles[profilesKey][profiles.current].hidden_categories[classList[i]]) {
                     return false;
                 }
                 foundMatch = 1;
@@ -471,40 +500,26 @@ var stateKey = 'darksouls3_state';
      */
      $(function() {
         // restore collapsed state on page load
-        $.each(stateStorage.collapsed, function(key, val) {
-            if (val) {
-                $('a[href="' + key + '"]').click();
-            }
-        });
+        restoreState(profiles.current);
 
-        if (stateStorage.current_tab) {
-            $('.nav.navbar-nav li a[href="' + stateStorage.current_tab + '"]').click();
+        if (profiles[profilesKey][profiles.current].current_tab) {
+            $('.nav.navbar-nav li a[href="' + profiles[profilesKey][profiles.current].current_tab + '"]').click();
         }
-
-        if (stateStorage.hide_completed) {
-            $("#toggleHideCompleted").click();
-        }
-
-        $.each(stateStorage.hidden_categories, function(key, value) {
-            if (value) {
-                $('[data-item-toggle="' + key + '"').click();
-            }
-        });
 
         // register on click handlers to store state
         $('a[href$="_col"]').on('click', function(el) {
             var collapsed_key = $(this).attr('href');
-            var saved_tab_state = !!stateStorage.collapsed[collapsed_key];
+            var saved_tab_state = !!profiles[profilesKey][profiles.current].collapsed[collapsed_key];
 
-            stateStorage.collapsed[$(this).attr('href')] = !saved_tab_state;
+            profiles[profilesKey][profiles.current].collapsed[$(this).attr('href')] = !saved_tab_state;
 
-            $.jStorage.set(stateKey, stateStorage);
+            $.jStorage.set(profilesKey, profiles);
         });
 
         $('.nav.navbar-nav li a').on('click', function(el) {
-            stateStorage.current_tab = $(this).attr('href');
+            profiles[profilesKey][profiles.current].current_tab = $(this).attr('href');
 
-            $.jStorage.set(stateKey, stateStorage);
+            $.jStorage.set(profilesKey, profiles);
         });
      });
 })( jQuery );
