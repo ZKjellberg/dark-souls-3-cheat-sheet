@@ -499,6 +499,9 @@ var profilesKey = 'darksouls3_profiles';
      * ------------------------------------------
      */
      $(function() {
+        // reset `Hide completed` button state (otherwise Chrome bugs out)
+        $('#toggleHideCompleted').attr('checked', false);
+
         // restore collapsed state on page load
         restoreState(profiles.current);
 
