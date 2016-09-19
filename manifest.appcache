@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#version 2016-09-19 13:31
+#version 2016-09-19 13:44
 
 CACHE:
 index.html
@@ -28,6 +28,10 @@ https://fonts.googleapis.com/css?family=Roboto:400,500
 https://fonts.googleapis.com/css?family=Open+Sans:400,700
 https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700
 https://fonts.googleapis.com/css?family=Ubuntu:400,700
+
+https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/fonts/glyphicons-halflings-regular.woff2
+https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/fonts/glyphicons-halflings-regular.woff
+https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/fonts/glyphicons-halflings-regular.ttf
 
 https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/fonts/glyphicons-halflings-regular.woff2
 https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/fonts/glyphicons-halflings-regular.woff
@@ -63,11 +67,6 @@ https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css
 https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/darkly/bootstrap.min.css
 https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cyborg/bootstrap.min.css
 https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cosmo/bootstrap.min.css
-
-FALLBACK:
-https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/fonts/glyphicons-halflings-regular.woff2 https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/fonts/glyphicons-halflings-regular.woff2
-https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/fonts/glyphicons-halflings-regular.woff https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/fonts/glyphicons-halflings-regular.woff
-https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/fonts/glyphicons-halflings-regular.ttf https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/fonts/glyphicons-halflings-regular.ttf
 
 NETWORK:
 http://www.google-analytics.com/analytics.js
