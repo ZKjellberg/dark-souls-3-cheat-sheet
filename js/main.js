@@ -425,9 +425,9 @@ var profilesKey = 'darksouls3_profiles';
     function toggleFilteredClasses(str) {
         $("li." + str).each(function() {
             if(canFilter($(this))) {
-                $(this).hide();
+                $(this).css('display', 'none');
             } else {
-                $(this).show();
+                $(this).css('display', '');
             }
         });
     }
