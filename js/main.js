@@ -175,6 +175,7 @@ var profilesKey = 'darksouls3_profiles';
         $('input#fileInput').change(function(){
           var fileInput = document.getElementById('fileInput');
           if(!fileInput.files || !fileInput.files[0] || !/\.json$/.test(fileInput.files[0].name)){
+            alert("Bad input file. File should end in .json")
             return;
           }
           var fr = new FileReader();
