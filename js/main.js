@@ -527,3 +527,6 @@ var profilesKey = 'darksouls3_profiles';
         });
      });
 })( jQuery );
+
+// to color the plus symbol in combined item pickups
+$(".p").html('<a style="pointer-events:none">&nbsp;+ </a>');
