@@ -44,7 +44,7 @@ var profilesKey = 'darksouls3_profiles';
 
         populateProfiles();
 
-        $('.checkbox input[type="checkbox"]').click(function(event) {
+        $('.checkbox input[type="checkbox"]').click(function() {
             var id = $(this).attr('id');
             var isChecked = profiles[profilesKey][profiles.current].checklistData[id] = $(this).prop('checked');
             //_gaq.push(['_trackEvent', 'Checkbox', (isChecked ? 'Check' : 'Uncheck'), id]);
@@ -55,14 +55,6 @@ var profilesKey = 'darksouls3_profiles';
             }
             $.jStorage.set(profilesKey, profiles);
             calculateTotals();
-            // Implement linked checkboxes
-            if (event.pageX != 0 && event.pageY != 0) {// Prevent triggered click events from triggering more clicks
-                $('input','[data-id="'+$(this).attr('data-link').split(' ').join('"],[data-id="')+'"]').each(function() {// Select all linked checkboxes
-                    if ($(this).prop('checked') != isChecked) {// Only toggle them if they currently differ from the one that was clicked
-                        $(this).click();
-                    }
-                });
-            }
         });
 
         // Theme callback
@@ -376,7 +368,7 @@ var profilesKey = 'darksouls3_profiles';
         content =
             '<div class="checkbox">' +
                 '<label>' +
-                    '<input type="checkbox" id="' + $el.attr('data-id') + '" data-link="' + $el.attr('data-link') + '">' +
+                    '<input type="checkbox" id="' + $el.attr('data-id') + '">' +
                     '<span class="item_content">' + content + '</span>' +
                 '</label>' +
             '</div>';
