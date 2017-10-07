@@ -53,11 +53,6 @@ var profilesKey = 'darksouls3_profiles';
             } else {
               $('[data-id="'+id+'"] label').removeClass('completed');
             }
-            $(this).parent().parent().find('li > label > input[type="checkbox"]').each(function() {
-                var id = $(this).attr('id');
-                profiles[profilesKey][profiles.current].checklistData[id] = isChecked;
-                $(this).prop('checked', isChecked);
-            });
             $.jStorage.set(profilesKey, profiles);
             calculateTotals();
         });
