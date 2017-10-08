@@ -439,10 +439,10 @@ var profilesKey = 'darksouls3_profiles';
             contentTag: '#playthrough_list ul'
         }), new Jets({
             searchTag: '#item_search',
-            contentTag: '#item_list ul'
+            contentTag: '#item_list h4, #item_list ul'// This does not mean that we are searching inside the content of both <h4> and <ul> tags
         }), new Jets({
             searchTag: '#weapons_search',
-            contentTag: '#weapons_list ul'
+            contentTag: '#weapons_list h4, #weapons_list ul'// The outcome is that all <h4> tags are hidden while searching inside <ul> tags
         }), new Jets({
             searchTag: '#armors_search',
             contentTag: '#armors_list ul'
