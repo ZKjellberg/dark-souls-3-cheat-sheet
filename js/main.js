@@ -342,12 +342,16 @@ var profilesKey = 'darksouls3_profiles';
                 if (checked === count) {
                     this.innerHTML = $('#' + type + '_nav_totals_' + i)[0].innerHTML = 'DONE';
                     $(this).removeClass('in_progress').addClass('done');
+                    $(this).parent('h3').addClass('completed');// Hide heading for completed category
                     $($('#' + type + '_nav_totals_' + i)[0]).removeClass('in_progress').addClass('done');
                 } else {
                     this.innerHTML = $('#' + type + '_nav_totals_' + i)[0].innerHTML =  checked + '/' + count;
                     $(this).removeClass('done').addClass('in_progress');
+                    $(this).parent('h3').removeClass('completed');// Show heading for not yet completed category
                     $($('#' + type + '_nav_totals_' + i)[0]).removeClass('done').addClass('in_progress');
                 }
+                $(this).parent('h3').next('div').children('h4').addClass('completed');// Hide all subheadings...
+                $(this).parent('h3').next('div').children('ul').children('li').children('div').children('label:not(.completed)').parent('div').parent('li').parent('ul').prev('h4').removeClass('completed');// ... except those where not all entries below the subheading are labeled as completed
             });
             if (overallChecked === overallCount) {
                 this.innerHTML = 'DONE';
