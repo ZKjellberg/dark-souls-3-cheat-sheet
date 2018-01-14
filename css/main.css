@@ -67,6 +67,11 @@ h3 {
 	font-size: 12px;
 	padding: 1em;
 	display: none;
+	/* The "Paper" bootstrap theme modifies the transition properties;
+	reset them to the default value to prevent ruining the fadeIn() */
+	-webkit-transition: all 0s ease 0s;
+	-o-transition: all 0s ease 0s;
+	transition: all 0s ease 0s;
 }
 
 .back-to-top:hover{
