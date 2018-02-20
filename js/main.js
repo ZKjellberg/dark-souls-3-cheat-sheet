@@ -177,6 +177,31 @@ var profilesKey = 'darksouls3_profiles';
           fr.readAsText(fileInput.files[0]);
           fr.onload = dataLoadCallback;
         });
+		
+		/*
+        *  Import & Export using textarea instead of files
+        */
+        $('#profileExportText').click(function(){
+          var text = JSON.stringify(profiles);
+		  document.getElementById("profileText").value=text; 
+        });
+
+        $('#profileImportText').click(function(){
+			if (!confirm('Are you sure you want to import profile data?')) {
+				return;
+			}
+			try {
+				var jsonProfileData = JSON.parse(document.getElementById("profileText").value);
+				profiles = jsonProfileData;
+				$.jStorage.set(profilesKey, profiles);
+				populateProfiles();
+				populateChecklists();
+				$('#profiles').trigger("change");
+				location.reload();
+			} catch(e) {
+				alert(e); // error in the above string (in this case, yes)!
+			}
+        });
 
         $("#toggleHideCompleted").change(function() {
             var hidden = !$(this).is(':checked');
@@ -258,6 +283,9 @@ var profilesKey = 'darksouls3_profiles';
                 $el.click();
             }
         });
+		
+		// Refresh the import/export textbox
+		document.getElementById("profileText").value=""; 
     }
 
     // Setup ("bootstrap", haha) styling
