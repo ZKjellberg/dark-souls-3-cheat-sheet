@@ -182,8 +182,9 @@ var profilesKey = 'darksouls3_profiles';
         *  Import & Export using textarea instead of files
         */
         $('#profileExportText').click(function(){
-            var text = JSON.stringify(profiles);
-            document.getElementById("profileText").value=text; 
+            document.getElementById("profileText").value = JSON.stringify(profiles);
+            document.getElementById("profileText").select();
+            document.execCommand("copy");
         });
 
         $('#profileImportText').click(function(){
