@@ -2506,24 +2506,39 @@
 
         <!-- Theme Selection -->
         <div class="row">
-          <div class="col col-md-8"><h4>The theme selection changes the look and feel of this site.</h4></div>
-          <div class="col col-md-4"><select class="form-control" id="themes"><!-- Gets filled by jQuery. --></select></div>
+          <div class="col col-xs-12 col-sm-4 col-md-6"><h4>Theme selection:</h4></div>
+          <div class="col col-xs-12 col-sm-8 col-md-6"><select class="form-control" id="themes"><!-- Gets filled by jQuery. --></select></div>
         </div>
         <!-- Profile Selection -->
         <div class="row">
-          <div class="col col-md-6"><h4>Switch your profiles at will</h4></div>
-          <div class="col col-md-6">
-            <form class="form-inline  pull-right">
-              <div class="form-group"><select class="form-control" id="profiles"></select></div>
-              <button class="btn btn-default" type="button" id="profileAdd">Add</button>
-              <button class="btn btn-default" type="button" id="profileEdit">Edit</button>
-              <button class="btn btn-default" type="button" id="profileImport">Import File</button>
-              <button class="btn btn-default" type="button" id="profileExport">Export File</button>
-			  <br><br><br>
-			  <textarea id="profileText" placeholder="Paste your profile information here to import it as text. Press 'Export Text' to get your currently saved profiles." ></textarea><br>
-			  <button class="btn btn-default" type="button" id="profileImportText">Import Text</button>
-              <button class="btn btn-default" type="button" id="profileExportText">Export Text</button>			  
+          <div class="col col-xs-12 col-sm-4 col-md-6"><h4>Profile management:</h4></div>
+          <div class="col col-xs-12 col-sm-8 col-md-6">
+            <form class="form-inline input-group pull-right">
+              <select class="form-control" id="profiles"></select>
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button" id="profileAdd">Add</button>
+                <button class="btn btn-default" type="button" id="profileEdit">Edit</button>
+              </span>
             </form>
+          </div>
+        </div>
+        <!-- Import/Export -->
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 col-md-6"><h4>Data import/export:</h4></div>
+          <div class="col-xs-12 col-sm-8 col-md-6">
+            <form class="form-inline">
+              <span class="btn-group pull-left">
+                <button class="btn btn-default" type="button" id="profileImport">Import file</button>
+                <button class="btn btn-default" type="button" id="profileExport">Export file</button>
+              </span>
+              <span class="btn-group pull-right">
+                <button class="btn btn-default" type="button" id="profileImportText">Import textbox</button>
+                <button class="btn btn-default" type="button" id="profileExportText">Export clipboard</button>
+              </span>
+            </form>
+          </div>
+          <div class="col col-xs-12">
+            <textarea id="profileText" class="form-control"></textarea>
           </div>
         </div>
       </div>
