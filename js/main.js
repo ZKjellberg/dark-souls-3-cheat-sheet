@@ -283,9 +283,6 @@ var profilesKey = 'darksouls3_profiles';
                 $el.click();
             }
         });
-
-        // Refresh the import/export textbox
-        document.getElementById("profileText").value=""; 
     }
 
     // Setup ("bootstrap", haha) styling
@@ -388,6 +385,8 @@ var profilesKey = 'darksouls3_profiles';
                 this.innerHTML = overallChecked + '/' + overallCount;
                 $(this).removeClass('done').addClass('in_progress');
             }
+        // Update textarea for profile export
+        document.getElementById("profileText").value = JSON.stringify(profiles);
         });
     }
 
