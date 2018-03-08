@@ -508,9 +508,9 @@ var profilesKey = 'darksouls3_profiles';
         var duration = 500;
         $(window).scroll(function() {
             if ($(this).scrollTop() > offset) {
-                $('.back-to-top').fadeIn(duration);
+                $('.fadingbutton').fadeIn(duration);
             } else {
-                $('.back-to-top').fadeOut(duration);
+                $('.fadingbutton').fadeOut(duration);
             }
         });
 
