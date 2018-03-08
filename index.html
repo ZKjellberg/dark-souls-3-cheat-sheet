@@ -32,11 +32,11 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="nav-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#tabPlaythrough" data-toggle="tab">Playthrough</a></li>
-          <li><a href="#tabChecklists" data-toggle="tab">Achievements</a></li>
-          <li><a href="#tabWeaponsShields" data-toggle="tab">Weapons/Shields</a></li>
-          <li><a href="#tabArmors" data-toggle="tab">Armor</a></li>
-          <li><a href="#tabMisc" data-toggle="tab">Misc</a></li>
+          <li class="active"><a href="#tabPlaythrough" data-toggle="tab" data-target="#tabPlaythrough,#btnHideCompleted">Playthrough</a></li>
+          <li><a href="#tabChecklists" data-toggle="tab" data-target="#tabChecklists,#btnHideCompleted">Achievements</a></li>
+          <li><a href="#tabWeaponsShields" data-toggle="tab" data-target="#tabWeaponsShields,#btnHideCompleted">Weapons/Shields</a></li>
+          <li><a href="#tabArmors" data-toggle="tab" data-target="#tabArmors,#btnHideCompleted">Armor</a></li>
+          <li><a href="#tabMisc" data-toggle="tab" data-target="#tabMisc,#btnHideCompleted">Misc</a></li>
           <li><a href="#tabFAQ" data-toggle="tab"><span class="glyphicon glyphicon-question-sign"></span> FAQ</a></li>
           <li><a href="#tabOptions" data-toggle="tab"><span class="glyphicon glyphicon-cog"></span></a></li>
         </ul>
@@ -57,7 +57,7 @@
 
     <div class="tab-content">
       <!-- Hide Completed Toggle -->
-      <div class="btn-group" role="group">
+      <div class="tab-pane active in" id="btnHideCompleted">
         <div class="btn-group" role="group" data-toggle="buttons">
           <label class="btn btn-default">
               <input type="checkbox" id="toggleHideCompleted" />
