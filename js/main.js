@@ -205,12 +205,24 @@ var profilesKey = 'darksouls3_profiles';
         });
 
         $("#toggleHideCompleted").change(function() {
+            // Store information about the old scroll position
+            var oldPos = $(window).scrollTop();
+            var labels = $('ul>li>div>label:visible:not(.completed)');
+            var oldOff = labels.map(function(){return $(this).offset().top});
+
             var hidden = !$(this).is(':checked');
 
             $('body').toggleClass('hide_completed', !hidden);
 
             profiles[profilesKey][profiles.current].hide_completed = !hidden;
             $.jStorage.set(profilesKey, profiles);
+            
+            // Try to find a reasonable new scroll position
+            for (var a=0; a<oldOff.length-1; a++) if (oldOff[a]>oldPos) break;
+            for (var b=0; b<oldOff.length-1; b++) if (oldOff[b]>oldPos+$(window).height()) break;
+            if (!oldOff.length || $('h2:visible').last().offset().top>oldPos) $('html, body').scrollTop(oldPos);
+            else if (a==b) $('html, body').scrollTop(Math.round(labels.eq(b).offset().top)-Math.round($(window).height()/2));
+            else {var c = Math.round((a+b)/2); $('html, body').scrollTop(oldPos+Math.round(labels.eq(c).offset().top)-Math.round(oldOff[c]));}
         });
 
         $('[data-item-toggle]').change(function() {
@@ -508,9 +520,9 @@ var profilesKey = 'darksouls3_profiles';
         var duration = 500;
         $(window).scroll(function() {
             if ($(this).scrollTop() > offset) {
-                $('.back-to-top').fadeIn(duration);
+                $('.fadingbutton').fadeIn(duration);
             } else {
-                $('.back-to-top').fadeOut(duration);
+                $('.fadingbutton').fadeOut(duration);
             }
         });
 

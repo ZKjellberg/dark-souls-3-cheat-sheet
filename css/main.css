@@ -57,25 +57,29 @@ h3 {
  overflow: hidden;
 }
 
-.back-to-top {
-	position: fixed;
-	bottom: 2em;
-	right: 0px;
-	text-decoration: none;
-	color: #000000;
-	background-color: rgba(235, 235, 235, 0.80);
-	font-size: 12px;
-	padding: 1em;
-	display: none;
-	/* The "Paper" bootstrap theme modifies the transition properties;
-	reset them to the default value to prevent ruining the fadeIn() */
-	-webkit-transition: all 0s ease 0s;
-	-o-transition: all 0s ease 0s;
-	transition: all 0s ease 0s;
+.fadingbutton {
+  position: fixed;
+  bottom: 2em;
+  text-decoration: none;
+  color: #000000;
+  background-color: rgba(235, 235, 235, 0.80);
+  font-size: 12px;
+  padding: 1em;
+  display: none;
+  /* The "Paper" bootstrap theme modifies the transition properties;
+  reset them to the default value to prevent ruining the fadeIn() */
+  -webkit-transition: all 0s ease 0s;
+  -o-transition: all 0s ease 0s;
+  transition: all 0s ease 0s;
 }
-
-.back-to-top:hover{
-	background-color: rgba(135, 135, 135, 0.50);
+.fadingbutton:hover {
+  background-color: rgba(135, 135, 135, 0.50);
+}
+.fadingbutton.back-to-top {
+  right: 0;
+}
+.fadingbutton.togglehide {
+  left: 0;
 }
 
 .btn-collapse {
@@ -125,13 +129,18 @@ input[type="checkbox"]:checked + .item_content {
   text-decoration: line-through;
 }
 
-input[type="checkbox"] ~ .glyphicon-eye-close { display:none; }
-
-input[type="checkbox"]:checked ~ .glyphicon-eye-close { display: inline-block; }
-
-input[type="checkbox"] ~ .glyphicon-eye-open { display: inline-block; }
-
-input[type="checkbox"]:checked ~ .glyphicon-eye-open { display: none; }
+input[type="checkbox"] ~ .glyphicon-eye-close,
+input[type="checkbox"] ~ * > .glyphicon-eye-close,
+input[type="checkbox"]:checked ~ .glyphicon-eye-open,
+input[type="checkbox"]:checked ~ * > .glyphicon-eye-open {
+  display: none;
+}
+input[type="checkbox"] ~ .glyphicon-eye-open,
+input[type="checkbox"] ~ * > .glyphicon-eye-open,
+input[type="checkbox"]:checked ~ .glyphicon-eye-close,
+input[type="checkbox"]:checked ~ * > .glyphicon-eye-close {
+  display: inline-block;
+}
 
 textarea#profileText {
   height: 15em;

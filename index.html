@@ -32,11 +32,11 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="nav-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#tabPlaythrough" data-toggle="tab">Playthrough</a></li>
-          <li><a href="#tabChecklists" data-toggle="tab">Achievements</a></li>
-          <li><a href="#tabWeaponsShields" data-toggle="tab">Weapons/Shields</a></li>
-          <li><a href="#tabArmors" data-toggle="tab">Armor</a></li>
-          <li><a href="#tabMisc" data-toggle="tab">Misc</a></li>
+          <li class="active"><a href="#tabPlaythrough" data-toggle="tab" data-target="#tabPlaythrough,#btnHideCompleted">Playthrough</a></li>
+          <li><a href="#tabChecklists" data-toggle="tab" data-target="#tabChecklists,#btnHideCompleted">Achievements</a></li>
+          <li><a href="#tabWeaponsShields" data-toggle="tab" data-target="#tabWeaponsShields,#btnHideCompleted">Weapons/Shields</a></li>
+          <li><a href="#tabArmors" data-toggle="tab" data-target="#tabArmors,#btnHideCompleted">Armor</a></li>
+          <li><a href="#tabMisc" data-toggle="tab" data-target="#tabMisc,#btnHideCompleted">Misc</a></li>
           <li><a href="#tabFAQ" data-toggle="tab"><span class="glyphicon glyphicon-question-sign"></span> FAQ</a></li>
           <li><a href="#tabOptions" data-toggle="tab"><span class="glyphicon glyphicon-cog"></span></a></li>
         </ul>
@@ -57,13 +57,18 @@
 
     <div class="tab-content">
       <!-- Hide Completed Toggle -->
-      <div class="btn-group" role="group">
+      <div class="tab-pane active in" id="btnHideCompleted">
         <div class="btn-group" role="group" data-toggle="buttons">
           <label class="btn btn-default">
-              <input type="checkbox" id="toggleHideCompleted" />
+            <input type="checkbox" id="toggleHideCompleted">
+            <span class="glyphicon glyphicon-eye-close"></span>
+            <span class="glyphicon glyphicon-eye-open"></span>
+            Hide Completed
+            <a class="fadingbutton togglehide">
               <span class="glyphicon glyphicon-eye-close"></span>
               <span class="glyphicon glyphicon-eye-open"></span>
               Hide Completed
+            </a>
           </label>
         </div>
       </div>
@@ -2581,7 +2586,7 @@
     <input name="upload" type="file" id="fileInput" />
   </div>
 
-  <a href="#" class="back-to-top">Back to Top</a>
+  <a href="#" class="fadingbutton back-to-top">Back to Top</a>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="https://cdn.rawgit.com/andris9/jStorage/v0.4.12/jstorage.min.js"></script>
