@@ -93,19 +93,6 @@ h3 {
     outline: 0;
 }
 
-.btn.filter-inactive .glyphicon-eye-close {
-display: inline-block;
-}
-.btn.filter-inactive .glyphicon-eye-close {
-display: none;
-}
-.btn.filter-active .glyphicon-eye-open {
-display: inline-block;
-}
-.btn.filter-active .glyphicon-eye-open {
-display: none;
-}
-
 /* Icon when the collapsible content is shown */
 .btn-collapse:after {
   font-family: 'Glyphicons Halflings';
