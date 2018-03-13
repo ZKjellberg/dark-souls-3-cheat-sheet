@@ -57,28 +57,28 @@ h3 {
  overflow: hidden;
 }
 
-.fadingbutton {
+.btn.fadingbutton {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom: 0;
   position: fixed;
-  bottom: 2em;
-  text-decoration: none;
-  color: #000000;
-  background-color: rgba(235, 235, 235, 0.80);
-  font-size: 12px;
-  padding: 1em;
   display: none;
+  z-index: 1;
+  bottom: 0;
   /* The "Paper" bootstrap theme modifies the transition properties;
   reset them to the default value to prevent ruining the fadeIn() */
   -webkit-transition: all 0s ease 0s;
   -o-transition: all 0s ease 0s;
   transition: all 0s ease 0s;
 }
-.fadingbutton:hover {
-  background-color: rgba(135, 135, 135, 0.50);
-}
 .fadingbutton.back-to-top {
+  border-top-right-radius: 0;
+  border-right: 0;
   right: 0;
 }
 .fadingbutton.togglehide {
+  border-top-left-radius: 0;
+  border-left: 0;
   left: 0;
 }
 
