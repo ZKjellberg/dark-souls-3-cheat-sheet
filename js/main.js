@@ -146,21 +146,24 @@ var profilesKey = 'darksouls3_profiles';
             $('#profileModal').modal('hide');
             //_gaq.push(['_trackEvent', 'Profile', 'Delete']);
         });
-        /*
-        *  The only stipulation with this method is that it will only work with
-        *  HTML5 ready browsers, should be the vast majority now...
-        */
+
         $('#profileExport').click(function(){
-          var filename = "profiles.json";
-          var text = JSON.stringify(profiles);
-          var element = document.createElement('a');
-          element.setAttribute('href', 'data:text/plain;charset=utf-8,' +
-            encodeURIComponent(text));
-          element.setAttribute('download', filename);
-          element.style.display = 'none';
-          document.body.appendChild(element);
-          element.click();
-          document.body.removeChild(element);
+            var filename = 'profiles.json';
+            var text = JSON.stringify(profiles);
+            if (window.Blob && window.navigator.msSaveBlob) {
+                // Microsoft browsers (https://docs.microsoft.com/en-us/microsoft-edge/dev-guide/html5/file-api/blob)
+                var blob = new window.Blob([text]);
+                window.navigator.msSaveBlob(blob, filename);
+            } else {
+                // All other modern browsers
+                var element = document.createElement('a');
+                element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+                element.setAttribute('download', filename);
+                element.style.display = 'none';
+                document.body.appendChild(element);
+                element.click();
+                document.body.removeChild(element);
+            }
         });
 
         $('#profileImport').click(function(){
