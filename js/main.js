@@ -236,6 +236,7 @@ var profilesKey = 'darksouls3_profiles';
             $.jStorage.set(profilesKey, profiles);
 
             toggleFilteredClasses(type);
+            toggleFilteredClasses('f_none');
 
             calculateTotals();
         });
@@ -443,10 +444,15 @@ var profilesKey = 'darksouls3_profiles';
     }
 
     function canFilter(entry) {
-        if (!entry.attr('class')) {
+        var classAttr = entry.attr('class');
+        if (!classAttr) {
             return false;
         }
-        var classList = entry.attr('class').split(/\s+/);
+        if (classAttr === 'f_none') {
+            // If some filters are enabled, all entries marked f_none are automatically filtered as well 
+            return Object.values(profiles[profilesKey][profiles.current].hidden_categories).some(function(f){return f});
+        }
+        var classList = classAttr.split(/\s+/);
         var foundMatch = 0;
         for (var i = 0; i < classList.length; i++) {
             if (!classList[i].match(/^f_(.*)/)) {
