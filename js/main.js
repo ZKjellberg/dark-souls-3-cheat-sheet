@@ -231,6 +231,7 @@ var profilesKey = 'darksouls3_profiles';
         $('[data-item-toggle]').change(function() {
             var type = $(this).data('item-toggle');
             var to_hide = $(this).is(':checked');
+            var item_toggles = $(this).closest('.btn-group.btn-group-vertical').find('[data-item-toggle]');
 
             profiles[profilesKey][profiles.current].hidden_categories[type] = to_hide;
             $.jStorage.set(profilesKey, profiles);
@@ -238,7 +239,24 @@ var profilesKey = 'darksouls3_profiles';
             toggleFilteredClasses(type);
             toggleFilteredClasses('f_none');
 
+            // Mark parent category as hidden if and only if all items in it are hidden
+            if (to_hide === (item_toggles.length === item_toggles.filter(':checked').length)) {
+                $(this).closest('.btn-group.btn-group-vertical').find('[data-category-toggle]').not(function(){return this.checked === to_hide}).click();
+            }
+            // Apply partial highlight to the parent category if at least one item in it is hidden
+            $(this).closest('.btn-group.btn-group-vertical').find('.btn-group-vertical').toggleClass('open', item_toggles.filter(':checked').length > 0);
+
             calculateTotals();
+        });
+
+        $('[data-category-toggle]').change(function() {
+            var to_hide = $(this).is(':checked');
+            var item_toggles = $(this).closest('.btn-group.btn-group-vertical').find('[data-item-toggle]');
+
+            // Change all child items to the same state as the category
+            if (to_hide || (item_toggles.length === item_toggles.filter(':checked').length)) {
+                item_toggles.not(function(){return this.checked === to_hide}).click();
+            }
         });
 
         calculateTotals();
