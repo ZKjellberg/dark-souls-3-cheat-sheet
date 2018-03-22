@@ -278,13 +278,23 @@ var profilesKey = 'darksouls3_profiles';
             profiles[profilesKey][profile_name].hide_completed = false;
         if (!('hidden_categories' in profiles[profilesKey][profile_name]))
             profiles[profilesKey][profile_name].hidden_categories = {
-                f_quest: false,
+                f_boss: false,
                 f_npc: false,
                 f_estus: false,
-                f_gear: false,
+                f_bone: false,
+                f_tome: false,
+                f_coal: false,
+                f_ash: false,
+                f_gest: false,
+                f_sorc: false,
+                f_pyro: false,
+                f_mirac: false,
                 f_ring: false,
-                f_spell: false,
-                f_mat: false,
+                f_weap: false,
+                f_arm: false,
+                f_tit: false,
+                f_gem: false,
+                f_cov: false,
                 f_misc: false
             };
     }
