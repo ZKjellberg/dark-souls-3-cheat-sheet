@@ -231,13 +231,32 @@ var profilesKey = 'darksouls3_profiles';
         $('[data-item-toggle]').change(function() {
             var type = $(this).data('item-toggle');
             var to_hide = $(this).is(':checked');
+            var item_toggles = $(this).closest('.btn-group.btn-group-vertical').find('[data-item-toggle]');
 
             profiles[profilesKey][profiles.current].hidden_categories[type] = to_hide;
             $.jStorage.set(profilesKey, profiles);
 
             toggleFilteredClasses(type);
+            toggleFilteredClasses('f_none');
+
+            // Mark parent category as hidden if and only if all items in it are hidden
+            if (to_hide === (item_toggles.length === item_toggles.filter(':checked').length)) {
+                $(this).closest('.btn-group.btn-group-vertical').find('[data-category-toggle]').not(function(){return this.checked === to_hide}).click();
+            }
+            // Apply partial highlight to the parent category if at least one item in it is hidden
+            $(this).closest('.btn-group.btn-group-vertical').find('.btn-group-vertical').toggleClass('open', item_toggles.filter(':checked').length > 0);
 
             calculateTotals();
+        });
+
+        $('[data-category-toggle]').change(function() {
+            var to_hide = $(this).is(':checked');
+            var item_toggles = $(this).closest('.btn-group.btn-group-vertical').find('[data-item-toggle]');
+
+            // Change all child items to the same state as the category
+            if (to_hide || (item_toggles.length === item_toggles.filter(':checked').length)) {
+                item_toggles.not(function(){return this.checked === to_hide}).click();
+            }
         });
 
         calculateTotals();
@@ -259,13 +278,23 @@ var profilesKey = 'darksouls3_profiles';
             profiles[profilesKey][profile_name].hide_completed = false;
         if (!('hidden_categories' in profiles[profilesKey][profile_name]))
             profiles[profilesKey][profile_name].hidden_categories = {
-                f_quest: false,
+                f_boss: false,
                 f_npc: false,
                 f_estus: false,
-                f_gear: false,
+                f_bone: false,
+                f_tome: false,
+                f_coal: false,
+                f_ash: false,
+                f_gest: false,
+                f_sorc: false,
+                f_pyro: false,
+                f_mirac: false,
                 f_ring: false,
-                f_spell: false,
-                f_mat: false,
+                f_weap: false,
+                f_arm: false,
+                f_tit: false,
+                f_gem: false,
+                f_cov: false,
                 f_misc: false
             };
     }
@@ -443,10 +472,15 @@ var profilesKey = 'darksouls3_profiles';
     }
 
     function canFilter(entry) {
-        if (!entry.attr('class')) {
+        var classAttr = entry.attr('class');
+        if (!classAttr) {
             return false;
         }
-        var classList = entry.attr('class').split(/\s+/);
+        if (classAttr === 'f_none') {
+            // If some filters are enabled, all entries marked f_none are automatically filtered as well 
+            return Object.values(profiles[profilesKey][profiles.current].hidden_categories).some(function(f){return f});
+        }
+        var classList = classAttr.split(/\s+/);
         var foundMatch = 0;
         for (var i = 0; i < classList.length; i++) {
             if (!classList[i].match(/^f_(.*)/)) {

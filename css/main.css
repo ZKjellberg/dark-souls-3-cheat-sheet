@@ -133,3 +133,36 @@ textarea#profileText {
   height: 15em;
   resize: vertical;
 }
+
+/* Styling for checklist filter categories and toggles */
+.btn-group.btn-group-vertical > .btn-group:not(:first-child) > .btn-group-vertical {
+  left: 0;
+  top: 100%;
+  display: none;
+  position: absolute;
+}
+.btn-group.btn-group-vertical:hover > .btn-group:not(:first-child) > .btn-group-vertical {
+  display: block;
+}
+.btn-group.btn-group-vertical > .btn-group:first-child > .btn-group-vertical.open > .btn {
+  z-index: 1;
+}
+.btn-group.btn-group-vertical > .btn-group:not(:first-child) > .btn-group-vertical > .btn {
+  z-index: 3;
+  text-align: left;
+}
+.btn-group.btn-group-vertical > .btn-group:not(:first-child) > .btn-group-vertical > .btn:hover {
+  z-index: 4;
+}
+.btn-group.btn-group-vertical:not(:last-child) > .btn-group:first-child > .btn-group-vertical > .btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.btn-group.btn-group-vertical:not(:first-child) > .btn-group:first-child > .btn-group-vertical > .btn,
+.btn-group.btn-group-vertical > .btn-group:not(:first-child) > .btn-group-vertical > .btn:first-child {
+  border-top-left-radius: 0;
+}
+.btn-group.btn-group-vertical:not(:first-child) > .btn-group:first-child > .btn-group-vertical > .btn,
+.btn-group.btn-group-vertical:first-child:hover > .btn-group:first-child > .btn-group-vertical > .btn {
+  border-bottom-left-radius: 0;
+}
