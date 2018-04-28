@@ -302,14 +302,14 @@ var profilesKey = 'darksouls3_profiles';
     /// restore all saved state, except for the current tab
     /// used on page load or when switching profiles
     function restoreState(profile_name) {
-        $.each(profiles[profilesKey][profile_name].collapsed, function(key, value) {
-            var $el = $('a[href="' + key + '"]');
-            var active = $el.hasClass('collapsed');
+        $('a[href$="_col"]').each(function() {
+            var value = profiles[profilesKey][profile_name].collapsed[$(this).attr('href')];
+            var active = $(this).hasClass('collapsed');
 
             // interesting note: this condition is the same as (value ^ active),
             // but there's no logical xor in JS as far as I know; also, this is more readable
             if ((value && !active) || (!value && active)) {
-                $el.click();
+                $($(this).attr('href')).collapse('toggle');
             }
         });
 
