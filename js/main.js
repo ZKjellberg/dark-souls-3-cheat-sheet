@@ -269,9 +269,6 @@ var profilesKey = 'darksouls3_profiles';
         if (!(profile_name in profiles[profilesKey])) profiles[profilesKey][profile_name] = {};
         if (!('checklistData' in profiles[profilesKey][profile_name]))
             profiles[profilesKey][profile_name].checklistData = {};
-
-        if (!('state' in profiles[profilesKey][profile_name]))
-            profiles[profilesKey][profile_name].state = {};
         if (!('collapsed' in profiles[profilesKey][profile_name]))
             profiles[profilesKey][profile_name].collapsed = {};
         if (!('current_tab' in profiles[profilesKey][profile_name]))
