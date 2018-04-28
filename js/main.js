@@ -112,6 +112,7 @@ var profilesKey = 'darksouls3_profiles';
                 $.jStorage.set(profilesKey, profiles);
                 populateProfiles();
                 populateChecklists();
+                restoreState(profiles.current);
             }
             //_gaq.push(['_trackEvent', 'Profile', 'Create', profile]);
         });
@@ -143,6 +144,7 @@ var profilesKey = 'darksouls3_profiles';
             $.jStorage.set(profilesKey, profiles);
             populateProfiles();
             populateChecklists();
+            restoreState(profiles.current);
             $('#profileModal').modal('hide');
             //_gaq.push(['_trackEvent', 'Profile', 'Delete']);
         });
