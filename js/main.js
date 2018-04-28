@@ -47,7 +47,6 @@ var profilesKey = 'darksouls3_profiles';
         $('.checkbox input[type="checkbox"]').click(function() {
             var id = $(this).attr('id');
             var isChecked = profiles[profilesKey][profiles.current].checklistData[id] = $(this).prop('checked');
-            //_gaq.push(['_trackEvent', 'Checkbox', (isChecked ? 'Check' : 'Uncheck'), id]);
             if (isChecked === true) {
               $('[data-id="'+id+'"] label').addClass('completed');
             } else {
@@ -75,7 +74,6 @@ var profilesKey = 'darksouls3_profiles';
             restoreState(profiles.current);
 
             calculateTotals();
-            //_gaq.push(['_trackEvent', 'Profile', 'Change', profiles.current]);
         });
 
         $('#profileAdd').click(function() {
@@ -85,7 +83,6 @@ var profilesKey = 'darksouls3_profiles';
             $('#profileModalUpdate').hide();
             $('#profileModalDelete').hide();
             $('#profileModal').modal('show');
-            //_gaq.push(['_trackEvent', 'Profile', 'Add']);
         });
 
         $('#profileEdit').click(function() {
@@ -99,7 +96,6 @@ var profilesKey = 'darksouls3_profiles';
                 $('#profileModalDelete').hide();
             }
             $('#profileModal').modal('show');
-            //_gaq.push(['_trackEvent', 'Profile', 'Edit', profiles.current]);
         });
 
         $('#profileModalAdd').click(function(event) {
@@ -114,7 +110,6 @@ var profilesKey = 'darksouls3_profiles';
                 populateChecklists();
                 restoreState(profiles.current);
             }
-            //_gaq.push(['_trackEvent', 'Profile', 'Create', profile]);
         });
 
         $('#profileModalUpdate').click(function(event) {
@@ -128,7 +123,6 @@ var profilesKey = 'darksouls3_profiles';
                 populateProfiles();
             }
             $('#profileModal').modal('hide');
-            //_gaq.push(['_trackEvent', 'Profile', 'Update', profile]);
         });
 
         $('#profileModalDelete').click(function(event) {
@@ -146,7 +140,6 @@ var profilesKey = 'darksouls3_profiles';
             populateChecklists();
             restoreState(profiles.current);
             $('#profileModal').modal('hide');
-            //_gaq.push(['_trackEvent', 'Profile', 'Delete']);
         });
 
         $('#profileExport').click(function(){
