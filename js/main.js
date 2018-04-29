@@ -47,7 +47,6 @@ var profilesKey = 'darksouls3_profiles';
         $('.checkbox input[type="checkbox"]').click(function() {
             var id = $(this).attr('id');
             var isChecked = profiles[profilesKey][profiles.current].checklistData[id] = $(this).prop('checked');
-            //_gaq.push(['_trackEvent', 'Checkbox', (isChecked ? 'Check' : 'Uncheck'), id]);
             if (isChecked === true) {
               $('[data-id="'+id+'"] label').addClass('completed');
             } else {
@@ -75,7 +74,6 @@ var profilesKey = 'darksouls3_profiles';
             restoreState(profiles.current);
 
             calculateTotals();
-            //_gaq.push(['_trackEvent', 'Profile', 'Change', profiles.current]);
         });
 
         $('#profileAdd').click(function() {
@@ -85,7 +83,6 @@ var profilesKey = 'darksouls3_profiles';
             $('#profileModalUpdate').hide();
             $('#profileModalDelete').hide();
             $('#profileModal').modal('show');
-            //_gaq.push(['_trackEvent', 'Profile', 'Add']);
         });
 
         $('#profileEdit').click(function() {
@@ -99,7 +96,6 @@ var profilesKey = 'darksouls3_profiles';
                 $('#profileModalDelete').hide();
             }
             $('#profileModal').modal('show');
-            //_gaq.push(['_trackEvent', 'Profile', 'Edit', profiles.current]);
         });
 
         $('#profileModalAdd').click(function(event) {
@@ -112,8 +108,8 @@ var profilesKey = 'darksouls3_profiles';
                 $.jStorage.set(profilesKey, profiles);
                 populateProfiles();
                 populateChecklists();
+                restoreState(profiles.current);
             }
-            //_gaq.push(['_trackEvent', 'Profile', 'Create', profile]);
         });
 
         $('#profileModalUpdate').click(function(event) {
@@ -127,7 +123,6 @@ var profilesKey = 'darksouls3_profiles';
                 populateProfiles();
             }
             $('#profileModal').modal('hide');
-            //_gaq.push(['_trackEvent', 'Profile', 'Update', profile]);
         });
 
         $('#profileModalDelete').click(function(event) {
@@ -143,8 +138,8 @@ var profilesKey = 'darksouls3_profiles';
             $.jStorage.set(profilesKey, profiles);
             populateProfiles();
             populateChecklists();
+            restoreState(profiles.current);
             $('#profileModal').modal('hide');
-            //_gaq.push(['_trackEvent', 'Profile', 'Delete']);
         });
 
         $('#profileExport').click(function(){
@@ -267,9 +262,6 @@ var profilesKey = 'darksouls3_profiles';
         if (!(profile_name in profiles[profilesKey])) profiles[profilesKey][profile_name] = {};
         if (!('checklistData' in profiles[profilesKey][profile_name]))
             profiles[profilesKey][profile_name].checklistData = {};
-
-        if (!('state' in profiles[profilesKey][profile_name]))
-            profiles[profilesKey][profile_name].state = {};
         if (!('collapsed' in profiles[profilesKey][profile_name]))
             profiles[profilesKey][profile_name].collapsed = {};
         if (!('current_tab' in profiles[profilesKey][profile_name]))
@@ -302,14 +294,14 @@ var profilesKey = 'darksouls3_profiles';
     /// restore all saved state, except for the current tab
     /// used on page load or when switching profiles
     function restoreState(profile_name) {
-        $.each(profiles[profilesKey][profile_name].collapsed, function(key, value) {
-            var $el = $('a[href="' + key + '"]');
-            var active = $el.hasClass('collapsed');
+        $('a[href$="_col"]').each(function() {
+            var value = profiles[profilesKey][profile_name].collapsed[$(this).attr('href')];
+            var active = $(this).hasClass('collapsed');
 
             // interesting note: this condition is the same as (value ^ active),
             // but there's no logical xor in JS as far as I know; also, this is more readable
             if ((value && !active) || (!value && active)) {
-                $el.click();
+                $($(this).attr('href')).collapse('toggle');
             }
         });
 
