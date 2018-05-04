@@ -142,6 +142,27 @@ var profilesKey = 'darksouls3_profiles';
             $('#profileModal').modal('hide');
         });
 
+        $('#profileNG\\+').click(function() {
+            $('#NG\\+Modal').modal('show');
+        });
+
+        $('#NG\\+ModalYes').click(function(event) {
+            event.preventDefault();
+            if (!confirm('Are you sure you wish to begin the next journey?')) {
+                return;
+            }
+            $('[id^="playthrough_"], [id^="crow_"]').filter(':checked').each(function(){
+                profiles[profilesKey][profiles.current].checklistData[this.id] = false;
+            });
+            if (profiles[profilesKey][profiles.current].journey < 3) {
+                profiles[profilesKey][profiles.current].journey++;
+            }
+            $.jStorage.set(profilesKey, profiles);
+            populateChecklists();
+            restoreState(profiles.current);
+            $('#NG\\+Modal').modal('hide');
+        });
+
         $('#profileExport').click(function(){
             var filename = 'profiles.json';
             var text = JSON.stringify(profiles);
