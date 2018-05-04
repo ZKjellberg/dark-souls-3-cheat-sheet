@@ -22,7 +22,7 @@
 
 ul {
   list-style-type: none;
-	padding-left: 22px;
+  padding-left: 22px;
 }
 ul li ul {
   padding-top: 0;
@@ -132,6 +132,12 @@ input[type="checkbox"]:checked ~ * > .glyphicon-eye-close {
 textarea#profileText {
   height: 15em;
   resize: vertical;
+}
+
+/* Work around what seems to be a bootstrap bug affecting the hover border on the right side of the add profile button */
+.input-group-btn:last-child>.btn:focus,
+.input-group-btn:last-child>.btn:hover {
+  z-index: 3;
 }
 
 /* Styling for checklist filter categories and toggles */
