@@ -223,6 +223,19 @@ var profilesKey = 'darksouls3_profiles';
             else {var c = Math.round((a+b)/2); $('html, body').scrollTop(oldPos+Math.round(labels.eq(c).offset().top)-Math.round(oldOff[c]));}
         });
 
+        $('[data-ng-toggle]').change(function() {
+            var journey = $(this).data('ng-toggle');
+
+            profiles[profilesKey][profiles.current].journey = +journey
+            $.jStorage.set(profilesKey, profiles);
+
+            toggleFilteredClasses('h_ng\\+');
+            toggleFilteredClasses('s_ng\\+');
+            toggleFilteredClasses('s_ng\\+\\+');
+
+            calculateTotals();
+        });
+
         $('[data-item-toggle]').change(function() {
             var type = $(this).data('item-toggle');
             var to_hide = $(this).is(':checked');
@@ -314,8 +327,9 @@ var profilesKey = 'darksouls3_profiles';
             $button.click();
         }
 
+        $('[data-ng-toggle="' + profiles[profilesKey][profile_name].journey + '"]').click().change();
         $.each(profiles[profilesKey][profile_name].hidden_categories, function(key, value) {
-            var $el = $('[data-item-toggle="' + key + '"');
+            var $el = $('[data-item-toggle="' + key + '"]');
             var active = $el.is(':checked');
 
             if ((value && !active) || (!value && active)) {
