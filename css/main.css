@@ -140,6 +140,18 @@ textarea#profileText {
   z-index: 3;
 }
 
+/* Decorators for NG+/NG++ entries */
+.s_ng\+ .item_content:before {
+  content: "[NG+: ";
+}
+.s_ng\+\+ .item_content:before {
+  content: "[NG++: ";
+}
+.s_ng\+ .item_content:after,
+.s_ng\+\+ .item_content:after {
+  content: "]";
+}
+
 /* Styling for checklist filter categories and toggles */
 .btn-group.btn-group-vertical > .btn-group:not(:first-child) > .btn-group-vertical {
   left: 0;
