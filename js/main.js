@@ -268,6 +268,8 @@ var profilesKey = 'darksouls3_profiles';
             profiles[profilesKey][profile_name].current_tab = '#tabPlaythrough';
         if (!('hide_completed' in profiles[profilesKey][profile_name]))
             profiles[profilesKey][profile_name].hide_completed = false;
+        if (!('journey' in profiles[profilesKey][profile_name]))
+            profiles[profilesKey][profile_name].journey = 1;
         if (!('hidden_categories' in profiles[profilesKey][profile_name]))
             profiles[profilesKey][profile_name].hidden_categories = {
                 f_boss: false,
@@ -473,9 +475,16 @@ var profilesKey = 'darksouls3_profiles';
             return Object.values(profiles[profilesKey][profiles.current].hidden_categories).some(function(f){return f});
         }
         var classList = classAttr.split(/\s+/);
+        for (var i = 0; i < classList.length; i++) {
+            // Hide(h) or show(s) entries based on journey number
+            if ((classList[i].match(/^h_ng\+*$/) && classList[i].match(/^h_ng(\+*)$/)[1].length < profiles[profilesKey][profiles.current].journey) ||
+               (classList[i].match(/^s_ng\+*$/) && classList[i].match(/^s_ng(\+*)$/)[1].length >= profiles[profilesKey][profiles.current].journey)) {
+                return true;
+            }
+        }
         var foundMatch = 0;
         for (var i = 0; i < classList.length; i++) {
-            if (!classList[i].match(/^f_(.*)/)) {
+            if (!classList[i].match(/^f_.*/)) {
                 continue;
             }
             if(classList[i] in profiles[profilesKey][profiles.current].hidden_categories) {
