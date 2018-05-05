@@ -42,3 +42,11 @@ The **class="f_gem f_misc"** field is used for the filtering system. This task p
 | f_misc  | *any other items* |
 
 If none of these filter classes match, use **class="f_none"**.
+
+In addition to the filter classes, there is a second type of classes used to control the visibility of entries based on which playthrough the user is on:
+
+| Class  | Description |
+|---     |--- |
+| h_ng+  | items hidden on NG+ and beyond, e.g., Ashen Estus Flask |
+| s_ng+  | items shown on NG+ and beyond, e.g., +1 rings |
+| s_ng++ | items shown on NG++ and beyond, e.g., +2 rings |
