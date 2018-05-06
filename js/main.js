@@ -154,6 +154,9 @@ var profilesKey = 'darksouls3_profiles';
             $('[id^="playthrough_"], [id^="crow_"]').filter(':checked').each(function(){
                 profiles[profilesKey][profiles.current].checklistData[this.id] = false;
             });
+            $.each(profiles[profilesKey][profiles.current].hidden_categories, function(f){
+                profiles[profilesKey][profiles.current].hidden_categories[f] = false;
+            });
             if (profiles[profilesKey][profiles.current].journey < 3) {
                 profiles[profilesKey][profiles.current].journey++;
             }
