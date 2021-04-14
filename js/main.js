@@ -310,6 +310,7 @@ var profilesKey = 'darksouls3_profiles';
         if (!('hidden_categories' in profiles[profilesKey][profile_name]))
             profiles[profilesKey][profile_name].hidden_categories = {
                 f_boss: false,
+                f_miss: false,
                 f_npc: false,
                 f_estus: false,
                 f_bone: false,

@@ -23,6 +23,7 @@ The **class="f_gem f_misc"** field is used for the filtering system. This task p
 | Class   | Description |
 |---      |--- |
 | f_boss  | Boss fights |
+| f_miss  | Content that can be permanently missed |
 | f_npc   | NPC side quests |
 | f_estus | Estus Shards |
 | f_bone  | Undead Bone Shards |
