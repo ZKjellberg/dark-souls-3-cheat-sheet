@@ -3,6 +3,8 @@ var profilesKey = 'darksouls3_profiles';
 (function($) {
     'use strict';
 
+    var t = window.DS3I18n.t;
+
     var themes = {
         "Standard" : "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css",
         "Cosmo" : "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cosmo/bootstrap.min.css",
@@ -77,7 +79,7 @@ var profilesKey = 'darksouls3_profiles';
         });
 
         $('#profileAdd').click(function() {
-            $('#profileModalTitle').html('Add Profile');
+            $('#profileModalTitle').text(t('Add Profile'));
             $('#profileModalName').val('');
             $('#profileModalAdd').show();
             $('#profileModalUpdate').hide();
@@ -86,7 +88,7 @@ var profilesKey = 'darksouls3_profiles';
         });
 
         $('#profileEdit').click(function() {
-            $('#profileModalTitle').html('Edit Profile');
+            $('#profileModalTitle').text(t('Edit Profile'));
             $('#profileModalName').val(profiles.current);
             $('#profileModalAdd').hide();
             $('#profileModalUpdate').show();
@@ -130,7 +132,7 @@ var profilesKey = 'darksouls3_profiles';
             if (!canDelete()) {
                 return;
             }
-            if (!confirm('Are you sure?')) {
+            if (!confirm(t('Are you sure?'))) {
                 return;
             }
             delete profiles[profilesKey][profiles.current];
@@ -148,7 +150,7 @@ var profilesKey = 'darksouls3_profiles';
 
         $('#NG\\+ModalYes').click(function(event) {
             event.preventDefault();
-            if (!confirm('Are you sure you wish to begin the next journey?')) {
+            if (!confirm(t('Are you sure you wish to begin the next journey?'))) {
                 return;
             }
             $('[id^="playthrough_"], [id^="crow_"]').filter(':checked').each(function(){
@@ -192,7 +194,7 @@ var profilesKey = 'darksouls3_profiles';
         $('input#fileInput').change(function(){
           var fileInput = document.getElementById('fileInput');
           if(!fileInput.files || !fileInput.files[0] || !/\.json$/.test(fileInput.files[0].name)){
-            alert("Bad input file. File should end in .json")
+            alert(t('Bad input file. File should end in .json'));
             return;
           }
           var fr = new FileReader();
@@ -210,7 +212,7 @@ var profilesKey = 'darksouls3_profiles';
         });
 
         $('#profileImportText').click(function(){
-            if (!confirm('Are you sure you want to import profile data?')) {
+            if (!confirm(t('Are you sure you want to import profile data?'))) {
                 return;
             }
             try {
@@ -222,7 +224,7 @@ var profilesKey = 'darksouls3_profiles';
                 $('#profiles').trigger("change");
                 location.reload();
             } catch(e) {
-                alert(e); // error in the above string (in this case, yes)!
+                alert(t('Unable to import profile data. Please check the JSON file.'));
             }
         });
 
@@ -376,7 +378,7 @@ var profilesKey = 'darksouls3_profiles';
         var themeSelect = $("#themes");
         $.each(themes, function(key, value){
             themeSelect.append(
-                $('<option></option>').val(key).html(key + " Theme")
+                $('<option></option>').val(key).text(t('{name} Theme', {name: t(key)}))
             );
         });
         themeSelect.val(style);
@@ -384,7 +386,13 @@ var profilesKey = 'darksouls3_profiles';
     }
 
     function dataLoadCallback(arg){
-      var jsonProfileData = JSON.parse(arg.currentTarget.result);
+      var jsonProfileData;
+      try {
+        jsonProfileData = JSON.parse(arg.currentTarget.result);
+      } catch (error) {
+        alert(t('Unable to import profile data. Please check the JSON file.'));
+        return;
+      }
       profiles = jsonProfileData;
       $.jStorage.set(profilesKey, profiles);
       populateProfiles();
@@ -396,7 +404,7 @@ var profilesKey = 'darksouls3_profiles';
     function populateProfiles() {
         $('#profiles').empty();
         $.each(profiles[profilesKey], function(index, value) {
-            $('#profiles').append($("<option></option>").attr('value', index).text(index));
+            $('#profiles').append($("<option></option>").attr('value', index).text(index === 'Default Profile' ? t(index) : index));
         });
         $('#profiles').val(profiles.current);
     }
@@ -443,7 +451,7 @@ var profilesKey = 'darksouls3_profiles';
                     }
                 }
                 if (checked === count) {
-                    this.innerHTML = $('#' + type + '_nav_totals_' + i)[0].innerHTML = 'DONE';
+                    this.innerHTML = $('#' + type + '_nav_totals_' + i)[0].innerHTML = t('DONE');
                     $(this).removeClass('in_progress').addClass('done');
                     $(this).parent('h3').addClass('completed');// Hide heading for completed category
                     $($('#' + type + '_nav_totals_' + i)[0]).removeClass('in_progress').addClass('done');
@@ -457,7 +465,7 @@ var profilesKey = 'darksouls3_profiles';
                 $(this).parent('h3').next('div').children('ul').children('li').children('div').children('label:not(.completed)').parent('div').parent('li').parent('ul').prev('h4').removeClass('completed');// ... except those where not all entries below the subheading are labeled as completed
             });
             if (overallChecked === overallCount) {
-                this.innerHTML = 'DONE';
+                this.innerHTML = t('DONE');
                 $(this).removeClass('in_progress').addClass('done');
             } else {
                 this.innerHTML = overallChecked + '/' + overallCount;
@@ -667,9 +675,9 @@ ptUl.each(function () {
     const ul = $(this);
     const h3 = ul.prev('h3');
 
-    const btnGroup = $('<div class="btn-group section_btn-group" role="group" aria-label="Section Checklist">');
-    const btnToggle = $('<button class="btn btn-primary">Toggle</button>');
-    const btnDelete = $('<button class="btn btn-primary">Clear</button>');
+    const btnGroup = $('<div class="btn-group section_btn-group" role="group">').attr('aria-label', window.DS3I18n.t('Section Checklist'));
+    const btnToggle = $('<button class="btn btn-primary">').text(window.DS3I18n.t('Toggle'));
+    const btnDelete = $('<button class="btn btn-primary">').text(window.DS3I18n.t('Clear'));
     btnGroup.append(btnToggle, btnDelete)
     h3.append(btnGroup);
     h3.addClass("section_header")

@@ -38,6 +38,13 @@
           <li><a href="#tabOptions" data-toggle="tab"><span class="glyphicon glyphicon-cog"></span> Options</a></li>
         </ul>
         <!-- /.nav.navbar-nav -->
+        <div class="navbar-form navbar-right language-selector">
+          <label for="language">Language</label>
+          <select id="language" class="form-control" aria-label="Choose language" data-no-i18n>
+            <option value="en">English</option>
+            <option value="zh-CN">简体中文</option>
+          </select>
+        </div>
       </div>
       <!-- /.navbar-collapse -->
     </div>
@@ -2733,7 +2740,7 @@
               <span class="input-group-btn">
                 <button class="btn btn-default" type="button" id="profileAdd">Add</button>
                 <button class="btn btn-default" type="button" id="profileEdit">Edit</button>
-                <button class="btn btn-default" type="button" id="profileNG+">NG+</button>
+                <button class="btn btn-default" type="button" id="profileNG+">Next journey</button>
               </span>
             </form>
           </div>
@@ -2820,10 +2827,12 @@
   <a class="btn btn-default btn-sm fadingbutton back-to-top">Back to Top&thinsp;<span class="glyphicon glyphicon-arrow-up"></span></a>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <script src="https://cdn.rawgit.com/andris9/jStorage/v0.4.12/jstorage.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/andris9/jStorage@v0.4.12/jstorage.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jets/0.8.0/jets.min.js"></script>
   <script src="js/jquery.highlight.js"></script>
+  <script src="js/locales/zh-CN.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

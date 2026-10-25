@@ -1,0 +1,11 @@
+{
+  "name": "dark-souls-3-cheat-sheet",
+  "private": true,
+  "scripts": {
+    "serve": "node tests/server.cjs",
+    "test": "node --test tests/localization.test.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

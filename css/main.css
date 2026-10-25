@@ -192,3 +192,17 @@ textarea#profileText {
 .btn-group.btn-group-vertical:first-child:hover > .btn-group:first-child > .btn-group-vertical > .btn {
   border-bottom-left-radius: 0;
 }
+.language-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.language-selector label {
+    margin-bottom: 0;
+}
+
+html:lang(zh-CN) body {
+    font-family: "Helvetica Neue", Helvetica, "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+    line-height: 1.6;
+}
